@@ -12,7 +12,7 @@ import NewInsights from "./NewInsights"
 
 const Home = () => {
   return (
-    <div className="bg-white dark:bg-white">
+    <div className="bg-white">
       <Header />
       <Hero />
       <EverythingYouNeed />

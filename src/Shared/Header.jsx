@@ -27,10 +27,10 @@ function Header() {
     <div className="w-full shadow-sm bg-white drop-shadow-lg fixed top-0 left-0 z-50">
       <div className="max-w-[1500px] mx-auto px-4 flex items-center justify-between h-16">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <img src={Logo} alt="Listlly logo" className="w-10 h-10" />
-        </div>
-
+       <Link to="/">
+         <img src={Logo} alt="Listlly logo" className="w-10 h-10" />
+       </Link>
+      
         {/* Navigation */}
         <nav className="flex items-center space-x-6 text-md font-medium text-[#1C1C1C]">
           {/* Buy dropdown */}

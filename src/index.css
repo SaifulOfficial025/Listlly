@@ -8,3 +8,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Ensure bg-white stays white in dark mode */
+html.dark .bg-white {
+  background-color: #fff !important;
+}

@@ -79,8 +79,11 @@ export default function HomeForSale() {
     : [1, 2, 3, "…", totalPages];
 
   return (
-      <div className="w-full dark:bg-white " style={{ background: "#FFFFFF", color: "#1C1C1C" }}>
+  <div className="w-full dark:bg-white " style={{ background: "#FFFFFF", color: "#1C1C1C" }}>
         <Header />
+        <div className="bg-white -mt-20 py-10">
+            {/* necessary for layout. dont remove this div */}
+        </div>
 
       {/* Filter bar */}
 <div className="mt-20">    
@@ -98,7 +101,7 @@ export default function HomeForSale() {
     >
       <Search className="w-4 h-4" style={{ color: "#5A5A5A" }} />
       <input
-        className="w-full h-full outline-none text-sm dark:bg-white text-black"
+  className="w-full h-full outline-none text-sm dark:bg-white text-black"
         style={{ color: "#1C1C1C" }}
         placeholder="Search by City, State or Zip"
       />
