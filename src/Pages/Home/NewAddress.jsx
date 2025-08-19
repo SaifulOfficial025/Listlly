@@ -111,15 +111,15 @@ const columns = [
 
 export default function NewAddress() {
   return (
-    <section className="w-full bg-white px-4 py-16">
+    <section className="w-full bg-white px-4 sm:px-6 md:px-8 py-10 md:py-16">
       <div className="max-w-[1200px] mx-auto">
         {/* Heading */}
-        <h2 className="text-center text-[28px] font-bold text-[#1C1C1C] mb-10">
+  <h2 className="text-center text-[20px] md:text-[28px] font-bold text-[#1C1C1C] mb-6 md:mb-10">
           Begin Your Journey to a <span className="text-[#EB4E3D]">New Address</span>
         </h2>
 
         {/* Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8 lg:gap-10">
           {columns.map((col, i) => (
             <div
               key={col.heading}
@@ -128,10 +128,10 @@ export default function NewAddress() {
               }`}
               style={{ borderColor: "#E7E9EE" }}
             >
-              <h3 className="text-[18px] font-semibold text-[#1C1C1C] mb-3">
+              <h3 className="text-[16px] md:text-[18px] font-semibold text-[#1C1C1C] mb-2 md:mb-3">
                 {col.heading}
               </h3>
-              <ul className="list-disc pl-5 space-y-2 text-[14px] text-[#1C1C1C]">
+              <ul className="list-disc pl-4 md:pl-5 space-y-1 md:space-y-2 text-[12px] md:text-[14px] text-[#1C1C1C]">
                 {col.items.map((item) => (
                   <li key={item}>{item}</li>
                 ))}

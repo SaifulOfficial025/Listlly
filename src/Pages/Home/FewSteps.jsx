@@ -37,17 +37,17 @@ const steps = [
 function FewSteps() {
   return (
     <div className="w-full bg-white mt-10">
-      <div className="bg-[#FAFAFA] py-16 px-4">
+      <div className="bg-[#FAFAFA] py-10 px-4 sm:px-6 md:px-8">
         <div className="max-w-[1100px] mx-auto text-center">
-          <h2 className="text-2xl font-bold text-[#1C1C1C]">
+    <h2 className="text-xl md:text-2xl font-bold text-[#1C1C1C]">
             <span className="text-[#EB4E3D]">Your Sale, Your Way</span>
             <span className="text-[#1C1C1C]">—In Just a Few Steps”</span>
         </h2>
-        <p className="text-sm text-[#5A5A5A] mt-2">
+  <p className="text-xs md:text-sm text-[#5A5A5A] mt-2">
           Our simple process makes it easy to get your home listed and sold.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+  <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {steps.map((step, index) => (
             <div key={index} className="flex flex-col items-center text-center">
               <div className="bg-gradient-to-br from-[#e87685] to-[#626acc] text-white w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs mb-4">

@@ -313,45 +313,7 @@ export default function HomeForSale() {
       </div>
 
 </div>
-      <section className="w-full bg-white px-4 py-8">
-      <div className=" ">
-        {/* Header */}
-        <div className="flex items-center justify-between">
-          <h2 className="text-[20px] font-semibold" style={{ color: "#1C1C1C" }}>
-            Find Homes For Sale <span style={{ color: "#EB4E3D" }}>Near You</span>
-          </h2>
-          <a
-            href="#"
-            className="text-[14px] font-semibold hover:underline"
-            style={{ color: "#0054F6" }}
-          >
-            View All
-          </a>
-        </div>
 
-        {/* Cards */}
-        <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {tiers.map((t) => (
-            <button
-              key={t}
-              className="w-full rounded-lg px-4 py-6 text-center transition-transform duration-200 hover:-translate-y-0.5"
-              style={{
-                background: "#FFFFFF",
-                border: "1px solid #CFE0FF",
-                boxShadow: "0 2px 10px rgba(0,0,0,0.04)",
-              }}
-            >
-              <div className="text-[12px]" style={{ color: "#5A5A5A" }}>
-                Houses For Sale<br />Under
-              </div>
-              <div className="mt-1 text-[18px] font-bold" style={{ color: "#2F6FEB" }}>
-                {t}
-              </div>
-            </button>
-          ))}
-        </div>
-      </div>
-    </section>
 
 
     </div>

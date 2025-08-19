@@ -27,8 +27,7 @@ export function PropertyCard({
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-[0_6px_24px_rgba(0,0,0,0.08)] overflow-hidden 
-                 transform transition-transform duration-500 ease-in-out hover:scale-105 hover:shadow-lg">
+  <div className="bg-white rounded-xl shadow-[0_6px_24px_rgba(0,0,0,0.08)] overflow-hidden transform transition-transform duration-500 ease-in-out hover:scale-105 hover:shadow-lg w-full max-w-full">
       {/* Media */}
       <div className="relative">
         <div className="pt-[56.25%]"></div>
@@ -36,13 +35,13 @@ export function PropertyCard({
           <img
             src={images[currentIndex]}
             alt={`${title} - image ${currentIndex + 1}`}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover max-h-60 md:max-h-full"
           />
         </div>
 
         {/* Status badge */}
         <span
-          className={`absolute top-2 right-2 text-[11px] font-semibold px-3 py-[6px] rounded-full shadow-sm ${
+          className={`absolute top-2 right-2 text-[10px] md:text-[11px] font-semibold px-2 md:px-3 py-[4px] md:py-[6px] rounded-full shadow-sm ${
             isSold ? "bg-[#FF6B6B] text-white" : "bg-[#E8F0FF] text-[#0054F6]"
           }`}
         >
@@ -56,17 +55,16 @@ export function PropertyCard({
     onClick={prevImage}
     className="p-1 bg-white/70 hover:bg-white rounded-full shadow-sm"
   >
-    <ChevronLeft className="w-5 h-5 text-[#1C1C1C]" />
+    <ChevronLeft className="w-4 h-4 md:w-5 md:h-5 text-[#1C1C1C]" />
   </button>
   <button
     onClick={nextImage}
     className="p-1 bg-white/70 hover:bg-white rounded-full shadow-sm"
   >
-    <ChevronRight className="w-5 h-5 text-[#1C1C1C]" />
+    <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-[#1C1C1C]" />
   </button>
 </div>
-
-        )}
+  )}
       </div>
 
       {/* Body */}

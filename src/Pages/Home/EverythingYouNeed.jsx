@@ -49,16 +49,16 @@ const features = [
 
 function EverythingYouNeed() {
   return (
-    <div className="bg-white w-full px-4 ">
+    <div className="bg-white w-full px-4 sm:px-6 md:px-8 ">
       <div className="max-w-[1100px] mx-auto text-center">
-        <h2 className="text-3xl font-bold text-[#1C1C1C]">
+        <h2 className="text-2xl md:text-3xl font-bold text-[#1C1C1C]">
           Everything <span className="text-[#EB4E3D]">You Need to Sell</span> with Confidence
         </h2>
-        <p className="text-[#5A5A5A] mt-4 max-w-[600px] mx-auto text-sm">
+        <p className="text-[#5A5A5A] mt-4 max-w-[600px] mx-auto text-sm md:text-base">
           Our platform provides all the tools and support you need to successfully sell your home without a traditional agent.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-10 text-left">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-8 text-left">
           {features.map((feature, index) => (
             <div key={index} className="flex items-start space-x-4">
               <div className="bg-[#EDF3FF] p-3 rounded-full">{feature.icon}</div>
