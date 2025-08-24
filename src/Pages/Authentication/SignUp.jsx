@@ -3,27 +3,26 @@ import { Eye, EyeOff } from "lucide-react";
 import SignupBackground from "../../../public/SignUpBackground.jpg";
 import Logo from "../../../public/Listlly-logo-white.svg";
 import { Link } from "react-router-dom";
-function SignIn() {
+
+function SignUp() {
   const [showPwd, setShowPwd] = useState(false);
+  const [showPwd2, setShowPwd2] = useState(false);
 
   return (
     <div className="h-screen w-full">
       <div className="grid grid-cols-1 lg:grid-cols-2 h-full p-5">
-        {/* LEFT: Background image with overlay and logo */}
-        <div className="relative h-full w-full">
+        {/* LEFT SIDE */}
+        <div className="relative h-full w-full ">
           <div
-            className="absolute inset-0 bg-cover bg-center rounded-xl"
-            style={{
-              backgroundImage: `url(${SignupBackground})`,
-            }}
+            className="absolute inset-0 bg-center bg-cover rounded-xl"
+            style={{ backgroundImage: `url(${SignupBackground})` }}
           />
           {/* Logo */}
           <Link to="/">
           <div className="absolute top-4 left-4 z-10">
             <img src={Logo} alt="Logo" className="w-16 h-16" />
-          </div>
-          </Link>
-          {/* Bottom overlay */}
+          </div></Link>
+          {/* Bottom text */}
           <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
             <div
               className="rounded-lg p-4"
@@ -50,7 +49,7 @@ function SignIn() {
           </div>
         </div>
 
-        {/* RIGHT: Sign-in Form */}
+        {/* RIGHT SIDE */}
         <div className="flex items-center justify-center px-6 sm:px-10 py-10">
           <div className="w-full max-w-md">
             <h1
@@ -60,11 +59,36 @@ function SignIn() {
               Create Your Listlly Account
             </h1>
             <p className="text-[12px] mt-1 text-center text-[#606A76]">
-              Please log in to access your account, manage your listings, and
-              take the next step in your real estate journey.
+              Start selling your home with no commissions and full professional
+              support.
+            </p>
+            <p className="text-[12px] mt-4 text-center text-[#606A76]">
+              If you are a partner/vendor/agent, please{" "}
+              <a
+                href="#"
+                className="font-semibold hover:underline text-[#0054F6]"
+              >
+                Register
+              </a>
             </p>
 
             <div className="mt-6 space-y-4">
+              {/* Full Name */}
+              <div>
+                <label className="block text-[12px] mb-1 text-[#4B5563]">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  className="w-full h-11 rounded-md px-3 text-sm outline-none"
+                  style={{
+                    border: "1px solid #E5E7EB",
+                    background: "#FFFFFF",
+                    color: "#1C1C1C",
+                  }}
+                />
+              </div>
+
               {/* Email */}
               <div>
                 <label className="block text-[12px] mb-1 text-[#4B5563]">
@@ -78,7 +102,6 @@ function SignIn() {
                     background: "#FFFFFF",
                     color: "#1C1C1C",
                   }}
-                  placeholder=""
                 />
               </div>
 
@@ -96,7 +119,6 @@ function SignIn() {
                       background: "#FFFFFF",
                       color: "#1C1C1C",
                     }}
-                    placeholder=""
                   />
                   <button
                     type="button"
@@ -111,26 +133,60 @@ function SignIn() {
                     )}
                   </button>
                 </div>
-                <div className="mt-5 text-right">
-                <span className="text-gray-500 mt-2 text-sm">Forget Password?{" "}</span>
-                <Link to="/forgot_password_email">
-                  <span className="text-blue-600 font-semibold hover:underline text-sm">
-                    Reset it here
-                  </span>
-                </Link>
+              </div>
+
+              {/* Confirm Password */}
+              <div>
+                <label className="block text-[12px] mb-1 text-[#4B5563]">
+                  Confirm Password
+                </label>
+                <div className="relative">
+                  <input
+                    type={showPwd2 ? "text" : "password"}
+                    className="w-full h-11 rounded-md px-3 pr-10 text-sm outline-none"
+                    style={{
+                      border: "1px solid #E5E7EB",
+                      background: "#FFFFFF",
+                      color: "#1C1C1C",
+                    }}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPwd2((v) => !v)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2"
+                    aria-label="Toggle password visibility"
+                  >
+                    {showPwd2 ? (
+                      <Eye size={18} color="#606A76" />
+                    ) : (
+                      <EyeOff size={18} color="#606A76" />
+                    )}
+                  </button>
                 </div>
               </div>
 
-              {/* Login button */}
+              {/* Register button */}
               <button
                 className="w-full h-11 rounded-md text-white font-semibold"
                 style={{
-                  background:
-                    "linear-gradient(90deg, #0054F6 0%, #0D47C1 100%)",
+                  background: "linear-gradient(90deg, #0054F6 0%, #0D47C1 100%)",
                 }}
               >
-                Log In
+                Register
               </button>
+
+              {/* Terms */}
+              <p className="text-[11px] text-center text-[#6B7280]">
+                By signing up, you agree to our{" "}
+                <a href="#" className="hover:underline text-[#0054F6]">
+                  Terms of Service
+                </a>{" "}
+                and{" "}
+                <a href="#" className="hover:underline text-[#0054F6]">
+                  Privacy Policy
+                </a>
+                .
+              </p>
 
               {/* Divider */}
               <div className="flex items-center gap-4 my-1">
@@ -139,7 +195,7 @@ function SignIn() {
                 <div className="h-px flex-1 bg-[#E5E7EB]" />
               </div>
 
-              {/* Social buttons */}
+              {/* Social */}
               <button
                 className="w-full h-11 rounded-md flex items-center justify-center gap-2 border"
                 style={{
@@ -166,9 +222,9 @@ function SignIn() {
 
               {/* Footer */}
               <p className="text-[12px] text-center mt-1 text-[#6B7280]">
-                Don't have an account?{" "}
-                <Link to="/signup">
-                  <span className="text-blue-600 font-bold">Sign Up</span>
+                Already have an account?{" "}
+                <Link to="/signin">
+                  <span className="text-blue-600 font-bold">Log In</span>
                 </Link>
               </p>
             </div>
@@ -211,4 +267,4 @@ function AppleIcon() {
   );
 }
 
-export default SignIn;
+export default SignUp;

@@ -100,6 +100,7 @@ function Header() {
         </nav>
 
         {/* Register Button */}
+        <Link to="/signup">
         <button
           className="hidden md:inline-block text-white text-[13px] font-medium px-4 py-2 rounded shadow-sm"
           style={{
@@ -108,6 +109,7 @@ function Header() {
         >
           Register
         </button>
+        </Link>
       </div>
     </div>
   );
