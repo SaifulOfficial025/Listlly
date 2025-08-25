@@ -6,12 +6,15 @@ import {
   Search,
   SlidersHorizontal,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import Header from "../../Shared/Header";
 
 import PriceFilter from "../Buys/PriceFilter";
 import BedsBathsDropdown from "../Buys/BedsBathsDropdown";
 import HomeTypeDropdown from "../Buys/HomeTypeDropdown";
 import FiltersPanel from "../Buys/FiltersPanel";
+import NewAddress from "../Home/NewAddress";
+import Footer from "../../Shared/Footer";
 
 /* UI helpers */
 const BarBtn = ({ children }) => (
@@ -56,6 +59,8 @@ const makeCard = (i) => {
 };
 
 export default function HomeForSale() {
+  const navigate = useNavigate();
+
   // 96 items so paging feels real
   const allCards = useMemo(
     () => Array.from({ length: 96 }, (_, i) => makeCard(i + 1)),
@@ -72,6 +77,10 @@ export default function HomeForSale() {
   const goPrev = () => setPage((p) => Math.max(1, p - 1));
   const goNext = () => setPage((p) => Math.min(totalPages, p + 1));
   const goTo = (p) => setPage(p);
+
+  const handleCardClick = (id) => {
+    navigate(`/homeforsale/property_details`);
+  };
 
   // Page numbers like the mock: 1 2 3 … N
   const pageNumbers = totalPages <= 5
@@ -200,7 +209,8 @@ export default function HomeForSale() {
                 {currentCards.map((c) => (
                   <div
                     key={c.id}
-                    className="bg-white rounded-xl overflow-hidden shadow-[0_6px_24px_rgba(0,0,0,0.08)]"
+                    className="bg-white rounded-xl overflow-hidden shadow-[0_6px_24px_rgba(0,0,0,0.08)] cursor-pointer"
+                    onClick={() => handleCardClick(c.id)}
                   >
                     <div className="w-full h-[120px]">
                       <img
@@ -311,6 +321,8 @@ export default function HomeForSale() {
           </div>
         </div>
       </div>
+          <NewAddress />
+          <Footer />
 
 </div>
 

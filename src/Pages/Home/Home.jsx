@@ -19,6 +19,9 @@ const Home = () => {
       <FewSteps />
       <FeaturedProperty />
       <Find />
+        <h2 className="text-center text-[20px] md:text-[28px] font-bold text-[#1C1C1C]  mt-10">
+          Begin Your Journey to a <span className="text-[#EB4E3D]">New Address</span>
+        </h2>
       <NewAddress />
       <NewInsights />
       <Contact />

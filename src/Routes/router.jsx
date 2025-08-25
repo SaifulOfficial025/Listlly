@@ -6,6 +6,7 @@ import SignIn from "../Pages/Authentication/SignIn";
 import ForgetPasswordEmail from "../Pages/Authentication/ForgetPasswordEmail";
 import ForgetPasswordVerifyEmail from "../Pages/Authentication/ForgetPasswordVerifyEmail";
 import NewPassword from "../Pages/Authentication/NewPassword";
+import PropertyDetails from "../Pages/PropertyDetails/PropertyDetails";
 
 export const router = createBrowserRouter([
   {
@@ -36,4 +37,8 @@ export const router = createBrowserRouter([
     path: "/new_password",
     element: <NewPassword />,
   },
+  {
+    path: "/homeforsale/property_details",
+    element: <PropertyDetails />,
+  }
 ]);
