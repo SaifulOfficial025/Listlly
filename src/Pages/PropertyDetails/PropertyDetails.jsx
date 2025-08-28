@@ -14,6 +14,8 @@ import Header from "../../Shared/Header";
 import Footer from "../../Shared/Footer";
 import NearbyHomes from "./NearbyHomes";
 import NewAddress from "../Home/NewAddress";
+import ScheduleModal from "./ScheduleModal";
+import MakeAnOfferModal from "./MakeAnOfferModal";
 
 const images = [
   "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=700&q=80",
@@ -36,6 +38,9 @@ function PropertyDetails() {
   const otpRefs = React.useRef([]);
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
+
+  // New state for Make an Offer modal flow
+  const [showMakeOfferModal, setShowMakeOfferModal] = useState(false);
 
   const openModal = (index) => {
     setCurrent(index);
@@ -66,6 +71,14 @@ function PropertyDetails() {
     setOtp(["", "", "", "", "", ""]);
     setSelectedDate(null);
     setSelectedTime(null);
+  };
+
+  // Make an Offer modal handlers
+  const openMakeOfferModal = () => {
+    setShowMakeOfferModal(true);
+  };
+  const closeMakeOfferModal = () => {
+    setShowMakeOfferModal(false);
   };
 
   const sendOtp = () => {
@@ -282,7 +295,7 @@ function PropertyDetails() {
             <button onClick={openScheduleModal} className="w-full border border-[#0054F6] text-[#0054F6] py-2 rounded-md text-sm font-medium hover:bg-[#F0F5FF] transition">
               Schedule Showing
             </button>
-            <button className="w-full bg-[#FFE3E3] text-[#D33C40] py-2 rounded-md text-sm font-medium hover:bg-[#FFDDDD] transition">
+            <button onClick={openMakeOfferModal} className="w-full bg-[#FFE3E3] text-[#D33C40] py-2 rounded-md text-sm font-medium hover:bg-[#FFDDDD] transition">
               Make an Offer
             </button>
 
@@ -524,190 +537,37 @@ function PropertyDetails() {
       </div>
       <Footer />
 
-      {/* Modal - Schedule Showing Flow */}
+     
       {showScheduleModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center" style={{ colorScheme: 'light' }}>
-          <div
-            className="absolute inset-0 backdrop-blur-sm bg-black/30"
-            onClick={closeScheduleModal}
-          ></div>
+        <ScheduleModal
+          closeScheduleModal={closeScheduleModal}
+          scheduleStep={scheduleStep}
+          selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate}
+          selectedTime={selectedTime}
+          setSelectedTime={setSelectedTime}
+          phone={phone}
+          setPhone={setPhone}
+          sendOtp={sendOtp}
+          otp={otp}
+          otpRefs={otpRefs}
+          handleOtpChange={handleOtpChange}
+          handleOtpKeyDown={handleOtpKeyDown}
+          verifyOtp={verifyOtp}
+          confirmSchedule={confirmSchedule}
+          setOtp={setOtp}
+          image={images[0]}
+        />
+      )}
 
-          <div className="relative w-full max-w-md mx-4">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden" style={{ colorScheme: 'light' }}>
-               {/* Step 1 - Houzeo's I-Minute Showing Request */}
-               {scheduleStep === 1 && (
-                 <div className="p-4">
-                   <div className="flex items-start gap-4">
-                     <img
-                       src={images[0]}
-                       alt="thumb"
-                       className="w-20 h-16 object-cover rounded-md"
-                     />
-                     <div>
-                       <div className="text-sm text-gray-500">
-                         123 Oak Street, Irvine, CA 92602
-                       </div>
-                       <div className="text-lg font-semibold">$899,000</div>
-                       <div className="text-xs text-gray-500 mt-1">
-                         4 beds • 3 baths • 2,200 sq ft
-                       </div>
-                     </div>
-                     <button
-                       className="ml-auto text-gray-400"
-                       onClick={closeScheduleModal}
-                     >
-                       <X />
-                     </button>
-                   </div>
-
-                   <div className="mt-4">
-                     <div className="text-sm font-medium text-gray-700 mb-2">
-                       Select Date
-                     </div>
-                     <div className="flex gap-2 overflow-x-auto">
-                       {["Mon 11", "Tue 12", "Wed 13", "Thu 14", "Fri 15"].map(
-                         (d) => (
-                           <button
-                             key={d}
-                             onClick={() => setSelectedDate(d)}
-                             className={`px-3 py-2 rounded-lg border ${
-                               selectedDate === d
-                                 ? "border-blue-600 bg-blue-50"
-                                 : "border-gray-200"
-                             }`}
-                           >
-                             {d}
-                           </button>
-                         )
-                       )}
-                     </div>
-
-                     <div className="mt-4">
-                       <div className="text-sm font-medium text-gray-700 mb-2">
-                         Select Time
-                       </div>
-                       <div className="flex gap-2 overflow-x-auto">
-                         {["9:00AM", "10:00AM", "11:00AM", "12:00PM"].map((t) => (
-                           <button
-                             key={t}
-                             onClick={() => setSelectedTime(t)}
-                             className={`px-3 py-2 rounded-lg border ${
-                               selectedTime === t
-                                 ? "border-blue-600 bg-blue-50"
-                                 : "border-gray-200"
-                             }`}
-                           >
-                             {t}
-                           </button>
-                         ))}
-                       </div>
-                     </div>
-
-                     <div className="mt-4">
-                       <label className="text-sm text-gray-700 block mb-2">
-                         Enter Phone Number
-                       </label>
-                       <input
-                         value={phone}
-                         onChange={(e) => setPhone(e.target.value)}
-                         className="w-full border rounded-md px-3 py-2 bg-white text-black"
-                         placeholder="Enter phone number"
-                         style={{ colorScheme: 'light' }}
-                       />
-                     </div>
-
-                     <div className="mt-4 flex gap-2">
-                       <button
-                         onClick={sendOtp}
-                         className="flex-1 bg-blue-600 text-white py-2 rounded-md"
-                       >
-                         Schedule Showing
-                       </button>
-                       <button
-                         onClick={closeScheduleModal}
-                         className="flex-1 border rounded-md py-2"
-                       >
-                         Cancel
-                       </button>
-                     </div>
-                   </div>
-                 </div>
-               )}
-
-               {/* Step 2 - Verify Your Contact Information */}
-               {scheduleStep === 2 && (
-                 <div className="p-6 text-center">
-                   <h3 className="text-lg font-semibold mb-2">
-                     Verify Your Contact Information
-                   </h3>
-                   <p className="text-sm text-gray-500 mb-4">
-                     Enter 6-digit code sent to {phone || "(xxx) xxx-xxxx"}
-                   </p>
-
-                   <div className="flex justify-center gap-2 mb-4">
-                     {otp.map((v, idx) => (
-                       <input
-                         key={idx}
-                         ref={(el) => (otpRefs.current[idx] = el)}
-                         value={v}
-                         onChange={(e) => handleOtpChange(e, idx)}
-                         onKeyDown={(e) => handleOtpKeyDown(e, idx)}
-                         className="w-10 h-10 text-center rounded-md border bg-white text-black"
-                         maxLength={1}
-                         style={{ colorScheme: 'light' }}
-                       />
-                     ))}
-                   </div>
-
-                   <div className="text-sm text-blue-600 mb-4">
-                     <button
-                       onClick={() => {
-                         setOtp(["", "", "", "", "", ""]);
-                       }}
-                     >
-                       Resend Code
-                     </button>
-                   </div>
-
-                   <div className="flex gap-2">
-                     <button
-                       onClick={verifyOtp}
-                       className="flex-1 bg-blue-600 text-white py-2 rounded-md"
-                     >
-                       Continue
-                     </button>
-                     <button
-                       onClick={closeScheduleModal}
-                       className="flex-1 border rounded-md py-2"
-                     >
-                       Cancel
-                     </button>
-                   </div>
-                 </div>
-               )}
-
-               {/* Step 3 - Schedule Confirmed */}
-               {scheduleStep === 3 && (
-                 <div className="p-6 text-center">
-                   <CheckCircle className="mx-auto text-green-500" size={48} />
-                   <h3 className="text-lg font-semibold mt-4">Schedule Confirmed</h3>
-                   <p className="text-sm text-gray-500 mt-2">
-                     We've received your details and will be in touch soon.
-                   </p>
-
-                   <div className="mt-6">
-                     <button
-                       onClick={confirmSchedule}
-                       className="w-full bg-blue-600 text-white py-2 rounded-md"
-                     >
-                       Confirm
-                     </button>
-                   </div>
-                 </div>
-               )}
-            </div>
-          </div>
-        </div>
+      {showMakeOfferModal && (
+        <MakeAnOfferModal
+          closeMakeOfferModal={closeMakeOfferModal}
+          image={images[0]}
+          propertyAddress="5465 Avenida Maravillas"
+          propertyLocation="Rancho Santa Fe, CA 92067"
+          propertyPrice="$7,995,000"
+        />
       )}
     </div>
   );
