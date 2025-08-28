@@ -3,26 +3,29 @@ import { Eye, EyeOff } from "lucide-react";
 import SignupBackground from "../../../public/SignUpBackground.jpg";
 import Logo from "../../../public/Listlly-logo-white.svg";
 import { Link } from "react-router-dom";
-
-function SignUp() {
-  const [showPwd, setShowPwd] = useState(false);
+function SignIn() {
+    const [showPwd, setShowPwd] = useState(false);
   const [showPwd2, setShowPwd2] = useState(false);
 
   return (
-    <div className="h-screen w-full">
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-full p-5">
-        {/* LEFT SIDE */}
-        <div className="relative h-full w-full ">
+    <div className="min-h-screen w-full bg-white">
+      <div className="grid grid-cols-1 lg:grid-cols-2 h-full p-4 md:p-8 gap-6">
+        {/* LEFT: Background image with overlay and logo */}
+        <div className="relative w-full rounded-xl overflow-hidden">
+          {/* responsive hero: short on mobile, full-height on lg */}
           <div
-            className="absolute inset-0 bg-center bg-cover rounded-xl"
-            style={{ backgroundImage: `url(${SignupBackground})` }}
+            className="absolute inset-0 bg-cover bg-center rounded-xl h-56 sm:h-72 md:h-96 lg:h-full"
+            style={{
+              backgroundImage: `url(${SignupBackground})`,
+            }}
           />
           {/* Logo */}
           <Link to="/">
-          <div className="absolute top-4 left-4 z-10">
-            <img src={Logo} alt="Logo" className="w-16 h-16" />
-          </div></Link>
-          {/* Bottom text */}
+            <div className="absolute top-4 left-4 z-20">
+              <img src={Logo} alt="Logo" className="w-12 h-12 md:w-16 md:h-16" />
+            </div>
+          </Link>
+          {/* Bottom overlay */}
           <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
             <div
               className="rounded-lg p-4"
@@ -49,30 +52,22 @@ function SignUp() {
           </div>
         </div>
 
-        {/* RIGHT SIDE */}
-        <div className="flex items-center justify-center px-6 sm:px-10 py-10">
+        {/* RIGHT: Sign-in Form */}
+        <div className="flex items-center justify-center px-4 md:px-10 py-8 md:py-10">
           <div className="w-full max-w-md">
             <h1
-              className="text-[26px] font-bold text-center"
+              className="text-[22px] md:text-[26px] font-bold text-center"
               style={{ color: "#1C1C1C" }}
             >
               Create Your Listlly Account
             </h1>
             <p className="text-[12px] mt-1 text-center text-[#606A76]">
-              Start selling your home with no commissions and full professional
-              support.
-            </p>
-            <p className="text-[12px] mt-4 text-center text-[#606A76]">
-              If you are a partner/vendor/agent, please{" "}
-              <a
-                href="#"
-                className="font-semibold hover:underline text-[#0054F6]"
-              >
-                Register
-              </a>
+              Please log in to access your account, manage your listings, and
+              take the next step in your real estate journey.
             </p>
 
             <div className="mt-6 space-y-4">
+
               {/* Full Name */}
               <div>
                 <label className="block text-[12px] mb-1 text-[#4B5563]">
@@ -80,12 +75,7 @@ function SignUp() {
                 </label>
                 <input
                   type="text"
-                  className="w-full h-11 rounded-md px-3 text-sm outline-none"
-                  style={{
-                    border: "1px solid #E5E7EB",
-                    background: "#FFFFFF",
-                    color: "#1C1C1C",
-                  }}
+                  className="w-full h-11 rounded-md px-3 text-sm md:text-base outline-none bg-white dark:bg-white text-black dark:text-black border border-gray-300"
                 />
               </div>
 
@@ -96,12 +86,13 @@ function SignUp() {
                 </label>
                 <input
                   type="email"
-                  className="w-full h-11 rounded-md px-3 text-sm outline-none"
+                  className="w-full h-11 rounded-md px-3 text-sm md:text-base outline-none"
                   style={{
                     border: "1px solid #E5E7EB",
                     background: "#FFFFFF",
                     color: "#1C1C1C",
                   }}
+                  placeholder=""
                 />
               </div>
 
@@ -113,12 +104,13 @@ function SignUp() {
                 <div className="relative">
                   <input
                     type={showPwd ? "text" : "password"}
-                    className="w-full h-11 rounded-md px-3 pr-10 text-sm outline-none"
+                    className="w-full h-11 rounded-md px-3 pr-10 text-sm md:text-base outline-none"
                     style={{
                       border: "1px solid #E5E7EB",
                       background: "#FFFFFF",
                       color: "#1C1C1C",
                     }}
+                    placeholder=""
                   />
                   <button
                     type="button"
@@ -133,9 +125,11 @@ function SignUp() {
                     )}
                   </button>
                 </div>
+              
               </div>
 
-              {/* Confirm Password */}
+
+               {/* Confirm Password */}
               <div>
                 <label className="block text-[12px] mb-1 text-[#4B5563]">
                   Confirm Password
@@ -143,12 +137,7 @@ function SignUp() {
                 <div className="relative">
                   <input
                     type={showPwd2 ? "text" : "password"}
-                    className="w-full h-11 rounded-md px-3 pr-10 text-sm outline-none"
-                    style={{
-                      border: "1px solid #E5E7EB",
-                      background: "#FFFFFF",
-                      color: "#1C1C1C",
-                    }}
+                    className="w-full h-11 rounded-md px-3 pr-10 text-sm md:text-base outline-none bg-white dark:bg-white text-black dark:text-black border border-gray-300"
                   />
                   <button
                     type="button"
@@ -165,28 +154,18 @@ function SignUp() {
                 </div>
               </div>
 
-              {/* Register button */}
+
+
+              {/* Login button */}
               <button
-                className="w-full h-11 rounded-md text-white font-semibold"
+                className="w-full h-11 rounded-md text-white font-semibold text-sm md:text-base"
                 style={{
-                  background: "linear-gradient(90deg, #0054F6 0%, #0D47C1 100%)",
+                  background:
+                    "linear-gradient(90deg, #0054F6 0%, #0D47C1 100%)",
                 }}
               >
-                Register
+                Log In
               </button>
-
-              {/* Terms */}
-              <p className="text-[11px] text-center text-[#6B7280]">
-                By signing up, you agree to our{" "}
-                <a href="#" className="hover:underline text-[#0054F6]">
-                  Terms of Service
-                </a>{" "}
-                and{" "}
-                <a href="#" className="hover:underline text-[#0054F6]">
-                  Privacy Policy
-                </a>
-                .
-              </p>
 
               {/* Divider */}
               <div className="flex items-center gap-4 my-1">
@@ -195,7 +174,7 @@ function SignUp() {
                 <div className="h-px flex-1 bg-[#E5E7EB]" />
               </div>
 
-              {/* Social */}
+              {/* Social buttons */}
               <button
                 className="w-full h-11 rounded-md flex items-center justify-center gap-2 border"
                 style={{
@@ -222,9 +201,9 @@ function SignUp() {
 
               {/* Footer */}
               <p className="text-[12px] text-center mt-1 text-[#6B7280]">
-                Already have an account?{" "}
-                <Link to="/signin">
-                  <span className="text-blue-600 font-bold">Log In</span>
+                Don't have an account?{" "}
+                <Link to="/signup">
+                  <span className="text-blue-600 font-bold">Sign Up</span>
                 </Link>
               </p>
             </div>
@@ -267,4 +246,4 @@ function AppleIcon() {
   );
 }
 
-export default SignUp;
+export default SignIn;
