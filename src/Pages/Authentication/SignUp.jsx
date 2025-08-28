@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import SignupBackground from "../../../public/SignUpBackground.jpg";
 import Logo from "../../../public/Listlly-logo-white.svg";
+import signup from "../../../public/signup.png";
+
 import { Link } from "react-router-dom";
-function SignIn() {
+function SignUp() {
     const [showPwd, setShowPwd] = useState(false);
   const [showPwd2, setShowPwd2] = useState(false);
 
@@ -16,7 +18,7 @@ function SignIn() {
           <div
             className="absolute inset-0 bg-cover bg-center rounded-xl h-56 sm:h-72 md:h-96 lg:h-full"
             style={{
-              backgroundImage: `url(${SignupBackground})`,
+              backgroundImage: `url(${signup})`,
             }}
           />
           {/* Logo */}
@@ -201,9 +203,9 @@ function SignIn() {
 
               {/* Footer */}
               <p className="text-[12px] text-center mt-1 text-[#6B7280]">
-                Don't have an account?{" "}
-                <Link to="/signup">
-                  <span className="text-blue-600 font-bold">Sign Up</span>
+                Do have an account?{" "}
+                <Link to="/signin">
+                  <span className="text-blue-600 font-bold">Sign In</span>
                 </Link>
               </p>
             </div>
@@ -246,4 +248,4 @@ function AppleIcon() {
   );
 }
 
-export default SignIn;
+export default SignUp;
