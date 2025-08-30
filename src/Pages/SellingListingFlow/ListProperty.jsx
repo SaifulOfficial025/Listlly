@@ -38,7 +38,7 @@ function ListProperty({ onCancel, onContinue }) {
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">📍</div>
             <div>
-              <div className="text-lg font-semibold">Property Address</div>
+              <div className="text-lg font-semibold text-[#2563eb]">Property Address</div>
             </div>
           </div>
           <div className="px-3 py-1 bg-blue-50 text-blue-600 rounded text-xs">Step 1 of 7</div>

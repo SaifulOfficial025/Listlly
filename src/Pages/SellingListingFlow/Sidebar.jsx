@@ -1,4 +1,5 @@
 import React from 'react'
+import Logo from "../../../public/Listlly-logo-white.svg"
 
 const NavItem = ({ children, active }) => (
   <div className={`pl-6 py-3 text-sm ${active ? 'bg-white text-[#1641ff] font-semibold' : 'text-white/90 hover:opacity-100'}`}>
@@ -12,15 +13,10 @@ function Sidebar() {
       <div>
         <div className="px-6 pt-6 pb-4 flex flex-col items-start gap-3">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-md bg-white/20 flex items-center justify-center">
-              {/* simple house icon */}
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
-                <path d="M3 11.5L12 4l9 7.5" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M5 21V12h14v9" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+            <div className="w-10 h-10 flex items-center justify-center">
+              <img src={Logo} alt="Listlly Logo" />
             </div>
             <div className="text-white">
-              <div className="text-sm font-semibold">Listlly</div>
             </div>
           </div>
         </div>

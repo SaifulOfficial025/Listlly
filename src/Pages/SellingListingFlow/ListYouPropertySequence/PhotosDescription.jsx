@@ -35,8 +35,13 @@ function PhotosDescription({ onCancel, onContinue }) {
   return (
     <>
       <div className="max-w-5xl mx-auto px-6 py-10 text-black">
-        <div className="text-center mb-8">
-          <h2 className="text-2xl font-semibold">Photos & Description</h2>
+         <div className="text-center mb-8">
+          <h2 className="text-2xl font-semibold">
+            <span className="text-red-400 mr-1">List</span> Your Property
+          </h2>
+        </div>
+        <div className="text-left mb-8">
+          <h2 className="text-2xl font-semibold text-[#2563eb]">Photos & Description</h2>
         </div>
 
         <div className="bg-white rounded-lg shadow px-8 py-6">

@@ -73,22 +73,7 @@ function ListPropertyFlow() {
 
   return (
     <div>
-      {/* Debug info - remove in production */}
-      <div className="bg-yellow-100 p-2 text-xs text-center flex items-center justify-center gap-4">
-        <span>DEBUG: Current Step {currentStep} - {steps[currentStep]?.name || 'Unknown'}</span>
-        <button 
-          onClick={() => setCurrentStep(Math.min(currentStep + 1, steps.length - 1))}
-          className="bg-blue-500 text-white px-2 py-1 rounded text-xs"
-        >
-          Force Next Step
-        </button>
-        <button 
-          onClick={() => setCurrentStep(Math.max(currentStep - 1, 0))}
-          className="bg-gray-500 text-white px-2 py-1 rounded text-xs"
-        >
-          Force Prev Step
-        </button>
-      </div>
+
       
       <CurrentStepComponent 
         onContinue={handleContinue}

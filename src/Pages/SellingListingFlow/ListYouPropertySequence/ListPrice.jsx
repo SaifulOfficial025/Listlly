@@ -23,8 +23,11 @@ function ListPrice({ onCancel, onContinue }) {
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-10 text-black">
-      <div className="text-center mb-8">
-        <h2 className="text-2xl font-semibold">List Price</h2>
+        <div className="text-center mb-8">
+        <h2 className="text-2xl font-semibold"><span className="text-red-400 mr-1">List</span> Your Property</h2>
+      </div>
+      <div className="text-left mb-8">
+        <h2 className="text-2xl font-semibold text-[#2563eb]">List Price</h2>
       </div>
 
       <div className="bg-white rounded-lg shadow px-8 py-6">
@@ -38,7 +41,7 @@ function ListPrice({ onCancel, onContinue }) {
               </div>
             </div>
           </div>
-          <div className="px-3 py-1 bg-blue-50 text-blue-600 rounded text-xs">Step 3 of 7</div>
+          <div className="px-3 py-1 bg-blue-50 text-blue-600 rounded text-xs whitespace-nowrap">Step 3 of 7</div>
         </div>
 
         <div className="max-w-md mx-auto">
@@ -54,19 +57,23 @@ function ListPrice({ onCancel, onContinue }) {
                 className="bg-white text-gray-900 placeholder-gray-400 border border-gray-200 rounded px-8 py-3 w-full text-lg"
               />
             </div>
-          </div>
-
-          {price && (
-            <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-green-600">💰</span>
-                <span className="text-sm font-medium text-green-800">Your savings via Listly</span>
+            
+            {/* Savings display under input */}
+            <div className="bg-green-50 border border-green-200 rounded-lg p-3 mt-3">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                  <span className="text-green-600 text-2xl">💰</span>
+                </div>
+                <div>
+                  <span className="text-sm text-gray-700">Your savings via </span>
+                  <span className="text-sm font-medium text-red-500">Listly</span>
+                </div>
               </div>
-              <div className="text-lg font-semibold text-green-700">
-                ${savings.low} to ${savings.high}
+              <div className="mt-1 ml-10">
+                <span className="text-lg font-semibold text-green-600">1.75% to 5.5%</span>
               </div>
             </div>
-          )}
+          </div>
         </div>
 
         <div className="flex items-center justify-center gap-6 mt-8">
