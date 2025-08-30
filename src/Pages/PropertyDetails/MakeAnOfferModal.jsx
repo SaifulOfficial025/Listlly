@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import BuyerAgentModal from "./BuyerAgentModal";
 import { X, CheckCircle, Upload } from "lucide-react";
 import { IoLocationOutline } from "react-icons/io5";
 import YesIcon from "../../../public/YesIcon.svg"
@@ -13,6 +14,7 @@ function MakeAnOfferModal({
 }) {
   const [step, setStep] = useState(1);
   const [role, setRole] = useState("");
+  const [showBuyerAgentModal, setShowBuyerAgentModal] = useState(false);
   const [seenProperty, setSeenProperty] = useState("");
   const [financeMethod, setFinanceMethod] = useState("");
   const [exclusiveAgreement, setExclusiveAgreement] = useState("");
@@ -133,6 +135,9 @@ function MakeAnOfferModal({
 
   // Step 1: Choose Your Role
   if (step === 1) {
+    if (showBuyerAgentModal) {
+      return <BuyerAgentModal open={showBuyerAgentModal} onClose={() => setShowBuyerAgentModal(false)} initialStep={1} />;
+    }
     return (
       <div className="fixed inset-0 z-50 flex items-center justify-center text-black" style={{ colorScheme: "light" }}>
         <div className="absolute inset-0 backdrop-blur-sm bg-black/30" onClick={handleClose}></div>
@@ -153,7 +158,7 @@ function MakeAnOfferModal({
                 <button
                   onClick={() => {
                     setRole("agent");
-                    setStep(2);
+                    setShowBuyerAgentModal(true);
                   }}
                   className="w-full border border-gray-300 py-3 rounded-md font-medium "
                 >
@@ -355,36 +360,6 @@ function MakeAnOfferModal({
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium mb-1">Full Name</label>
-                  <input
-                    type="text"
-                    value={formData.fullName}
-                    onChange={(e) => setFormData({...formData, fullName: e.target.value})}
-                    className="w-full border rounded-md px-3 py-2"
-                    placeholder="Enter full name"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-1">Email</label>
-                  <input
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    className="w-full border rounded-md px-3 py-2"
-                    placeholder="Enter email"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-1">Phone Number</label>
-                  <input
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    className="w-full border rounded-md px-3 py-2"
-                    placeholder="Enter phone number"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-1">DRE License</label>
                   <input
                     type="text"
                     value={formData.dreeLicense}
@@ -758,33 +733,24 @@ function MakeAnOfferModal({
   // Step 91: Upload Pre-Approval
   if (step === 91) {
     return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center text-black" style={{ colorScheme: "light" }}>
-        <div className="absolute inset-0 backdrop-blur-sm bg-black/30" onClick={handleClose}></div>
+    <div className="fixed inset-0 z-50 flex items-center justify-center text-black" style={{ colorScheme: 'light' }}>
+        <div className="absolute inset-0 backdrop-blur-sm bg-black/30" onClick={handleClose} />
         <div className="relative w-full max-w-lg mx-4">
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <PropertyHeader />
             <div className="p-6">
               <h3 className="text-lg font-semibold mb-6">Upload Pre-Approval</h3>
               <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center mb-6">
-                <input
-                  ref={fileInputRef}
-                  type="file"
-                  accept=".pdf,image/*"
-                  onChange={handleFileChange}
-                  className="hidden"
-                />
-
+                <input ref={fileInputRef} type="file" accept=".pdf,image/*" onChange={handleFileChange} className="hidden" />
                 {!preApprovalFile ? (
-                  <div
-                    role="button"
-                    tabIndex={0}
-                    onClick={() => fileInputRef.current?.click()}
-                    onKeyDown={(e) => { if (e.key === 'Enter') fileInputRef.current?.click(); }}
-                    className="cursor-pointer"
-                  >
-                    <Upload className="mx-auto text-blue-600 mb-2" size={32} />
-                    <div className="text-sm font-medium mb-1">Upload File</div>
-                    <div className="text-xs text-gray-500">Drag files here or click browse through your machine</div>
+                  <div role="button" tabIndex={0} onClick={() => fileInputRef.current?.click()} className="cursor-pointer">
+                    <div className="flex flex-col items-center justify-center gap-3">
+                      <div className="w-20 h-20 flex items-center justify-center">
+                        <UploadIcon />
+                      </div>
+                      <div className="text-sm font-medium mb-1">Upload File</div>
+                      <div className="text-xs text-gray-500">Drag files here or click browse through your machine</div>
+                    </div>
                   </div>
                 ) : (
                   <div className="flex items-center justify-between gap-3">
@@ -793,35 +759,16 @@ function MakeAnOfferModal({
                       <div className="text-xs text-gray-500">{(preApprovalFile.size / 1024).toFixed(1)} KB</div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <button
-                        onClick={() => fileInputRef.current?.click()}
-                        className="px-3 py-1 border rounded-md text-sm"
-                      >
-                        Replace
-                      </button>
-                      <button
-                        onClick={removeFile}
-                        className="px-3 py-1 bg-red-50 text-red-600 border border-red-100 rounded-md text-sm"
-                      >
-                        Remove
-                      </button>
+                      <button onClick={() => fileInputRef.current?.click()} className="px-3 py-1 border rounded-md text-sm">Replace</button>
+                      <button onClick={removeFile} className="px-3 py-1 bg-red-50 text-red-600 border border-red-100 rounded-md text-sm">Remove</button>
                     </div>
                   </div>
                 )}
               </div>
+
               <div className="flex gap-3">
-                <button
-                  onClick={() => setStep(3)}
-                  className="flex-1 border border-gray-300 py-2 rounded-md"
-                >
-                  Back
-                </button>
-                <button
-                  onClick={() => preApprovalFile ? finalizeUpload() : fileInputRef.current?.click()}
-                  className="flex-1 bg-blue-600 text-white py-2 rounded-md"
-                >
-                  {preApprovalFile ? "Complete Upload" : "Upload File"}
-                </button>
+                <button onClick={() => setStep(2)} className="flex-1 border border-gray-300 py-2 rounded-md">Back</button>
+                <button onClick={() => preApprovalFile ? finalizeUpload() : fileInputRef.current?.click()} className="flex-1 bg-blue-600 text-white py-2 rounded-md">{preApprovalFile ? 'Complete Upload' : 'Upload File'}</button>
               </div>
             </div>
           </div>
