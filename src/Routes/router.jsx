@@ -11,6 +11,9 @@ import Dashboard from "../Pages/SellingListingFlow/Dashboard";
 import SellProperties from "../Pages/SellingListingFlow/SellProperties";
 import SubmittedOffer from "../Pages/SellingListingFlow/SubmittedOffer";
 import BuyProperties from "../Pages/SellingListingFlow/BuyProperties";
+import ListProperty from "../Pages/SellingListingFlow/ListProperty";
+import ListPropertyFlow from "../Pages/SellingListingFlow/ListYouPropertySequence/ListPropertyFlow";
+
 
 export const router = createBrowserRouter([
   {
@@ -46,9 +49,21 @@ export const router = createBrowserRouter([
     element: <PropertyDetails />,
   },
   {
-    path: "/dashboard",
-    children: [
-      { path: "selling_properties", element: <SellProperties /> },
+  path: "/dashboard",
+  element: <Dashboard />,
+  children: [
+      {
+        path: "selling_properties",
+        element: <SellProperties />,
+      },
+      {
+        path: "selling_properties/list_property",
+        element: <ListProperty />
+      },
+      {
+        path: "selling_properties/list_property/property_information",
+        element: <ListPropertyFlow />
+      },
       { path: "submitted-offer", element: <SubmittedOffer /> },
       { path: "buy-properties", element: <BuyProperties /> },
     ],
