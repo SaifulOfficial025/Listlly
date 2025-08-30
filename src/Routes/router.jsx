@@ -7,6 +7,10 @@ import ForgetPasswordEmail from "../Pages/Authentication/ForgetPasswordEmail";
 import ForgetPasswordVerifyEmail from "../Pages/Authentication/ForgetPasswordVerifyEmail";
 import NewPassword from "../Pages/Authentication/NewPassword";
 import PropertyDetails from "../Pages/PropertyDetails/PropertyDetails";
+import Dashboard from "../Pages/SellingListingFlow/Dashboard";
+import SellProperties from "../Pages/SellingListingFlow/SellProperties";
+import SubmittedOffer from "../Pages/SellingListingFlow/SubmittedOffer";
+import BuyProperties from "../Pages/SellingListingFlow/BuyProperties";
 
 export const router = createBrowserRouter([
   {
@@ -40,5 +44,13 @@ export const router = createBrowserRouter([
   {
     path: "/homeforsale/property_details",
     element: <PropertyDetails />,
+  },
+  {
+    path: "/dashboard",
+    children: [
+      { path: "selling_properties", element: <SellProperties /> },
+      { path: "submitted-offer", element: <SubmittedOffer /> },
+      { path: "buy-properties", element: <BuyProperties /> },
+    ],
   }
 ]);

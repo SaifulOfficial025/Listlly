@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   X,
   ZoomIn,
@@ -16,6 +17,7 @@ import NearbyHomes from "./NearbyHomes";
 import NewAddress from "../Home/NewAddress";
 import ScheduleModal from "./ScheduleModal";
 import MakeAnOfferModal from "./MakeAnOfferModal";
+import GetPreApprovalModal from "./GetPreApprovalModal";
 
 const images = [
   "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=700&q=80",
@@ -79,6 +81,17 @@ function PropertyDetails() {
   };
   const closeMakeOfferModal = () => {
     setShowMakeOfferModal(false);
+  };
+
+  // Get Pre-approval modal handlers
+  const [showGetPreApproval, setShowGetPreApproval] = useState(false);
+  const openGetPreApproval = () => {
+    console.log('openGetPreApproval called');
+    setShowGetPreApproval(true);
+  };
+  const closeGetPreApproval = () => {
+    console.log('closeGetPreApproval called');
+    setShowGetPreApproval(false);
   };
 
   const sendOtp = () => {
@@ -161,6 +174,7 @@ function PropertyDetails() {
               $1,941/mo Est.{" "}
               <a
                 href="#"
+                onClick={(e) => { e.preventDefault(); openGetPreApproval(); }}
                 className="text-[#0054F6] hover:underline font-medium"
               >
                 Get Pre-approved
@@ -305,21 +319,29 @@ function PropertyDetails() {
               <div className="h-px bg-gray-300 w-10"></div>
             </div>
 
-            <button className="w-full border border-[#0054F6] text-[#0054F6] py-2 rounded-md text-sm font-medium hover:bg-[#F0F5FF] transition">
+            <button onClick={openGetPreApproval} className="w-full border border-[#0054F6] text-[#0054F6] py-2 rounded-md text-sm font-medium hover:bg-[#F0F5FF] transition">
               Get Pre - approved
             </button>
-            <button className="w-full border border-gray-300 text-[#1C1C1C] py-2 rounded-md text-sm font-medium hover:bg-gray-100 transition">
+            <button onClick={openGetPreApproval} className="w-full border border-gray-300 text-[#1C1C1C] py-2 rounded-md text-sm font-medium hover:bg-gray-100 transition">
               Contact Agent
             </button>
           </div>
 
           {/* Bottom Buttons */}
-          <button className="w-full bg-gradient-to-r from-[#D991F9] to-[#5466F9] text-white font-medium py-2 rounded-md text-sm shadow-md">
-            List Your Home For Sale
-          </button>
-          <button className="w-full bg-gradient-to-r from-[#0054F6] to-[#0D47C1] text-white font-medium py-2 rounded-md text-sm shadow-md flex items-center justify-center gap-1">
+          <div role="banner" aria-label="Promotional banner" className="w-full bg-gradient-to-r from-[#D991F9] to-[#5466F9] text-white font-medium  shadow-md">
+            <div className="flex items-center justify-between gap-4 px-4 py-3">
+              <div>
+                <div className="text-sm font-semibold">List Your Home For Sale</div>
+                <div className="text-xs opacity-90 mt-1">Quickly create a listing and reach buyers in your area.</div>
+              </div>
+
+            </div>
+          </div>
+          <Link to="/dashboard/selling_properties">
+          <button className="w-full bg-gradient-to-r from-[#0054F6] to-[#0D47C1] text-white font-medium py-2 rounded-md text-sm shadow-md flex items-center justify-center gap-1 mt-5">
             Start Listing <span>↗</span>
           </button>
+          </Link>
         </div>
       </div>
 
@@ -567,6 +589,17 @@ function PropertyDetails() {
           propertyAddress="5465 Avenida Maravillas"
           propertyLocation="Rancho Santa Fe, CA 92067"
           propertyPrice="$7,995,000"
+        />
+      )}
+      {showGetPreApproval && (
+        <GetPreApprovalModal
+          data-debug="get-pre-approval-modal"
+          open={showGetPreApproval}
+          onClose={closeGetPreApproval}
+          image={images[0]}
+          address="5465 Avenida Maravillas"
+          location="Rancho Santa Fe, CA 92067"
+          price="$7,995,000"
         />
       )}
     </div>
