@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
-
+/* Use Roboto Flex app-wide (loaded from index.html) */
+:root{
+  --app-font: 'Roboto Flex', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
 
 #root{
-  font-family: "Space Grotesk", serif;
+  font-family: var(--app-font);
 }
 
 @tailwind base;

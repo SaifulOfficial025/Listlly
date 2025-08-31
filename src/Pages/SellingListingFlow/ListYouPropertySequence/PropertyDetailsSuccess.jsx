@@ -126,34 +126,7 @@ function PropertyDetailsSuccess({ propertyData }) {
           </div>
         </div>
 
-        {/* MLS Info */}
-        <div className="px-6 py-6">
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-5">
-            <div className="bg-[#f0f6ff] px-6 py-4 border-b border-pink-200 flex items-center justify-between">
-              <h2 className="text-[16px] font-semibold text-[#1C1C1C]">MLS Info</h2>
-              <button onClick={() => openSectionModal('mls')} className="text-blue-600 hover:text-blue-700 text-sm">Edit Details</button>
-            </div>
-
-            <div className="px-6 py-4">
-              <div className="grid grid-cols-1 sm:grid-cols-3 text-sm gap-y-4">
-                <div>
-                  <div className="font-medium text-black">MLS Name</div>
-                  <div className="text-[#6B7280]">{data.mlsName}</div>
-                </div>
-
-                <div>
-                  <div className="font-medium text-black">MLS Number</div>
-                  <div className="text-[#6B7280]">{data.mlsNumber}</div>
-                </div>
-
-                <div>
-                  <div className="font-medium text-black">MLS Email</div>
-                  <div className="text-[#6B7280]">{data.mlsEmail}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+     
 
         {/* Description */}
         <div className="p-6 border-t">
@@ -292,12 +265,40 @@ function PropertyDetailsSuccess({ propertyData }) {
         </div>
 
         {/* Additional sections could be added here */}
+           {/* MLS Info */}
+        <div className="px-6 py-6">
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-5">
+            <div className="bg-[#f0f6ff] px-6 py-4 border-b border-pink-200 flex items-center justify-between">
+              <h2 className="text-[16px] font-semibold text-[#1C1C1C]">MLS Info</h2>
+              <button onClick={() => openSectionModal('mls')} className="text-blue-600 hover:text-blue-700 text-sm">Edit Details</button>
+            </div>
+
+            <div className="px-6 py-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 text-sm gap-y-4">
+                <div>
+                  <div className="font-medium text-black">MLS Name</div>
+                  <div className="text-[#6B7280]">{data.mlsName}</div>
+                </div>
+
+                <div>
+                  <div className="font-medium text-black">MLS Number</div>
+                  <div className="text-[#6B7280]">{data.mlsNumber}</div>
+                </div>
+
+                <div>
+                  <div className="font-medium text-black">MLS Email</div>
+                  <div className="text-[#6B7280]">{data.mlsEmail}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* Bottom Action */}
         <div className="p-6 border-t text-center">
             <Link to="/dashboard/selling_properties">
           <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700">
-            Best Choice
+            Save Changes
           </button> </Link>
         </div>
       </div>
@@ -305,8 +306,8 @@ function PropertyDetailsSuccess({ propertyData }) {
       {/* Section Edit Modal */}
       {modalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
-          <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto relative">
-            <button onClick={closeModal} className="absolute right-3 top-3 text-gray-500 hover:text-gray-700" aria-label="Close">
+          <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto relative text-black">
+            <button onClick={closeModal} className="absolute right-3 top-3 text-gray-500 hover:text-gray-700 bg-white rounded-full p-1" aria-label="Close">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"/></svg>
             </button>
 
@@ -318,15 +319,15 @@ function PropertyDetailsSuccess({ propertyData }) {
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm mb-1">MLS Name</label>
-                    <input value={editValues.mlsName || ''} onChange={(e) => setEditValues(prev=>({...prev, mlsName: e.target.value}))} className="w-full border px-3 py-2 rounded" />
+                    <input value={editValues.mlsName || ''} onChange={(e) => setEditValues(prev=>({...prev, mlsName: e.target.value}))} className="w-full bg-white text-gray-900 placeholder-gray-400 border border-gray-200 px-3 py-2 rounded" />
                   </div>
                   <div>
                     <label className="block text-sm mb-1">MLS Number</label>
-                    <input value={editValues.mlsNumber || ''} onChange={(e) => setEditValues(prev=>({...prev, mlsNumber: e.target.value}))} className="w-full border px-3 py-2 rounded" />
+                    <input value={editValues.mlsNumber || ''} onChange={(e) => setEditValues(prev=>({...prev, mlsNumber: e.target.value}))} className="w-full bg-white text-gray-900 placeholder-gray-400 border border-gray-200 px-3 py-2 rounded" />
                   </div>
                   <div>
                     <label className="block text-sm mb-1">MLS Email</label>
-                    <input value={editValues.mlsEmail || ''} onChange={(e) => setEditValues(prev=>({...prev, mlsEmail: e.target.value}))} className="w-full border px-3 py-2 rounded" />
+                    <input value={editValues.mlsEmail || ''} onChange={(e) => setEditValues(prev=>({...prev, mlsEmail: e.target.value}))} className="w-full bg-white text-gray-900 placeholder-gray-400 border border-gray-200 px-3 py-2 rounded" />
                   </div>
                 </div>
               )}
@@ -334,7 +335,7 @@ function PropertyDetailsSuccess({ propertyData }) {
               {modalSection === 'description' && (
                 <div>
                   <label className="block text-sm mb-1">Description</label>
-                  <textarea value={editValues.description || ''} onChange={(e) => setEditValues(prev=>({...prev, description: e.target.value}))} className="w-full border px-3 py-2 rounded h-40" />
+                  <textarea value={editValues.description || ''} onChange={(e) => setEditValues(prev=>({...prev, description: e.target.value}))} className="w-full bg-white text-gray-900 placeholder-gray-400 border border-gray-200 px-3 py-2 rounded h-40" />
                 </div>
               )}
 
@@ -342,27 +343,27 @@ function PropertyDetailsSuccess({ propertyData }) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm mb-1">Type</label>
-                    <input value={editValues.type || ''} onChange={(e) => setEditValues(prev=>({...prev, type: e.target.value}))} className="w-full border px-3 py-2 rounded" />
+                    <input value={editValues.type || ''} onChange={(e) => setEditValues(prev=>({...prev, type: e.target.value}))} className="w-full bg-white text-gray-900 placeholder-gray-400 border border-gray-200 px-3 py-2 rounded" />
                   </div>
                   <div>
                     <label className="block text-sm mb-1">County</label>
-                    <input value={editValues.county || ''} onChange={(e) => setEditValues(prev=>({...prev, county: e.target.value}))} className="w-full border px-3 py-2 rounded" />
+                    <input value={editValues.county || ''} onChange={(e) => setEditValues(prev=>({...prev, county: e.target.value}))} className="w-full bg-white text-gray-900 placeholder-gray-400 border border-gray-200 px-3 py-2 rounded" />
                   </div>
                   <div>
                     <label className="block text-sm mb-1">Neighborhood</label>
-                    <input value={editValues.neighborhood || ''} onChange={(e) => setEditValues(prev=>({...prev, neighborhood: e.target.value}))} className="w-full border px-3 py-2 rounded" />
+                    <input value={editValues.neighborhood || ''} onChange={(e) => setEditValues(prev=>({...prev, neighborhood: e.target.value}))} className="w-full bg-white text-gray-900 placeholder-gray-400 border border-gray-200 px-3 py-2 rounded" />
                   </div>
                   <div>
                     <label className="block text-sm mb-1">Listing Agent</label>
-                    <input value={editValues.listingAgent || ''} onChange={(e) => setEditValues(prev=>({...prev, listingAgent: e.target.value}))} className="w-full border px-3 py-2 rounded" />
+                    <input value={editValues.listingAgent || ''} onChange={(e) => setEditValues(prev=>({...prev, listingAgent: e.target.value}))} className="w-full bg-white text-gray-900 placeholder-gray-400 border border-gray-200 px-3 py-2 rounded" />
                   </div>
                   <div>
                     <label className="block text-sm mb-1">Stories</label>
-                    <input value={editValues.stories || ''} onChange={(e) => setEditValues(prev=>({...prev, stories: e.target.value}))} className="w-full border px-3 py-2 rounded" />
+                    <input value={editValues.stories || ''} onChange={(e) => setEditValues(prev=>({...prev, stories: e.target.value}))} className="w-full bg-white text-gray-900 placeholder-gray-400 border border-gray-200 px-3 py-2 rounded" />
                   </div>
                   <div>
                     <label className="block text-sm mb-1">MLS Status</label>
-                    <input value={editValues.mlsStatus || ''} onChange={(e) => setEditValues(prev=>({...prev, mlsStatus: e.target.value}))} className="w-full border px-3 py-2 rounded" />
+                    <input value={editValues.mlsStatus || ''} onChange={(e) => setEditValues(prev=>({...prev, mlsStatus: e.target.value}))} className="w-full bg-white text-gray-900 placeholder-gray-400 border border-gray-200 px-3 py-2 rounded" />
                   </div>
                 </div>
               )}
@@ -371,51 +372,51 @@ function PropertyDetailsSuccess({ propertyData }) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm mb-1">Flooring</label>
-                    <input value={editValues.flooring || ''} onChange={(e) => setEditValues(prev=>({...prev, flooring: e.target.value}))} className="w-full border px-3 py-2 rounded" />
+                    <input value={editValues.flooring || ''} onChange={(e) => setEditValues(prev=>({...prev, flooring: e.target.value}))} className="w-full bg-white text-gray-900 placeholder-gray-400 border border-gray-200 px-3 py-2 rounded" />
                   </div>
                   <div>
                     <label className="block text-sm mb-1">Interior Features</label>
-                    <input value={editValues.interior || ''} onChange={(e) => setEditValues(prev=>({...prev, interior: e.target.value}))} className="w-full border px-3 py-2 rounded" />
+                    <input value={editValues.interior || ''} onChange={(e) => setEditValues(prev=>({...prev, interior: e.target.value}))} className="w-full bg-white text-gray-900 placeholder-gray-400 border border-gray-200 px-3 py-2 rounded" />
                   </div>
                   <div>
                     <label className="block text-sm mb-1">Cooling</label>
-                    <input value={editValues.cooling || ''} onChange={(e) => setEditValues(prev=>({...prev, cooling: e.target.value}))} className="w-full border px-3 py-2 rounded" />
+                    <input value={editValues.cooling || ''} onChange={(e) => setEditValues(prev=>({...prev, cooling: e.target.value}))} className="w-full bg-white text-gray-900 placeholder-gray-400 border border-gray-200 px-3 py-2 rounded" />
                   </div>
                   <div>
                     <label className="block text-sm mb-1">Sewer</label>
-                    <input value={editValues.sewer || ''} onChange={(e) => setEditValues(prev=>({...prev, sewer: e.target.value}))} className="w-full border px-3 py-2 rounded" />
+                    <input value={editValues.sewer || ''} onChange={(e) => setEditValues(prev=>({...prev, sewer: e.target.value}))} className="w-full bg-white text-gray-900 placeholder-gray-400 border border-gray-200 px-3 py-2 rounded" />
                   </div>
                   <div>
                     <label className="block text-sm mb-1">Appliances</label>
-                    <input value={editValues.appliances || ''} onChange={(e) => setEditValues(prev=>({...prev, appliances: e.target.value}))} className="w-full border px-3 py-2 rounded" />
+                    <input value={editValues.appliances || ''} onChange={(e) => setEditValues(prev=>({...prev, appliances: e.target.value}))} className="w-full bg-white text-gray-900 placeholder-gray-400 border border-gray-200 px-3 py-2 rounded" />
                   </div>
                   <div>
                     <label className="block text-sm mb-1">Window Features</label>
-                    <input value={editValues.window || ''} onChange={(e) => setEditValues(prev=>({...prev, window: e.target.value}))} className="w-full border px-3 py-2 rounded" />
+                    <input value={editValues.window || ''} onChange={(e) => setEditValues(prev=>({...prev, window: e.target.value}))} className="w-full bg-white text-gray-900 placeholder-gray-400 border border-gray-200 px-3 py-2 rounded" />
                   </div>
                   <div>
                     <label className="block text-sm mb-1">Heating</label>
-                    <input value={editValues.heating || ''} onChange={(e) => setEditValues(prev=>({...prev, heating: e.target.value}))} className="w-full border px-3 py-2 rounded" />
+                    <input value={editValues.heating || ''} onChange={(e) => setEditValues(prev=>({...prev, heating: e.target.value}))} className="w-full bg-white text-gray-900 placeholder-gray-400 border border-gray-200 px-3 py-2 rounded" />
                   </div>
                   <div>
                     <label className="block text-sm mb-1">Security Features</label>
-                    <input value={editValues.security || ''} onChange={(e) => setEditValues(prev=>({...prev, security: e.target.value}))} className="w-full border px-3 py-2 rounded" />
+                    <input value={editValues.security || ''} onChange={(e) => setEditValues(prev=>({...prev, security: e.target.value}))} className="w-full bg-white text-gray-900 placeholder-gray-400 border border-gray-200 px-3 py-2 rounded" />
                   </div>
                   <div>
                     <label className="block text-sm mb-1">Fireplace Features</label>
-                    <input value={editValues.fireplace || ''} onChange={(e) => setEditValues(prev=>({...prev, fireplace: e.target.value}))} className="w-full border px-3 py-2 rounded" />
+                    <input value={editValues.fireplace || ''} onChange={(e) => setEditValues(prev=>({...prev, fireplace: e.target.value}))} className="w-full bg-white text-gray-900 placeholder-gray-400 border border-gray-200 px-3 py-2 rounded" />
                   </div>
                   <div>
                     <label className="block text-sm mb-1">Laundry Features</label>
-                    <input value={editValues.laundry || ''} onChange={(e) => setEditValues(prev=>({...prev, laundry: e.target.value}))} className="w-full border px-3 py-2 rounded" />
+                    <input value={editValues.laundry || ''} onChange={(e) => setEditValues(prev=>({...prev, laundry: e.target.value}))} className="w-full bg-white text-gray-900 placeholder-gray-400 border border-gray-200 px-3 py-2 rounded" />
                   </div>
                   <div>
                     <label className="block text-sm mb-1">Electric</label>
-                    <input value={editValues.electric || ''} onChange={(e) => setEditValues(prev=>({...prev, electric: e.target.value}))} className="w-full border px-3 py-2 rounded" />
+                    <input value={editValues.electric || ''} onChange={(e) => setEditValues(prev=>({...prev, electric: e.target.value}))} className="w-full bg-white text-gray-900 placeholder-gray-400 border border-gray-200 px-3 py-2 rounded" />
                   </div>
                   <div>
                     <label className="block text-sm mb-1">Water Source</label>
-                    <input value={editValues.waterSource || ''} onChange={(e) => setEditValues(prev=>({...prev, waterSource: e.target.value}))} className="w-full border px-3 py-2 rounded" />
+                    <input value={editValues.waterSource || ''} onChange={(e) => setEditValues(prev=>({...prev, waterSource: e.target.value}))} className="w-full bg-white text-gray-900 placeholder-gray-400 border border-gray-200 px-3 py-2 rounded" />
                   </div>
                 </div>
               )}

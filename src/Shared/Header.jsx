@@ -32,9 +32,9 @@ function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6 text-md font-medium text-[#1C1C1C]">
+        <nav className="hidden md:flex items-center space-x-6 text-md  font-bold text-[#1C1C1C]">
           {/* Buy dropdown */}
-          <div className="relative" ref={buyRef}>
+          <div className="relative " ref={buyRef}>
             <button
               type="button"
               className="flex items-center cursor-pointer outline-none"
