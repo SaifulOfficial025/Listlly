@@ -271,26 +271,61 @@ function SelectPlan({ onCancel, onContinue }) {
 
           <div className="text-xs text-gray-500 space-y-2 mb-6">
             <p>
-              * Potential savings calculated at 1.75% of your listing price of
-              $250,000. Savings can be as high as $13,750 (6.5%) if the buyer
-              pays more. Upfront fees are due at closing.
+              Potential savings calculated as 1.75% of your listing price of
+              $250,000. Savings can be as high as $13,750 (5.5%) if the buyer
+              does not have an agent.
             </p>
+
             <p>
-              On Silver, Gold, and Premium plans, a minimum commission of $999
+              On Silver, Gold, and Platinum plans, a minimum commission of $999
               is applicable. If your listing is in New York City, an additional
-              0.25% fee is closing is applicable.
+              0.25% due at closing is applicable.
             </p>
+
             <p>
-              † Properties in New York City are charged $99 FOR LEGAL review fee
-              BY LEGAL experts to finalize the contract between buyer and
-              seller, and filing agent.
+              Properties in New York City (Manhattan, Queens, Brooklyn, Staten
+              Island, and the Bronx) will be listed on OneKey MLS, REBNY RLS,
+              and StreetEasy, in addition to over 100 third-party real estate
+              websites including Zillow, Homes, Realtor, Redfin, Trulia and many,
+              many more.
             </p>
-            <p>
-              ‡ All Escape and Legre are PRE- with a seller. Service is then
-              refills that includes you, the yard sign, and the house, and get
-              the going $40 back paid at closing when it available for purchase.
-              Refunds are not applicable on listing agent signs.
-            </p>
+
+            <div className="space-y-3 mt-2 text-xs text-gray-500">
+              <p>
+                1 All Houzeo yard signs are FREE with a selfie. Send us a clear
+                selfie that includes you, the yard sign, and the house, and get
+                the entire $49 back. Some states or MLS' require the listing
+                agent's yard sign, which is available for purchase. Refunds are
+                not applicable on listing agent signs.
+              </p>
+
+              <p>
+                2 The broker's point of contact will help efficiently
+                communicate between the broker, buyer agent, and the closing
+                agent.
+              </p>
+
+              <p>
+                3 If the broker receives any calls for your property, they will
+                be forwarded to you
+              </p>
+
+              <p>
+                4 Upon request, a draft will be assigned or the listing
+                activated within 12 business hours (Included for Platinum; $99
+                otherwise).
+              </p>
+
+              <p>
+                5 Coming Soon: Only upon request, and where available
+                (Included for Platinum; $199 otherwise).
+              </p>
+
+              <p>
+                6 Additional MLS: Only upon request, and where available
+                (Included for Platinum; $199 otherwise).
+              </p>
+            </div>
           </div>
 
           <div className="flex items-center justify-center gap-6">

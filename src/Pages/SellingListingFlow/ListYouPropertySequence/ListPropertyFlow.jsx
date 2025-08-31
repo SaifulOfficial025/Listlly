@@ -6,6 +6,7 @@ import SelectPlan from './SelectPlan';
 import TitleDocumentations from './TitleDocumentations';
 import Commission from './Commission';
 import PhotosDescription from './PhotosDescription';
+import ReviewPublish from './ReviewPublish';
 import PropertyDetailsSuccess from './PropertyDetailsSuccess';
 
 function ListPropertyFlow() {
@@ -37,8 +38,9 @@ function ListPropertyFlow() {
     { component: SelectPlan, key: 'selectedPlan', name: 'Select Plan' },
     { component: TitleDocumentations, key: 'titleDocumentations', name: 'Title & Documentations' },
     { component: Commission, key: 'commission', name: 'Commission' },
-    { component: PhotosDescription, key: 'photosDescription', name: 'Photos & Description' },
-    { component: PropertyDetailsSuccess, key: 'final', name: 'Success' }
+  { component: PhotosDescription, key: 'photosDescription', name: 'Photos & Description' },
+  { component: ReviewPublish, key: 'reviewPublish', name: 'Review & Publish' },
+  { component: PropertyDetailsSuccess, key: 'final', name: 'Success' }
   ];
 
   const handleContinue = (stepData) => {

@@ -13,7 +13,9 @@ function PhotosDescription({ onCancel, onContinue }) {
   };
 
   const requestPhotographer = () => {
-    setShowPhotographerSection(true);
+  // show the expanded photographer section and open the contact modal
+  setShowPhotographerSection(true);
+  setShowContactModal(true);
   };
 
   const handleContinue = () => {
@@ -139,7 +141,12 @@ function PhotosDescription({ onCancel, onContinue }) {
             </button>
             <button
               type="button"
-              onClick={handleContinue}
+              onClick={() => {
+                // advance the flow and pass current photos/description
+                if (onContinue) {
+                  onContinue({ photos, description, photographerRequested: showPhotographerSection });
+                }
+              }}
               className="px-6 py-2 rounded text-white bg-gradient-to-r from-blue-500 to-blue-700 shadow"
             >
               Continue
