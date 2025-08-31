@@ -52,7 +52,7 @@ function Commission({ onCancel, onContinue }) {
               <div className="text-lg font-semibold">Commission Terms</div>
             </div>
           </div>
-          <div className="px-3 py-1 bg-blue-50 text-blue-600 rounded text-xs">Step 6 of 7</div>
+          <div className="px-3 py-1 bg-blue-50 text-blue-600 rounded text-xs bg-pink-100">Step 6 of 7</div>
         </div>
 
         <div className="space-y-8">

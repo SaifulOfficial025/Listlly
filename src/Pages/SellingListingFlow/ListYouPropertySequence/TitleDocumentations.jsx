@@ -45,7 +45,7 @@ function TitleDocumentations({ onCancel, onContinue }) {
               <div className="text-lg font-semibold">Property Owner Info.</div>
             </div>
           </div>
-          <div className="px-3 py-1 bg-blue-50 text-blue-600 rounded text-xs">Step 5 of 7</div>
+          <div className="px-3 py-1 bg-blue-50 text-blue-600 rounded text-xs bg-pink-100">Step 5 of 7</div>
         </div>
 
         <div className="mb-8">

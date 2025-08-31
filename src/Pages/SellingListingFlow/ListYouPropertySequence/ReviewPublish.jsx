@@ -19,8 +19,9 @@ function ReviewPublish({ onCancel, onContinue, data }) {
             <div className="text-lg font-semibold">{property.title || 'Sample Property Title'}</div>
             <div className="text-sm text-gray-500 mt-1">{property.summary || '4 beds • 3 baths • 2,200 sq ft'}</div>
           </div>
-          <div className="text-right">
+          <div className="flex flex-col items-center justify-center text-center drop-shadow-lg">
             <button className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">➕</button>
+            <span className="mt-2">Start Escrow</span>
           </div>
         </div>
 

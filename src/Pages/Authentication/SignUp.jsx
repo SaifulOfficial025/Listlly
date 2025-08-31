@@ -64,7 +64,7 @@ function SignUp() {
               Create Your Listlly Account
             </h1>
             <p className="text-[12px] mt-1 text-center text-[#606A76]">
-              Please log in to access your account, manage your listings, and
+              Please sign up to access your account, manage your listings, and
               take the next step in your real estate journey.
             </p>
 
@@ -166,7 +166,7 @@ function SignUp() {
                     "linear-gradient(90deg, #0054F6 0%, #0D47C1 100%)",
                 }}
               >
-                Log In
+                Sign Up
               </button>
 
               {/* Divider */}

@@ -41,7 +41,7 @@ function ListPrice({ onCancel, onContinue }) {
               </div>
             </div>
           </div>
-          <div className="px-3 py-1 bg-blue-50 text-blue-600 rounded text-xs whitespace-nowrap">Step 3 of 7</div>
+          <div className="px-3 py-1 bg-blue-50 text-blue-600 rounded text-xs bg-pink-100 whitespace-nowrap">Step 3 of 7</div>
         </div>
 
         <div className="max-w-md mx-auto">

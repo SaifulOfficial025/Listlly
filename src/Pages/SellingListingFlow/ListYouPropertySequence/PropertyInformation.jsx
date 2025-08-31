@@ -49,7 +49,7 @@ function PropertyInformation({ onCancel, onContinue }) {
               <div className="text-lg font-semibold">Enter Property Basic Info.</div>
             </div>
           </div>
-          <div className="px-3 py-1 bg-blue-50 text-blue-600 rounded text-xs">Step 2 of 7</div>
+          <div className="px-3 py-1 bg-blue-50 text-blue-600 rounded text-xs bg-pink-100">Step 2 of 7</div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
