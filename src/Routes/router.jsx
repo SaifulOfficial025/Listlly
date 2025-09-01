@@ -9,10 +9,22 @@ import NewPassword from "../Pages/Authentication/NewPassword";
 import PropertyDetails from "../Pages/PropertyDetails/PropertyDetails";
 import Dashboard from "../Pages/SellingListingFlow/Dashboard";
 import SellProperties from "../Pages/SellingListingFlow/SellProperties";
-import SubmittedOffer from "../Pages/SellingListingFlow/SubmittedOffer";
+import RootSubmitted from "../Pages/SellingListingFlow/SubmittedOffer/RootPage";
+import OfferSummary from "../Pages/SellingListingFlow/SubmittedOffer/OfferSummary";
+import OfferDetails from "../Pages/SellingListingFlow/SubmittedOffer/OfferDetails";
+import CounterOffer from "../Pages/SellingListingFlow/SubmittedOffer/CounterOffer";
+import RequestHighest from "../Pages/SellingListingFlow/SubmittedOffer/RequestHighest";
+import SelectRecipient from "../Pages/SellingListingFlow/SubmittedOffer/SelectRecipient";
 import BuyProperties from "../Pages/SellingListingFlow/BuyProperties";
 import ListProperty from "../Pages/SellingListingFlow/ListProperty";
 import ListPropertyFlow from "../Pages/SellingListingFlow/ListYouPropertySequence/ListPropertyFlow";
+
+
+// import OfferSummary from "../Pages/SellingListingFlow/SubmittedOffer/OfferSummary";
+// import OfferDetails from "../Pages/SellingListingFlow/SubmittedOffer/OfferDetails";
+// import CounterOffer from "../Pages/SellingListingFlow/SubmittedOffer/CounterOffer";
+// import RequestHighest from "../Pages/SellingListingFlow/SubmittedOffer/RequestHighest";
+// import SelectRecipient from "../Pages/SellingListingFlow/SubmittedOffer/SelectRecipient";
 
 
 export const router = createBrowserRouter([
@@ -64,8 +76,18 @@ export const router = createBrowserRouter([
         path: "selling_properties/list_property/property_information",
         element: <ListPropertyFlow />
       },
-      { path: "submitted-offer", element: <SubmittedOffer /> },
-      { path: "buy-properties", element: <BuyProperties /> },
+      {
+        path: "submitted_offer",
+        element: <RootSubmitted />,
+        children: [
+          { path: "offer_summary", element: <OfferSummary /> },
+          { path: "offer_details", element: <OfferDetails /> },
+          { path: "counter_offer", element: <CounterOffer /> },
+          { path: "request_highest", element: <RequestHighest /> },
+          { path: "select_recipient", element: <SelectRecipient /> },
+        ],
+      },
+      { path: "buy_properties", element: <BuyProperties /> },
     ],
   }
 ]);

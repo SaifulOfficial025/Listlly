@@ -1,11 +1,6 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import Logo from "../../../public/Listlly-logo-white.svg"
-
-const NavItem = ({ children, active }) => (
-  <div className={`pl-6 py-3 text-sm ${active ? 'bg-white text-[#1641ff] font-semibold' : 'text-white/90 hover:opacity-100'}`}>
-    {children}
-  </div>
-)
 
 function Sidebar() {
   return (
@@ -22,11 +17,20 @@ function Sidebar() {
         </div>
 
         <nav className="mt-4 space-y-1">
-          <NavItem active>Sell Properties</NavItem>
-          <NavItem>Submitted Offer</NavItem>
-          <NavItem>Buy Properties</NavItem>
-          <NavItem>Saved Properties</NavItem>
-          <NavItem>How To Videos</NavItem>
+          <NavLink to="/dashboard/selling_properties" className={({isActive}) => `block w-full pl-6 py-3 text-sm ${isActive ? 'bg-white text-[#1641ff] font-semibold' : 'text-white/90 hover:opacity-100'}`}>
+            Sell Properties
+          </NavLink>
+
+          <NavLink to="/dashboard/submitted_offer" className={({isActive}) => `block w-full pl-6 py-3 text-sm ${isActive ? 'bg-white text-[#1641ff] font-semibold' : 'text-white/90 hover:opacity-100'}`}>
+            Submitted Offer
+          </NavLink>
+
+          <NavLink to="/dashboard/buy_properties" className={({isActive}) => `block w-full pl-6 py-3 text-sm ${isActive ? 'bg-white text-[#1641ff] font-semibold' : 'text-white/90 hover:opacity-100'}`}>
+            Buy Properties
+          </NavLink>
+
+          <NavLink to="#" className="block w-full pl-6 py-3 text-sm text-white/90 hover:opacity-100">Saved Properties</NavLink>
+          <NavLink to="#" className="block w-full pl-6 py-3 text-sm text-white/90 hover:opacity-100">How To Videos</NavLink>
         </nav>
       </div>
 
