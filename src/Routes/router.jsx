@@ -18,6 +18,7 @@ import SelectRecipient from "../Pages/SellingListingFlow/SubmittedOffer/SelectRe
 import BuyProperties from "../Pages/SellingListingFlow/BuyProperties";
 import ListProperty from "../Pages/SellingListingFlow/ListProperty";
 import ListPropertyFlow from "../Pages/SellingListingFlow/ListYouPropertySequence/ListPropertyFlow";
+import OfferDetails2 from "../Pages/SellingListingFlow/SubmittedOffer/OfferDetails";
 
 
 // import OfferSummary from "../Pages/SellingListingFlow/SubmittedOffer/OfferSummary";
@@ -89,5 +90,6 @@ export const router = createBrowserRouter([
       },
       { path: "buy_properties", element: <BuyProperties /> },
     ],
-  }
+  },
+
 ]);

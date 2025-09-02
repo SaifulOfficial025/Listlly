@@ -1,212 +1,492 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React from "react";
+import { FaRegEdit } from 'react-icons/fa';
+import { FaHome, FaDollarSign, FaCalendarAlt, FaCheck, FaTimes } from "react-icons/fa";
+import Dollar from "../../../../public/dollar.svg"
+import Home from "../../../../public/home.svg"
+import Date from "../../../../public/date.svg"
+import Home2 from "../../../../public/home2.svg"
+import Home3 from "../../../../public/home3.svg"
+
+
+
 
 export default function OfferDetails() {
-  const navigate = useNavigate()
-  const [settlementDate, setSettlementDate] = useState('July 3, 2021')
-  const [expirationDate, setExpirationDate] = useState('July 12, 2021')
-
   return (
-    <div className="max-w-6xl mx-auto px-6 py-10 text-black">
-      <h1 className="text-2xl font-semibold mb-2">Offer Details</h1>
-      <div className="text-sm text-gray-500 mb-6">The Buyer Provided Info</div>
+    <div className="w-full bg-white text-black justify-center min-h-screen py-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="flex items-start justify-between">
+          {/* Left: Title + Subtitle */}
+          <div>
+            <h1 className="text-[40px] leading-none font-bold tracking-tight">
+              Offer Details
+            </h1>
+            <p className="mt-3 text-sm text-gray-500">
+              {/* keep the double space exactly as in the screenshot */}
+              {"The\u00A0\u00A0Buyer Provided Info"}
+            </p>
+          </div>
 
-      {/* Counter Offer header rows */}
-      <div className="space-y-4 mb-6">
-        <div className="bg-white border rounded">
-          <div className="px-4 py-3 border-b flex items-center justify-between">
-            <div className="text-sm font-medium">Offer Contract</div>
-            <div className="text-xs text-gray-500">3 Files/ Offer Contract</div>
-          </div>
-          <div className="px-4 py-3 flex items-center justify-between">
-            <div className="text-sm font-medium">Payment</div>
-            <div className="text-xs text-gray-500">Mortgage • 1 Files/ Pre Approved Files</div>
-          </div>
+          {/* Right: Gradient CTA */}
+          <button
+            className="inline-flex h-11 items-center justify-center rounded-xl px-8 text-sm font-medium text-white bg-gradient-to-r from-[#4E87F6] to-[#16386F] shadow-[0_10px_25px_rgba(0,0,0,0.12)] hover:shadow-[0_14px_30px_rgba(0,0,0,0.16)] transition-shadow"
+          >
+            Give Offer
+          </button>
         </div>
       </div>
 
-      {/* Financials */}
-      <div className="bg-white border rounded mb-6">
-        <div className="px-4 py-3 border-b">
-          <div className="font-medium">Financials</div>
-        </div>
 
-        <div className="px-4 py-4 space-y-4 text-sm">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded bg-blue-50 flex items-center justify-center text-blue-600">🏠</div>
-              <div>
-                <div className="text-sm">Offer Price</div>
-                <div className="text-xs text-gray-400">List Price : $795,000</div>
-              </div>
-            </div>
-            <div className="text-sm font-semibold">$700,000 <span className="text-green-500 text-xs">- $95,000</span></div>
-          </div>
 
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded bg-blue-50 flex items-center justify-center text-blue-600">💰</div>
-              <div>
-                <div className="text-sm">Earnest Money Deposit</div>
-                <div className="text-xs text-gray-400">Original : $0</div>
-              </div>
-            </div>
-            <div className="text-sm font-semibold">$0.00</div>
-          </div>
+  <div className="w-full bg-white border border-gray-200 rounded-sm text-black container mx-auto px-4 sm:px-6 lg:px-8 py-6 mb-10">
+      {/* Counter Offer label */}
+      <div className="text-[14px] leading-5 mb-2">Counter Offer</div>
 
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded bg-blue-50 flex items-center justify-center text-blue-600">⚖️</div>
-              <div>
-                <div className="text-sm">Seller Paid Settlement Charges</div>
-                <div className="text-xs text-gray-400">Original : $0</div>
-              </div>
-            </div>
-            <div className="text-sm">$0.00</div>
-          </div>
-
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded bg-blue-50 flex items-center justify-center text-blue-600">🏷️</div>
-              <div>
-                <div className="text-sm">Seller Paid Settlement Charges</div>
-                <div className="text-xs text-gray-400">Original : $0</div>
-              </div>
-            </div>
-            <div className="text-sm">Buyer</div>
-          </div>
-        </div>
-      </div>
-
-      {/* Key Dates */}
-      <div className="bg-white border rounded mb-6">
-        <div className="px-4 py-3 border-b">
-          <div className="font-medium">Key Dates</div>
-        </div>
-
-        <div className="px-4 py-4 space-y-4 text-sm">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded bg-blue-50 flex items-center justify-center text-blue-600">📅</div>
-              <div>
-                <div className="text-sm">Settlement Date</div>
-                <div className="text-xs text-gray-400">Original : Jun 18, 2021</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <input value={settlementDate} onChange={e=>setSettlementDate(e.target.value)} className="border px-3 py-1 rounded text-sm" />
-              <div className="text-sm text-green-500">-17 Days</div>
-              <div className="text-green-600">✔</div>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded bg-blue-50 flex items-center justify-center text-blue-600">⏳</div>
-              <div>
-                <div className="text-sm">Offer Expiration Date</div>
-                <div className="text-xs text-gray-400">Original : May 19, 2021</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <input value={expirationDate} onChange={e=>setExpirationDate(e.target.value)} className="border px-3 py-1 rounded text-sm" />
-              <button className="text-blue-600 text-sm">✎</button>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded bg-blue-50 flex items-center justify-center text-blue-600">🔍</div>
-              <div>
-                <div className="text-sm">Inspection Period End Date</div>
-                <div className="text-xs text-gray-400">Original : Jun 18, 2021</div>
-              </div>
-            </div>
-            <div className="text-sm">Aug 7, 2021</div>
-          </div>
-
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded bg-blue-50 flex items-center justify-center text-blue-600">🛠️</div>
-              <div>
-                <div className="text-sm">Inspection Resolution Date</div>
-                <div className="text-xs text-gray-400">Original : May 19, 2021</div>
-              </div>
-            </div>
-            <div className="text-sm">Sep 30, 2021</div>
-          </div>
-        </div>
-      </div>
-
-      {/* Contingencies / Misc / Inclusions */}
-      <div className="space-y-4 mb-6">
-        <div className="bg-white border rounded">
-          <div className="px-4 py-3 border-b font-medium">Contingencies</div>
-          <div className="px-4 py-4 text-sm">
-            <div className="flex items-start justify-between">
-              <div>
-                <div className="text-sm font-medium">Financing</div>
-                <div className="text-xs text-gray-400">Original : No</div>
-              </div>
-              <div className="text-sm">Conventional Loan</div>
+      {/* Rows */}
+      <div className="space-y-3">
+        {/* Row 1 */}
+        <div className="border border-gray-200 rounded-sm">
+          <div className="grid grid-cols-3 gap-4 items-center px-4 py-3">
+            {/* Left link */}
+            <div className="text-[14px] font-semibold text-blue-600">
+              Offer Contract
             </div>
 
-            <div className="mt-4 flex items-start justify-between">
-              <div>
-                <div className="text-sm font-medium">Appraisal</div>
-                <div className="text-xs text-gray-400">Original : No</div>
-              </div>
-              <div className="text-sm">No</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-white border rounded">
-          <div className="px-4 py-3 border-b font-medium">Miscellaneous</div>
-          <div className="px-4 py-4 text-sm">
-            <div className="mb-4">
-              <div className="text-sm font-medium">Home Warranty</div>
-              <div className="text-xs text-gray-400">Original : 0</div>
-            </div>
-
+            {/* Middle title + subtext */}
             <div>
-              <div className="text-sm font-medium">Any Other Imp Offer Consideration</div>
-              <div className="text-xs text-gray-500 mt-2">Buyer Agrees To Increase The Purchase Price By $1,000 Above Any Bona Fide Competing Offer, Up To The Agreed Maximum Price. This Escalation Shall Apply Only Upon Written Proof Of Such Competing Offer.</div>
+              <div className="text-[14px] font-semibold">Offer Contract</div>
+              <div className="text-[12px] text-gray-500">
+                (3 Files) Offer Contract
+              </div>
+            </div>
+
+            {/* Edit icon */}
+            <div className="flex justify-end">
+              <button type="button" className="p-1" aria-label="Edit">
+                <FaRegEdit className="w-4 h-4 text-blue-600" />
+              </button>
             </div>
           </div>
         </div>
 
-        <div className="bg-white border rounded">
-          <div className="px-4 py-3 border-b font-medium">Inclusions/Exclusions</div>
-          <div className="px-4 py-4 text-sm">
-            <div className="flex items-start justify-between mb-4">
-              <div>
-                <div className="text-sm font-medium">Include Fixtures & Items Beyond The Usual</div>
-                <div className="text-xs text-gray-400">Original : None</div>
-              </div>
-              <div className="text-sm">None</div>
+        {/* Row 2 */}
+        <div className="border border-gray-200 rounded-sm">
+          <div className="grid grid-cols-3 gap-4 items-center px-4 py-3">
+            {/* Left link */}
+            <div className="text-[14px] font-semibold text-blue-600">
+              Payment
             </div>
 
-            <div className="flex items-start justify-between">
-              <div>
-                <div className="text-sm font-medium">Exclude Fixtures & Items Beyond The Usual</div>
-                <div className="text-xs text-gray-400">Original : None</div>
+            {/* Middle title + subtext */}
+            <div>
+              <div className="text-[14px] font-semibold">Mortgage</div>
+              <div className="text-[12px] text-gray-500">
+                (1 Files) Pre Approved File
               </div>
-              <div className="text-sm">None</div>
+            </div>
+
+            {/* Edit icon */}
+            <div className="flex justify-end">
+              <button type="button" className="p-1" aria-label="Edit">
+                <FaRegEdit className="w-4 h-4 text-blue-600" />
+              </button>
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="bg-white border rounded p-4 mb-6">
-        <div className="text-sm font-medium mb-2">Any Comments (Optional)</div>
-        <textarea className="w-full border rounded p-3 h-28 text-sm" placeholder="Add any comments..."></textarea>
-      </div>
-
-      <div className="flex items-center justify-between">
-        <button onClick={() => navigate(-1)} className="px-6 py-2 border rounded bg-white text-gray-700">Back</button>
-    <button onClick={() => navigate('/dashboard/submitted_offer/counter_offer')} className="px-8 py-2 rounded bg-gradient-to-r from-blue-600 to-blue-800 text-white">Give Offer</button>
       </div>
     </div>
-  )
+
+
+
+
+
+
+
+
+
+
+
+
+    <div className="w-full bg-white border border-gray-200 rounded-sm text-black container mx-auto px-4 sm:px-6 lg:px-8 py-6 mb-10">
+      {/* Section Label */}
+      <div className="px-4 py-3 border-b border-gray-200">
+        <span className="text-[14px] font-semibold text-blue-600">
+          Financials
+        </span>
+      </div>
+
+      <div className="divide-y divide-gray-200">
+        {/* Row 1 */}
+        <div className="grid grid-cols-3 items-center px-4 py-3">
+          {/* Left: Icon + Title */}
+          <div className="flex items-center gap-3">
+            <img src={Home} alt="Home Icon" className="h-10 w-10" />
+            <div>
+              <div className="text-[14px] font-semibold">Offer Price</div>
+              <div className="text-[12px] text-gray-500">
+                List Price : $795,000
+              </div>
+            </div>
+          </div>
+
+          {/* Middle: Value */}
+          <div>
+            <div className="text-[14px] font-semibold">$700,000</div>
+            <div className="text-[12px] text-green-600">- $95,000</div>
+          </div>
+
+          {/* Right: Edit */}
+          <div className="flex justify-end">
+            <button type="button" className="p-1" aria-label="Edit">
+              <FaRegEdit className="w-4 h-4 text-blue-600" />
+            </button>
+          </div>
+        </div>
+
+        {/* Row 2 */}
+        <div className="grid grid-cols-3 items-center px-4 py-3">
+          <div className="flex items-center gap-3">
+            <img src={Home} alt="Home Icon" className="h-10 w-10" />
+            <div>
+              <div className="text-[14px] font-semibold">
+                Earnest Money Deposit
+              </div>
+              <div className="text-[12px] text-gray-500">Original : $0</div>
+            </div>
+          </div>
+          <div className="text-[14px] font-semibold">$00.00</div>
+          <div className="flex justify-end">
+            <button type="button" className="p-1" aria-label="Edit">
+              <FaRegEdit className="w-4 h-4 text-blue-600" />
+            </button>
+          </div>
+        </div>
+
+        {/* Row 3 */}
+        <div className="grid grid-cols-3 items-center px-4 py-3">
+          <div className="flex items-center gap-3">
+            <img src={Dollar} alt="Dollar Icon" className="w-10 h-10 text-blue-600" />
+            <div>
+              <div className="text-[14px] font-semibold">
+                Seller Paid Settlement Charges
+              </div>
+              <div className="text-[12px] text-gray-500">Original : $0</div>
+            </div>
+          </div>
+          <div className="text-[14px] font-semibold">$00.00</div>
+          <div className="flex justify-end">
+            <button type="button" className="p-1" aria-label="Edit">
+              <FaRegEdit className="w-4 h-4 text-blue-600" />
+            </button>
+          </div>
+        </div>
+
+        {/* Row 4 */}
+        <div className="grid grid-cols-3 items-center px-4 py-3">
+          <div className="flex items-center gap-3">
+            <img src={Dollar} alt="Dollar Icon" className="w-10 h-10 text-blue-600" />
+            <div>
+              <div className="text-[14px] font-semibold">
+                Seller Paid Settlement Charges
+              </div>
+              <div className="text-[12px] text-gray-500">Original : $0</div>
+            </div>
+          </div>
+          <div className="text-[14px] font-semibold">Buyer</div>
+          <div className="flex justify-end">
+            <button type="button" className="p-1" aria-label="Edit">
+              <FaRegEdit className="w-4 h-4 text-blue-600" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div className="w-full bg-white border border-gray-200 rounded-sm text-black container mx-auto px-4 sm:px-6 lg:px-8 py-6 mb-10">
+  {/* Section Label */}
+  <div className="px-4 py-3 border-b border-gray-200">
+    <span className="text-[14px] font-semibold text-blue-600">Key Dates</span>
+  </div>
+
+  <div className="divide-y divide-gray-200">
+    {/* Row 1 (inline edit) */}
+    <div className="grid grid-cols-3 items-center px-4 py-3">
+      {/* Left */}
+      <div className="flex items-center gap-3 pr-6">
+        <img src={Date} alt="Date Icon" className="w-10 h-10 text-blue-600" />
+        <div>
+          <div className="text-[14px] font-semibold">Settlement Date</div>
+          <div className="text-[12px] text-gray-500">Original : Jun 16, 2021</div>
+        </div>
+      </div>
+
+      {/* Middle */}
+      <div className="flex items-center gap-2 px-6">
+        <div className="flex items-center rounded px-2 py-0.5 text-[14px]">
+          <FaCalendarAlt className="w-4 h-4 text-blue-600 mr-2" />
+          July 3, 2021
+        </div>
+        <span className="text-[12px] text-green-600">-17 Days</span>
+      </div>
+
+      {/* Right */}
+      <div className="flex justify-end gap-3 pl-6">
+        <button type="button" aria-label="Save">
+          <FaCheck className="w-4 h-4 text-blue-600" />
+        </button>
+        <button type="button" aria-label="Cancel">
+          <FaTimes className="w-4 h-4 text-blue-600" />
+        </button>
+      </div>
+    </div>
+
+    {/* Row 2 */}
+    <div className="grid grid-cols-3 items-center px-4 py-3">
+      <div className="flex items-center gap-3 pr-6">
+                <img src={Date} alt="Date Icon" className="w-10 h-10 text-blue-600" />
+
+        <div>
+          <div className="text-[14px] font-semibold">Offer Expiration Date</div>
+          <div className="text-[12px] text-gray-500">Original : May 18, 2021</div>
+        </div>
+      </div>
+      <div className="flex items-center  rounded px-2 py-0.5 text-[14px]">
+          <FaCalendarAlt className="w-4 h-4 text-blue-600 mr-2" />
+          July 3, 2021
+        </div>
+      <div className="flex justify-end pl-6">
+        <FaRegEdit className="w-4 h-4 text-blue-600" />
+      </div>
+    </div>
+
+    {/* Row 3 */}
+    <div className="grid grid-cols-3 items-center px-4 py-3">
+      <div className="flex items-center gap-3 pr-6">
+                <img src={Date} alt="Date Icon" className="w-10 h-10 text-blue-600" />
+
+        <div>
+          <div className="text-[14px] font-semibold">Inspection Period End Date</div>
+          <div className="text-[12px] text-gray-500">Original : Jun 16, 2021</div>
+        </div>
+      </div>
+      <div className="flex items-center  rounded px-2 py-0.5 text-[14px]">
+          <FaCalendarAlt className="w-4 h-4 text-blue-600 mr-2" />
+          Aug 7, 2021
+        </div>
+      <div className="flex justify-end pl-6">
+        <FaRegEdit className="w-4 h-4 text-blue-600" />
+      </div>
+    </div>
+
+    {/* Row 4 */}
+    <div className="grid grid-cols-3 items-center px-4 py-3">
+      <div className="flex items-center gap-3 pr-6">
+        <img src={Date} alt="Date Icon" className="w-10 h-10 text-blue-600" />
+        <div>
+          <div className="text-[14px] font-semibold">Inspection Resolution Date</div>
+          <div className="text-[12px] text-gray-500">Original : May 18, 2021</div>
+        </div>
+      </div>
+      <div className="flex items-center  rounded px-2 py-0.5 text-[14px]">
+          <FaCalendarAlt className="w-4 h-4 text-blue-600 mr-2" />
+          July 3, 2021
+        </div>
+      <div className="flex justify-end pl-6">
+        <FaRegEdit className="w-4 h-4 text-blue-600" />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div className="w-full bg-white border border-gray-200 rounded-sm text-black container mx-auto px-4 sm:px-6 lg:px-8 py-6 mb-10">
+      {/* Section Label */}
+      <div className="px-4 py-3 border-b border-gray-200">
+        <span className="text-[14px] font-semibold text-blue-600">
+          Contingencies
+        </span>
+      </div>
+
+      <div className="divide-y divide-gray-200">
+        {/* Row: Financing */}
+        <div className="grid grid-cols-3 items-center px-4 py-4">
+          {/* Left: Icon + Title */}
+          <div className="flex items-center gap-3">
+            <img src={Home2} alt="Home Icon" className="w-10 h-10 text-blue-600" />
+            <div>
+              <div className="text-[14px] font-semibold">Financing</div>
+              <div className="text-[12px] text-gray-500">
+                Original : Conventional Loan
+              </div>
+            </div>
+          </div>
+
+          {/* Middle: Value */}
+          <div className="text-center text-[14px] font-semibold">
+            Conventional Loan
+          </div>
+
+          {/* Right: Edit */}
+          <div className="flex justify-end">
+            <FaRegEdit className="w-4 h-4 text-blue-600" />
+          </div>
+        </div>
+
+        {/* Row: Appraisal */}
+        <div className="grid grid-cols-3 items-center px-4 py-4">
+          {/* Left: Icon + Title */}
+          <div className="flex items-center gap-3">
+            <img src={Home2} alt="Home Icon" className="w-10 h-10 text-blue-600" />
+            <div>
+              <div className="text-[14px] font-semibold">Appraisal</div>
+              <div className="text-[12px] text-gray-500">Original : No</div>
+            </div>
+          </div>
+
+          {/* Middle: Value */}
+          <div className="text-center text-[14px] font-semibold">No</div>
+
+          {/* Right: Edit */}
+          <div className="flex justify-end">
+            <FaRegEdit className="w-4 h-4 text-blue-600" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div className="w-full bg-white border border-gray-200 rounded-sm text-black container mx-auto px-4 sm:px-6 lg:px-8 py-6 mb-10">
+      {/* Section Label */}
+      <div className="px-4 py-3 border-b border-gray-200">
+        <span className="text-[14px] font-semibold text-blue-600">
+          Miscellaneous
+        </span>
+      </div>
+
+      <div className="divide-y divide-gray-200">
+        {/* Row: Home Warranty */}
+        <div className="grid grid-cols-3 items-center px-4 py-4">
+          {/* Left: Icon + Title */}
+          <div className="flex items-center gap-3">
+            <img src={Home3} alt="Home Icon" className="w-10 h-10 text-blue-600" />
+            <div>
+              <div className="text-[14px] font-semibold">Home Warranty</div>
+              <div className="text-[12px] text-gray-500">Original : 0</div>
+            </div>
+          </div>
+
+          {/* Middle: Value */}
+          <div className="text-center text-[14px] font-semibold">0</div>
+
+          {/* Right: Edit */}
+          <div className="flex justify-end">
+            <FaRegEdit className="w-4 h-4 text-blue-600" />
+          </div>
+        </div>
+
+        {/* Row: Any Other Important Consideration */}
+        <div className="grid grid-cols-3 items-start px-4 py-4">
+          {/* Left: Icon + Title */}
+          <div className="flex items-start gap-3">
+            <img src={Home3} alt="Home Icon" className="w-10 h-10 text-blue-600 mt-0.5" />
+            <div>
+              <div className="text-[14px] font-semibold">
+                Any Other Imp Offer Consideration
+              </div>
+              <div className="text-[12px] text-gray-500">
+                Buyer Agrees To Pay 100 More.................
+              </div>
+            </div>
+          </div>
+
+          {/* Middle: Long Text */}
+          <div className="text-[13px] text-gray-700 leading-snug">
+            Buyer Agrees To Increase The Purchase Price By $1,000 Above Any Bona
+            Fide Competing Offer, Up To The Agreed Maximum Price. This Escalation
+            Shall Apply Only Upon Written Proof Of Such Competing Offer.
+          </div>
+
+          {/* Right: Edit */}
+          <div className="flex justify-end">
+            <FaRegEdit className="w-4 h-4 text-blue-600 mt-1" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div className="w-full bg-white border border-gray-200 rounded-sm text-black container mx-auto px-4 sm:px-6 lg:px-8 py-6 mb-10 ">
+      {/* Section Label */}
+      <div className="px-4 py-3 border-b border-gray-200">
+        <span className="text-[14px] font-semibold text-blue-600">
+          Any Comments (Optional)
+        </span>
+      </div>
+
+      {/* Textarea */}
+      <div className="px-4 py-4 ">
+        <textarea
+          rows="4"
+          className="w-full border border-gray-300 rounded-md p-3 text-[14px] outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 dark:bg-white"
+          placeholder=""
+        />
+      </div>
+
+      {/* Back Button */}
+      <div className="flex justify-center px-4 pb-6">
+        <button
+          type="button"
+          className="px-6 py-2 border border-blue-500 rounded-md text-[14px] font-medium text-black hover:bg-blue-50"
+        >
+          Back
+        </button>
+      </div>
+    </div>
+
+
+
+
+
+    </div>
+  );
 }
