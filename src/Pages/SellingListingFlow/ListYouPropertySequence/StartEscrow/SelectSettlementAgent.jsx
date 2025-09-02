@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const AGENTS = [
   {
@@ -28,6 +29,9 @@ const AGENTS = [
 ]
 
 export default function SelectSettlementAgent({ onBack, onContinue }) {
+  const [selectedAgentIndex, setSelectedAgentIndex] = useState(null)
+  const navigate = useNavigate()
+
   return (
     <div className="max-w-6xl mx-auto px-6 py-10 text-black">
       <div className="mb-6">
@@ -56,7 +60,14 @@ export default function SelectSettlementAgent({ onBack, onContinue }) {
             <div className="col-span-4 px-4 text-sm text-gray-600">{a.address}</div>
 
             <div className="col-span-2 px-4 flex justify-end">
-              <button className="text-sm px-4 py-1 border rounded-full text-gray-700">Select</button>
+              <button
+                className={`text-sm px-4 py-1 border rounded-full ${
+                  selectedAgentIndex === i ? 'bg-green-500 text-white' : 'text-gray-700'
+                }`}
+                onClick={() => setSelectedAgentIndex(selectedAgentIndex === i ? null : i)}
+              >
+                {selectedAgentIndex === i ? 'Selected' : 'Select'}
+              </button>
             </div>
           </div>
         ))}
@@ -68,7 +79,19 @@ export default function SelectSettlementAgent({ onBack, onContinue }) {
           Back
         </button>
 
-        <button onClick={() => (onContinue ? onContinue() : null)} className="px-8 py-2 rounded bg-gradient-to-r from-blue-500 to-blue-700 text-white shadow-lg">
+        <button
+          onClick={() => {
+            if (selectedAgentIndex !== null) {
+              navigate('/dashboard/selling_properties/start_escrow/settlement_tasks')
+            } else {
+              alert('Please select an agent before continuing.')
+            }
+          }}
+          className={`px-8 py-2 rounded bg-gradient-to-r from-blue-500 to-blue-700 text-white shadow-lg ${
+            selectedAgentIndex === null ? 'opacity-50 cursor-not-allowed' : ''
+          }`}
+          disabled={selectedAgentIndex === null}
+        >
           Continue
         </button>
       </div>

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 function ReviewPublish({ onCancel, onContinue, data }) {
   const property = data?.propertyAddress || {};
+  const navigate = useNavigate();
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-10 text-black">
@@ -20,7 +22,12 @@ function ReviewPublish({ onCancel, onContinue, data }) {
             <div className="text-sm text-gray-500 mt-1">{property.summary || '4 beds • 3 baths • 2,200 sq ft'}</div>
           </div>
           <div className="flex flex-col items-center justify-center text-center drop-shadow-lg">
-            <button className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">➕</button>
+            <button
+              className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600"
+              onClick={() => navigate("/dashboard/selling_properties/start_escrow/social_media_sharing")}
+            >
+              ➕
+            </button>
             <span className="mt-2">Start Escrow</span>
           </div>
         </div>

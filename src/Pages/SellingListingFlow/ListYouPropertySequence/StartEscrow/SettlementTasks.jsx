@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 export default function SettlementTasks() {
   const [open, setOpen] = useState(true)
+  const navigate = useNavigate();
 
   const bullets = [
     {
@@ -74,8 +76,18 @@ export default function SettlementTasks() {
               ))}
 
               <div className="mt-4 flex items-center gap-4">
-                <button className="px-6 py-2 rounded bg-green-500 text-white">Mark As Complete</button>
-                <button className="px-6 py-2 rounded bg-gradient-to-r from-blue-500 to-blue-700 text-white shadow">Launch Now</button>
+                <button
+                  className="px-6 py-2 rounded bg-green-500 text-white"
+                  onClick={() => navigate('/dashboard/selling_properties/start_escrow/settlement_task1')}
+                >
+                  Mark As Complete
+                </button>
+                <button
+                  className="px-6 py-2 rounded bg-gradient-to-r from-blue-500 to-blue-700 text-white shadow"
+                  onClick={() => alert('The project is successfully launched')} 
+                >
+                  Launch Now
+                </button>
               </div>
             </div>
           )}

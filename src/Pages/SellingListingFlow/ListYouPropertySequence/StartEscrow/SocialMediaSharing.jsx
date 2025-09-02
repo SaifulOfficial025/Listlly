@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from "react-router-dom";
 
 function Row({ children, onClick }) {
   return (
@@ -28,6 +29,8 @@ function Accordion({ title, description, items = [] }) {
 }
 
 export default function SocialMediaSharing() {
+  const navigate = useNavigate();
+
   const property = {
     address: '123 Oak Street, Irvine, CA 92602',
     region: 'Rancho Santa Fe, CA 92067',
@@ -58,7 +61,12 @@ export default function SocialMediaSharing() {
 
       {/* centered action buttons */}
       <div className="mt-6 flex items-center justify-center gap-4">
-        <button className="px-6 py-2 rounded bg-gray-100 border text-gray-700">Start Escrow</button>
+        <button
+          className="px-6 py-2 rounded bg-gray-100 border text-gray-700"
+          onClick={() => navigate("/dashboard/selling_properties/start_escrow/select_settlement_agent")}
+        >
+          Start Escrow
+        </button>
         <button className="px-4 py-2 rounded border bg-white flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-600" viewBox="0 0 20 20" fill="currentColor"><path d="M17.414 2.586a2 2 0 010 2.828l-8.485 8.485a1 1 0 01-.464.263l-4 1a1 1 0 01-1.213-1.213l1-4a1 1 0 01.263-.464L14.586 2.586a2 2 0 012.828 0z"/></svg>Edit Listing</button>
       </div>
 

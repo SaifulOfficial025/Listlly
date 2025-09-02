@@ -1,19 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Sidebar from './Sidebar'
 import Header from './Header'
 import { Outlet } from 'react-router-dom'
 
 const Dashboard = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(false)
+
   return (
-    <div className="min-h-screen flex bg-white">
-      <div className="sticky top-0 h-screen flex-shrink-0">
-        <Sidebar />
-      </div>
-      <div className="flex-1 flex flex-col">
+  <div className="flex bg-white overflow-hidden">
+      <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+
+  <div className="flex-1 flex flex-col overflow-hidden md:ml-56 bg-white min-h-screen">
         <div className="sticky top-0 z-20 bg-white">
-          <Header />
+          <Header onToggleSidebar={() => setSidebarOpen(true)} />
         </div>
-        <main className="flex-1 overflow-auto max-h-[calc(100vh-64px)] p-6">
+        <main className="flex-1 overflow-auto p-6">
           <Outlet />
         </main>
       </div>

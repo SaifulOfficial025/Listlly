@@ -1,107 +1,157 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-function StepPill({ label, active }) {
-  return (
-    <div className="flex items-center gap-3">
-      <div className={`w-8 h-2 rounded ${active ? 'bg-blue-500' : 'bg-gray-200'}`}></div>
-      <div className={`text-xs ${active ? 'text-gray-700' : 'text-gray-400'}`}>{label}</div>
-    </div>
-  )
-}
+export default function SettlementTasks2({ onCancel }) {
+  // State for radio groups and selects
+  const [listingAgent, setListingAgent] = useState('yes')
+  const [buyerAgent, setBuyerAgent] = useState('yes')
+  const [thirdParty, setThirdParty] = useState('no')
+  const [sellerDocs, setSellerDocs] = useState('yes')
 
-function OptionCard({ title, icon, selected, onClick }) {
-  return (
-    <button onClick={onClick} className={`flex flex-col items-center gap-2 p-4 rounded border ${selected ? 'border-blue-300 bg-blue-50' : 'border-gray-200 bg-white'} w-40`}> 
-      <div className="w-10 h-10 rounded flex items-center justify-center text-gray-500">{icon}</div>
-      <div className="text-sm text-gray-700">{title}</div>
-    </button>
-  )
-}
-
-export default function SettlementTasks2({ onCancel, onContinue }) {
-  const [holds, setHolds] = useState('single')
-  const [title, setTitle] = useState('')
+  const navigate = useNavigate()
 
   return (
-    <div className="max-w-6xl mx-auto px-6 py-10 text-black">
-      <div className="mb-6">
-        <h2 className="text-2xl font-semibold">Settlement Tasks</h2>
-        <div className="text-sm text-gray-500 mt-1">Fulfill The Settlement Tasks Necessary To Close Your Transactions</div>
-      </div>
+    <div className="max-w-6xl mx-auto px-4 py-10 text-black">
+      {/* Header */}
+      <div className="mb-8">
+        <h2 className="text-2xl font-semibold text-gray-800">Settlement Tasks</h2>
+        <p className="text-sm text-gray-500 mt-2">Fulfill The Settlement Tasks Necessary To Close Your Transactions</p>
 
-      <div className="flex items-center gap-6 mb-8">
-        <StepPill label="Title & Contact Info" active />
-        <StepPill label="Parties Involved" />
-        <StepPill label="Schedule Closing" />
-        <StepPill label="Receive Funds" />
-      </div>
-
-      <div className="bg-white rounded shadow-sm p-6">
-        <div className="mb-6">
-          <label className="block text-sm font-medium text-gray-700">Title</label>
-          <div className="text-xs text-gray-500 mb-2">Title Info Of The Seller</div>
-          <input value={title} onChange={e => setTitle(e.target.value)} placeholder="How Is The Title Held?" className="w-full border rounded px-3 py-2 text-sm" />
-        </div>
-
-        <div className="mb-6">
-          <div className="text-sm font-medium mb-3">Holds Title?</div>
-          <div className="flex gap-4">
-            <OptionCard title="Single Individual" icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"></path><path d="M6 20v-1a4 4 0 014-4h4a4 4 0 014 4v1"></path></svg>} selected={holds==='single'} onClick={() => setHolds('single')} />
-            <OptionCard title="Multiple Individuals" icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 00-3-3.87"></path><path d="M16 3.13a4 4 0 010 7.75"></path></svg>} selected={holds==='multiple'} onClick={() => setHolds('multiple')} />
-            <OptionCard title="Corporation LLC, Or Trust" icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M8 7h8"></path></svg>} selected={holds==='corp'} onClick={() => setHolds('corp')} />
+        {/* Steps */}
+        <div className="mt-6 flex items-end justify-between gap-6">
+          <div className="flex flex-col items-center flex-1">
+            <div className="text-sm font-semibold text-gray-400">Title & Contact Info</div>
+            <div className="w-2 h-2 rounded-full bg-gray-300 mt-2" />
+            <div className="mt-2 w-36 h-3 rounded-full bg-gray-100" />
+          </div>
+          <div className="flex flex-col items-center flex-1">
+            <div className="text-sm font-semibold text-gray-800">Parties Involved</div>
+            <div className="w-2 h-2 rounded-full bg-blue-600 mt-2" />
+            <div className="mt-2 w-36 h-3 rounded-full bg-gray-200 overflow-hidden">
+              <div className="h-3 bg-blue-600 rounded-full" style={{ width: '100%' }} />
+            </div>
+          </div>
+          <div className="flex flex-col items-center flex-1">
+            <div className="text-sm font-semibold text-gray-400">Schedule Closing</div>
+            <div className="w-2 h-2 rounded-full bg-gray-300 mt-2" />
+            <div className="mt-2 w-36 h-3 rounded-full bg-gray-100" />
+          </div>
+          <div className="flex flex-col items-center flex-1">
+            <div className="text-sm font-semibold text-gray-400">Receive Funds</div>
+            <div className="w-2 h-2 rounded-full bg-gray-300 mt-2" />
+            <div className="mt-2 w-36 h-3 rounded-full bg-gray-100" />
           </div>
         </div>
+      </div>
 
+      {/* Real Estate Agents */}
+      <div className="mb-8">
+        <h3 className="text-lg font-semibold text-gray-800 mb-2">Real Estate Agents</h3>
+        <p className="text-xs text-gray-500 mb-4">Fill The Input Fields Here To Continue Next</p>
+
+        {/* Listing Agent */}
         <div className="mb-6">
-          <div className="text-sm font-medium mb-3">Contact Info</div>
-          <div className="grid grid-cols-3 gap-4">
-            <input placeholder="Legal Name" className="border rounded px-3 py-2 text-sm" />
-            <input placeholder="Email" className="border rounded px-3 py-2 text-sm" />
-            <input placeholder="Phone Number" className="border rounded px-3 py-2 text-sm" />
-
-            <input placeholder="Social Security Number" className="border rounded px-3 py-2 text-sm" />
-            <input placeholder="Seller Forwarding Address" className="border rounded px-3 py-2 text-sm" />
-            <select className="border rounded px-3 py-2 text-sm">
-              <option>Marital Status</option>
-              <option>Single</option>
-              <option>Married</option>
+          <div className="text-sm font-medium text-gray-700 mb-2">Is There A Listing Agent Involved In This Transaction?</div>
+          <div className="flex gap-6 mb-4">
+            <label className="flex items-center gap-2">
+              <input type="radio" name="listingAgent" checked={listingAgent === 'yes'} onChange={() => setListingAgent('yes')} />
+              <span className="text-sm">Yes</span>
+            </label>
+            <label className="flex items-center gap-2">
+              <input type="radio" name="listingAgent" checked={listingAgent === 'no'} onChange={() => setListingAgent('no')} />
+              <span className="text-sm">No</span>
+            </label>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input className="border border-gray-200 rounded p-3 dark:bg-white" placeholder="Listing Agent Name" />
+            <select className="border border-gray-200 rounded p-3 dark:bg-white">
+              <option>Listing Agent Phone</option>
             </select>
-          </div>
-
-          <div className="flex items-center gap-8 mt-4">
-            <div>
-              <div className="text-sm">Will This Individual Attend The Closing?</div>
-              <div className="flex items-center gap-4 mt-2">
-                <label className="inline-flex items-center"><input type="radio" name="attend" className="mr-2" /> Yes</label>
-                <label className="inline-flex items-center"><input type="radio" name="attend" className="mr-2" /> No</label>
-              </div>
-            </div>
-
-            <div>
-              <div className="text-sm">Are There Any Civil Judgements Against Any Seller?</div>
-              <div className="flex items-center gap-4 mt-2">
-                <label className="inline-flex items-center"><input type="radio" name="judgement" className="mr-2" /> Yes</label>
-                <label className="inline-flex items-center"><input type="radio" name="judgement" className="mr-2" /> No</label>
-              </div>
-            </div>
+            <input className="border border-gray-200 rounded p-3 dark:bg-white" placeholder="Listing Agent Email Address" />
+            <input className="border border-gray-200 rounded p-3 dark:bg-white" placeholder="Listing Agent Commission" />
           </div>
         </div>
 
+        {/* Buyer's Agent */}
         <div className="mb-6">
-          <div className="text-sm font-medium mb-3">Title Insurance Information (Optional)</div>
-          <div className="text-xs text-gray-500 mb-4">Provide A Copy Of Any Title Insurance Policies Or A Copy Of The HUD Statement From Your Purchase Of The Property If Its Readily Available</div>
-
-          <div className="border-2 border-dashed border-gray-200 rounded-lg p-8 text-center">
-            <div className="text-gray-400 mb-4">Upload Property Photo</div>
-            <div className="text-sm text-gray-500 mb-4">Take multiple photos of your Property site</div>
-            <button className="px-6 py-2 bg-blue-100 rounded shadow">Upload</button>
+          <div className="text-sm font-medium text-gray-700 mb-2">Is There A Listing Agent Involved In This Transaction?</div>
+          <div className="flex gap-6 mb-4">
+            <label className="flex items-center gap-2">
+              <input type="radio" name="buyerAgent" checked={buyerAgent === 'yes'} onChange={() => setBuyerAgent('yes')} />
+              <span className="text-sm">Yes</span>
+            </label>
+            <label className="flex items-center gap-2">
+              <input type="radio" name="buyerAgent" checked={buyerAgent === 'no'} onChange={() => setBuyerAgent('no')} />
+              <span className="text-sm">No</span>
+            </label>
+            <label className="flex items-center gap-2">
+              <input type="radio" name="buyerAgent" checked={buyerAgent === 'unknown'} onChange={() => setBuyerAgent('unknown')} />
+              <span className="text-sm">Not Known/No Offer Accepted Yet</span>
+            </label>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input className="border border-gray-200 rounded p-3 dark:bg-white" placeholder="Buyer's Agent Name" />
+            <select className="border border-gray-200 rounded p-3 dark:bg-white">
+              <option>Buyer's Agent Phone</option>
+            </select>
+            <input className="border border-gray-200 rounded p-3 dark:bg-white" placeholder="Buyer's Agent Email Address" />
+            <input className="border border-gray-200 rounded p-3 dark:bg-white" placeholder="Buyer's Agent Commission" />
           </div>
         </div>
+      </div>
 
-        <div className="mt-6 flex items-center justify-center gap-6">
-          <button onClick={() => (onCancel ? onCancel() : null)} className="px-6 py-2 rounded bg-orange-600 text-white">Cancel</button>
-          <button onClick={() => (onContinue ? onContinue() : null)} className="px-8 py-2 rounded bg-gradient-to-r from-blue-600 to-blue-800 text-white">Continue</button>
+      {/* Buyer(s) */}
+      <div className="mb-8">
+        <h3 className="text-lg font-semibold text-gray-800 mb-2">Buyer(S)</h3>
+        <p className="text-xs text-gray-500 mb-4">Fill The Input Fields Here To Continue Next</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input className="border border-gray-200 rounded p-3 dark:bg-white" placeholder="Name Of Buyers" />
+          <select className="border border-gray-200 rounded p-3 dark:bg-white">
+            <option>Phone</option>
+          </select>
+          <input className="border border-gray-200 rounded p-3 dark:bg-white" placeholder="Email" />
+          <input className="border border-gray-200 rounded p-3 dark:bg-white" placeholder="Buyers Agent Commission" />
         </div>
+      </div>
+
+      {/* Other Third Parties */}
+      <div className="mb-8">
+        <h3 className="text-lg font-semibold text-gray-800 mb-2">Other Third Parties</h3>
+        <p className="text-xs text-gray-500 mb-4">Fill The Input Fields Here To Continue Next</p>
+        <div className="mb-2 text-sm font-medium text-gray-700">Have You Hired Anyone To Perform Any Work On The Property In The Past Next Six Months?</div>
+        <div className="flex gap-6 mb-4">
+          <label className="flex items-center gap-2">
+            <input type="radio" name="thirdParty" checked={thirdParty === 'yes'} onChange={() => setThirdParty('yes')} />
+            <span className="text-sm">Yes</span>
+          </label>
+          <label className="flex items-center gap-2">
+            <input type="radio" name="thirdParty" checked={thirdParty === 'no'} onChange={() => setThirdParty('no')} />
+            <span className="text-sm">No</span>
+          </label>
+        </div>
+      </div>
+
+      {/* Seller Closing Documents */}
+      <div className="mb-8">
+        <h3 className="text-lg font-semibold text-gray-800 mb-2">Seller Closing Documents</h3>
+        <p className="text-xs text-gray-500 mb-4">Fill The Input Fields Here To Continue Next</p>
+        <div className="mb-2 text-sm font-medium text-gray-700">Are We To Prepare The Deed, Lien Waiver, and 1099?</div>
+        <div className="flex gap-6 mb-4">
+          <label className="flex items-center gap-2">
+            <input type="radio" name="sellerDocs" checked={sellerDocs === 'yes'} onChange={() => setSellerDocs('yes')} />
+            <span className="text-sm">Yes</span>
+          </label>
+          <label className="flex items-center gap-2">
+            <input type="radio" name="sellerDocs" checked={sellerDocs === 'no'} onChange={() => setSellerDocs('no')} />
+            <span className="text-sm">No</span>
+          </label>
+        </div>
+      </div>
+
+      {/* Actions */}
+      <div className="flex justify-end gap-4 mt-10">
+        <button type="button" onClick={() => navigate('/dashboard/selling_properties/start_escrow/settlement_task1')} className="px-6 py-2 bg-gray-100 text-gray-700 rounded">Back</button>
+        <button type="button" onClick={() => navigate('/dashboard/selling_properties/start_escrow/settlement_task3')} className="px-6 py-2 bg-blue-600 text-white rounded shadow">Continue</button>
       </div>
     </div>
   )

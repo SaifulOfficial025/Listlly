@@ -18,8 +18,13 @@ import SelectRecipient from "../Pages/SellingListingFlow/SubmittedOffer/SelectRe
 import BuyProperties from "../Pages/SellingListingFlow/BuyProperties";
 import ListProperty from "../Pages/SellingListingFlow/ListProperty";
 import ListPropertyFlow from "../Pages/SellingListingFlow/ListYouPropertySequence/ListPropertyFlow";
-import OfferDetails2 from "../Pages/SellingListingFlow/SubmittedOffer/OfferDetails";
-
+import SocialMediaSharing from "../Pages/SellingListingFlow/ListYouPropertySequence/StartEscrow/SocialMediaSharing";
+import SelectSettlementAgent from "../Pages/SellingListingFlow/ListYouPropertySequence/StartEscrow/SelectSettlementAgent";
+import SettlementTasks from "../Pages/SellingListingFlow/ListYouPropertySequence/StartEscrow/SettlementTasks";
+import SettlementTask1 from "../Pages/SellingListingFlow/ListYouPropertySequence/StartEscrow/SattlementTask1";
+import SettlementTasks2 from "../Pages/SellingListingFlow/ListYouPropertySequence/StartEscrow/SettlementTasks2";
+import SettlementTask3 from "../Pages/SellingListingFlow/ListYouPropertySequence/StartEscrow/SettlementTask3";
+import SettlementTask4 from "../Pages/SellingListingFlow/ListYouPropertySequence/StartEscrow/SettlementTask4";
 
 // import OfferSummary from "../Pages/SellingListingFlow/SubmittedOffer/OfferSummary";
 // import OfferDetails from "../Pages/SellingListingFlow/SubmittedOffer/OfferDetails";
@@ -89,6 +94,34 @@ export const router = createBrowserRouter([
         ],
       },
       { path: "buy_properties", element: <BuyProperties /> },
+      {
+        path: "selling_properties/start_escrow/social_media_sharing",
+        element: <SocialMediaSharing />,
+      },
+      {
+        path: "selling_properties/start_escrow/select_settlement_agent",
+        element: <SelectSettlementAgent />,
+      },
+      {
+        path: "selling_properties/start_escrow/settlement_tasks",
+        element: <SettlementTasks />,
+      },
+      {
+        path: "selling_properties/start_escrow/settlement_task1",
+        element: <SettlementTask1 />,
+      },
+      {
+        path: "selling_properties/start_escrow/settlement_tasks2",
+        element: <SettlementTasks2 />,
+      },
+      {
+        path: "selling_properties/start_escrow/settlement_task3",
+        element: <SettlementTask3 />,
+      },
+      {
+        path: "selling_properties/start_escrow/settlement_task4",
+        element: <SettlementTask4 />,
+      },
     ],
   },
 

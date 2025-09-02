@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 
-const Header = ({ name = 'Soliman', avatarUrl = 'https://i.pravatar.cc/56?img=12' }) => {
+const Header = ({ name = 'Soliman', avatarUrl = 'https://i.pravatar.cc/56?img=12', onToggleSidebar }) => {
   const [open, setOpen] = useState(false)
   const ref = useRef(null)
 
@@ -16,9 +16,18 @@ const Header = ({ name = 'Soliman', avatarUrl = 'https://i.pravatar.cc/56?img=12
     <header className="w-full bg-transparent">
       <div className="max-w-7xl mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          <div className="text-lg text-gray-800 font-medium">
-            <span className="text-gray-700">Hi, Welcome </span>
-            <a href="#" className="text-[#0054F6] font-semibold hover:underline">{name}</a>
+          <div className="flex items-center gap-3">
+            {/* mobile hamburger */}
+            <button onClick={onToggleSidebar} className="md:hidden p-2 rounded hover:bg-gray-100" aria-label="open menu">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+
+            <div className="text-lg text-gray-800 font-medium">
+              <span className="text-gray-700">Hi, Welcome </span>
+              <a href="#" className="text-[#0054F6] font-semibold hover:underline">{name}</a>
+            </div>
           </div>
 
           <div className="relative" ref={ref}>
