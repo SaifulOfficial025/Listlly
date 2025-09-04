@@ -15,7 +15,7 @@ import OfferDetails from "../Pages/SellingListingFlow/SubmittedOffer/OfferDetail
 import CounterOffer from "../Pages/SellingListingFlow/SubmittedOffer/CounterOffer";
 import RequestHighest from "../Pages/SellingListingFlow/SubmittedOffer/RequestHighest";
 import SelectRecipient from "../Pages/SellingListingFlow/SubmittedOffer/SelectRecipient";
-import BuyProperties from "../Pages/SellingListingFlow/BuyProperties";
+// import BuyProperties from "../Pages/SellingListingFlow/BuyProperties";
 import ListProperty from "../Pages/SellingListingFlow/ListProperty";
 import ListPropertyFlow from "../Pages/SellingListingFlow/ListYouPropertySequence/ListPropertyFlow";
 import SocialMediaSharing from "../Pages/SellingListingFlow/ListYouPropertySequence/StartEscrow/SocialMediaSharing";
@@ -25,6 +25,8 @@ import SettlementTask1 from "../Pages/SellingListingFlow/ListYouPropertySequence
 import SettlementTasks2 from "../Pages/SellingListingFlow/ListYouPropertySequence/StartEscrow/SettlementTasks2";
 import SettlementTask3 from "../Pages/SellingListingFlow/ListYouPropertySequence/StartEscrow/SettlementTask3";
 import SettlementTask4 from "../Pages/SellingListingFlow/ListYouPropertySequence/StartEscrow/SettlementTask4";
+import RootPage from "../Pages/SellingListingFlow/BuyProperties/RootPage";
+import Details from "../Pages/SellingListingFlow/BuyProperties/Details";
 
 // import OfferSummary from "../Pages/SellingListingFlow/SubmittedOffer/OfferSummary";
 // import OfferDetails from "../Pages/SellingListingFlow/SubmittedOffer/OfferDetails";
@@ -93,7 +95,8 @@ export const router = createBrowserRouter([
           { path: "select_recipient", element: <SelectRecipient /> },
         ],
       },
-      { path: "buy_properties", element: <BuyProperties /> },
+  { path: "buy_properties", element: <RootPage /> },
+  { path: "buy_properties/details", element: <Details /> },
       {
         path: "selling_properties/start_escrow/social_media_sharing",
         element: <SocialMediaSharing />,
