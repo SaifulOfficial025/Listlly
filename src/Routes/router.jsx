@@ -32,6 +32,8 @@ import SavedProperties from "../Pages/SellingListingFlow/SavedProperties/RootPag
 import HowToVideos from "../Pages/SellingListingFlow/HowToVideos/RootPage";
 import AccountSettings from "../Pages/SellingListingFlow/AccountSettings";
 
+import SellFlatFeeMLS from "../Pages/Sell/FlatFeeMLS/RootPage"
+
 // import OfferSummary from "../Pages/SellingListingFlow/SubmittedOffer/OfferSummary";
 // import OfferDetails from "../Pages/SellingListingFlow/SubmittedOffer/OfferDetails";
 // import CounterOffer from "../Pages/SellingListingFlow/SubmittedOffer/CounterOffer";
@@ -71,6 +73,10 @@ export const router = createBrowserRouter([
   {
     path: "/homeforsale/property_details",
     element: <PropertyDetails />,
+  },
+  {
+    path: "/sell/flat_fee_mls",
+    element: <SellFlatFeeMLS />,
   },
   {
   path: "/dashboard",

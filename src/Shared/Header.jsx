@@ -5,15 +5,21 @@ import { Link } from "react-router-dom";
 
 function Header() {
   const [buyOpen, setBuyOpen] = useState(false);
+  const [sellOpen, setSellOpen] = useState(false);
   const buyRef = useRef(null);
+  const sellRef = useRef(null);
 
   // Close on click outside or Esc
   useEffect(() => {
     function onClick(e) {
       if (buyRef.current && !buyRef.current.contains(e.target)) setBuyOpen(false);
+      if (sellRef.current && !sellRef.current.contains(e.target)) setSellOpen(false);
     }
     function onKey(e) {
-      if (e.key === "Escape") setBuyOpen(false);
+      if (e.key === "Escape") {
+        setBuyOpen(false);
+        setSellOpen(false);
+      }
     }
     document.addEventListener("mousedown", onClick);
     document.addEventListener("keydown", onKey);
@@ -63,10 +69,50 @@ function Header() {
             )}
           </div>
 
-          {/* Sell (static for now) */}
-          <div className="flex items-center cursor-pointer">
-            Sell
-            <ChevronDown className="w-4 h-4 ml-1 text-[#5A5A5A]" />
+          {/* Sell dropdown */}
+          <div className="relative" ref={sellRef}>
+            <button
+              type="button"
+              className="flex items-center cursor-pointer outline-none"
+              aria-haspopup="menu"
+              aria-expanded={sellOpen}
+              onClick={() => setSellOpen((v) => !v)}
+            >
+              Sell
+              <ChevronDown className="w-4 h-4 ml-1 text-[#5A5A5A]" />
+            </button>
+
+            {sellOpen && (
+              <div
+                role="menu"
+                className="absolute left-0 mt-2 w-48 bg-white border border-[#E5E7EB] rounded-lg shadow-lg z-50"
+              >
+                <Link to="/sell/flat_fee_mls">
+                  <button
+                    role="menuitem"
+                    className="w-full text-left px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#F5F7FB]"
+                  >
+                    Flat Fee MLS
+                  </button>
+                </Link>
+                <Link to="/sell/sell_home_cash">
+                  <button
+                    role="menuitem"
+                    className="w-full text-left px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#F5F7FB]"
+                  >
+                    Sell Your Home For Cash
+                  </button>
+                </Link>
+                  <Link to="/sell/my_home_worth">
+                  <button
+                    role="menuitem"
+                    className="w-full text-left px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#F5F7FB]"
+                  >
+                    What’s My Home Worth?
+                  </button>
+                </Link>
+              </div>
+            )}
           </div>
 
           <div className="cursor-pointer">Pricing</div>
