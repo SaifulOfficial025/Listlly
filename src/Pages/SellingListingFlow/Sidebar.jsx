@@ -31,8 +31,8 @@ function Sidebar({ open, onClose }) {
               Buy Properties
             </NavLink>
 
-            <NavLink to="#" className="block w-full pl-6 py-3 text-sm text-white/90 hover:opacity-100">Saved Properties</NavLink>
-            <NavLink to="#" className="block w-full pl-6 py-3 text-sm text-white/90 hover:opacity-100">How To Videos</NavLink>
+            <NavLink to="/dashboard/saved_properties" className={({isActive}) => `block w-full pl-6 py-3 text-sm ${isActive ? 'bg-white text-[#1641ff] font-semibold' : 'text-white/90 hover:opacity-100'}`}>Saved Properties</NavLink>
+            <NavLink to="/dashboard/how_to_videos" className={({isActive}) => `block w-full pl-6 py-3 text-sm ${isActive ? 'bg-white text-[#1641ff] font-semibold' : 'text-white/90 hover:opacity-100'}`}>How To Videos</NavLink>
           </nav>
         </div>
 

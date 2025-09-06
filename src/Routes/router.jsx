@@ -27,6 +27,10 @@ import SettlementTask3 from "../Pages/SellingListingFlow/ListYouPropertySequence
 import SettlementTask4 from "../Pages/SellingListingFlow/ListYouPropertySequence/StartEscrow/SettlementTask4";
 import RootPage from "../Pages/SellingListingFlow/BuyProperties/RootPage";
 import Details from "../Pages/SellingListingFlow/BuyProperties/Details";
+import BuyOfferDetails from "../Pages/SellingListingFlow/BuyProperties/OfferDetails";
+import SavedProperties from "../Pages/SellingListingFlow/SavedProperties/RootPage";
+import HowToVideos from "../Pages/SellingListingFlow/HowToVideos/RootPage";
+import AccountSettings from "../Pages/SellingListingFlow/AccountSettings";
 
 // import OfferSummary from "../Pages/SellingListingFlow/SubmittedOffer/OfferSummary";
 // import OfferDetails from "../Pages/SellingListingFlow/SubmittedOffer/OfferDetails";
@@ -97,6 +101,7 @@ export const router = createBrowserRouter([
       },
   { path: "buy_properties", element: <RootPage /> },
   { path: "buy_properties/details", element: <Details /> },
+  { path: "buy_properties/offer_details", element: <BuyOfferDetails /> },
       {
         path: "selling_properties/start_escrow/social_media_sharing",
         element: <SocialMediaSharing />,
@@ -124,6 +129,18 @@ export const router = createBrowserRouter([
       {
         path: "selling_properties/start_escrow/settlement_task4",
         element: <SettlementTask4 />,
+      },
+      {
+        path: "saved_properties",
+        element: <SavedProperties />,
+      },
+      {
+        path: "how_to_videos",
+        element: <HowToVideos />,
+      },
+      {
+        path: "account_settings",
+        element: <AccountSettings />,
       },
     ],
   },

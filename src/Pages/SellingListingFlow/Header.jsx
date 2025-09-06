@@ -46,7 +46,7 @@ const Header = ({ name = 'Soliman', avatarUrl = 'https://i.pravatar.cc/56?img=12
               <div className="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                 <ul className="divide-y">
                   <li>
-                    <a href="#" className="flex items-center gap-3 px-4 py-3 text-sm text-gray-800 hover:bg-gray-50">
+                    <a href="/dashboard/account_settings" className="flex items-center gap-3 px-4 py-3 text-sm text-gray-800 hover:bg-gray-50">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <path strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" />
                         <path strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M6 20a6 6 0 0112 0" />

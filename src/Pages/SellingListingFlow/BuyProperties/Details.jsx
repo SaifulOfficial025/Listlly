@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   X,
   ZoomIn,
@@ -39,6 +39,8 @@ function Details() {
 
   // New state for Make an Offer modal flow
   const [showMakeOfferModal, setShowMakeOfferModal] = useState(false);
+
+  const navigate = useNavigate();
 
   const openModal = (index) => {
     setCurrent(index);
@@ -247,7 +249,12 @@ function Details() {
                 </div>
                 <div className="flex gap-2 mt-1">
                   <span className="bg-green-100 text-green-700 px-3 py-1 rounded text-xs font-semibold">Offer Given</span>
-                  <button className="border border-blue-600 text-blue-600 px-3 py-1 rounded text-xs font-medium">View Details</button>
+                  <button
+                    className="border border-blue-600 text-blue-600 px-3 py-1 rounded text-xs font-medium"
+                    onClick={() => navigate('/dashboard/buy_properties/offer_details')}
+                  >
+                    View Details
+                  </button>
                 </div>
               </div>
             </div>

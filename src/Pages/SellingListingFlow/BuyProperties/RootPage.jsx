@@ -135,7 +135,7 @@ function RootPage() {
             {cards.map((p, idx) => (
               <div
                 key={p.id}
-                onClick={() => navigate('/dashboard/buy_properties/details')}
+                onClick={() => navigate('/homeforsale/property_details')}
                 className={`cursor-pointer bg-white rounded-lg shadow p-4 text-black transform transition-transform duration-200 relative ${idx === activeCard ? 'scale-105 lg:scale-110 z-10' : 'opacity-90'}`}>
                 <div className="relative">
                   <img src={p.img} alt={p.title} className="w-full h-40 object-cover rounded-md" />
@@ -147,7 +147,14 @@ function RootPage() {
                   <div className="text-xs text-gray-500 mt-2">4 beds · 3 baths · 2,200 sq ft</div>
                 </div>
                 <div className="mt-4">
-                  <button className="w-full bg-gradient-to-r from-[#2563EB] to-[#1E40AF] text-white py-2 rounded-md">View Details</button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate('/homeforsale/property_details');
+                    }}
+                    className="w-full bg-gradient-to-r from-[#2563EB] to-[#1E40AF] text-white py-2 rounded-md">
+                    View Details
+                  </button>
                 </div>
               </div>
             ))}
@@ -170,7 +177,7 @@ function RootPage() {
             {offerCards.map((p, idx) => (
               <div
                 key={p.id}
-                onClick={() => navigate('/dashboard/buy_properties/property_details')}
+                onClick={() => navigate('/dashboard/buy_properties/details')}
                 className={`cursor-pointer bg-white rounded-lg shadow p-4 text-black transform transition-transform duration-200 relative ${idx === activeOfferCard ? 'scale-105 lg:scale-110 z-10' : 'opacity-90'}`}>
                 <div className="relative">
                   <img src={p.img} alt={p.title} className="w-full h-40 object-cover rounded-md" />
@@ -182,7 +189,14 @@ function RootPage() {
                   <div className="text-xs text-gray-500 mt-2">4 beds · 3 baths · 2,200 sq ft</div>
                 </div>
                 <div className="mt-4">
-                  <button className="w-full bg-gradient-to-r from-[#2563EB] to-[#1E40AF] text-white py-2 rounded-md">View Details</button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate('/dashboard/buy_properties/details');
+                    }}
+                    className="w-full bg-gradient-to-r from-[#2563EB] to-[#1E40AF] text-white py-2 rounded-md">
+                    View Details
+                  </button>
                 </div>
               </div>
             ))}
