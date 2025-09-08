@@ -35,6 +35,7 @@ import AccountSettings from "../Pages/SellingListingFlow/AccountSettings";
 import SellFlatFeeMLS from "../Pages/Sell/FlatFeeMLS/RootPage"
 import SellHomeCash from "../Pages/Sell/SellHomeCash/RootPage"
 import HomeWorth from "../Pages/Sell/HomeWorth/RootPage"
+import FindValue from "../Pages/Sell/HomeWorth/FindValue"
 
 
 
@@ -89,6 +90,10 @@ export const router = createBrowserRouter([
   {
     path: "/sell/home_worth",
     element: <HomeWorth />,
+  },
+  {
+    path: "/sell/home_worth/find_value",
+    element: <FindValue />,
   },
   {
   path: "/dashboard",
