@@ -103,7 +103,7 @@ function Header() {
                     Sell Your Home For Cash
                   </button>
                 </Link>
-                  <Link to="/sell/my_home_worth">
+                  <Link to="/sell/home_worth">
                   <button
                     role="menuitem"
                     className="w-full text-left px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#F5F7FB]"
