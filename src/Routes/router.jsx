@@ -40,6 +40,9 @@ import FindValue from "../Pages/Sell/HomeWorth/FindValue"
 
 import Pricing from "../Pages/Pricing/RootPage";
 import WhyListly from "../Pages/WhyListlly/RootPage"
+import HowListllyWorks from "../Pages/Resources/HowListllyWorks/RootPage";
+import Blog from "../Pages/Resources/Blog";
+import ResourceFAQ from "../Pages/Resources/FAQ";
 
 
 
@@ -54,6 +57,18 @@ export const router = createBrowserRouter([
   {
     path: "/pricing",
     element: <Pricing />,
+  },
+  {
+    path: "/resources/how_listlly_works",
+    element: <HowListllyWorks />,
+  },
+  {
+    path: "/resources/blogs",
+    element: <Blog />,
+  },
+  {
+    path: "/resources/faq",
+    element: <ResourceFAQ />,
   },
   {
     path: "/why_listly",

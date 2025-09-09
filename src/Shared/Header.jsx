@@ -29,6 +29,31 @@ function Header() {
     };
   }, []);
 
+  const [resourcesOpen, setResourcesOpen] = useState(false);
+  const resourcesRef = useRef(null);
+
+  // extend click handler for resources ref
+  useEffect(() => {
+    function onClick(e) {
+      if (buyRef.current && !buyRef.current.contains(e.target)) setBuyOpen(false);
+      if (sellRef.current && !sellRef.current.contains(e.target)) setSellOpen(false);
+      if (resourcesRef.current && !resourcesRef.current.contains(e.target)) setResourcesOpen(false);
+    }
+    function onKey(e) {
+      if (e.key === "Escape") {
+        setBuyOpen(false);
+        setSellOpen(false);
+        setResourcesOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", onClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onClick);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, []);
+
   return (
     <div className="w-full shadow-sm bg-white drop-shadow-lg fixed top-0 left-0 z-50">
       <div className="max-w-[1500px] mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between h-16">
@@ -118,10 +143,38 @@ function Header() {
           <Link to="/pricing" className="cursor-pointer">Pricing</Link>
           <Link to="/why_listly" className="cursor-pointer">Why Listlly</Link>
 
-          {/* Resources (static for now) */}
-          <div className="flex items-center cursor-pointer">
-            Resources
-            <ChevronDown className="w-4 h-4 ml-1 text-[#5A5A5A]" />
+          {/* Resources dropdown */}
+          <div className="relative" ref={resourcesRef}>
+            <button
+              type="button"
+              className="flex items-center cursor-pointer outline-none"
+              aria-haspopup="menu"
+              aria-expanded={resourcesOpen}
+              onClick={() => setResourcesOpen((v) => !v)}
+            >
+              Resources
+              <ChevronDown className="w-4 h-4 ml-1 text-[#5A5A5A]" />
+            </button>
+
+            {resourcesOpen && (
+              <div role="menu" className="absolute left-0 mt-2 w-56 bg-white border border-[#E5E7EB] rounded-lg shadow-lg z-50">
+                <Link to="/resources/how_listlly_works">
+                  <button role="menuitem" className="w-full text-left px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#F5F7FB]">
+                    How Listlly Works
+                  </button>
+                </Link>
+                <Link to="/resources/blogs">
+                  <button role="menuitem" className="w-full text-left px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#F5F7FB]">
+                    Blog
+                  </button>
+                </Link>
+                <Link to="/resources/faq">
+                  <button role="menuitem" className="w-full text-left px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#F5F7FB]">
+                    FAQ
+                  </button>
+                </Link>
+              </div>
+            )}
           </div>
         </nav>
 
