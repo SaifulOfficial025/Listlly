@@ -26,6 +26,7 @@ import SettlementTasks2 from "../Pages/SellingListingFlow/ListYouPropertySequenc
 import SettlementTask3 from "../Pages/SellingListingFlow/ListYouPropertySequence/StartEscrow/SettlementTask3";
 import SettlementTask4 from "../Pages/SellingListingFlow/ListYouPropertySequence/StartEscrow/SettlementTask4";
 import RootPage from "../Pages/SellingListingFlow/BuyProperties/RootPage";
+import PricingRootPage from "../Pages/Pricing/RootPage";
 import Details from "../Pages/SellingListingFlow/BuyProperties/Details";
 import BuyOfferDetails from "../Pages/SellingListingFlow/BuyProperties/OfferDetails";
 import SavedProperties from "../Pages/SellingListingFlow/SavedProperties/RootPage";
@@ -37,6 +38,9 @@ import SellHomeCash from "../Pages/Sell/SellHomeCash/RootPage"
 import HomeWorth from "../Pages/Sell/HomeWorth/RootPage"
 import FindValue from "../Pages/Sell/HomeWorth/FindValue"
 
+import Pricing from "../Pages/Pricing/RootPage";
+import WhyListly from "../Pages/WhyListlly/RootPage"
+
 
 
 // import OfferSummary from "../Pages/SellingListingFlow/SubmittedOffer/OfferSummary";
@@ -47,6 +51,14 @@ import FindValue from "../Pages/Sell/HomeWorth/FindValue"
 
 
 export const router = createBrowserRouter([
+  {
+    path: "/pricing",
+    element: <Pricing />,
+  },
+  {
+    path: "/why_listly",
+    element: <WhyListly />,
+  },
   {
     path: "/",
     element: <Home />,
@@ -95,6 +107,7 @@ export const router = createBrowserRouter([
     path: "/sell/home_worth/find_value",
     element: <FindValue />,
   },
+
   {
   path: "/dashboard",
   element: <Dashboard />,

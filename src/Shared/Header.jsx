@@ -115,8 +115,8 @@ function Header() {
             )}
           </div>
 
-          <div className="cursor-pointer">Pricing</div>
-          <div className="cursor-pointer">Why Listlly</div>
+          <Link to="/pricing" className="cursor-pointer">Pricing</Link>
+          <Link to="/why_listly" className="cursor-pointer">Why Listlly</Link>
 
           {/* Resources (static for now) */}
           <div className="flex items-center cursor-pointer">
@@ -138,7 +138,7 @@ function Header() {
             <div className="absolute top-16 left-0 w-full bg-white border-t border-[#E5E7EB] shadow-lg z-50 flex flex-col">
               <Link to="/buy/homes_for_sale" className="px-6 py-4 border-b border-[#E5E7EB] text-[#1C1C1C] font-medium">Buy</Link>
               <Link to="#" className="px-6 py-4 border-b border-[#E5E7EB] text-[#1C1C1C] font-medium">Sell</Link>
-              <Link to="#" className="px-6 py-4 border-b border-[#E5E7EB] text-[#1C1C1C] font-medium">Pricing</Link>
+              <Link to="/pricing" className="px-6 py-4 border-b border-[#E5E7EB] text-[#1C1C1C] font-medium">Pricing</Link>
               <Link to="#" className="px-6 py-4 border-b border-[#E5E7EB] text-[#1C1C1C] font-medium">Why Listlly</Link>
               <Link to="#" className="px-6 py-4 text-[#1C1C1C] font-medium">Resources</Link>
             </div>

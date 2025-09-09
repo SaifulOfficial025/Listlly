@@ -1,7 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 
-function GetYourCashOffer() {
+export default function GetYourCashOffer() {
+  // modal state: showModal controls whether overlay is visible
+  // showConfirmation controls whether the confirmation popup is visible
+  const [showModal, setShowModal] = useState(false)
+  const [showConfirmation, setShowConfirmation] = useState(false)
+  const [form, setForm] = useState({ firstName: '', lastName: '', email: '', price: '' })
+
+  function openPopups() {
+    setShowModal(true)
+    setShowConfirmation(false)
+  }
+
+  function closeAll() {
+    setShowModal(false)
+    setShowConfirmation(false)
+    setForm({ firstName: '', lastName: '', email: '', price: '' })
+  }
+
+  function onSubmit(e) {
+    e.preventDefault()
+    // After submitting the contact form, show the confirmation popup
+    setShowConfirmation(true)
+  }
+
+  function updateField(key, value) {
+    setForm((f) => ({ ...f, [key]: value }))
+  }
   return (
     <section className=" mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="text-center">
@@ -21,14 +47,57 @@ function GetYourCashOffer() {
               />
             </div>
 
-            <button className="ml-4 bg-gradient-to-b from-[#2B6CB0] to-[#1B4FA0] text-white px-6 py-2 rounded-md shadow-md hover:opacity-95">
+            <button onClick={openPopups} className="ml-4 bg-gradient-to-b from-[#2B6CB0] to-[#1B4FA0] text-white px-6 py-2 rounded-md shadow-md hover:opacity-95">
               Get Cash Offer
             </button>
           </div>
         </div>
       </div>
+
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div className="absolute inset-0 bg-black opacity-60" onClick={closeAll} />
+
+          <div className="relative max-w-6xl w-full mx-4">
+            {/* If confirmation is not shown, render the contact form */}
+            {!showConfirmation && (
+              <div className="grid grid-cols-1 gap-6 items-start">
+                <div className="bg-white rounded-2xl p-8 shadow-xl max-w-3xl mx-auto">
+                  <h3 className="text-xl font-semibold mb-4 text-black">Contact Information</h3>
+                  <form onSubmit={onSubmit} className="space-y-4">
+                    <input value={form.firstName} onChange={(e) => updateField('firstName', e.target.value)} placeholder="First Name" className="w-full border rounded-md px-4 py-3 dark:bg-white text-black" />
+                    <input value={form.lastName} onChange={(e) => updateField('lastName', e.target.value)} placeholder="Last Name" className="w-full border rounded-md px-4 py-3 dark:bg-white text-black" />
+                    <input value={form.email} onChange={(e) => updateField('email', e.target.value)} placeholder="Email" className="w-full border rounded-md px-4 py-3 dark:bg-white text-black" />
+                    <div>
+                      <label className="text-sm text-gray-600">How Much Do You Want For A Property</label>
+                      <input value={form.price} onChange={(e) => updateField('price', e.target.value)} placeholder="$" className="w-full border rounded-md px-4 py-3 mt-1 dark:bg-white text-black" />
+                    </div>
+                    <div className="pt-4">
+                      <button type="submit" className="w-full bg-gradient-to-r from-[#2B6CB0] to-[#1B4FA0] text-white py-3 rounded-md shadow-lg">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            )}
+
+            {/* If confirmation should be shown, replace content with the confirmation card */}
+            {showConfirmation && (
+              <div className="flex justify-center">
+                <div className="bg-white rounded-2xl p-8 shadow-xl max-w-md w-full">
+                  <div className="flex flex-col items-center text-center gap-3">
+                    <div className="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-[#1DC600]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#1DC600" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    </div>
+                    <h4 className="font-semibold text-black">Cash Offer Request Received</h4>
+                    <p className="text-sm text-gray-500">We'll review your details and send your offer shortly.</p>
+                    <button onClick={closeAll} className="mt-4 w-full bg-gradient-to-b from-[#2B6CB0] to-[#1B4FA0] text-white py-2 rounded-md">Confirm</button>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </section>
   )
 }
-
-export default GetYourCashOffer
