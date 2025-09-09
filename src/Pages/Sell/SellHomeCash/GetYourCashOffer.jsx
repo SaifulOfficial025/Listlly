@@ -29,17 +29,17 @@ export default function GetYourCashOffer() {
     setForm((f) => ({ ...f, [key]: value }))
   }
   return (
-    <section className=" mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <section className=" mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="text-center">
         <h2 className="text-3xl font-bold text-gray-800">Get Your <span className="text-[#ff6061]">Cash Offer</span></h2>
         <p className="mt-3 text-gray-500 max-w-2xl mx-auto">Enter your property address to receive a detailed cash offer analysis</p>
       </div>
 
-      <div className="mt-8">
-        <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-lg p-8">
-          <div className="bg-[#F3F8FF] rounded-lg p-4 flex items-center">
-            <div className="flex items-center bg-white rounded-md flex-1 px-4 py-2 shadow-sm">
-              <AiOutlineSearch className="text-blue-500 w-6 h-6 mr-3" />
+      <div className="mt-6">
+        <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-lg p-4 sm:p-8">
+          <div className="bg-[#F3F8FF] rounded-lg p-4 flex flex-col sm:flex-row items-stretch sm:items-center">
+            <div className="flex items-center bg-white rounded-md flex-1 px-3 py-3 sm:px-4 sm:py-2 shadow-sm">
+              <AiOutlineSearch className="text-blue-500 w-5 h-5 mr-3" />
               <input
                 type="text"
                 placeholder="Enter your property address"
@@ -47,7 +47,7 @@ export default function GetYourCashOffer() {
               />
             </div>
 
-            <button onClick={openPopups} className="ml-4 bg-gradient-to-b from-[#2B6CB0] to-[#1B4FA0] text-white px-6 py-2 rounded-md shadow-md hover:opacity-95">
+            <button onClick={openPopups} className="mt-3 sm:mt-0 sm:ml-4 bg-gradient-to-b from-[#2B6CB0] to-[#1B4FA0] text-white px-6 py-3 rounded-md shadow-md hover:opacity-95">
               Get Cash Offer
             </button>
           </div>
@@ -58,11 +58,11 @@ export default function GetYourCashOffer() {
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div className="absolute inset-0 bg-black opacity-60" onClick={closeAll} />
 
-          <div className="relative max-w-6xl w-full mx-4">
+          <div className="relative max-w-3xl w-full mx-4 sm:mx-auto">
             {/* If confirmation is not shown, render the contact form */}
             {!showConfirmation && (
               <div className="grid grid-cols-1 gap-6 items-start">
-                <div className="bg-white rounded-2xl p-8 shadow-xl max-w-3xl mx-auto">
+                <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-xl max-w-3xl mx-auto">
                   <h3 className="text-xl font-semibold mb-4 text-black">Contact Information</h3>
                   <form onSubmit={onSubmit} className="space-y-4">
                     <input value={form.firstName} onChange={(e) => updateField('firstName', e.target.value)} placeholder="First Name" className="w-full border rounded-md px-4 py-3 dark:bg-white text-black" />

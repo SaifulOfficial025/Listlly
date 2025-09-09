@@ -10,7 +10,7 @@ import SearchPropertyAddress from './SearchPropertyAddress'
 
 function RootPage() {
   return (
-    <div>
+  <div className="bg-white">
       <Header />
       <Hero />
       <GetYourCashOffer />

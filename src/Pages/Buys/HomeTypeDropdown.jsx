@@ -66,10 +66,10 @@ export default function HomeTypeDropdown({ onApply }) {
       </button>
       {open && (
         <div
-          className="absolute z-50 mt-2 w-[370px] rounded-xl shadow-[0_12px_30px_rgba(0,0,0,0.12)]"
+          className="absolute left-0 right-0 z-50 mt-2 mx-4 sm:mx-0 sm:left-auto sm:right-0 sm:w-[370px] rounded-xl shadow-[0_12px_30px_rgba(0,0,0,0.12)]"
           style={{ background: "#fff", border: "1px solid #E5E7EB" }}
         >
-          <div className="p-5">
+          <div className="p-4 sm:p-5">
             <div className="flex items-center justify-between mb-4">
               <div className="font-semibold" style={{ color: "#1C1C1C" }}>Property</div>
               <label className="flex items-center gap-2 cursor-pointer select-none">

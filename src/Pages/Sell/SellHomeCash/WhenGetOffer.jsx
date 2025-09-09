@@ -43,21 +43,21 @@ function WhenGetOffer() {
   ]
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="text-center">
         <h2 className="text-3xl font-bold text-gray-800">When to Get a <span className="text-[#ff6061]">Cash Offer</span></h2>
         <p className="mt-3 text-gray-500 max-w-2xl mx-auto">Houzeo helps you sell your home fast for cash, at the best price. We assist sellers in various situations like these and more:</p>
       </div>
 
-      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {cards.map((c, idx) => (
-          <div key={idx} className="bg-white rounded-lg shadow-sm p-6">
+          <div key={idx} className="bg-white rounded-lg shadow-sm p-4 sm:p-6">
             <div className="flex items-center justify-center">
-              <div className="w-12 h-12 rounded-md  flex items-center justify-center">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-md flex items-center justify-center">
                 {c.icon}
               </div>
             </div>
-            <h3 className="text-center text-lg font-semibold text-gray-800 mt-4">{c.title}</h3>
+            <h3 className="text-center text-base sm:text-lg font-semibold text-gray-800 mt-3">{c.title}</h3>
             <p className="text-center text-sm text-gray-500 mt-2">{c.subtitle}</p>
           </div>
         ))}

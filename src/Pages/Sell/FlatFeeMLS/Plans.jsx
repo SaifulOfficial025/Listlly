@@ -134,9 +134,9 @@ const plans = [
 
 function Plans() {
 	return (
-		<div className="w-full bg-white px-2 py-10 text-black">
+		<div className="w-full bg-white px-4 sm:px-6 py-8 sm:py-10 text-black">
 			<div className="max-w-[1200px] mx-auto">
-				<h2 className="text-center text-[28px] font-bold text-[#1C1C1C] mb-6">
+				<h2 className="text-center text-2xl sm:text-3xl font-bold text-[#1C1C1C] mb-6">
 					<span className="text-[#EB4E3D]">Pick a Flat Fee Plan</span> That Fits
 					Your Budget
 				</h2>
@@ -156,10 +156,10 @@ function Plans() {
 								<img
 									src={plan.bgImage}
 									alt={`${plan.name} header`}
-									className="w-full h-[130px] object-cover -mt-4"
+									className="w-full h-36 sm:h-[130px] object-cover -mt-4"
 								/>
 								<div className="absolute inset-0 flex items-center justify-center pointer-events-none -mt-5">
-									<h3 className="text-4xl font-bold text-white text-center drop-shadow-md">
+									<h3 className="text-2xl sm:text-4xl font-bold text-white text-center drop-shadow-md">
 										{plan.name}
 									</h3>
 								</div>

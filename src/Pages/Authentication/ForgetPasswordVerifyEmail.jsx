@@ -36,7 +36,7 @@ function ForgetPasswordVerifyEmail() {
 
   return (
     <div
-      className="min-h-screen flex flex-col items-center justify-center px-4 relative"
+      className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 relative"
       style={{
         backgroundImage: `url('/ForgotPasswordBg.svg')`,
         backgroundRepeat: "no-repeat",
@@ -47,18 +47,18 @@ function ForgetPasswordVerifyEmail() {
       }}
     >
       {/* Logo */}
-      <div className="absolute top-6 left-6">
-        <img src={Logo} alt="Listlly Logo" className="w-24 h-auto" />
+      <div className="absolute top-4 left-4 sm:top-6 sm:left-6">
+        <img src={Logo} alt="Listlly Logo" className="w-16 sm:w-24 h-auto" />
       </div>
 
       {/* Icon */}
-      <img src={ShieldIcon} alt="Shield Icon" className="w-20 h-20 mb-4" />
+  <img src={ShieldIcon} alt="Shield Icon" className="w-16 sm:w-20 h-auto mb-4" />
 
       {/* Title */}
-      <h1 className="text-[26px] font-semibold text-gray-900 text-center">
+  <h1 className="text-xl sm:text-[26px] font-semibold text-gray-900 text-center">
         Verify Your Email
       </h1>
-      <p className="text-[14px] text-gray-500 mt-1 text-center mb-6">
+  <p className="text-sm sm:text-[14px] text-gray-500 mt-1 text-center mb-6">
         Enter the PIN we sent to your email address
       </p>
 
@@ -73,7 +73,7 @@ function ForgetPasswordVerifyEmail() {
             value={value}
             onChange={(e) => handleChange(e, index)}
             onKeyDown={(e) => handleKeyDown(e, index)}
-            className="w-12 h-12 text-center rounded-md border border-gray-300 text-lg outline-none bg-blue-500 text-white font-bold shadow-sm"
+            className="w-10 sm:w-12 h-10 sm:h-12 text-center rounded-md border border-gray-300 text-lg sm:text-xl outline-none bg-blue-500 text-white font-bold shadow-sm"
           />
         ))}
       </div>
@@ -82,10 +82,9 @@ function ForgetPasswordVerifyEmail() {
       <div className="w-full max-w-md">
         <Link to="/new_password">
           <button
-            className="w-full h-12 rounded-md text-white font-semibold shadow-md mb-4"
+            className="w-full h-12 sm:h-12 rounded-md text-white font-semibold shadow-md mb-4 text-base"
             style={{
               background: "linear-gradient(90deg, #0054F6 0%, #0D47C1 100%)",
-              fontSize: "16px",
             }}
           >
             Done

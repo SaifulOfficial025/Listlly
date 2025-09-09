@@ -30,17 +30,17 @@ function Beware() {
   ]
 
   return (
-    <section className="bg-[#fff2f2] py-12">
+    <section className="bg-[#fff2f2] py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center text-[#ff6061] ">Beware of <span className="text-gray-800">“Cash for Houses” Scams</span></h2>
 
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {items.map((it, idx) => (
-            <div key={idx} className="bg-white rounded-lg shadow-sm p-6">
-              <div className="w-12 h-12 rounded-md  flex items-center justify-center mx-auto">
+            <div key={idx} className="bg-white rounded-lg shadow-sm p-4 sm:p-6">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-md flex items-center justify-center mx-auto">
                 {it.icon}
               </div>
-              <h3 className="text-center text-lg font-semibold text-gray-800 mt-4">{it.title}</h3>
+              <h3 className="text-center text-base sm:text-lg font-semibold text-gray-800 mt-3">{it.title}</h3>
               <p className="text-center text-sm text-gray-500 mt-2">{it.desc}</p>
             </div>
           ))}

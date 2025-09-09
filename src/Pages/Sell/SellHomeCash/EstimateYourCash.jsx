@@ -19,19 +19,19 @@ function EstimateYourCash() {
   const mlsEstimate = Math.round(value * 1.0);
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="text-center">
-        <h2 className="text-3xl font-bold text-gray-800">Estimate <span className="text-[#ff6061]">Your Cash Offer</span></h2>
-        <p className="mt-4 text-gray-500 max-w-2xl mx-auto">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">Estimate <span className="text-[#ff6061]">Your Cash Offer</span></h2>
+        <p className="mt-3 text-gray-500 max-w-2xl mx-auto">
           Our advanced algorithms analyze local market data to provide an accurate cash offer estimate based on comparable sales and current market trends. Use this to get the highest possible price for your home.
         </p>
       </div>
 
-      <div className="mt-8 bg-white rounded-lg shadow-md p-6">
+      <div className="mt-6 bg-white rounded-lg shadow-md p-4 sm:p-6">
         <h3 className="text-xl font-semibold text-gray-800">Select Your Home Value</h3>
         <p className="text-sm text-gray-500 mt-2">Adjust the slider to match your estimated home value</p>
 
-        <div className="relative mt-8 mb-4 h-20">
+        <div className="relative mt-6 mb-4 h-20 sm:h-24">
           <div
             className="absolute -top-8"
             style={{ left: `${leftPercent}%`, transform: 'translateX(-50%)' }}
@@ -60,7 +60,7 @@ function EstimateYourCash() {
           </div>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className=" rounded-lg shadow-lg">
             <div className="bg-[#fee4d7] rounded-t-lg py-3 text-center text-sm text-gray-600">With Listlly Cash Buyer Network</div>
             <div className="p-6 text-center">

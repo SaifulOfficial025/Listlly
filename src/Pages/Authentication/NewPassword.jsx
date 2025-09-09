@@ -10,7 +10,7 @@ function NewPassword() {
 
   return (
     <div
-      className="min-h-screen flex flex-col items-center justify-center px-4 relative"
+      className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 relative"
       style={{
         backgroundImage: `url('/ForgotPasswordBg.svg')`,
         backgroundRepeat: "no-repeat",
@@ -21,26 +21,26 @@ function NewPassword() {
       }}
     >
       {/* Logo */}
-      <div className="absolute top-6 left-6">
-        <img src={Logo} alt="Listlly Logo" className="w-24 h-auto" />
+      <div className="absolute top-4 left-4 sm:top-6 sm:left-6">
+        <img src={Logo} alt="Listlly Logo" className="w-16 sm:w-24 h-auto" />
       </div>
 
       {/* Shield Icon */}
-      <img src={ShieldIcon} alt="Shield Icon" className="w-20 h-20 mb-4" />
+  <img src={ShieldIcon} alt="Shield Icon" className="w-16 sm:w-20 h-auto mb-4" />
 
       {/* Title */}
-      <h1 className="text-[26px] font-semibold text-gray-900 text-center mb-6">
+  <h1 className="text-xl sm:text-[26px] font-semibold text-gray-900 text-center mb-6">
         Welcome Back
       </h1>
 
       {/* Input fields */}
-      <div className="w-full max-w-md">
+  <div className="w-full max-w-md mx-auto">
         {/* New Password */}
         <div className="relative mb-4">
           <label className="text-sm text-gray-700 mb-1 block">New Password</label>
           <input
             type={showPwd ? "text" : "password"}
-            className="w-full h-11 px-3 pr-10 rounded-md border border-gray-300 text-sm outline-none bg-white text-gray-900"
+            className="w-full h-11 px-3 pr-10 rounded-md border border-gray-300 text-sm sm:text-sm md:text-base outline-none bg-white text-gray-900"
             placeholder=""
           />
           <button
@@ -58,7 +58,7 @@ function NewPassword() {
           <label className="text-sm text-gray-700 mb-1 block">Confirm Password</label>
           <input
             type={showPwd2 ? "text" : "password"}
-            className="w-full h-11 px-3 pr-10 rounded-md border border-gray-300 text-sm outline-none bg-white text-gray-900"
+            className="w-full h-11 px-3 pr-10 rounded-md border border-gray-300 text-sm sm:text-sm md:text-base outline-none bg-white text-gray-900"
             placeholder=""
           />
           <button
@@ -75,7 +75,7 @@ function NewPassword() {
         {/* Submit */}
         <Link to="/signin">
         <button
-          className="w-full h-11 rounded-md text-white font-semibold shadow-md"
+          className="w-full h-11 rounded-md text-white font-semibold shadow-md text-sm sm:text-sm md:text-base"
           style={{
             background: "linear-gradient(90deg, #0054F6 0%, #0D47C1 100%)",
           }}

@@ -144,7 +144,7 @@ export default function PriceFilter({ onApply, initialMin = 200000, initialMax =
 
       {/* Dropdown */}
       {open && (
-        <div className="absolute z-50 mt-2 w-[350px] rounded-xl shadow-xl border backdrop-blur-sm"
+  <div className="absolute z-50 mt-2 left-0 right-0 mx-4 sm:mx-0 sm:left-auto sm:right-auto sm:w-[350px] rounded-xl shadow-xl border backdrop-blur-sm"
              style={{ 
                background: "rgba(255, 255, 255, 0.95)", 
                borderColor: "#E5E7EB",

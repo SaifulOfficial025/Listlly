@@ -50,11 +50,11 @@ function HiddenFees() {
   ];
 
   return (
-    <div className="w-full bg-white px-4 py-10 mx-auto max-w-[1200px]">
-      <h2 className="text-[28px] font-bold text-[#EB4E3D] mb-4 text-center">
+    <div className="w-full bg-white px-4 sm:px-6 py-8 sm:py-10 mx-auto max-w-[1200px]">
+      <h2 className="text-2xl sm:text-3xl font-bold text-[#EB4E3D] mb-4 text-center">
         Hidden Fees? <span className="text-black">Not with Listlly</span>
       </h2>
-      <p className="text-lg text-black mb-6 text-center">
+      <p className="text-sm sm:text-lg text-black mb-6 text-center">
         Houzeo doesn’t believe in hidden fees and discloses all the costs upfront.
         Transparency is in our DNA. Several Flat Fee MLS companies claim to list
         your home on the market for $99 or lower. The appeal is real, but your
@@ -76,10 +76,10 @@ function HiddenFees() {
             key={index}
             className="p-6 bg-gray-100 rounded-lg shadow-md transition-transform transform hover:scale-105"
           >
-            <h3 className="text-lg font-bold text-[#1C1C1C] mb-2">
+              <h3 className="text-base sm:text-lg font-bold text-[#1C1C1C] mb-2">
               {fee.title}
             </h3>
-            <p className="text-sm text-gray-500">{fee.description}</p>
+              <p className="text-sm sm:text-base text-gray-500">{fee.description}</p>
           </div>
         ))}
       </div>

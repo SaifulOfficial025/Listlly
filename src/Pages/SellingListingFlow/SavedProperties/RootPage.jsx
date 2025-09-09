@@ -41,15 +41,15 @@ function RootPage() {
   return (
     <div className="bg-white min-h-screen pb-12">
       {/* Header */}
-      <div className="max-w-5xl mx-auto pt-10 px-4">
-        <h1 className="text-3xl font-bold text-center">
+      <div className="max-w-5xl mx-auto pt-8 sm:pt-10 px-4">
+        <h1 className="text-2xl sm:text-3xl font-bold text-center">
           <span className="text-red-500">Saved</span> <span className="text-black">Properties</span>
         </h1>
         <p className="text-center text-gray-500 mt-2">Find your dream home from thousands of listings across Texas.</p>
       </div>
 
       {/* Property grid */}
-      <div className="max-w-5xl mx-auto mt-10 px-4">
+      <div className="max-w-5xl mx-auto mt-8 sm:mt-10 px-4">
         <div className="flex items-center justify-between">
           <button className="text-red-500 text-sm font-medium">Remove</button>
           <button className="text-blue-600 text-sm font-medium">View All</button>

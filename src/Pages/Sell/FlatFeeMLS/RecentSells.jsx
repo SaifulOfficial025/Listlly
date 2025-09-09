@@ -106,12 +106,12 @@ const recentSales = [
 
 function RecentSells() {
   return (
-    <div className="w-full bg-white px-4 py-14">
+    <div className="w-full bg-white px-4 sm:px-6 py-10">
       <div className="max-w-[1200px] mx-auto">
-        <h2 className="text-center text-[28px] font-bold text-[#1C1C1C] mb-6">
+        <h2 className="text-center text-2xl sm:text-3xl font-bold text-[#1C1C1C] mb-6">
           <span className="text-[#EB4E3D]">Recent Sales</span> Properties
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {recentSales.map((p, i) => (
             <PropertyCard key={`r-${i}`} {...p} />
           ))}

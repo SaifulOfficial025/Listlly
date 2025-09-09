@@ -27,17 +27,17 @@ function TitleDocumentations({ onCancel, onContinue }) {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-10 text-black">
-         <div className="text-center mb-8">
-          <h2 className="text-2xl font-semibold">
+    <div className="max-w-5xl mx-auto px-4 py-8 sm:px-6 sm:py-10 text-black">
+         <div className="text-center mb-6">
+          <h2 className="text-xl sm:text-2xl font-semibold">
             <span className="text-red-400 mr-1">List</span> Your Property
           </h2>
         </div>
-      <div className="text-left mb-8">
-        <h2 className="text-2xl font-semibold text-[#2563eb]">Title & Documentations</h2>
+      <div className="text-left mb-6">
+        <h2 className="text-xl sm:text-2xl font-semibold text-[#2563eb]">Title & Documentations</h2>
       </div>
 
-      <div className="bg-white rounded-lg shadow px-8 py-6">
+      <div className="bg-white rounded-lg shadow px-6 py-5 sm:px-8 sm:py-6">
         <div className="flex items-start justify-between mb-6">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">📄</div>
@@ -45,7 +45,7 @@ function TitleDocumentations({ onCancel, onContinue }) {
               <div className="text-lg font-semibold">Property Owner Info.</div>
             </div>
           </div>
-          <div className="px-3 py-1 bg-blue-50 text-blue-600 rounded text-xs bg-pink-100">Step 5 of 7</div>
+          <div className="px-3 py-1 bg-pink-100 text-blue-600 rounded text-xs">Step 5 of 7</div>
         </div>
 
         <div className="mb-8">

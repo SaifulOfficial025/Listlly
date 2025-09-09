@@ -28,7 +28,7 @@ const BarBtn = ({ children }) => (
 
 const tiers = ["$100K", "$150K", "$250K", "$300K", "$350K", "$400K"];
 
-const contentHeight = "calc(100vh - 64px)"; // below the filter bar
+  const contentHeight = "calc(100vh - 64px)"; // below the filter bar (used for large screens)
 
 /* Dummy pictures */
 const pics = [
@@ -158,13 +158,14 @@ export default function HomeForSale() {
 
 
       {/* Split: 60% map / 40% list */}
-  <div className="grid grid-cols-5 gap-4 w-full py-5" style={{ height: contentHeight }}>
+  <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 w-full py-5">
         {/* Map (left) */}
         <div
           className="col-span-5 lg:col-span-3 border-r"
-          style={{ height: contentHeight, borderColor: "#E5E7EB", background: "#E9F0FF" }}
+          style={{ borderColor: "#E5E7EB", background: "#E9F0FF" }}
         >
-          <div className="sticky top-[64px] h-[calc(100vh-64px)] w-full">
+          {/* On small screens show a shorter static map; on lg screens keep sticky full-height map */}
+          <div className="w-full h-56 lg:h-[calc(100vh-64px)]">
             <img
               src="https://maps.gstatic.com/tactile/pane/default_geographic_background_tile_hdpi.png"
               alt="Map"
@@ -176,7 +177,7 @@ export default function HomeForSale() {
 
         {/* List (right) */}
         <div className="col-span-5 lg:col-span-2">
-          <div className="flex flex-col" style={{ height: contentHeight }}>
+          <div className="flex flex-col">
             {/* Section header */}
             <div className="px-4 pt-5">
               <h2 className="text-[24px] font-semibold">
@@ -200,19 +201,19 @@ export default function HomeForSale() {
               </div>
             </div>
 
-            {/* Cards scroller (ALWAYS scrollable) */}
+            {/* Cards scroller (ALWAYS scrollable on lg) */}
             <div
-              className="flex-1 overflow-y-auto"
+              className="flex-1 overflow-y-auto lg:h-[calc(100vh-64px)]"
               style={{ padding: "16px 16px 96px 16px" }}
             >
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {currentCards.map((c) => (
                   <div
                     key={c.id}
                     className="bg-white rounded-xl overflow-hidden shadow-[0_6px_24px_rgba(0,0,0,0.08)] cursor-pointer"
                     onClick={() => handleCardClick(c.id)}
                   >
-                    <div className="w-full h-[120px]">
+                    <div className="w-full h-48 sm:h-40 md:h-44 lg:h-[120px]">
                       <img
                         src={c.img}
                         alt={c.title}

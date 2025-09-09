@@ -186,11 +186,11 @@ const BuyerAgentModal = ({ open, onClose, initialStep = 1 }) => {
                 <h3 className="text-lg font-semibold mb-6">How will you finance this purchase?</h3>
                 <div className="flex gap-4 mb-6">
                   <button onClick={() => setFinanceMethod('cash')} className={`flex-1 p-4 rounded-lg border-2 text-center ${financeMethod === 'cash' ? 'border-blue-600 bg-blue-50' : 'border-gray-200'}`}>
-                    <div className="mb-2 flex justify-center"><img src={AllCash} alt="All Cash" className="w-15 h-15" /></div>
+                    <div className="mb-2 flex justify-center"><img src={AllCash} alt="All Cash" className="w-12 h-12 sm:w-14 sm:h-14" /></div>
                     <div className="text-sm">All Cash</div>
                   </button>
                   <button onClick={() => setFinanceMethod('mortgage')} className={`flex-1 p-4 rounded-lg border-2 text-center ${financeMethod === 'mortgage' ? 'border-red-600 bg-red-50' : 'border-gray-200'}`}>
-                    <div className="mb-2 flex justify-center"><img src={Mortgage} alt="Mortgage" className="w-15 h-15" /></div>
+                    <div className="mb-2 flex justify-center"><img src={Mortgage} alt="Mortgage" className="w-12 h-12 sm:w-14 sm:h-14" /></div>
                     <div className="text-sm">Mortgage</div>
                   </button>
                 </div>

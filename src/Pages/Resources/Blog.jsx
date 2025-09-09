@@ -51,11 +51,11 @@ export default function Blog() {
   return (
     <div>
         <Header />
-    <main className="max-w-6xl mx-auto px-6 py-12">
-      <div className="flex items-center justify-between mt-16">
-        <h2 className="text-2xl font-bold text-gray-900">Recent <span className="text-[#FF6B6B]">Blog</span></h2>
+    <main className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-12 gap-4">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Recent <span className="text-[#FF6B6B]">Blog</span></h2>
 
-        <div className="w-64">
+        <div className="w-full sm:w-64">
           <label className="sr-only">Search</label>
           <div className="relative">
             <input type="search" placeholder="Search here..." className="w-full border rounded-md px-4 py-2 text-sm dark:bg-white dark:text-black" />
@@ -65,33 +65,32 @@ export default function Blog() {
 
       <div className="mt-8 space-y-6">
         {displayedPosts.map((post) => (
-          <article key={post.id} className="flex gap-6 items-start hover:shadow-lg p-4 rounded-lg transition-shadow duration-200">
-            <img src={post.image} alt="post" className="w-80 h-56 object-cover rounded-lg shadow-sm" />
+          <article key={post.id} className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start hover:shadow-lg p-4 rounded-lg transition-shadow duration-200">
+            <img src={post.image} alt="post" className="w-full sm:w-80 h-56 sm:h-56 object-cover rounded-lg shadow-sm" />
 
             <div className="flex-1">
               <h3 className="text-lg font-semibold text-gray-900">{post.title}</h3>
               <p className="mt-2 text-sm text-gray-600">{post.excerpt}</p>
 
-              <div className="mt-4  items-center justify-between">
+              <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <div className="flex items-center text-xs text-gray-500">
                   <SlCalender className="mr-1" />
                   {post.date}
                 </div>
-                <button className="text-sm bg-blue-600 text-white px-3 py-1 rounded mt-5">Learn More</button>
+                <button className="text-sm bg-blue-600 text-white px-3 py-1 rounded">Learn More</button>
               </div>
             </div>
           </article>
         ))}
       </div>
 
-      <div className="mt-10 flex items-center justify-center gap-3">
+      <div className="mt-10 flex items-center justify-center gap-3 flex-wrap">
         <button
           onClick={() => goTo(currentPage - 1)}
           disabled={currentPage === 1}
           className={`h-10 w-10 rounded-full border flex items-center justify-center ${currentPage === 1 ? 'text-gray-300 border-gray-200' : 'text-blue-600 border-blue-200'}`}
         >&lt;</button>
 
-        {/* page numbers - show all when small, otherwise show a compact range */}
         {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
           <button
             key={p}

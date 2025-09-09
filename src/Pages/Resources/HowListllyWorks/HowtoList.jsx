@@ -18,10 +18,10 @@ export default function HowtoList() {
   )
 
   return (
-    <section className="max-w-6xl mx-auto px-6 py-16">
+  <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">How to List Your Home & Request Changes</h2>
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">How to List Your Home & Request Changes</h2>
           <p className="mt-4 text-gray-600 max-w-xl">Listlly's IntelliList Listing Management system makes listing your home on Houzeo.com and the MLS easy. Changes too can be requested online.</p>
 
           <div className="mt-8 grid grid-cols-2 gap-4">

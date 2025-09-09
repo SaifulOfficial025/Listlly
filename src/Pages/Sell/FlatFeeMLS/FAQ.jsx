@@ -40,8 +40,8 @@ function FAQ() {
   };
 
   return (
-    <div className="w-full bg-white px-4 py-10 mx-auto max-w-[1200px] ">
-      <h2 className="text-[28px] font-bold text-black mb-4 text-center">
+    <div className="w-full bg-white px-4 sm:px-6 py-8 sm:py-10 mx-auto max-w-[1200px] ">
+      <h2 className="text-2xl sm:text-3xl font-bold text-black mb-4 text-center">
         Flat Fee MLS <span className="text-[#EB4E3D]">FAQs</span>
       </h2>
 
@@ -53,15 +53,15 @@ function FAQ() {
             onClick={() => toggleFAQ(index)}
           >
             <div className="flex justify-between items-center">
-              <h3 className="text-lg font-bold text-[#1C1C1C]">
+              <h3 className="text-base sm:text-lg font-bold text-[#1C1C1C]">
                 {faq.question}
               </h3>
-              <span className="text-[#EB4E3D] text-xl">
+              <span className="text-[#EB4E3D] text-lg sm:text-xl">
                 {openIndex === index ? "▲" : "▼"}
               </span>
             </div>
             {openIndex === index && (
-              <p className="text-sm text-gray-500 mt-2">{faq.answer}</p>
+              <p className="text-sm sm:text-base text-gray-500 mt-2">{faq.answer}</p>
             )}
           </div>
         ))}

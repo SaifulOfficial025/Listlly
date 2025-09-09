@@ -22,7 +22,7 @@ const SellProperties = ({ onCreate }) => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-6">
-      <div className="flex items-center justify-between gap-6">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-semibold">
             <span className="text-[#F97373] mr-2">Selling</span>
@@ -31,9 +31,9 @@ const SellProperties = ({ onCreate }) => {
           <p className="text-sm text-gray-500 mt-1">Find your dream home from thousands of listings across Texas.</p>
         </div>
 
-        <div className='text-black'>
+        <div className='text-black w-full sm:w-auto'>
           <Link to="/dashboard/selling_properties/list_property">
-            <button onClick={onCreate} className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md shadow-md">
+            <button onClick={onCreate} className="w-full sm:w-auto inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md shadow-md justify-center">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M12 5v14M5 12h14" />
               </svg>

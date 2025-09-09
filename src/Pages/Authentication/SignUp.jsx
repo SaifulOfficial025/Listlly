@@ -11,12 +11,11 @@ function SignUp() {
 
   return (
     <div className="min-h-screen w-full bg-white">
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-full p-4 md:p-8 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 h-full p-4 sm:p-6 md:p-8 gap-6 items-stretch">
         {/* LEFT: Background image with overlay and logo */}
         <div className="relative w-full rounded-xl overflow-hidden">
-          {/* responsive hero: short on mobile, full-height on lg */}
           <div
-            className="absolute inset-0 bg-cover bg-center rounded-xl h-56 sm:h-72 md:h-96 lg:h-full"
+            className="absolute inset-0 bg-cover bg-center rounded-xl h-48 sm:h-72 md:h-96 lg:h-full"
             style={{
               backgroundImage: `url(${signup})`,
             }}
@@ -56,9 +55,9 @@ function SignUp() {
 
         {/* RIGHT: Sign-in Form */}
         <div className="flex items-center justify-center px-4 md:px-10 py-8 md:py-10">
-          <div className="w-full max-w-md">
+            <div className="w-full max-w-md mx-auto">
             <h1
-              className="text-[22px] md:text-[26px] font-bold text-center"
+              className="text-lg sm:text-xl md:text-2xl font-bold text-center"
               style={{ color: "#1C1C1C" }}
             >
               Create Your Listlly Account
@@ -77,7 +76,7 @@ function SignUp() {
                 </label>
                 <input
                   type="text"
-                  className="w-full h-11 rounded-md px-3 text-sm md:text-base outline-none bg-white dark:bg-white text-black dark:text-black border border-gray-300"
+                  className="w-full h-11 rounded-md px-3 text-sm sm:text-sm md:text-base outline-none bg-white dark:bg-white text-black dark:text-black border border-gray-300"
                 />
               </div>
 
@@ -88,7 +87,7 @@ function SignUp() {
                 </label>
                 <input
                   type="email"
-                  className="w-full h-11 rounded-md px-3 text-sm md:text-base outline-none"
+                  className="w-full h-11 rounded-md px-3 text-sm sm:text-sm md:text-base outline-none"
                   style={{
                     border: "1px solid #E5E7EB",
                     background: "#FFFFFF",
@@ -106,7 +105,7 @@ function SignUp() {
                 <div className="relative">
                   <input
                     type={showPwd ? "text" : "password"}
-                    className="w-full h-11 rounded-md px-3 pr-10 text-sm md:text-base outline-none"
+                    className="w-full h-11 rounded-md px-3 pr-10 text-sm sm:text-sm md:text-base outline-none"
                     style={{
                       border: "1px solid #E5E7EB",
                       background: "#FFFFFF",
@@ -139,7 +138,7 @@ function SignUp() {
                 <div className="relative">
                   <input
                     type={showPwd2 ? "text" : "password"}
-                    className="w-full h-11 rounded-md px-3 pr-10 text-sm md:text-base outline-none bg-white dark:bg-white text-black dark:text-black border border-gray-300"
+                    className="w-full h-11 rounded-md px-3 pr-10 text-sm sm:text-sm md:text-base outline-none bg-white dark:bg-white text-black dark:text-black border border-gray-300"
                   />
                   <button
                     type="button"

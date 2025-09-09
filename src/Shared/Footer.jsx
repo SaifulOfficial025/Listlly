@@ -14,7 +14,7 @@ export default function Footer() {
             {/* Left: Logo + blurb */}
             <div>
               <div className="flex items-center gap-2">
-                <img src={Logo} alt="Listlly logo" className="w-12 h-12 md:w-15 md:h-15" />
+                <img src={Logo} alt="Listlly logo" className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14" />
               </div>
               <p className="mt-4 text-[12px] md:text-[13px] leading-relaxed text-white/85 max-w-[320px]">
                 For Sale by Owner Just Made Simple — Sell Your

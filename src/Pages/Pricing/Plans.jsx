@@ -140,7 +140,7 @@ function Plans() {
 					<span className="text-[#EB4E3D]">Pick a Flat Fee Plan</span> That Fits
 					Your Budget
 				</h2>
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[980px] mx-auto">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1100px] mx-auto">
 					{plans.map((plan) => (
 						<div
 							key={plan.id}
@@ -156,10 +156,10 @@ function Plans() {
 								<img
 									src={plan.bgImage}
 									alt={`${plan.name} header`}
-									className="w-full h-[130px] object-cover -mt-4"
+									className="w-full h-36 sm:h-44 md:h-44 lg:h-[130px] object-cover -mt-4"
 								/>
 								<div className="absolute inset-0 flex items-center justify-center pointer-events-none -mt-5">
-									<h3 className="text-4xl font-bold text-white text-center drop-shadow-md">
+									<h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center drop-shadow-md">
 										{plan.name}
 									</h3>
 								</div>

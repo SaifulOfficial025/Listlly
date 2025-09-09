@@ -56,9 +56,9 @@ function LosAngeles() {
   };
 
   return (
-    <div className="w-full bg-white px-4 py-10 text-center">
+    <div className="w-full bg-white px-4 sm:px-6 py-8 sm:py-10 text-center">
       {/* Header Section */}
-      <h2 className="text-[28px] font-bold text-[#1C1C1C] mb-4">
+      <h2 className="text-2xl sm:text-3xl font-bold text-[#1C1C1C] mb-4">
         Los Anglos <span className="text-[#EB4E3D]">Listlly</span>
       </h2>
       <div className="flex items-center justify-center mb-6">
@@ -67,7 +67,7 @@ function LosAngeles() {
       </div>
 
       {/* Properties Section */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {currentProperties.map((property, index) => (
           <div
             key={index}
@@ -76,7 +76,7 @@ function LosAngeles() {
             <img
               src={property.image}
               alt="Property"
-              className="w-full h-[200px] object-cover rounded-md mb-4"
+              className="w-full h-48 sm:h-[200px] object-cover rounded-md mb-4"
             />
             <p className="text-[#1C1C1C] font-bold mb-2">{property.address}</p>
             <p className="text-blue-600 font-bold">Saved {property.savings}</p>

@@ -40,7 +40,7 @@ function CashHomeSellers() {
   ]
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="text-center">
         <h2 className="text-3xl font-bold text-gray-800">Cash Home Sellers <span className="text-[#ff6061]">Listlly</span></h2>
         <p className="mt-3 text-gray-500 max-w-2xl mx-auto">
@@ -48,13 +48,13 @@ function CashHomeSellers() {
         </p>
       </div>
 
-      <div className="relative mt-8">
+      <div className="relative mt-6">
         {/* Cards row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map(item => (
             <div key={item.id} className="bg-white rounded-xl shadow-md overflow-hidden">
               <div className="relative">
-                <img src={item.image} alt={item.address} className="w-full h-44 object-cover" />
+                <img src={item.image} alt={item.address} className="w-full h-40 sm:h-44 object-cover" />
                 <span className="absolute top-3 right-3 bg-[#00A82D] text-white text-xs font-semibold px-3 py-1 rounded-full">Sold for Cash</span>
               </div>
 
@@ -70,7 +70,7 @@ function CashHomeSellers() {
 
                 <p className="text-sm text-gray-500 mt-2">{item.location}</p>
 
-                <div className="mt-3 flex items-center justify-between text-sm text-gray-500">
+                <div className="mt-3 flex flex-col sm:flex-row items-start sm:items-center justify-between text-sm text-gray-500">
                   <div className="space-x-3">
                     <span className="font-medium text-[#3B82F6]">{item.beds} beds</span>
                     <span className="ml-2">•</span>
@@ -84,8 +84,8 @@ function CashHomeSellers() {
           ))}
         </div>
 
-        {/* Right nav arrows */}
-        <div className="absolute right-0 top-0 transform translate-y-12 flex flex-col items-center space-y-3">
+        {/* Right nav arrows (hide on small screens) */}
+  <div className="absolute right-0 top-0 transform translate-y-12 hidden sm:flex sm:flex-col sm:items-center sm:space-y-3">
           <button className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center">
             <HiOutlineChevronLeft className="w-5 h-5 text-gray-400" />
           </button>

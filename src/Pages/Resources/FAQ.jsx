@@ -10,8 +10,8 @@ const Section = ({ title, items }) => {
   }
 
   return (
-    <div className="mb-8 " >
-      <h2 className="text-[22px] font-bold text-black mb-4">{title}</h2>
+    <div className="mb-8">
+      <h2 className="text-xl sm:text-2xl font-bold text-black mb-4">{title}</h2>
 
       <div className="grid grid-cols-1 gap-4">
         {items.map((it, i) => (
@@ -21,11 +21,11 @@ const Section = ({ title, items }) => {
             onClick={() => toggle(i)}
           >
             <div className="flex justify-between items-center">
-              <h3 className="text-lg font-bold text-[#1C1C1C]">{it.q}</h3>
-              <span className="text-[#EB4E3D] text-xl">{openIndex === i ? '▲' : '▼'}</span>
+              <h3 className="text-base sm:text-lg font-bold text-[#1C1C1C]">{it.q}</h3>
+              <span className="text-[#EB4E3D] text-lg sm:text-xl">{openIndex === i ? '▲' : '▼'}</span>
             </div>
             {openIndex === i && (
-              <p className="text-sm text-gray-500 mt-2">{it.a}</p>
+              <p className="text-sm sm:text-base text-gray-500 mt-2">{it.a}</p>
             )}
           </div>
         ))}

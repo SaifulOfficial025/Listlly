@@ -14,16 +14,16 @@ function Hero() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Left Section */}
         <div>
           <div className="inline-block bg-[#E6F9E6] text-[#00A82D] font-medium text-xs px-3 py-1 rounded-full">
             CASH FOR HOUSES
           </div>
-          <h1 className="text-4xl font-bold mt-4 text-black">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-4 text-black">
             CASH FOR HOUSES
           </h1>
-          <h2 className="text-4xl font-bold text-black mt-2">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mt-2">
             Sell Your House Fast for <span className="text-[#ff6061]">Cash</span>
           </h2>
           <p className="text-gray-600 mt-4">
@@ -31,8 +31,8 @@ function Hero() {
           </p>
 
           {/* Input Section */}
-          <div className="mt-6 flex items-center bg-white shadow-md rounded-lg">
-            <div className="flex items-center px-4">
+          <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center bg-white shadow-md rounded-lg">
+            <div className="flex items-center px-4 py-3 sm:py-0">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -51,29 +51,29 @@ function Hero() {
             <input
               type="text"
               placeholder="Enter your property address"
-              className="flex-grow px-4 py-2 text-gray-600 focus:outline-none dark:bg-white text-black"
+              className="flex-1 px-4 py-3 text-gray-600 focus:outline-none dark:bg-white"
             />
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-r-lg font-medium hover:bg-blue-700 ml-5">
+            <button className="bg-blue-600 text-white px-6 py-3 rounded-b-lg sm:rounded-r-lg font-medium hover:bg-blue-700 mt-3 sm:mt-0 sm:ml-4">
               Get Cash Offer
             </button>
           </div>
 
           {/* Features Section */}
-          <div className="mt-8 grid grid-cols-2 gap-4 text-black">
+      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 text-black">
             <div className="flex items-center space-x-2">
-              <IoTimeOutline className='w-10 h-10 text-green-600 p-2 bg-green-200 rounded-full' />
+        <IoTimeOutline className='w-8 h-8 sm:w-10 sm:h-10 text-green-600 p-2 bg-green-200 rounded-full' />
               <span>Sell Your House Fast</span>
             </div>
             <div className="flex items-center space-x-2">
-              <FaHome  className='w-10 h-10 text-green-600 p-2 bg-green-200 rounded-full' />
+        <FaHome  className='w-8 h-8 sm:w-10 sm:h-10 text-green-600 p-2 bg-green-200 rounded-full' />
               <span>Sell as-is, no repairs needed</span>
             </div>
             <div className="flex items-center space-x-2">
-              <SlCalender className='w-10 h-10 text-green-600 p-2 bg-green-200 rounded-full' />
+        <SlCalender className='w-8 h-8 sm:w-10 sm:h-10 text-green-600 p-2 bg-green-200 rounded-full' />
               <span>Choose your closing date</span>
             </div>
             <div className="flex items-center space-x-2">
-              <FiDollarSign  className='w-10 h-10 text-green-600 p-2 bg-green-200 rounded-full' />
+        <FiDollarSign  className='w-8 h-8 sm:w-10 sm:h-10 text-green-600 p-2 bg-green-200 rounded-full' />
               <span>Get a fair offer</span>
             </div>
           </div>
@@ -82,8 +82,8 @@ function Hero() {
         {/* Right Section */}
         <div className="flex justify-center items-center">
           <div className="relative">
-            <div className="rounded-3xl p-5 bg-gradient-to-r from-[#FADBCF] via-[#E8EEF6] to-[#B4D8FF]">
-              <div className="bg-white rounded-2xl px-6 py-6 w-80 h-44 flex flex-col justify-between">
+            <div className="rounded-3xl p-4 sm:p-5 bg-gradient-to-r from-[#FADBCF] via-[#E8EEF6] to-[#B4D8FF]">
+              <div className="bg-white rounded-2xl px-4 py-5 w-64 sm:w-80 h-36 sm:h-44 flex flex-col justify-between">
                 <div className="flex justify-between items-start">
                   <FaHome className="text-blue-500 w-6 h-6" />
                   <span className="bg-[#E6F9E6] text-[#00A82D] text-sm font-medium px-3 py-1 rounded-full">Sold</span>
@@ -97,8 +97,8 @@ function Hero() {
             </div>
 
             {/* Overlapping circular dollar badge */}
-            <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full bg-gradient-to-br from-[#6EA8FF] via-[#A77BFF] to-[#FF8A8A] flex items-center justify-center shadow-md">
-              <FiDollarSign className="text-white w-5 h-5" />
+            <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-[#6EA8FF] via-[#A77BFF] to-[#FF8A8A] flex items-center justify-center shadow-md">
+              <FiDollarSign className="text-white w-4 h-4 sm:w-5 sm:h-5" />
             </div>
           </div>
         </div>

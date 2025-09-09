@@ -108,9 +108,9 @@ function PhotosDescription({ onCancel, onContinue }) {
                 <div className="bg-white rounded p-4 border">
                   <h4 className="font-medium mb-3">Photographer Sent you request to confirm</h4>
                   <div className="flex gap-4 mb-4">
-                    <img src="/api/placeholder/60/60" alt="Sample 1" className="w-15 h-15 rounded" />
-                    <img src="/api/placeholder/60/60" alt="Sample 2" className="w-15 h-15 rounded" />
-                    <img src="/api/placeholder/60/60" alt="Sample 3" className="w-15 h-15 rounded" />
+                    <img src="/api/placeholder/60/60" alt="Sample 1" className="w-12 h-12 sm:w-14 sm:h-14 rounded" />
+                    <img src="/api/placeholder/60/60" alt="Sample 2" className="w-12 h-12 sm:w-14 sm:h-14 rounded" />
+                    <img src="/api/placeholder/60/60" alt="Sample 3" className="w-12 h-12 sm:w-14 sm:h-14 rounded" />
                   </div>
                   <button className="bg-green-600 text-white px-4 py-1 rounded text-sm">
                     Accept

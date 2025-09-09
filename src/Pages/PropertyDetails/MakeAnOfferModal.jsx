@@ -145,7 +145,7 @@ function MakeAnOfferModal({
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="p-6 text-center">
               <h3 className="text-lg font-semibold mb-6">Choose Your Role</h3>
-              <div className="flex justify-between items-center gap-5">
+              <div className="flex flex-col sm:flex-row justify-between items-center gap-5">
                 <button
                   onClick={() => {
                     setRole("buyer");
@@ -190,7 +190,7 @@ function MakeAnOfferModal({
                   }`}
                 >
                   <div className="mb-2 flex justify-center">
-                    <img src={YesIcon} alt="Yes" className="w-15 h-15" />
+                    <img src={YesIcon} alt="Yes" className="w-12 h-12 sm:w-14 sm:h-14" />
                   </div>
                 </button>
                 <button
@@ -200,7 +200,7 @@ function MakeAnOfferModal({
                   }`}
                 >
                   <div className="mb-2 flex justify-center">
-                    <img src={NoIcon} alt="No" className="w-15 h-15" />
+                    <img src={NoIcon} alt="No" className="w-12 h-12 sm:w-14 sm:h-14" />
                   </div>
                 </button>
               </div>
@@ -250,7 +250,7 @@ function MakeAnOfferModal({
                   }`}
                 >
                   <div className="mb-2 flex justify-center">
-                    <img src={AllCash} alt="All Cash" className="w-15 h-15" />
+                    <img src={AllCash} alt="All Cash" className="w-12 h-12 sm:w-14 sm:h-14" />
                   </div>
                 </button>
                 <button
@@ -260,7 +260,7 @@ function MakeAnOfferModal({
                   }`}
                 >
                   <div className="mb-2 flex justify-center">
-                    <img src={Mortgage} alt="Mortgage" className="w-15 h-15" />
+                    <img src={Mortgage} alt="Mortgage" className="w-12 h-12 sm:w-14 sm:h-14" />
                   </div>
                 </button>
               </div>
@@ -302,7 +302,7 @@ function MakeAnOfferModal({
                   }`}
                 >
                   <div className="mb-2 flex justify-center">
-                    <img src={YesIcon} alt="Yes" className="w-15 h-15" />
+                    <img src={YesIcon} alt="Yes" className="w-12 h-12 sm:w-14 sm:h-14" />
                   </div>
                 </button>
                 <button
@@ -312,7 +312,7 @@ function MakeAnOfferModal({
                   }`}
                 >
                   <div className="mb-2 flex justify-center">
-                    <img src={NoIcon} alt="No" className="w-15 h-15" />
+                    <img src={NoIcon} alt="No" className="w-12 h-12 sm:w-14 sm:h-14" />
                   </div>
                 </button>
               </div>
@@ -539,7 +539,7 @@ function MakeAnOfferModal({
                   }`}
                 >
                   <div className="mb-2 flex justify-center">
-                    <img src={YesIcon} alt="Yes" className="w-15 h-15" />
+                    <img src={YesIcon} alt="Yes" className="w-12 h-12 sm:w-14 sm:h-14" />
                   </div>
                 </button>
                 <button
@@ -549,7 +549,7 @@ function MakeAnOfferModal({
                   }`}
                 >
                   <div className="mb-2 flex justify-center">
-                    <img src={NoIcon} alt="No" className="w-15 h-15" />
+                    <img src={NoIcon} alt="No" className="w-12 h-12 sm:w-14 sm:h-14" />
                   </div>
                 </button>
               </div>

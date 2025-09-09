@@ -7,21 +7,21 @@ function SignIn() {
   const [showPwd, setShowPwd] = useState(false);
 
   return (
-    <div className="h-screen w-full">
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-full p-5">
+    <div className="min-h-screen w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-2 h-full p-4 sm:p-6 lg:p-8 gap-6 items-stretch">
         {/* LEFT: Background image with overlay and logo */}
-        <div className="relative h-full w-full">
+        <div className="relative w-full rounded-xl overflow-hidden">
           <div
-            className="absolute inset-0 bg-cover bg-center rounded-xl"
+            className="absolute inset-0 bg-cover bg-center rounded-xl h-56 sm:h-72 md:h-96 lg:h-full"
             style={{
               backgroundImage: `url(${SignupBackground})`,
             }}
           />
           {/* Logo */}
           <Link to="/">
-          <div className="absolute top-4 left-4 z-10">
-            <img src={Logo} alt="Logo" className="w-16 h-16" />
-          </div>
+            <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-20">
+              <img src={Logo} alt="Logo" className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16" />
+            </div>
           </Link>
           {/* Bottom overlay */}
           <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
@@ -51,10 +51,10 @@ function SignIn() {
         </div>
 
         {/* RIGHT: Sign-in Form */}
-        <div className="flex items-center justify-center px-6 sm:px-10 py-10">
-          <div className="w-full max-w-md">
+        <div className="flex items-center justify-center px-4 sm:px-6 md:px-10 py-8 sm:py-10">
+          <div className="w-full max-w-md mx-auto">
             <h1
-              className="text-[26px] font-bold text-center"
+              className="text-xl sm:text-2xl md:text-[26px] font-bold text-center"
               style={{ color: "#1C1C1C" }}
             >
               Create Your Listlly Account
@@ -72,7 +72,7 @@ function SignIn() {
                 </label>
                 <input
                   type="email"
-                  className="w-full h-11 rounded-md px-3 text-sm outline-none"
+                  className="w-full h-11 rounded-md px-3 text-sm sm:text-sm md:text-base outline-none"
                   style={{
                     border: "1px solid #E5E7EB",
                     background: "#FFFFFF",
@@ -90,7 +90,7 @@ function SignIn() {
                 <div className="relative">
                   <input
                     type={showPwd ? "text" : "password"}
-                    className="w-full h-11 rounded-md px-3 pr-10 text-sm outline-none"
+                    className="w-full h-11 rounded-md px-3 pr-10 text-sm sm:text-sm md:text-base outline-none"
                     style={{
                       border: "1px solid #E5E7EB",
                       background: "#FFFFFF",
@@ -123,7 +123,7 @@ function SignIn() {
 
               {/* Login button */}
               <button
-                className="w-full h-11 rounded-md text-white font-semibold"
+                className="w-full h-11 rounded-md text-white font-semibold text-sm sm:text-sm md:text-base"
                 style={{
                   background:
                     "linear-gradient(90deg, #0054F6 0%, #0D47C1 100%)",

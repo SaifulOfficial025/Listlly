@@ -56,10 +56,10 @@ export default function FiltersPanel({ onApply }) {
       </button>
       {open && (
         <div
-          className="absolute right-0 z-50 mt-2 w-[350px] rounded-xl shadow-[0_12px_30px_rgba(0,0,0,0.12)]"
+          className="absolute left-0 right-0 z-50 mt-2 mx-4 sm:mx-0 sm:left-auto sm:right-0 sm:w-[350px] rounded-xl shadow-[0_12px_30px_rgba(0,0,0,0.12)]"
           style={{ background: "#fff", border: "1px solid #E5E7EB" }}
         >
-          <div className="p-5 max-h-[90vh] overflow-y-auto flex flex-col gap-3">
+          <div className="p-4 sm:p-5 max-h-[90vh] overflow-y-auto flex flex-col gap-3">
             {/* Price Reduced */}
             <div>
               <div className="font-semibold mb-1" style={{ color: "#1C1C1C" }}>Price Reduced</div>

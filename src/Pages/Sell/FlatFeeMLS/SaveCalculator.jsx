@@ -13,7 +13,7 @@ function SaveCalculator() {
 
   return (
     <div className=" bg-white px-4 py-10 text-center">
-      <h2 className="text-[28px] font-bold text-[#1C1C1C] mb-6">
+      <h2 className="text-2xl sm:text-3xl font-bold text-[#1C1C1C] mb-6">
         How Much Can{" "}
         <span className="text-[#EB4E3D]">You Save With Listlly</span> ?
       </h2>

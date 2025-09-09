@@ -16,25 +16,7 @@ const faqs = [
   },
   {
     q: "Who pays the most for houses?",
-    a: (
-      <>
-        Individual buyers typically pay the most for houses if the property
-        matches their needs. With Listllyv's Cash Buyer Network, you may receive
-        offers up to 70% of your home's value. However, a{" "}
-        <a href="#" className="text-blue-600 underline">
-          Flat Fee MLS
-        </a>{" "}
-        listing is your best option if you want top dollar.
-      </>
-    ),
-  },
-  {
-    q: "What are the pros and cons of a cash offer on a house?",
-    a: "",
-  },
-  {
-    q: "What does it mean to sell my home for cash?",
-    a: "",
+    a: "Typically, buyers who are most motivated or have the fewest contingencies (such as cash buyers or investors) may pay the most, but it depends on your local market and property condition.",
   },
   {
     q: "Are cash sales faster than traditional home sales?",

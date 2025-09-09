@@ -140,7 +140,7 @@ function PropertyDetails() {
   return (
     <div className="property-details">
   <Header />
-   <div className="max-w-7xl mx-auto px-4 py-6 font-sans text-[#1C1C1C] mt-10">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 font-sans text-[#1C1C1C] mt-10">
         {/* Top Info */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-start gap-4">
           <div>
@@ -183,28 +183,28 @@ function PropertyDetails() {
           </div>
         </div>
 
-        {/* Image Grid */}
-        <div className="grid grid-cols-4 grid-rows-2 gap-2 mt-6 h-[260px]">
+        {/* Image Grid - responsive: stacked on small, mosaic on md+ */}
+        <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-2 mt-6">
           <img
             src={images[0]}
             alt="Home 1"
             onClick={() => openModal(0)}
-            className="col-span-1 row-span-2 w-full h-full object-cover rounded-xl cursor-pointer"
+            className="w-full h-56 md:h-auto md:col-span-1 md:row-span-2 object-cover rounded-xl cursor-pointer"
           />
           <img
             src={images[1]}
             alt="Home 2"
             onClick={() => openModal(1)}
-            className="col-span-2 row-span-2 w-full h-full object-cover rounded-xl cursor-pointer"
+            className="w-full h-56 md:h-auto md:col-span-2 md:row-span-2 object-cover rounded-xl cursor-pointer"
           />
           <img
             src={images[2]}
             alt="Home 3"
             onClick={() => openModal(2)}
-            className="w-full h-full object-cover rounded-xl cursor-pointer"
+            className="w-full h-56 md:h-auto md:col-span-1 md:row-span-1 object-cover rounded-xl cursor-pointer"
           />
           <div
-            className="relative w-full h-full cursor-pointer"
+            className="relative w-full h-56 md:h-auto md:col-span-1 md:row-span-1 cursor-pointer"
             onClick={() => openModal(3)}
           >
             <img
@@ -274,7 +274,7 @@ function PropertyDetails() {
            </div>
          )}
        </div>
-      <div className="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+  <div className="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* LEFT: Description */}
         <div className="md:col-span-2">
           <h2 className="text-xl font-semibold text-[#1C1C1C] mb-3">
@@ -302,8 +302,8 @@ function PropertyDetails() {
           </p>
         </div>
 
-        {/* RIGHT: Button Sidebar */}
-        <div className="space-y-4">
+  {/* RIGHT: Button Sidebar */}
+  <div className="space-y-4 lg:sticky lg:top-24">
           {/* Box with top buttons */}
           <div className="bg-white shadow-md rounded-lg p-4 space-y-3">
             <button onClick={openScheduleModal} className="w-full border border-[#0054F6] text-[#0054F6] py-2 rounded-md text-sm font-medium hover:bg-[#F0F5FF] transition">

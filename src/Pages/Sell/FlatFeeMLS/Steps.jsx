@@ -30,7 +30,7 @@ function Steps() {
 
   return (
     <div className="w-full bg-white px-2 py-10 text-center">
-      <h2 className="text-[28px] font-bold text-[#1C1C1C] mb-6">
+      <h2 className="text-2xl sm:text-3xl font-bold text-[#1C1C1C] mb-6">
         Steps to{" "}
         <span className="text-[#EB4E3D]">List Your Home</span> on MLS
       </h2>

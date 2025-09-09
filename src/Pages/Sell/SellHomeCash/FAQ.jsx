@@ -46,16 +46,16 @@ function FAQ() {
   const [open, setOpen] = useState(3); // fourth question open by default
 
   return (
-    <section className="max-w-3xl mx-auto px-4 py-12">
-      <h2 className="text-2xl font-bold text-center mb-8 text-black">
+    <section className="max-w-3xl mx-auto px-4 py-8 sm:py-12">
+      <h2 className="text-xl sm:text-2xl font-bold text-center mb-6 sm:mb-8 text-black">
         Frequently{" "}
         <span className="text-[#ff6061]">Asked Questions</span>
       </h2>
-      <div className="space-y-4">
+      <div className="space-y-3">
         {faqs.map((item, idx) => (
           <div key={idx}>
             <button
-              className={`w-full text-left bg-[#fafafa] rounded-md px-5 py-4 flex items-center justify-between font-medium text-lg focus:outline-none transition-colors ${
+              className={`w-full text-left bg-[#fafafa] rounded-md px-4 py-3 flex items-center justify-between font-medium text-base sm:text-lg focus:outline-none transition-colors ${
                 open === idx
                   ? "text-[#ff6061]"
                   : "text-gray-800"
@@ -64,13 +64,13 @@ function FAQ() {
             >
               <span>{item.q}</span>
               {open === idx ? (
-                <FiChevronUp className="text-[#ff6061] w-6 h-6" />
+                <FiChevronUp className="text-[#ff6061] w-5 h-5" />
               ) : (
-                <FiChevronDown className="text-gray-400 w-6 h-6" />
+                <FiChevronDown className="text-gray-400 w-5 h-5" />
               )}
             </button>
             {open === idx && item.a && (
-              <div className="bg-[#faf6f6] rounded-b-md px-5 pb-4 pt-2 text-gray-700 text-base">
+              <div className="bg-[#faf6f6] rounded-b-md px-4 pb-3 pt-2 text-gray-700 text-sm sm:text-base">
                 {item.a}
               </div>
             )}

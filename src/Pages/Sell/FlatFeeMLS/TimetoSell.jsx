@@ -17,7 +17,7 @@ function TimetoSell() {
    
 
       {/* Content Section */}
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6 items-center px-20 py-10">
+  <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6 items-center px-4 sm:px-20 py-8 sm:py-10">
         {/* Left Side: Text Content */}
         <div className="text-center md:text-left">
           <h2 className="text-5xl font-bold mb-4">
