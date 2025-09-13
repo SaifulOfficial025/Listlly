@@ -221,7 +221,7 @@ export default function HomeForSale() {
                       />
                     </div>
                     <div className="p-3">
-                      <div className="text-[12px] mb-1" style={{ color: "#6B7280" }}>
+                      <div className="text-[16px] mb-1" style={{ color: "#6B7280" }}>
                         Active • MLS # {10000 + c.id}
                       </div>
                       <div className="text-[13px] font-semibold">{c.title}</div>

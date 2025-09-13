@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import individual from "../../../../../public/individual.svg"
 import multiple from "../../../../../public/multiple.svg"
 import corporate from "../../../../../public/corporate.svg"
-
+import { BsCloudUpload } from "react-icons/bs";
 
 function SattlementTask1() {
   const navigate = useNavigate()
@@ -188,14 +188,10 @@ function SattlementTask1() {
               <h4 className="text-lg font-medium text-gray-800">Title Insurance Information (Optional)</h4>
               <p className="text-sm text-gray-500 mt-1">Provide A Copy Of Any Title Insurance Policies Or A Copy Of The Hud Statement From Your Purchase Of The Property If It Is Readily Available</p>
 
-              <label className="mt-4 block border-2 border-dashed border-gray-200 rounded-lg p-8 text-center bg-gray-50">
+              <label className="mt-4 block border-2 border-dashed border-gray-200 rounded-lg p-8 text-center bg-pink-50">
                 <div className="flex flex-col items-center justify-center">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" className="mb-3" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 3v10" stroke="#9CA3AF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="#9CA3AF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M7 10l5-5 5 5" stroke="#9CA3AF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  <div className="text-sm text-gray-500">Upload Property Photo</div>
+                  <BsCloudUpload className="mb-3 text-gray-600 text-4xl" />
+                  <div className="text-sm text-red-500">Upload Property Photo</div>
                   <div className="text-xs text-gray-400 mt-1">Take multiple photos of your Property site</div>
                   <input type="file" multiple onChange={handleFile} className="sr-only" />
                  

@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { BiSolidDollarCircle } from "react-icons/bi";
+import { FaRegImage } from "react-icons/fa6";
+import { FaMoneyCheckAlt } from "react-icons/fa";
 
 export default function SettlementTask4() {
   const navigate = useNavigate();
@@ -35,20 +38,27 @@ export default function SettlementTask4() {
 
         {/* Steps */}
         <div className="mt-6 flex items-end justify-between gap-6">
+          
           <div className="flex flex-col items-center flex-1">
-            <div className="text-sm font-semibold text-gray-400">Title & Contact Info</div>
-            <div className="w-2 h-2 rounded-full bg-gray-300 mt-2" />
-            <div className="mt-2 w-36 h-3 rounded-full bg-gray-100" />
+            <div className="text-sm font-semibold text-gray-800">Title & Contact Inf</div>
+            <div className="w-2 h-2 rounded-full bg-blue-600 mt-2" />
+            <div className="mt-2 w-36 h-3 rounded-full bg-gray-200 overflow-hidden">
+              <div className="h-3 bg-blue-600 rounded-full" style={{ width: '100%' }} />
+            </div>
           </div>
           <div className="flex flex-col items-center flex-1">
-            <div className="text-sm font-semibold text-gray-400">Parties Involved</div>
-            <div className="w-2 h-2 rounded-full bg-gray-300 mt-2" />
-            <div className="mt-2 w-36 h-3 rounded-full bg-gray-100" />
+            <div className="text-sm font-semibold text-gray-800">Parties Involved</div>
+            <div className="w-2 h-2 rounded-full bg-blue-600 mt-2" />
+            <div className="mt-2 w-36 h-3 rounded-full bg-gray-200 overflow-hidden">
+              <div className="h-3 bg-blue-600 rounded-full" style={{ width: '100%' }} />
+            </div>
           </div>
           <div className="flex flex-col items-center flex-1">
-            <div className="text-sm font-semibold text-gray-400">Schedule Closing</div>
-            <div className="w-2 h-2 rounded-full bg-gray-300 mt-2" />
-            <div className="mt-2 w-36 h-3 rounded-full bg-gray-100" />
+            <div className="text-sm font-semibold text-gray-800">Schedule Closing</div>
+            <div className="w-2 h-2 rounded-full bg-blue-600 mt-2" />
+            <div className="mt-2 w-36 h-3 rounded-full bg-gray-200 overflow-hidden">
+              <div className="h-3 bg-blue-600 rounded-full" style={{ width: '100%' }} />
+            </div>
           </div>
           <div className="flex flex-col items-center flex-1">
             <div className="text-sm font-semibold text-gray-800">Receive Funds</div>
@@ -68,13 +78,13 @@ export default function SettlementTask4() {
             <span className={`w-5 h-5 rounded-full border flex items-center justify-center ${fundMethod === 'wire' ? 'bg-blue-600 border-blue-600' : 'bg-white border-gray-300'}`}>
               {fundMethod === 'wire' && <span className="w-2 h-2 rounded-full bg-white block" />}
             </span>
-            <span className="font-medium text-gray-800">Fund By Wire</span>
+            <span className="font-medium text-gray-800 inline-flex items-center"> <BiSolidDollarCircle  className='w-6 h-6 mr-2 ' /> Fund By Wire</span>
           </button>
           <button type="button" onClick={() => setFundMethod('check')} className={`flex items-center gap-3 px-6 py-4 rounded border ${fundMethod === 'check' ? 'border-blue-600 bg-blue-50' : 'border-gray-200 bg-white'}`}>
             <span className={`w-5 h-5 rounded-full border flex items-center justify-center ${fundMethod === 'check' ? 'bg-blue-600 border-blue-600' : 'bg-white border-gray-300'}`}>
               {fundMethod === 'check' && <span className="w-2 h-2 rounded-full bg-white block" />}
             </span>
-            <span className="font-medium text-gray-800">Fund By Check</span>
+            <span className="font-medium text-gray-800 inline-flex items-center"> <FaMoneyCheckAlt className='w-6 h-6 mr-2 ' /> Fund By Check</span>
           </button>
         </div>
       </div>
@@ -97,12 +107,21 @@ export default function SettlementTask4() {
           <input name="instructions" value={fields.instructions} onChange={handleChange} className="border border-gray-200 rounded p-3 w-full mb-4 dark:bg-white" placeholder="Additional Instructions" />
           <div className="mb-4">
             <label className="block text-sm text-gray-700 mb-2">Upload Loan Statement</label>
-            <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center bg-gray-50">
+            <div className="border-2 border-dashed border-gray-300 rounded-lg bg-gray-50 flex flex-col items-center justify-center text-center min-h-[140px] md:min-h-[160px] lg:min-h-[180px]" style={{ minHeight: '140px', height: '140px', maxHeight: '180px' }}>
               <input type="file" accept=".svg,.png,.jpg,.gif" className="sr-only" id="wirefile" onChange={handleFile} />
-              <label htmlFor="wirefile" className="cursor-pointer text-blue-600 underline">
-                Click to replace <span className="text-gray-400">or drag and drop<br />SVG, PNG, JPG or GIF (max. 400 × 400px)</span>
+              <label htmlFor="wirefile" className="w-full h-full flex flex-col items-center justify-center cursor-pointer">
+                <FaRegImage className="mx-auto mb-2 text-blue-500 text-4xl" />
+                <span className="text-blue-600 text-base font-medium">
+                  Click to replace
+                </span>
+                <span className="block text-gray-400 text-sm mt-1">
+                  or drag and drop
+                </span>
+                <span className="block text-gray-400 text-xs mt-1">
+                  SVG, PNG, JPG or GIF (max. 400 × 400px)
+                </span>
+                {file && <div className="mt-2 text-xs text-gray-600">{file.name}</div>}
               </label>
-              {file && <div className="mt-2 text-xs text-gray-600">{file.name}</div>}
             </div>
           </div>
         </div>

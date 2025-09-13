@@ -38,7 +38,7 @@ function SignIn() {
                 One‑Stop Real Estate Solution.
               </p>
               <p
-                className="text-[12px] mt-2 leading-relaxed text-center"
+                className="text-[16px] mt-2 leading-relaxed text-center"
                 style={{ color: "rgba(255,255,255,0.85)" }}
               >
                 *Discover a simpler, smarter way to buy and sell homes. With
@@ -57,9 +57,9 @@ function SignIn() {
               className="text-xl sm:text-2xl md:text-[26px] font-bold text-center"
               style={{ color: "#1C1C1C" }}
             >
-              Create Your Listlly Account
+              Welcome to Listlly
             </h1>
-            <p className="text-[12px] mt-1 text-center text-[#606A76]">
+            <p className="text-[16px] mt-1 text-center text-[#606A76]">
               Please log in to access your account, manage your listings, and
               take the next step in your real estate journey.
             </p>
@@ -67,7 +67,7 @@ function SignIn() {
             <div className="mt-6 space-y-4">
               {/* Email */}
               <div>
-                <label className="block text-[12px] mb-1 text-[#4B5563]">
+                <label className="block text-[16px] mb-1 text-[#4B5563]">
                   Email Address
                 </label>
                 <input
@@ -84,7 +84,7 @@ function SignIn() {
 
               {/* Password */}
               <div>
-                <label className="block text-[12px] mb-1 text-[#4B5563]">
+                <label className="block text-[16px] mb-1 text-[#4B5563]">
                   Password
                 </label>
                 <div className="relative">
@@ -135,7 +135,7 @@ function SignIn() {
               {/* Divider */}
               <div className="flex items-center gap-4 my-1">
                 <div className="h-px flex-1 bg-[#E5E7EB]" />
-                <span className="text-[12px] text-[#6B7280]">Or</span>
+                <span className="text-[16px] text-[#6B7280]">Or</span>
                 <div className="h-px flex-1 bg-[#E5E7EB]" />
               </div>
 
@@ -165,7 +165,7 @@ function SignIn() {
               </button>
 
               {/* Footer */}
-              <p className="text-[12px] text-center mt-1 text-[#6B7280]">
+              <p className="text-[16px] text-center mt-1 text-[#6B7280]">
                 Don't have an account?{" "}
                 <Link to="/signup">
                   <span className="text-blue-600 font-bold">Sign Up</span>

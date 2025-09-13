@@ -42,7 +42,7 @@ export default function BedsBathsDropdown({ onApply }) {
       </button>
       {open && (
         <div
-          className="absolute left-0 right-0 z-50 mt-2 mx-4 sm:mx-0 sm:left-auto sm:right-0 sm:w-[340px] rounded-xl shadow-[0_12px_30px_rgba(0,0,0,0.12)]"
+          className="absolute left-0 right-0 z-50 mt-2 mx-4 sm:mx-0 sm:left-auto sm:right-0 sm:w-[340px] rounded-xl shadow-[0_16px_30px_rgba(0,0,0,0.12)]"
           style={{ background: "#fff", border: "1px solid #E5E7EB" }}
         >
           <div className="p-4 sm:p-5">

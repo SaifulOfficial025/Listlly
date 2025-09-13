@@ -100,23 +100,40 @@ function RootPage() {
         <button className="bg-blue-600 text-white px-6 py-3 rounded font-semibold text-sm">Search</button>
       </div>
 
-      {/* Price Slider */}
+      {/* Price Slider - Updated Design */}
       <div className="max-w-5xl mx-auto mt-8 px-4">
-        <div className="flex flex-col items-center">
-          <div className="text-blue-600 font-bold text-lg mb-2">{formatPrice(sliderValue)}</div>
-          <div className="w-full flex items-center gap-2">
-            <span className="text-xs text-gray-400">$25K</span>
-            <input
-              type="range"
-              min="25000"
-              max="2000000"
-              value={sliderValue}
-              onChange={handleSliderChange}
-              className="w-full accent-blue-600"
-            />
-            <span className="text-xs text-gray-400">$2m</span>
+        <div className="p-6  rounded-lg shadow-md max-w-5xl mx-auto">
+          <div className="relative mb-4 mt-20">
+            <div
+              className="absolute -top-10"
+              style={{
+                left: `${((sliderValue - 25000) / (2000000 - 25000)) * 100}%`,
+                transition: 'left 0.2s',
+              }}
+            >
+              <div className="text-2xl font-bold text-[#00589c] bg-red-50 border-2 border-[#00589c] rounded-xl px-3 py-1 shadow-md mb-1 -ml-14">
+                {formatPrice(sliderValue)}
+              </div>
+              {/* Triangle icon can be replaced with an SVG or a styled div */}
+              <div className="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-[#00589c] mx-auto -mt-2 -ml-2"></div>
+            </div>
           </div>
-          <div className="text-xs text-gray-400 mt-2">Adjust the slider to see your budget friendly properties</div>
+          <input
+            type="range"
+            min="25000"
+            max="2000000"
+            value={sliderValue}
+            onChange={handleSliderChange}
+            className="w-full h-2 bg-blue-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+            style={{ accentColor: '#2563EB' }}
+          />
+          <div className="flex justify-between text-sm text-gray-500 mt-2">
+            <span>$25k</span>
+            <span>$2m</span>
+          </div>
+          <p className="text-xs text-gray-500 mt-4 text-center">
+            Adjust the slider to see your budget friendly properties
+          </p>
         </div>
       </div>
 

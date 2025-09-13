@@ -192,7 +192,7 @@ export default function OfferDetails() {
               {/* Middle title + subtext */}
               <div className="items-center justify-center text-center">
                 <div className="text-[14px] font-semibold">Offer Contract</div>
-                <div className="text-[12px] text-gray-500">
+                <div className="text-[16px] text-gray-500">
                   (3 Files) Offer Contract
                 </div>
               </div>
@@ -200,7 +200,7 @@ export default function OfferDetails() {
               {/* Previous Counter Offers */}
               {savedOffers.map((offer, index) => (
                 <div key={index} className="flex items-center justify-center text-center">
-                  <div className="text-[12px] font-semibold text-blue-600">
+                  <div className="text-[16px] font-semibold text-blue-600">
                     {offer.offerContract || 'No changes'}
                   </div>
                 </div>
@@ -218,7 +218,7 @@ export default function OfferDetails() {
                       }
                     }}
                     placeholder="Enter details"
-                    className="w-24 px-2 py-1 text-[12px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
                   />
                 </div>
               )}
@@ -243,7 +243,7 @@ export default function OfferDetails() {
               {/* Middle title + subtext */}
               <div className="items-center justify-center text-center">
                 <div className="text-[14px] font-semibold">Mortgage</div>
-                <div className="text-[12px] text-gray-500">
+                <div className="text-[16px] text-gray-500">
                   (1 Files) Pre Approved File
                 </div>
               </div>
@@ -251,7 +251,7 @@ export default function OfferDetails() {
               {/* Previous Counter Offers */}
               {savedOffers.map((offer, index) => (
                 <div key={index} className="flex items-center justify-center text-center">
-                  <div className="text-[12px] font-semibold text-blue-600">
+                  <div className="text-[16px] font-semibold text-blue-600">
                     {offer.payment || 'No changes'}
                   </div>
                 </div>
@@ -269,7 +269,7 @@ export default function OfferDetails() {
                       }
                     }}
                     placeholder="Enter details"
-                    className="w-24 px-2 py-1 text-[12px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
                   />
                 </div>
               )}
@@ -312,7 +312,7 @@ export default function OfferDetails() {
               <img src={Home} alt="Home Icon" className="h-10 w-10" />
               <div>
                 <div className="text-[14px] font-semibold">Offer Price</div>
-                <div className="text-[12px] text-gray-500">
+                <div className="text-[16px] text-gray-500">
                   List Price : $795,000
                 </div>
               </div>
@@ -321,13 +321,13 @@ export default function OfferDetails() {
             {/* Middle: Value */}
             <td className="flex flex-col items-center justify-center text-center">
               <div className="text-[14px] font-semibold">$700,000</div>
-              <div className="text-[12px] text-green-600">- $95,000</div>
+              <div className="text-[16px] text-green-600">- $95,000</div>
             </td>
 
             {/* Previous Counter Offers */}
             {savedOffers.map((offer, index) => (
               <td key={index} className="flex items-center justify-center text-center">
-                <div className="text-[12px] font-semibold text-blue-600">
+                <div className="text-[16px] font-semibold text-blue-600">
                   {offer.offerPrice ? `$${offer.offerPrice}` : 'No change'}
                 </div>
               </td>
@@ -345,7 +345,7 @@ export default function OfferDetails() {
                     }
                   }}
                   placeholder="Enter price"
-                  className="w-24 px-2 py-1 text-[12px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
                 />
               </td>
             )}
@@ -366,7 +366,7 @@ export default function OfferDetails() {
                 <div className="text-[14px] font-semibold">
                   Earnest Money Deposit
                 </div>
-                <div className="text-[12px] text-gray-500">Original : $0</div>
+                <div className="text-[16px] text-gray-500">Original : $0</div>
               </div>
             </td>
             <td className="flex items-center justify-center text-center">
@@ -374,7 +374,7 @@ export default function OfferDetails() {
             </td>
             {savedOffers.map((offer, index) => (
               <td key={index} className="flex items-center justify-center text-center">
-                <div className="text-[12px] font-semibold text-blue-600">
+                <div className="text-[16px] font-semibold text-blue-600">
                   {offer.earnestMoney ? `$${offer.earnestMoney}` : 'No change'}
                 </div>
               </td>
@@ -390,7 +390,7 @@ export default function OfferDetails() {
                     }
                   }}
                   placeholder="Enter amount"
-                  className="w-24 px-2 py-1 text-[12px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
                 />
               </td>
             )}
@@ -409,7 +409,7 @@ export default function OfferDetails() {
                 <div className="text-[14px] font-semibold">
                   Seller Paid Settlement Charges
                 </div>
-                <div className="text-[12px] text-gray-500">Original : $0</div>
+                <div className="text-[16px] text-gray-500">Original : $0</div>
               </div>
             </td>
             <td className="flex items-center justify-center text-center">
@@ -417,7 +417,7 @@ export default function OfferDetails() {
             </td>
             {savedOffers.map((offer, index) => (
               <td key={index} className="flex items-center justify-center text-center">
-                <div className="text-[12px] font-semibold text-blue-600">
+                <div className="text-[16px] font-semibold text-blue-600">
                   {offer.sellerSettlement1 ? `$${offer.sellerSettlement1}` : 'No change'}
                 </div>
               </td>
@@ -433,7 +433,7 @@ export default function OfferDetails() {
                     }
                   }}
                   placeholder="Enter amount"
-                  className="w-24 px-2 py-1 text-[12px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
                 />
               </td>
             )}
@@ -452,7 +452,7 @@ export default function OfferDetails() {
                 <div className="text-[14px] font-semibold">
                   Seller Paid Settlement Charges
                 </div>
-                <div className="text-[12px] text-gray-500">Original : $0</div>
+                <div className="text-[16px] text-gray-500">Original : $0</div>
               </div>
             </td>
             <td className="flex items-center justify-center text-center">
@@ -460,7 +460,7 @@ export default function OfferDetails() {
             </td>
             {savedOffers.map((offer, index) => (
               <td key={index} className="flex items-center justify-center text-center">
-                <div className="text-[12px] font-semibold text-blue-600">
+                <div className="text-[16px] font-semibold text-blue-600">
                   {offer.sellerSettlement2 || 'No change'}
                 </div>
               </td>
@@ -476,7 +476,7 @@ export default function OfferDetails() {
                     }
                   }}
                   placeholder="Enter value"
-                  className="w-24 px-2 py-1 text-[12px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
                 />
               </td>
             )}
@@ -517,7 +517,7 @@ export default function OfferDetails() {
           <img src={Date} alt="Date Icon" className="w-10 h-10 text-blue-600" />
           <div>
             <div className="text-[14px] font-semibold">Settlement Date</div>
-            <div className="text-[12px] text-gray-500">Original : Jun 16, 2021</div>
+            <div className="text-[16px] text-gray-500">Original : Jun 16, 2021</div>
           </div>
         </td>
 
@@ -527,13 +527,13 @@ export default function OfferDetails() {
             <FaCalendarAlt className="w-4 h-4 text-blue-600 mr-2" />
             July 3, 2021
           </div>
-          <span className="text-[12px] text-green-600">-17 Days</span>
+          <span className="text-[16px] text-green-600">-17 Days</span>
         </td>
 
         {/* Previous Counter Offers */}
         {savedOffers.map((offer, index) => (
           <td key={index} className="flex items-center justify-center text-center">
-            <div className="text-[12px] font-semibold text-blue-600">
+            <div className="text-[16px] font-semibold text-blue-600">
               {offer.settlementDate || 'No change'}
             </div>
           </td>
@@ -551,7 +551,7 @@ export default function OfferDetails() {
                 }
               }}
               placeholder="MM/DD/YYYY"
-              className="w-24 px-2 py-1 text-[12px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
             />
           </td>
         )}
@@ -573,7 +573,7 @@ export default function OfferDetails() {
           <img src={Date} alt="Date Icon" className="w-10 h-10 text-blue-600" />
           <div>
             <div className="text-[14px] font-semibold">Offer Expiration Date</div>
-            <div className="text-[12px] text-gray-500">Original : May 18, 2021</div>
+            <div className="text-[16px] text-gray-500">Original : May 18, 2021</div>
           </div>
         </td>
         <td className="flex items-center justify-center rounded px-2 py-0.5 text-[14px]">
@@ -582,7 +582,7 @@ export default function OfferDetails() {
         </td>
         {savedOffers.map((offer, index) => (
           <td key={index} className="flex items-center justify-center text-center">
-            <div className="text-[12px] font-semibold text-blue-600">
+            <div className="text-[16px] font-semibold text-blue-600">
               {offer.expirationDate || 'No change'}
             </div>
           </td>
@@ -598,7 +598,7 @@ export default function OfferDetails() {
                 }
               }}
               placeholder="MM/DD/YYYY"
-              className="w-24 px-2 py-1 text-[12px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
             />
           </td>
         )}
@@ -613,7 +613,7 @@ export default function OfferDetails() {
           <img src={Date} alt="Date Icon" className="w-10 h-10 text-blue-600" />
           <div>
             <div className="text-[14px] font-semibold">Inspection Period End Date</div>
-            <div className="text-[12px] text-gray-500">Original : Jun 16, 2021</div>
+            <div className="text-[16px] text-gray-500">Original : Jun 16, 2021</div>
           </div>
         </td>
         <td className="flex items-center justify-center rounded px-2 py-0.5 text-[14px]">
@@ -622,7 +622,7 @@ export default function OfferDetails() {
         </td>
         {savedOffers.map((offer, index) => (
           <td key={index} className="flex items-center justify-center text-center">
-            <div className="text-[12px] font-semibold text-blue-600">
+            <div className="text-[16px] font-semibold text-blue-600">
               {offer.inspectionEndDate || 'No change'}
             </div>
           </td>
@@ -638,7 +638,7 @@ export default function OfferDetails() {
                 }
               }}
               placeholder="MM/DD/YYYY"
-              className="w-24 px-2 py-1 text-[12px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
             />
           </td>
         )}
@@ -653,7 +653,7 @@ export default function OfferDetails() {
           <img src={Date} alt="Date Icon" className="w-10 h-10 text-blue-600" />
           <div>
             <div className="text-[14px] font-semibold">Inspection Resolution Date</div>
-            <div className="text-[12px] text-gray-500">Original : May 18, 2021</div>
+            <div className="text-[16px] text-gray-500">Original : May 18, 2021</div>
           </div>
         </td>
         <td className="flex items-center justify-center rounded px-2 py-0.5 text-[14px]">
@@ -662,7 +662,7 @@ export default function OfferDetails() {
         </td>
         {savedOffers.map((offer, index) => (
           <td key={index} className="flex items-center justify-center text-center">
-            <div className="text-[12px] font-semibold text-blue-600">
+            <div className="text-[16px] font-semibold text-blue-600">
               {offer.inspectionResolutionDate || 'No change'}
             </div>
           </td>
@@ -678,7 +678,7 @@ export default function OfferDetails() {
                 }
               }}
               placeholder="MM/DD/YYYY"
-              className="w-24 px-2 py-1 text-[12px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
             />
           </td>
         )}
@@ -722,7 +722,7 @@ export default function OfferDetails() {
               <img src={Home2} alt="Home Icon" className="w-10 h-10 text-blue-600" />
               <div>
                 <div className="text-[14px] font-semibold">Financing</div>
-                <div className="text-[12px] text-gray-500">
+                <div className="text-[16px] text-gray-500">
                   Original : Conventional Loan
                 </div>
               </div>
@@ -736,7 +736,7 @@ export default function OfferDetails() {
             {/* Previous Counter Offers */}
             {savedOffers.map((offer, index) => (
               <td key={index} className="flex items-center justify-center text-center">
-                <div className="text-[12px] font-semibold text-blue-600">
+                <div className="text-[16px] font-semibold text-blue-600">
                   {offer.financing || 'No change'}
                 </div>
               </td>
@@ -754,7 +754,7 @@ export default function OfferDetails() {
                     }
                   }}
                   placeholder="Enter type"
-                  className="w-24 px-2 py-1 text-[12px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
                 />
               </td>
             )}
@@ -772,7 +772,7 @@ export default function OfferDetails() {
               <img src={Home2} alt="Home Icon" className="w-10 h-10 text-blue-600" />
               <div>
                 <div className="text-[14px] font-semibold">Appraisal</div>
-                <div className="text-[12px] text-gray-500">Original : No</div>
+                <div className="text-[16px] text-gray-500">Original : No</div>
               </div>
             </td>
 
@@ -782,7 +782,7 @@ export default function OfferDetails() {
             {/* Previous Counter Offers */}
             {savedOffers.map((offer, index) => (
               <td key={index} className="flex items-center justify-center text-center">
-                <div className="text-[12px] font-semibold text-blue-600">
+                <div className="text-[16px] font-semibold text-blue-600">
                   {offer.appraisal || 'No change'}
                 </div>
               </td>
@@ -800,7 +800,7 @@ export default function OfferDetails() {
                     }
                   }}
                   placeholder="Yes/No"
-                  className="w-24 px-2 py-1 text-[12px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
                 />
               </td>
             )}
@@ -840,7 +840,7 @@ export default function OfferDetails() {
               <img src={Home3} alt="Home Icon" className="w-10 h-10 text-blue-600" />
               <div>
                 <div className="text-[14px] font-semibold">Home Warranty</div>
-                <div className="text-[12px] text-gray-500">Original : 0</div>
+                <div className="text-[16px] text-gray-500">Original : 0</div>
               </div>
             </td>
 
@@ -850,7 +850,7 @@ export default function OfferDetails() {
             {/* Previous Counter Offers */}
             {savedOffers.map((offer, index) => (
               <td key={index} className="flex items-center justify-center text-center">
-                <div className="text-[12px] font-semibold text-blue-600">
+                <div className="text-[16px] font-semibold text-blue-600">
                   {offer.homeWarranty || 'No change'}
                 </div>
               </td>
@@ -868,7 +868,7 @@ export default function OfferDetails() {
                     }
                   }}
                   placeholder="Enter value"
-                  className="w-24 px-2 py-1 text-[12px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
                 />
               </td>
             )}
@@ -888,7 +888,7 @@ export default function OfferDetails() {
                 <div className="text-[14px] font-semibold">
                   Any Other Imp Offer Consideration
                 </div>
-                <div className="text-[12px] text-gray-500">
+                <div className="text-[16px] text-gray-500">
                   Buyer Agrees To Pay 100 More.................
                 </div>
               </div>
@@ -904,7 +904,7 @@ export default function OfferDetails() {
             {/* Previous Counter Offers */}
             {savedOffers.map((offer, index) => (
               <td key={index} className="flex items-start justify-center text-center pt-2">
-                <div className="text-[12px] font-semibold text-blue-600">
+                <div className="text-[16px] font-semibold text-blue-600">
                   {offer.otherConsideration || 'No change'}
                 </div>
               </td>
@@ -922,7 +922,7 @@ export default function OfferDetails() {
                   }}
                   placeholder="Enter details"
                   rows="3"
-                  className="w-32 px-2 py-1 text-[12px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500 resize-none"
+                  className="w-32 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500 resize-none"
                 />
               </td>
             )}
@@ -940,7 +940,84 @@ export default function OfferDetails() {
 
 
 
-
+{/* Inclusions/Exclusions Section */}
+<div className="w-full bg-white border border-gray-200 rounded-sm text-black container mx-auto px-4 sm:px-6 lg:px-8 py-6 mb-10">
+  <div className="px-4 py-3 border-b border-gray-200">
+    <span className="text-[16px] font-semibold text-blue-600">Inclusions/Exclusions</span>
+  </div>
+  <div className="flex flex-col divide-y divide-gray-200">
+    {/* Include Fixtures */}
+    <div className="flex items-center py-6">
+      <div className="flex items-center gap-4 flex-1">
+        <img src={Home} alt="Home Icon" className="h-10 w-10" />
+        <div>
+          <div className="text-[15px] font-semibold">Include Fixtures & Items Beyond The Usual</div>
+          <div className="text-[12px] text-gray-500">Original : None</div>
+        </div>
+      </div>
+      {/* Previous Counter Offers */}
+      <div className="flex-1 flex flex-col items-center justify-center text-center">
+        {savedOffers.length === 0 && <div className="text-[17px] text-gray-700 font-medium">None</div>}
+        {savedOffers.map((offer, index) => (
+          <div key={index} className="text-[16px] font-semibold text-blue-600">
+            {offer.includeFixtures || 'No change'}
+          </div>
+        ))}
+        {isCounterOffer && (
+          <input
+            type="text"
+            value={counterOfferData.includeFixtures || ''}
+            onChange={e => handleInputChange('includeFixtures', e.target.value)}
+            placeholder="Enter details"
+            className="w-32 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500 mt-2"
+          />
+        )}
+      </div>
+      <div className="flex-1 flex justify-end">
+        <button type="button" className="p-1" aria-label="Edit">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-blue-600">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487a2.1 2.1 0 1 1 2.97 2.97L7.5 19.788l-4 1 1-4 14.362-14.3z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    {/* Exclude Fixtures */}
+    <div className="flex items-center py-6">
+      <div className="flex items-center gap-4 flex-1">
+        <img src={Home} alt="Home Icon" className="h-10 w-10" />
+        <div>
+          <div className="text-[15px] font-semibold">Exclude Fixtures & Items Beyond The Usual</div>
+          <div className="text-[12px] text-gray-500">Original : None</div>
+        </div>
+      </div>
+      {/* Previous Counter Offers */}
+      <div className="flex-1 flex flex-col items-center justify-center text-center">
+        {savedOffers.length === 0 && <div className="text-[17px] text-gray-700 font-medium">None</div>}
+        {savedOffers.map((offer, index) => (
+          <div key={index} className="text-[16px] font-semibold text-blue-600">
+            {offer.excludeFixtures || 'No change'}
+          </div>
+        ))}
+        {isCounterOffer && (
+          <input
+            type="text"
+            value={counterOfferData.excludeFixtures || ''}
+            onChange={e => handleInputChange('excludeFixtures', e.target.value)}
+            placeholder="Enter details"
+            className="w-32 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500 mt-2"
+          />
+        )}
+      </div>
+      <div className="flex-1 flex justify-end">
+        <button type="button" className="p-1" aria-label="Edit">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-blue-600">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487a2.1 2.1 0 1 1 2.97 2.97L7.5 19.788l-4 1 1-4 14.362-14.3z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

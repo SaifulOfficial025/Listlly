@@ -14,6 +14,7 @@ import TimetoSell from './TimetoSell'
 import HiddenFees from './HiddenFees'
 import FAQ from './FAQ'
 import Footer from '../../../Shared/Footer'
+import BuyingBuying from './BuyingBuying'
 
 function RootPage() {
   return (
@@ -48,6 +49,9 @@ function RootPage() {
             <TimetoSell />
         </div>
         <div className=''>
+            <BuyingBuying />
+        </div>
+         <div className=''>
             <HiddenFees />
         </div>
         <div className=''>

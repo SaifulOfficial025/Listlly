@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ContactInformationModal from './ContactInformationModal';
+import { BsCloudUpload } from "react-icons/bs";
 
 function PhotosDescription({ onCancel, onContinue }) {
   const [description, setDescription] = useState('');
@@ -58,12 +59,12 @@ function PhotosDescription({ onCancel, onContinue }) {
           </div>
 
           <div className="mb-8">
-            <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center bg-gray-50">
+            <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center bg-pink-100">
               <div className="flex flex-col items-center">
                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                  <span className="text-blue-600 text-xl">☁️</span>
+                  <BsCloudUpload className='text-blue-600 text-3xl' />
                 </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">Upload Property Photos</h3>
+                <h3 className="text-lg font-medium text-red-500 mb-2">Upload Property Photos</h3>
                 <p className="text-sm text-gray-600 mb-4">Take multiple photos of your Property like</p>
                 
                 <label className="bg-blue-600 text-white px-6 py-2 rounded cursor-pointer hover:bg-blue-700">

@@ -280,7 +280,7 @@ function PropertyDetails() {
           <h2 className="text-xl font-semibold text-[#1C1C1C] mb-3">
             Description
           </h2>
-          <p className="text-sm text-[#444] leading-relaxed">
+          <p className="text-md text-[#444] leading-relaxed text-justify">
             Lorem ipsum dolor sit amet consectetur. Morbi sed pharetra lectus
             tempus sapien ornare est felis. Quisque id in egestas nibh dignissim
             turpis sit. Dui hendrerit sodales aliquet sed magna proin elementum

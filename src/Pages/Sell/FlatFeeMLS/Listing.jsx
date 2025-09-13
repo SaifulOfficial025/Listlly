@@ -8,14 +8,14 @@ function Listing() {
       <div className="absolute inset-0 bg-contain bg-center bg-no-repeat" style={{ backgroundImage: `url(${ListingBG})`, backgroundSize: '40%' }}></div>
 
       {/* Content */}
-  <div className="relative max-w-5xl mx-auto pt-8 sm:pt-10 px-4 sm:px-6 flex flex-col sm:flex-row gap-10 sm:gap-28">
+  <div className="relative max-w-5xl mx-auto pt-8 sm:pt-10 px-4 sm:px-6 flex flex-col sm:flex-row gap-10 sm:gap-28 mt-16">
         {/* Left Content */}
         <div className="flex-1">
-          <h1 className="text-blue-600 text-lg sm:text-xl font-semibold">FLAT FEE MLS</h1>
-          <h2 className="text-2xl sm:text-4xl font-bold text-black mt-2 mb-3">
+          <h1 className="text-blue-600 text-xl sm:text-2xl font-bold">FLAT FEE MLS</h1>
+          <h2 className="text-3xl sm:text-5xl font-bold text-black mt-2 mb-3">
             List Your House on MLS for
           </h2>
-          <span className="text-2xl sm:text-4xl font-bold mt-6 sm:mt-20 text-red-500">$249 only*</span>
+          <span className="text-3xl sm:text-5xl font-bold mt-6 sm:mt-20 text-red-500">$249 only*</span>
 
           <div className="mt-6 ">
             <button className="bg-gradient-to-r from-[#2563EB] to-[#1E40AF] text-white w-full px-6 py-3 sm:px-24 sm:py-4 rounded font-semibold text-base flex items-center justify-center gap-2">
@@ -38,8 +38,8 @@ function Listing() {
 
         {/* Right Content */}
   <div className="flex-1  backdrop-blur-sm border border-gray-200 rounded-lg p-6 sm:p-8 shadow mt-6 sm:mt-0">
-          <h3 className="text-xl font-semibold text-black">Why Choose <span className="text-blue-600">Listlly</span></h3>
-          <ul className="mt-6 space-y-3 text-base text-gray-700">
+          <h3 className="text-2xl font-semibold text-black">Why Choose <span className="text-blue-600">Listlly</span></h3>
+          <ul className="mt-6 space-y-3  text-gray-700 text-2xl">
             <li>✔️ 100% online</li>
             <li>✔️ 4.6 star rated mobile app</li>
             <li>✔️ Save thousands in commissions</li>

@@ -92,6 +92,53 @@ export default function SettlementTasks() {
             </div>
           )}
         </div>
+        {/* Implement from here */}
+        {/* Social Media Sharing */}
+        <div className="mt-10">
+          <h3 className="text-lg font-semibold text-[#1C1C1C]">Social Media Sharing</h3>
+          <p className="text-sm text-gray-500 mt-1 mb-4 max-w-2xl">
+            20% Of Homes Are Bought By People The Sellers Know! There Is No Better Way To Market To These Folks Than Via Social Media
+          </p>
+          <div className="bg-white border rounded shadow-sm divide-y">
+            <div className="flex items-center justify-between px-6 py-4 cursor-pointer group">
+              <span className="text-gray-700">Share Via Facebook</span>
+              <span className="text-gray-400 group-hover:text-blue-600">▾</span>
+            </div>
+            <div className="flex items-center justify-between px-6 py-4 cursor-pointer group">
+              <span className="text-gray-700">Share Via Twitter</span>
+              <span className="text-gray-400 group-hover:text-blue-600">▾</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Under Review Tasks */}
+        <div className="mt-10">
+          <h3 className="text-lg font-semibold text-[#1C1C1C] mt-8">Under Review Tasks</h3>
+          <div className="mt-4">
+            <div className="font-semibold text-base">NC Regional MLS-NC Document</div>
+            <div className="text-sm text-gray-500 mt-1 mb-4 max-w-2xl">
+              Your Listing Agent Requires Some Documents Like The Listing Agreement, Agency Disclosure, And Property Details Input Forms. The Sooner You Complete This, The Quicker Your Listing Will Be Online
+            </div>
+            <div className="bg-white border rounded shadow-sm divide-y">
+              <div className="flex items-center justify-between px-6 py-4 cursor-pointer group">
+                <span className="text-gray-700">Listly Relationship Agreement And Disclosure</span>
+                <span className="text-gray-400 group-hover:text-blue-600">▾</span>
+              </div>
+              <div className="flex items-center justify-between px-6 py-4 cursor-pointer group">
+                <span className="text-gray-700">North Carolina Property Required Sketch</span>
+                <span className="text-gray-400 group-hover:text-blue-600">▾</span>
+              </div>
+              <div className="flex items-center justify-between px-6 py-4 cursor-pointer group">
+                <span className="text-gray-700">Listing Agreement</span>
+                <span className="text-gray-400 group-hover:text-blue-600">▾</span>
+              </div>
+              <div className="flex items-center justify-between px-6 py-4 cursor-pointer group">
+                <span className="text-gray-700">Agency Disclosure</span>
+                <span className="text-gray-400 group-hover:text-blue-600">▾</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )

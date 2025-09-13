@@ -187,11 +187,11 @@ const BuyerAgentModal = ({ open, onClose, initialStep = 1 }) => {
                 <div className="flex gap-4 mb-6">
                   <button onClick={() => setFinanceMethod('cash')} className={`flex-1 p-4 rounded-lg border-2 text-center ${financeMethod === 'cash' ? 'border-blue-600 bg-blue-50' : 'border-gray-200'}`}>
                     <div className="mb-2 flex justify-center"><img src={AllCash} alt="All Cash" className="w-12 h-12 sm:w-14 sm:h-14" /></div>
-                    <div className="text-sm">All Cash</div>
+                    {/* <div className="text-sm">All Cash</div> */}
                   </button>
                   <button onClick={() => setFinanceMethod('mortgage')} className={`flex-1 p-4 rounded-lg border-2 text-center ${financeMethod === 'mortgage' ? 'border-red-600 bg-red-50' : 'border-gray-200'}`}>
                     <div className="mb-2 flex justify-center"><img src={Mortgage} alt="Mortgage" className="w-12 h-12 sm:w-14 sm:h-14" /></div>
-                    <div className="text-sm">Mortgage</div>
+                    {/* <div className="text-sm">Mortgage</div> */}
                   </button>
                 </div>
                 <button onClick={() => { if (financeMethod === 'cash') setStep(4); else if (financeMethod === 'mortgage') setStep(8); }} disabled={!financeMethod} className="w-full bg-blue-600 text-white py-2 rounded-md disabled:opacity-50">Continue</button>
@@ -215,27 +215,27 @@ const BuyerAgentModal = ({ open, onClose, initialStep = 1 }) => {
                 <div className="text-sm text-gray-600 mb-4">By selecting Yes, you confirm that you have a signed Exclusive Agency Agreement and that your agent is required to submit the offer on your behalf.</div>
                 <h3 className="text-lg font-semibold mb-4">Agent Contact & Quote Form</h3>
                 <div className="space-y-4">
-                  <div className="bg-white p-2 rounded-md border border-gray-200">
+                  <div>
                     <label className="block text-sm font-medium mb-1">Full Name</label>
                     <input type="text" value={formData.fullName} onChange={(e) => setFormData({...formData, fullName: e.target.value})} className="w-full border border-gray-200 bg-white rounded-md px-3 py-2" placeholder="Full Name" />
                   </div>
-                  <div className="bg-white p-2 rounded-md border border-gray-200">
+                  <div>
                     <label className="block text-sm font-medium mb-1">Email</label>
                     <input type="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full border border-gray-200 bg-white rounded-md px-3 py-2" placeholder="Email" />
                   </div>
-                  <div className="bg-white p-2 rounded-md border border-gray-200">
+                  <div>
                     <label className="block text-sm font-medium mb-1">Phone Number</label>
                     <input type="text" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="w-full border border-gray-200 bg-white rounded-md px-3 py-2" placeholder="Phone Number" />
                   </div>
-                  <div className="bg-white p-2 rounded-md border border-gray-200">
+                  <div>
                     <label className="block text-sm font-medium mb-1">DRE License</label>
                     <input type="text" value={formData.dreeLicense} onChange={(e) => setFormData({...formData, dreeLicense: e.target.value})} className="w-full border border-gray-200 bg-white rounded-md px-3 py-2" placeholder="DRE License" />
                   </div>
-                  <div className="bg-white p-2 rounded-md border border-gray-200">
+                  <div>
                     <label className="block text-sm font-medium mb-1">Enter Price</label>
                     <input type="text" value={formData.enterPrice} onChange={(e) => setFormData({...formData, enterPrice: e.target.value})} className="w-full border border-gray-200 bg-white rounded-md px-3 py-2" placeholder="Enter Price" />
                   </div>
-                  <div className="bg-white p-2 rounded-md border border-gray-200">
+                  <div>
                     <label className="block text-sm font-medium mb-1">Expire Date</label>
                     <input type="text" value={formData.expireDate} onChange={(e) => setFormData({...formData, expireDate: e.target.value})} className="w-full border border-gray-200 bg-white rounded-md px-3 py-2" placeholder="Expire Date" />
                   </div>

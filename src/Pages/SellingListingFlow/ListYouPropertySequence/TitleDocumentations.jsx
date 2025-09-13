@@ -42,7 +42,7 @@ function TitleDocumentations({ onCancel, onContinue }) {
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">📄</div>
             <div>
-              <div className="text-lg font-semibold">Property Owner Info.</div>
+              <div className="text-lg font-bold">Property Owner Info.</div>
             </div>
           </div>
           <div className="px-3 py-1 bg-pink-100 text-blue-600 rounded text-xs">Step 5 of 7</div>
@@ -50,7 +50,7 @@ function TitleDocumentations({ onCancel, onContinue }) {
 
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-base font-medium">Property Owner Info.</h3>
+            <h3 className="text-base font-bold">Property Owner Info.</h3>
             <button
               type="button"
               onClick={addOwner}
@@ -105,7 +105,7 @@ function TitleDocumentations({ onCancel, onContinue }) {
         </div>
 
         <div className="mb-8">
-          <h3 className="text-base font-medium mb-4">Property Seller Info.</h3>
+          <h3 className="text-base font-bold mb-4">Property Seller Info.</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             <div>

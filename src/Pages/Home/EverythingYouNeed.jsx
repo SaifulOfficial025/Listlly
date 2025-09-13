@@ -58,13 +58,13 @@ function EverythingYouNeed() {
           Our platform provides all the tools and support you need to successfully sell your home without a traditional agent.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-8 text-left">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 text-left">
           {features.map((feature, index) => (
-            <div key={index} className="flex items-start space-x-4">
-              <div className="bg-[#EDF3FF] p-3 rounded-full">{feature.icon}</div>
+            <div key={index} className="flex items-start gap-4">
+              <div className="bg-[#EDF3FF] p-3 rounded-full flex items-center justify-center mt-1">{feature.icon}</div>
               <div>
-                <h3 className="text-sm font-semibold text-[#1C1C1C]">{feature.title}</h3>
-                <p className="text-sm text-[#3A3A3A] mt-1">
+                <h3 className="text-[15px] font-semibold text-[#1C1C1C] leading-snug">{feature.title}</h3>
+                <p className="text-[15px] text-[#3A3A3A] mt-1 leading-snug">
                   {feature.description} <span className="text-[#0054F6] cursor-pointer">See more</span>
                 </p>
               </div>

@@ -6,6 +6,7 @@ import YesIcon from "../../../public/YesIcon.svg"
 import NoIcon from "../../../public/NoIcon.svg"
 import AllCash from "../../../public/AllCash.svg"
 import Mortgage from "../../../public/Mortgage.svg"
+import { UploadIcon } from "lucide-react";
 
 
 function MakeAnOfferModal({
@@ -362,8 +363,38 @@ function MakeAnOfferModal({
                   <label className="block text-sm font-medium mb-1">Full Name</label>
                   <input
                     type="text"
-                    value={formData.dreeLicense}
-                    onChange={(e) => setFormData({...formData, dreeLicense: e.target.value})}
+                    value={formData.fullName}
+                    onChange={(e) => setFormData({...formData, fullName: e.target.value})}
+                    className="w-full border rounded-md px-3 py-2"
+                    placeholder="Enter Full Name"
+                  />
+                </div>
+                  <div>
+                  <label className="block text-sm font-medium mb-1">Email</label>
+                  <input
+                    type="text"
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    className="w-full border rounded-md px-3 py-2"
+                    placeholder="Enter Email"
+                  />
+                </div>
+                  <div>
+                  <label className="block text-sm font-medium mb-1">Phone</label>
+                  <input
+                    type="text"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                    className="w-full border rounded-md px-3 py-2"
+                    placeholder="Enter Phone"
+                  />
+                </div>
+                 <div>
+                  <label className="block text-sm font-medium mb-1">DRE License</label>
+                  <input
+                    type="text"
+                    value={formData.dreLicense}
+                    onChange={(e) => setFormData({...formData, dreLicense: e.target.value})}
                     className="w-full border rounded-md px-3 py-2"
                     placeholder="Enter DRE License"
                   />

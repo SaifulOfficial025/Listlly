@@ -42,7 +42,7 @@ export default function NewInsights() {
           </h2>
           <a
             href="#"
-            className="text-[#0054F6] text-[12px] md:text-[13px] font-semibold hover:underline ml-0 md:ml-4 shrink-0"
+            className="text-[#0054F6] text-[16px] md:text-[13px] font-semibold hover:underline ml-0 md:ml-4 shrink-0"
           >
             View All
           </a>

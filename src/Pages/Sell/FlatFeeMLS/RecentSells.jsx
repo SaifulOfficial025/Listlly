@@ -62,7 +62,7 @@ function PropertyCard({
         <div className="mt-2 text-[14px] font-semibold text-[#0054F6]">
           {price}
         </div>
-        <div className="mt-2 text-[12px] text-[#5F6B7A]">
+        <div className="mt-2 text-[16px] text-[#5F6B7A]">
           {beds} beds <span className="mx-2">•</span> {baths} baths
           <span className="mx-2">•</span>
           <span>

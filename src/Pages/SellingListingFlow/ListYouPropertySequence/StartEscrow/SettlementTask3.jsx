@@ -22,16 +22,20 @@ export default function SettlementTask3() {
 
         {/* Steps */}
         <div className="mt-6 flex items-end justify-between gap-6">
-          <div className="flex flex-col items-center flex-1">
-            <div className="text-sm font-semibold text-gray-400">Title & Contact Info</div>
-            <div className="w-2 h-2 rounded-full bg-gray-300 mt-2" />
-            <div className="mt-2 w-36 h-3 rounded-full bg-gray-100" />
+         
+           <div className="flex flex-col items-center flex-1">
+            <div className="text-sm font-semibold text-gray-800">Title & Contact Info</div>
+            <div className="w-2 h-2 rounded-full bg-blue-600 mt-2" />
+            <div className="mt-2 w-36 h-3 rounded-full bg-gray-200 overflow-hidden">
+              <div className="h-3 bg-blue-600 rounded-full" style={{ width: '100%' }} />
+            </div>
           </div>
-          <div className="flex flex-col items-center flex-1">
-            <div className="text-sm font-semibold text-gray-400">Parties Involved</div>
-            <div className="w-2 h-2 rounded-full bg-gray-300 mt-2" />
-            <div className="mt-2 w-36 h-3 rounded-full bg-gray-100"  />
-            
+           <div className="flex flex-col items-center flex-1">
+            <div className="text-sm font-semibold text-gray-800">Parties Involved</div>
+            <div className="w-2 h-2 rounded-full bg-blue-600 mt-2" />
+            <div className="mt-2 w-36 h-3 rounded-full bg-gray-200 overflow-hidden">
+              <div className="h-3 bg-blue-600 rounded-full" style={{ width: '100%' }} />
+            </div>
           </div>
           <div className="flex flex-col items-center flex-1">
             <div className="text-sm font-semibold text-gray-800">Schedule Closing</div>

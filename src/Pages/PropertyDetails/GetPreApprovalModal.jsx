@@ -64,6 +64,7 @@ const GetPreApprovalModal = ({ open, onClose, image, address = '123 Oak Street, 
           <div className="p-6">
             {step === 1 && (
               <form onSubmit={handleSubmitContact} className="space-y-4">
+                <span className='text-gray-600 '> I am interested in the following property</span>
                 <h3 className="text-lg font-semibold">Contact Information</h3>
                 <div>
                   <label className="text-sm text-gray-600 block mb-1">First Name</label>
@@ -104,8 +105,8 @@ const GetPreApprovalModal = ({ open, onClose, image, address = '123 Oak Street, 
                 <div className="mb-4 flex items-center justify-center">
                   <CheckCircle size={56} className="text-green-500" />
                 </div>
-                <h3 className="text-lg font-semibold">Get Pre-Approve Confirm</h3>
-                <p className="text-sm text-gray-500 mt-2 mb-6">We'll review your details and send you your offer shortly.</p>
+                <h3 className="text-lg font-semibold">Thank you for submitting your request</h3>
+                <p className="text-sm text-gray-500 mt-2 mb-6">We'll review your details shortly.</p>
                 <button onClick={handleConfirm} className="w-full bg-gradient-to-r from-blue-500 to-blue-700 text-white py-3 rounded">Confirm</button>
               </div>
             )}

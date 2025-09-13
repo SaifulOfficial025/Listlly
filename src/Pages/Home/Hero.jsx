@@ -60,7 +60,7 @@ function Hero() {
         </div>
       </div>
 
-  {/* Search + Register Bar */}
+  {/* Search  */}
   <div className="mt-20 flex items-center justify-center gap-0 shadow-xl rounded-2xl overflow-hidden bg-white w-full max-w-7xl mx-auto">
         <input
           type="text"
@@ -70,7 +70,7 @@ function Hero() {
         <button
           className="px-8 py-4 text-base text-white font-semibold rounded-none shadow-sm transition-all duration-200 hover:scale-105 active:scale-100 bg-gradient-to-r from-[#0054F6] to-[#0D47C1]"
         >
-          Register 🔍
+          Search 🔍
         </button>
       </div>
 

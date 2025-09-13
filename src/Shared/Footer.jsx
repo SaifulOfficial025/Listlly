@@ -16,11 +16,11 @@ export default function Footer() {
               <div className="flex items-center gap-2">
                 <img src={Logo} alt="Listlly logo" className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14" />
               </div>
-              <p className="mt-4 text-[12px] md:text-[13px] leading-relaxed text-white/85 max-w-[320px]">
+              <p className="mt-4 text-[16px] md:text-[13px] leading-relaxed text-white/85 max-w-[320px]">
                 For Sale by Owner Just Made Simple — Sell Your
                 Home Yourself And Keep Every Dollar
               </p>
-              <p className="mt-4 text-[11px] md:text-[12px] text-white/70 max-w-[360px]">
+              <p className="mt-4 text-[11px] md:text-[16px] text-white/70 max-w-[360px]">
                 Listlly Corp. holds real estate brokerage licenses in
                 California (License No. 02187353)
               </p>
@@ -29,7 +29,7 @@ export default function Footer() {
             {/* Middle: Quick Links */}
             <div>
               <h4 className="text-[16px] md:text-[18px] font-semibold mb-2 md:mb-4">Quick Links</h4>
-              <ul className="space-y-2 md:space-y-3 text-[12px] md:text-[14px]">
+              <ul className="space-y-2 md:space-y-3 text-[16px] md:text-[14px]">
                 <li><a href="#" className="hover:underline text-white/90">Sell Your Home</a></li>
                 <li><a href="#" className="hover:underline text-white/90">Buy a Home</a></li>
                 <li><a href="#" className="hover:underline text-white/90">Pricing</a></li>
@@ -42,7 +42,7 @@ export default function Footer() {
             {/* Right: Contact Us */}
             <div>
               <h4 className="text-[16px] md:text-[18px] font-semibold mb-2 md:mb-4">Contact Us</h4>
-              <ul className="space-y-2 md:space-y-3 text-[12px] md:text-[14px]">
+              <ul className="space-y-2 md:space-y-3 text-[16px] md:text-[14px]">
                 <li className="text-white/90">
                   Email: <a href="mailto:help@listlly.com" className="hover:underline text-white">help@listlly.com</a>
                 </li>

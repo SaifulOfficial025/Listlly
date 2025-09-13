@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
-import SignupBackground from "../../../public/SignUpBackground.jpg";
+import signup from "../../../public/SignUpBackground.jpg";
 import Logo from "../../../public/Listlly-logo-white.svg";
-import signup from "../../../public/signup.png";
 
 import { Link } from "react-router-dom";
 function SignUp() {
@@ -41,7 +40,7 @@ function SignUp() {
                 One‑Stop Real Estate Solution.
               </p>
               <p
-                className="text-[12px] mt-2 leading-relaxed text-center"
+                className="text-[16px] mt-2 leading-relaxed text-center"
                 style={{ color: "rgba(255,255,255,0.85)" }}
               >
                 *Discover a simpler, smarter way to buy and sell homes. With
@@ -57,21 +56,24 @@ function SignUp() {
         <div className="flex items-center justify-center px-4 md:px-10 py-8 md:py-10">
             <div className="w-full max-w-md mx-auto">
             <h1
-              className="text-lg sm:text-xl md:text-2xl font-bold text-center"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-center"
               style={{ color: "#1C1C1C" }}
             >
               Create Your Listlly Account
             </h1>
-            <p className="text-[12px] mt-1 text-center text-[#606A76]">
-              Please sign up to access your account, manage your listings, and
-              take the next step in your real estate journey.
+            <p className="text-[16px] mt-1 text-center text-[#606A76]">
+              Start selling your home with no commissions and full professional support.
+            </p>
+
+            <p className="text-[16px] mt-1 text-center text-black mt-5">
+              If you are a partner/vendor/agent, please <span className="text-blue-700 underline">Register</span>
             </p>
 
             <div className="mt-6 space-y-4">
 
               {/* Full Name */}
               <div>
-                <label className="block text-[12px] mb-1 text-[#4B5563]">
+                <label className="block text-[16px] mb-1 text-[#4B5563]">
                   Full Name
                 </label>
                 <input
@@ -82,7 +84,7 @@ function SignUp() {
 
               {/* Email */}
               <div>
-                <label className="block text-[12px] mb-1 text-[#4B5563]">
+                <label className="block text-[16px] mb-1 text-[#4B5563]">
                   Email Address
                 </label>
                 <input
@@ -99,7 +101,7 @@ function SignUp() {
 
               {/* Password */}
               <div>
-                <label className="block text-[12px] mb-1 text-[#4B5563]">
+                <label className="block text-[16px] mb-1 text-[#4B5563]">
                   Password
                 </label>
                 <div className="relative">
@@ -132,7 +134,7 @@ function SignUp() {
 
                {/* Confirm Password */}
               <div>
-                <label className="block text-[12px] mb-1 text-[#4B5563]">
+                <label className="block text-[16px] mb-1 text-[#4B5563]">
                   Confirm Password
                 </label>
                 <div className="relative">
@@ -157,6 +159,7 @@ function SignUp() {
 
 
 
+
               {/* Login button */}
               <button
                 className="w-full h-11 rounded-md text-white font-semibold text-sm md:text-base"
@@ -165,13 +168,21 @@ function SignUp() {
                     "linear-gradient(90deg, #0054F6 0%, #0D47C1 100%)",
                 }}
               >
-                Sign Up
+                Register
               </button>
+
+              {/* Terms and Privacy */}
+              <p className="text-[15px] text-center text-[#222] mt-2 mb-1">
+                By signing up, you agree to our{' '}
+                <Link to="/terms" className="text-blue-700 underline">Terms of Service</Link>
+                {' '}and{' '}
+                <Link to="/privacy" className="text-blue-700 underline">Privacy Policy.</Link>
+              </p>
 
               {/* Divider */}
               <div className="flex items-center gap-4 my-1">
                 <div className="h-px flex-1 bg-[#E5E7EB]" />
-                <span className="text-[12px] text-[#6B7280]">Or</span>
+                <span className="text-[16px] text-[#6B7280]">Or</span>
                 <div className="h-px flex-1 bg-[#E5E7EB]" />
               </div>
 
@@ -201,7 +212,7 @@ function SignUp() {
               </button>
 
               {/* Footer */}
-              <p className="text-[12px] text-center mt-1 text-[#6B7280]">
+              <p className="text-[16px] text-center mt-1 text-[#6B7280]">
                 Do have an account?{" "}
                 <Link to="/signin">
                   <span className="text-blue-600 font-bold">Sign In</span>

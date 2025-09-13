@@ -44,6 +44,11 @@ const SellProperties = ({ onCreate }) => {
       </div>
 
       {/* Processing banner */}
+       <div className='mt-10'>
+            <h2 className="text-lg font-semibold text-black">Your Listed Property <span className='text-red-400'>(Processing)</span></h2>
+            <p className="text-sm text-gray-500">Property details according to your Info</p>
+          </div>
+
       <div className="mt-8 bg-[#FFF1F2] border border-[#FEE2E2] rounded-md p-4 flex text-black items-center gap-4">
         <img src={photos[1]} alt="processing" className="w-28 h-20 rounded-md object-cover" />
         <div className="flex-1">
