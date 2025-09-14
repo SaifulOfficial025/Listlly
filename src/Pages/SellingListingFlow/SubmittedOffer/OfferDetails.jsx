@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaRegEdit } from 'react-icons/fa';
+
 import { FaHome, FaDollarSign, FaCalendarAlt, FaCheck, FaTimes } from "react-icons/fa";
 import Dollar from "../../../../public/dollar.svg"
 import Home from "../../../../public/home.svg"
@@ -200,9 +200,11 @@ export default function OfferDetails() {
               {/* Previous Counter Offers */}
               {savedOffers.map((offer, index) => (
                 <div key={index} className="flex items-center justify-center text-center">
-                  <div className="text-[16px] font-semibold text-blue-600">
-                    {offer.offerContract || 'No changes'}
-                  </div>
+                  {offer.offerContract ? (
+                    <div className="text-[16px] font-semibold text-blue-600">{offer.offerContract}</div>
+                  ) : (
+                    <div className="text-[16px] font-semibold text-red-500">No change</div>
+                  )}
                 </div>
               ))}
 
@@ -218,17 +220,13 @@ export default function OfferDetails() {
                       }
                     }}
                     placeholder="Enter details"
-                    className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500 dark:bg-white text-black"
                   />
                 </div>
               )}
 
               {/* Edit icon */}
-              <div className="flex justify-end">
-                <button type="button" className="p-1" aria-label="Edit">
-                  <FaRegEdit className="w-4 h-4 text-blue-600" />
-                </button>
-              </div>
+              {/* Edit icon removed */}
             </td>
           </tr>
 
@@ -251,9 +249,11 @@ export default function OfferDetails() {
               {/* Previous Counter Offers */}
               {savedOffers.map((offer, index) => (
                 <div key={index} className="flex items-center justify-center text-center">
-                  <div className="text-[16px] font-semibold text-blue-600">
-                    {offer.payment || 'No changes'}
-                  </div>
+                  {offer.payment ? (
+                    <div className="text-[16px] font-semibold text-blue-600">{offer.payment}</div>
+                  ) : (
+                    <div className="text-[16px] font-semibold text-red-500">No change</div>
+                  )}
                 </div>
               ))}
 
@@ -269,17 +269,13 @@ export default function OfferDetails() {
                       }
                     }}
                     placeholder="Enter details"
-                    className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500 dark:bg-white text-black"
                   />
                 </div>
               )}
 
               {/* Edit icon */}
-              <div className="flex justify-end">
-                <button type="button" className="p-1" aria-label="Edit">
-                  <FaRegEdit className="w-4 h-4 text-blue-600" />
-                </button>
-              </div>
+              {/* Edit icon removed */}
             </td>
           </tr>
         </tbody>
@@ -327,9 +323,11 @@ export default function OfferDetails() {
             {/* Previous Counter Offers */}
             {savedOffers.map((offer, index) => (
               <td key={index} className="flex items-center justify-center text-center">
-                <div className="text-[16px] font-semibold text-blue-600">
-                  {offer.offerPrice ? `$${offer.offerPrice}` : 'No change'}
-                </div>
+                {offer.offerPrice ? (
+                  <div className="text-[16px] font-semibold text-blue-600">${offer.offerPrice}</div>
+                ) : (
+                  <div className="text-[16px] font-semibold text-red-500">No change</div>
+                )}
               </td>
             ))}
 
@@ -345,17 +343,13 @@ export default function OfferDetails() {
                     }
                   }}
                   placeholder="Enter price"
-                  className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500 dark:bg-white text-black"
                 />
               </td>
             )}
 
             {/* Right: Edit */}
-            <td className="flex justify-end">
-              <button type="button" className="p-1" aria-label="Edit">
-                <FaRegEdit className="w-4 h-4 text-blue-600" />
-              </button>
-            </td>
+            {/* Edit icon removed */}
           </tr>
 
           {/* Row 2 */}
@@ -374,9 +368,11 @@ export default function OfferDetails() {
             </td>
             {savedOffers.map((offer, index) => (
               <td key={index} className="flex items-center justify-center text-center">
-                <div className="text-[16px] font-semibold text-blue-600">
-                  {offer.earnestMoney ? `$${offer.earnestMoney}` : 'No change'}
-                </div>
+                {offer.earnestMoney ? (
+                  <div className="text-[16px] font-semibold text-blue-600">${offer.earnestMoney}</div>
+                ) : (
+                  <div className="text-[16px] font-semibold text-red-500">No change</div>
+                )}
               </td>
             ))}
             {isCounterOffer && (
@@ -390,15 +386,11 @@ export default function OfferDetails() {
                     }
                   }}
                   placeholder="Enter amount"
-                  className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500 dark:bg-white text-black"
                 />
               </td>
             )}
-            <td className="flex justify-end">
-              <button type="button" className="p-1" aria-label="Edit">
-                <FaRegEdit className="w-4 h-4 text-blue-600" />
-              </button>
-            </td>
+            {/* Edit icon removed */}
           </tr>
 
           {/* Row 3 */}
@@ -417,9 +409,11 @@ export default function OfferDetails() {
             </td>
             {savedOffers.map((offer, index) => (
               <td key={index} className="flex items-center justify-center text-center">
-                <div className="text-[16px] font-semibold text-blue-600">
-                  {offer.sellerSettlement1 ? `$${offer.sellerSettlement1}` : 'No change'}
-                </div>
+                {offer.sellerSettlement1 ? (
+                  <div className="text-[16px] font-semibold text-blue-600">${offer.sellerSettlement1}</div>
+                ) : (
+                  <div className="text-[16px] font-semibold text-red-500">No change</div>
+                )}
               </td>
             ))}
             {isCounterOffer && (
@@ -433,14 +427,12 @@ export default function OfferDetails() {
                     }
                   }}
                   placeholder="Enter amount"
-                  className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500 dark:bg-white text-black"
                 />
               </td>
             )}
             <td className="flex justify-end">
-              <button type="button" className="p-1" aria-label="Edit">
-                <FaRegEdit className="w-4 h-4 text-blue-600" />
-              </button>
+             
             </td>
           </tr>
 
@@ -460,9 +452,11 @@ export default function OfferDetails() {
             </td>
             {savedOffers.map((offer, index) => (
               <td key={index} className="flex items-center justify-center text-center">
-                <div className="text-[16px] font-semibold text-blue-600">
-                  {offer.sellerSettlement2 || 'No change'}
-                </div>
+                {offer.sellerSettlement2 ? (
+                  <div className="text-[16px] font-semibold text-blue-600">{offer.sellerSettlement2}</div>
+                ) : (
+                  <div className="text-[16px] font-semibold text-red-500">No change</div>
+                )}
               </td>
             ))}
             {isCounterOffer && (
@@ -476,14 +470,12 @@ export default function OfferDetails() {
                     }
                   }}
                   placeholder="Enter value"
-                  className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500 dark:bg-white text-black"
                 />
               </td>
             )}
             <td className="flex justify-end">
-              <button type="button" className="p-1" aria-label="Edit">
-                <FaRegEdit className="w-4 h-4 text-blue-600" />
-              </button>
+           
             </td>
           </tr>
         </tbody>
@@ -533,9 +525,15 @@ export default function OfferDetails() {
         {/* Previous Counter Offers */}
         {savedOffers.map((offer, index) => (
           <td key={index} className="flex items-center justify-center text-center">
-            <div className="text-[16px] font-semibold text-blue-600">
-              {offer.settlementDate || 'No change'}
-            </div>
+            {offer.settlementDate ? (
+              <div className="text-[16px] font-semibold text-blue-600">
+                {offer.settlementDate}
+              </div>
+            ) : (
+              <div className="text-[16px] font-semibold text-red-500">
+                No change
+              </div>
+            )}
           </td>
         ))}
 
@@ -551,7 +549,7 @@ export default function OfferDetails() {
                 }
               }}
               placeholder="MM/DD/YYYY"
-              className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500 dark:bg-white text-black"
             />
           </td>
         )}
@@ -582,9 +580,11 @@ export default function OfferDetails() {
         </td>
         {savedOffers.map((offer, index) => (
           <td key={index} className="flex items-center justify-center text-center">
-            <div className="text-[16px] font-semibold text-blue-600">
-              {offer.expirationDate || 'No change'}
-            </div>
+            {offer.expirationDate ? (
+              <div className="text-[16px] font-semibold text-blue-600">{offer.expirationDate}</div>
+            ) : (
+              <div className="text-[16px] font-semibold text-red-500">No change</div>
+            )}
           </td>
         ))}
         {isCounterOffer && (
@@ -598,13 +598,11 @@ export default function OfferDetails() {
                 }
               }}
               placeholder="MM/DD/YYYY"
-              className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500 dark:bg-white text-black"
             />
           </td>
         )}
-        <td className="flex justify-end pl-6">
-          <FaRegEdit className="w-4 h-4 text-blue-600" />
-        </td>
+  {/* Edit icon removed */}
       </tr>
 
       {/* Row 3 */}
@@ -622,9 +620,11 @@ export default function OfferDetails() {
         </td>
         {savedOffers.map((offer, index) => (
           <td key={index} className="flex items-center justify-center text-center">
-            <div className="text-[16px] font-semibold text-blue-600">
-              {offer.inspectionEndDate || 'No change'}
-            </div>
+            {offer.inspectionEndDate ? (
+              <div className="text-[16px] font-semibold text-blue-600">{offer.inspectionEndDate}</div>
+            ) : (
+              <div className="text-[16px] font-semibold text-red-500">No change</div>
+            )}
           </td>
         ))}
         {isCounterOffer && (
@@ -638,13 +638,11 @@ export default function OfferDetails() {
                 }
               }}
               placeholder="MM/DD/YYYY"
-              className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500 dark:bg-white text-black"
             />
           </td>
         )}
-        <td className="flex justify-end pl-6">
-          <FaRegEdit className="w-4 h-4 text-blue-600" />
-        </td>
+  {/* Edit icon removed */}
       </tr>
 
       {/* Row 4 */}
@@ -662,9 +660,11 @@ export default function OfferDetails() {
         </td>
         {savedOffers.map((offer, index) => (
           <td key={index} className="flex items-center justify-center text-center">
-            <div className="text-[16px] font-semibold text-blue-600">
-              {offer.inspectionResolutionDate || 'No change'}
-            </div>
+            {offer.inspectionResolutionDate ? (
+              <div className="text-[16px] font-semibold text-blue-600">{offer.inspectionResolutionDate}</div>
+            ) : (
+              <div className="text-[16px] font-semibold text-red-500">No change</div>
+            )}
           </td>
         ))}
         {isCounterOffer && (
@@ -678,13 +678,11 @@ export default function OfferDetails() {
                 }
               }}
               placeholder="MM/DD/YYYY"
-              className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500 dark:bg-white text-black"
             />
           </td>
         )}
-        <td className="flex justify-end pl-6">
-          <FaRegEdit className="w-4 h-4 text-blue-600" />
-        </td>
+    
       </tr>
     </tbody>
   </table>
@@ -736,9 +734,11 @@ export default function OfferDetails() {
             {/* Previous Counter Offers */}
             {savedOffers.map((offer, index) => (
               <td key={index} className="flex items-center justify-center text-center">
-                <div className="text-[16px] font-semibold text-blue-600">
-                  {offer.financing || 'No change'}
-                </div>
+                {offer.financing ? (
+                  <div className="text-[16px] font-semibold text-blue-600">{offer.financing}</div>
+                ) : (
+                  <div className="text-[16px] font-semibold text-red-500">No change</div>
+                )}
               </td>
             ))}
 
@@ -754,15 +754,13 @@ export default function OfferDetails() {
                     }
                   }}
                   placeholder="Enter type"
-                  className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500 dark:bg-white text-black"
                 />
               </td>
             )}
 
             {/* Right: Edit */}
-            <td className="flex justify-end">
-              <FaRegEdit className="w-4 h-4 text-blue-600" />
-            </td>
+            {/* Edit icon removed */}
           </tr>
 
           {/* Row: Appraisal */}
@@ -782,9 +780,11 @@ export default function OfferDetails() {
             {/* Previous Counter Offers */}
             {savedOffers.map((offer, index) => (
               <td key={index} className="flex items-center justify-center text-center">
-                <div className="text-[16px] font-semibold text-blue-600">
-                  {offer.appraisal || 'No change'}
-                </div>
+                {offer.appraisal ? (
+                  <div className="text-[16px] font-semibold text-blue-600">{offer.appraisal}</div>
+                ) : (
+                  <div className="text-[16px] font-semibold text-red-500">No change</div>
+                )}
               </td>
             ))}
 
@@ -800,15 +800,13 @@ export default function OfferDetails() {
                     }
                   }}
                   placeholder="Yes/No"
-                  className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500 dark:bg-white text-black"
                 />
               </td>
             )}
 
             {/* Right: Edit */}
-            <td className="flex justify-end">
-              <FaRegEdit className="w-4 h-4 text-blue-600" />
-            </td>
+        
           </tr>
         </tbody>
       </table>
@@ -850,9 +848,11 @@ export default function OfferDetails() {
             {/* Previous Counter Offers */}
             {savedOffers.map((offer, index) => (
               <td key={index} className="flex items-center justify-center text-center">
-                <div className="text-[16px] font-semibold text-blue-600">
-                  {offer.homeWarranty || 'No change'}
-                </div>
+                {offer.homeWarranty ? (
+                  <div className="text-[16px] font-semibold text-blue-600">{offer.homeWarranty}</div>
+                ) : (
+                  <div className="text-[16px] font-semibold text-red-500">No change</div>
+                )}
               </td>
             ))}
 
@@ -868,21 +868,19 @@ export default function OfferDetails() {
                     }
                   }}
                   placeholder="Enter value"
-                  className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-24 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500 dark:bg-white text-black"
                 />
               </td>
             )}
 
             {/* Right: Edit */}
-            <td className="flex justify-end">
-              <FaRegEdit className="w-4 h-4 text-blue-600" />
-            </td>
+         
           </tr>
 
           {/* Row: Any Other Important Consideration */}
           <tr className={`grid ${getGridCols()} items-start px-4 py-4`}>
             {/* Left: Icon + Title */}
-            <td className="flex items-start gap-3">
+            <td className="flex items-start gap-3 ">
               <img src={Home3} alt="Home Icon" className="w-10 h-10 text-blue-600 mt-0.5" />
               <div>
                 <div className="text-[14px] font-semibold">
@@ -904,9 +902,11 @@ export default function OfferDetails() {
             {/* Previous Counter Offers */}
             {savedOffers.map((offer, index) => (
               <td key={index} className="flex items-start justify-center text-center pt-2">
-                <div className="text-[16px] font-semibold text-blue-600">
-                  {offer.otherConsideration || 'No change'}
-                </div>
+                {offer.otherConsideration ? (
+                  <div className="text-[16px] font-semibold text-blue-600">{offer.otherConsideration}</div>
+                ) : (
+                  <div className="text-[16px] font-semibold text-red-500">No change</div>
+                )}
               </td>
             ))}
 
@@ -922,15 +922,13 @@ export default function OfferDetails() {
                   }}
                   placeholder="Enter details"
                   rows="3"
-                  className="w-32 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500 resize-none"
+                  className="w-32 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500 resize-none dark:bg-white text-black"
                 />
               </td>
             )}
 
             {/* Right: Edit */}
-            <td className="flex justify-end">
-              <FaRegEdit className="w-4 h-4 text-blue-600 mt-1" />
-            </td>
+            {/* Edit icon removed */}
           </tr>
         </tbody>
       </table>
@@ -959,9 +957,23 @@ export default function OfferDetails() {
       <div className="flex-1 flex flex-col items-center justify-center text-center">
         {savedOffers.length === 0 && <div className="text-[17px] text-gray-700 font-medium">None</div>}
         {savedOffers.map((offer, index) => (
-          <div key={index} className="text-[16px] font-semibold text-blue-600">
-            {offer.includeFixtures || 'No change'}
-          </div>
+          (
+            offer.includeFixtures ? (
+              <div
+                key={index}
+                className="text-[16px] font-semibold text-blue-600"
+              >
+                {offer.includeFixtures}
+              </div>
+            ) : (
+              <div
+                key={index}
+                className="text-[16px] font-semibold text-red-500"
+              >
+                No change
+              </div>
+            )
+          )
         ))}
         {isCounterOffer && (
           <input
@@ -969,17 +981,11 @@ export default function OfferDetails() {
             value={counterOfferData.includeFixtures || ''}
             onChange={e => handleInputChange('includeFixtures', e.target.value)}
             placeholder="Enter details"
-            className="w-32 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500 mt-2"
+            className="w-32 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500 mt-2 dark:bg-white text-black"
           />
         )}
       </div>
-      <div className="flex-1 flex justify-end">
-        <button type="button" className="p-1" aria-label="Edit">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-blue-600">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487a2.1 2.1 0 1 1 2.97 2.97L7.5 19.788l-4 1 1-4 14.362-14.3z" />
-          </svg>
-        </button>
-      </div>
+  {/* Edit icon removed */}
     </div>
     {/* Exclude Fixtures */}
     <div className="flex items-center py-6">
@@ -994,9 +1000,13 @@ export default function OfferDetails() {
       <div className="flex-1 flex flex-col items-center justify-center text-center">
         {savedOffers.length === 0 && <div className="text-[17px] text-gray-700 font-medium">None</div>}
         {savedOffers.map((offer, index) => (
-          <div key={index} className="text-[16px] font-semibold text-blue-600">
-            {offer.excludeFixtures || 'No change'}
-          </div>
+          (
+            offer.excludeFixtures ? (
+              <div key={index} className="text-[16px] font-semibold text-blue-600">{offer.excludeFixtures}</div>
+            ) : (
+              <div key={index} className="text-[16px] font-semibold text-red-500">No change</div>
+            )
+          )
         ))}
         {isCounterOffer && (
           <input
@@ -1004,17 +1014,11 @@ export default function OfferDetails() {
             value={counterOfferData.excludeFixtures || ''}
             onChange={e => handleInputChange('excludeFixtures', e.target.value)}
             placeholder="Enter details"
-            className="w-32 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500 mt-2"
+            className="w-32 px-2 py-1 text-[16px] border border-gray-300 rounded text-center focus:outline-none focus:ring-1 focus:ring-blue-500 mt-2 dark:bg-white text-black"
           />
         )}
       </div>
-      <div className="flex-1 flex justify-end">
-        <button type="button" className="p-1" aria-label="Edit">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-blue-600">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487a2.1 2.1 0 1 1 2.97 2.97L7.5 19.788l-4 1 1-4 14.362-14.3z" />
-          </svg>
-        </button>
-      </div>
+  {/* Edit icon removed */}
     </div>
   </div>
 </div>
@@ -1033,7 +1037,7 @@ export default function OfferDetails() {
       <div className="px-4 py-4 ">
         <textarea
           rows="4"
-          className="w-full border border-gray-300 rounded-md p-3 text-[14px] outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 dark:bg-white"
+          className="w-full border border-gray-300 rounded-md p-3 text-[14px] outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 dark:bg-white text-black"
           placeholder=""
         />
       </div>

@@ -1,49 +1,38 @@
 import React from 'react';
-import {
-  FaRegClock,
-  FaCamera,
-  FaFileAlt,
-  FaUsers,
-  FaClipboardList,
-  FaPiggyBank,
-  FaHandshake,
-} from 'react-icons/fa';
+
+// Red check SVG icon as React component
+const RedCheck = () => (
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="28" height="28" rx="10" fill="#fff6f3"/>
+    <path d="M19.5 10.5L12.25 17.5L9 14.5" stroke="#EB4E3D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <circle cx="14" cy="14" r="12" stroke="#EB4E3D" strokeWidth="2"/>
+  </svg>
+);
 
 const features = [
   {
-    icon: <FaClipboardList className="text-[#0054F6] w-5 h-5" />,
-    title: "Complete Your Listing in Just Minutes",
-    description: "Our guided listing flow walks you through every step — from entering your property details to setting your price. Just a seamless",
+    title: "Complete Your Listing in Minutes",
+    description: "Guided flow walks you step by step — from property details to pricing.",
   },
   {
-    icon: <FaRegClock className="text-[#0054F6] w-5 h-5" />,
-    title: "Your Home Listed on the MLS Within 24 Hours",
-    description: "Once your listing is submitted, it’s professionally reviewed and published to the MLS within 24 hours. From there, it’s",
+    title: "Professional Photography",
+    description: "Schedule a pro photographer through Listlly to make your home shine.",
   },
   {
-    icon: <FaCamera className="text-[#0054F6] w-5 h-5" />,
-    title: "Professional Photography, Delivered to Your Door",
-    description: "Easily schedule a professional photographer through Listlly to showcase your home in the best possible light. High-quality",
+    title: "MLS Listing in 24 Hours",
+    description: "Get professionally reviewed & live on the MLS within a day.",
   },
   {
-    icon: <FaPiggyBank className="text-[#0054F6] w-5 h-5" />,
-    title: "Huge Savings and No Hidden Fees",
-    description: "With Listlly, there are no surprises and no 5% commissions. Our flat-fee structure helps homeowners save an average of $20,000",
+    title: "Simple Disclosures",
+    description: "Our digital disclosure process is compliant & stress-free.",
   },
   {
-    icon: <FaFileAlt className="text-[#0054F6] w-5 h-5" />,
-    title: "The Simplest Way to Complete Seller Disclosures",
-    description: "We’ve made paperwork stress-free. Our digital disclosure process is straightforward, compliant, and tailored to the Department of",
+    title: "Huge Savings",
+    description: "No hidden fees. Flat-rate pricing saves homeowners an average of $20,000.",
   },
   {
-    icon: <FaHandshake className="text-[#0054F6] w-5 h-5" />,
     title: "Smart Offer Management",
-    description: "Get notified instantly when buyers submit offers. Review, counter, or call for best-and-final — all within your dashboard.",
-  },
-  {
-    icon: <FaUsers className="text-[#0054F6] w-5 h-5" />,
-    title: "A Dedicated Team by Your Side from Start to Finish",
-    description: "Selling on your own doesn’t mean selling alone. Our experienced listing advisors are by your side throughout the entire process",
+    description: "Review, counter, or accept offers instantly inside your dashboard.",
   },
 ];
 
@@ -55,18 +44,23 @@ function EverythingYouNeed() {
           Everything <span className="text-[#EB4E3D]">You Need to Sell</span> with Confidence
         </h2>
         <p className="text-[#5A5A5A] mt-4 max-w-[600px] mx-auto text-sm md:text-base">
-          Our platform provides all the tools and support you need to successfully sell your home without a traditional agent.
+         Listlly gives you all the tools and support to sell your home smoothly — without paying 5% commissions.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 text-left">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
           {features.map((feature, index) => (
-            <div key={index} className="flex items-start gap-4">
-              <div className="bg-[#EDF3FF] p-3 rounded-full flex items-center justify-center mt-1">{feature.icon}</div>
-              <div>
-                <h3 className="text-[15px] font-semibold text-[#1C1C1C] leading-snug">{feature.title}</h3>
-                <p className="text-[15px] text-[#3A3A3A] mt-1 leading-snug">
-                  {feature.description} <span className="text-[#0054F6] cursor-pointer">See more</span>
-                </p>
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow-[0_2px_12px_rgba(44,62,80,0.07)] p-6 flex flex-col h-full min-h-[170px] border border-[#f2f2f2] hover:shadow-lg transition-shadow duration-300 transform hover:scale-105"
+            >
+              <div className=" items-start">
+                <span className="block mr-3 mt-1 mb-3"><RedCheck /></span>
+                <div>
+                  <h3 className="text-[18px] font-bold text-[#1C1C1C] leading-snug mb-1">{feature.title}</h3>
+                  <p className="text-[15px] text-[#3A3A3A] leading-snug opacity-90">
+                    {feature.description}
+                  </p>
+                </div>
               </div>
             </div>
           ))}

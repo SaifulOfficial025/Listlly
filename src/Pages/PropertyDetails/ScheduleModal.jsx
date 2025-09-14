@@ -21,18 +21,52 @@ function ScheduleModal({
   setOtp,
   image,
 }) {
-  const dates = ["Mon 11", "Tue 12", "Wed 13", "Thu 14", "Fri 15"];
-  const times = ["9:00AM", "10:00AM", "11:00AM", "12:00PM"];
+  // Generate all dates for the current month
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const dates = Array.from({ length: daysInMonth }, (_, i) => {
+    const dateObj = new Date(year, month, i + 1);
+    return `${weekdays[dateObj.getDay()]} ${i + 1}`;
+  });
 
+  // More granular time options for dropdown (every 15 minutes, 9AM-8PM)
+  const times = [];
+  for (let h = 9; h <= 20; h++) {
+    for (let m = 0; m < 60; m += 15) {
+      let hour = h > 12 ? h - 12 : h;
+      let ampm = h < 12 ? 'AM' : 'PM';
+      if (h === 12) ampm = 'PM';
+      if (h === 0) hour = 12;
+      times.push(`${hour}:${m.toString().padStart(2, '0')}${ampm}`);
+    }
+  }
+
+  // For auto-sliding date selector
+  const dateListRef = React.useRef(null);
   const prevDate = () => {
     const idx = dates.indexOf(selectedDate);
     const nextIdx = idx <= 0 ? 0 : idx - 1;
     setSelectedDate(dates[nextIdx]);
+    setTimeout(() => {
+      if (dateListRef.current) {
+        const btn = dateListRef.current.querySelectorAll('button')[nextIdx];
+        if (btn) btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    }, 0);
   };
   const nextDate = () => {
     const idx = dates.indexOf(selectedDate);
     const nextIdx = idx === -1 ? 0 : Math.min(dates.length - 1, idx + 1);
     setSelectedDate(dates[nextIdx]);
+    setTimeout(() => {
+      if (dateListRef.current) {
+        const btn = dateListRef.current.querySelectorAll('button')[nextIdx];
+        if (btn) btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    }, 0);
   };
 
   const prevTime = () => {
@@ -89,17 +123,17 @@ function ScheduleModal({
                   <button onClick={prevDate} className="p-2 rounded-full bg-white border">
                     <ChevronLeft />
                   </button>
-                  <div className="flex gap-2 overflow-x-auto px-1">
-                    {dates.map((d) => (
+                  <div ref={dateListRef} className="flex gap-2 overflow-x-auto px-1 max-w-[400px] scroll-smooth">
+                    {dates.map((d, i) => (
                       <button
                         key={d}
                         onClick={() => setSelectedDate(d)}
-                        className={`min-w-[84px] px-3 py-2 rounded-lg border text-sm ${
+                        className={`min-w-[70px] px-2 py-2 rounded-lg border text-sm ${
                           selectedDate === d ? "border-blue-600 bg-blue-50" : "border-gray-200"
                         }`}
                       >
                         <div className="font-medium">{d.split(" ")[0]}</div>
-                        <div className="text-xs text-gray-500">{d.split(" ")[1]} August</div>
+                        <div className="text-xs text-gray-500">{d.split(" ")[1]} {now.toLocaleString('default', { month: 'long' })}</div>
                       </button>
                     ))}
                   </div>
@@ -110,25 +144,17 @@ function ScheduleModal({
 
                 {/* Time selector with chevrons */}
                 <div className="flex items-center gap-3 mb-4">
-                  <button onClick={prevTime} className="p-2 rounded-full bg-white border">
-                    <ChevronLeft />
-                  </button>
-                  <div className="flex gap-2 overflow-x-auto px-1">
+                  <label className="text-sm font-medium">Select Time:</label>
+                  <select
+                    value={selectedTime}
+                    onChange={e => setSelectedTime(e.target.value)}
+                    className="border rounded-lg px-3 py-2 text-sm bg-white text-black"
+                  >
+                    <option value="" disabled>Select a time</option>
                     {times.map((t) => (
-                      <button
-                        key={t}
-                        onClick={() => setSelectedTime(t)}
-                        className={`px-3 py-2 rounded-lg border text-sm ${
-                          selectedTime === t ? "border-blue-600 bg-blue-50" : "border-gray-200"
-                        }`}
-                      >
-                        {t}
-                      </button>
+                      <option key={t} value={t}>{t}</option>
                     ))}
-                  </div>
-                  <button onClick={nextTime} className="p-2 rounded-full bg-white border">
-                    <ChevronRight />
-                  </button>
+                  </select>
                 </div>
 
                 {/* Phone input */}

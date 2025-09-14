@@ -4,33 +4,33 @@ import { FaBoxOpen, FaHome, FaCamera, FaCheckCircle, FaGlobe } from 'react-icons
 const steps = [
   {
     number: 1,
-    icon: <FaBoxOpen className="text-[#0054F6] w-5 h-5" />,
-    title: 'Choose Your Package',
-    description: 'Pick the plan that fits your needs—from basic MLS to full pro support.',
+    titleTop: 'Choose',
+    titleBottom: 'Package',
+    description: 'Pick the plan that fits your needs.',
   },
   {
     number: 2,
-    icon: <FaHome className="text-[#0054F6] w-5 h-5" />,
-    title: 'Enter Property Details',
-    description: 'Add address, home features, and pricing in a guided form.',
+    titleTop: 'Enter',
+    titleBottom: 'Details',
+    description: 'Add address, features, and pricing.',
   },
   {
     number: 3,
-    icon: <FaCamera className="text-[#0054F6] w-5 h-5" />,
-    title: 'Upload Your Photos',
-    description: 'Upload your own or schedule a professional shoot with our partners.',
+    titleTop: 'Upload',
+    titleBottom: 'Photos',
+    description: 'Use your own or book a pro shoot.',
   },
   {
     number: 4,
-    icon: <FaCheckCircle className="text-[#0054F6] w-5 h-5" />,
-    title: 'Final Review',
-    description: 'Review all listing info and make any last-minute edits.',
+    titleTop: 'Final Review',
+    titleBottom: '',
+    description: 'Check info & make final edits.',
   },
   {
     number: 5,
-    icon: <FaGlobe className="text-[#0054F6] w-5 h-5" />,
-    title: 'Go Live on the MLS',
-    description: 'Hit submit and go live within 24 hours. Your home is now visible to millions.',
+    titleTop: 'Go Live!',
+    titleBottom: '',
+    description: 'Your home is listed on the MLS within 24 hrs.',
   },
 ];
 
@@ -47,20 +47,32 @@ function FewSteps() {
           Our simple process makes it easy to get your home listed and sold.
         </p>
 
-  <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-          {steps.map((step, index) => (
-            <div key={index} className="flex flex-col items-center text-center">
-              <div className="bg-gradient-to-br from-[#e87685] to-[#626acc] text-white w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs mb-4">
-                {step.number}
-              </div>
-              <div className="bg-[#EDF3FF] p-3 rounded-full mb-3">
-                {step.icon}
-              </div>
-              <h3 className="text-sm font-semibold text-[#1C1C1C]">{step.title}</h3>
-              <p className="text-xs text-[#3A3A3A] mt-1">{step.description}</p>
-            </div>
-          ))}
-        </div>
+  <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+    {steps.map((step, index) => (
+      <div
+        key={index}
+        className="bg-white rounded-2xl shadow-[0_2px_12px_rgba(44,62,80,0.07)] border border-[#e3eaf2] flex flex-col items-center text-center px-8 py-8 min-h-[230px] hover:shadow-lg transition-shadow duration-300 transform hover:scale-105"
+      >
+        <div className="text-[32px] font-bold text-[#EB4E3D] leading-none mb-2">{step.number}</div>
+        <h3 className="text-[22px] font-bold text-[#1C1C1C] leading-tight mb-1">
+          {step.titleTop && <span className="block">{step.titleTop}</span>}
+          {step.titleBottom && <span className="block">{step.titleBottom}</span>}
+        </h3>
+        <p className="text-[17px] text-[#3A3A3A] opacity-90 leading-snug mt-1">
+          {step.description}
+        </p>
+      </div>
+    ))}
+  </div>
+
+  {/* Red button below steps */}
+  <div className="flex justify-center mt-10">
+    <button
+      className="bg-gradient-to-r from-[#FF2B2B] to-[#EB4E3D] text-white text-[22px] font-semibold rounded-xl px-12 py-3 shadow-md hover:scale-105 transition-transform duration-200 focus:outline-none"
+    >
+      Get Started Today
+    </button>
+  </div>
       </div>
       </div>
     </div>
