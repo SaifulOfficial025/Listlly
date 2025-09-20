@@ -4,7 +4,9 @@ import Logo from "../../../../public/Listlly-logo-white.svg"
 
 function Sidebar({ open, onClose }) {
   const location = useLocation()
-  const isPhotographyActive = location.pathname.startsWith('/vendor_dashboard/photography_request') || location.pathname.startsWith('/vendor_dashboard/property_information') || location.pathname.startsWith('/vendor_dashboard/property/')
+  const path = location.pathname
+  const isDashboardActive = path === '/vendor_dashboard' || path.startsWith('/vendor_dashboard/property/')
+  const isPhotographyActive = path.startsWith('/vendor_dashboard/photography_request') || path.startsWith('/vendor_dashboard/property_information')
   return (
     <>
       {/* Desktop sidebar */}
@@ -21,7 +23,7 @@ function Sidebar({ open, onClose }) {
           </div>
 
           <nav className="mt-4 space-y-1">
-            <NavLink to="/vendor_dashboard" end className={({isActive}) => `block w-full pl-6 py-3 text-sm ${isActive ? 'bg-white text-[#1641ff] font-semibold' : 'text-white/90 hover:opacity-100'}`}>
+            <NavLink to="/vendor_dashboard" end className={() => `block w-full pl-6 py-3 text-sm ${isDashboardActive ? 'bg-white text-[#1641ff] font-semibold' : 'text-white/90 hover:opacity-100'}`}>
               Dashboard
             </NavLink>
 

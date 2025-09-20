@@ -50,6 +50,7 @@ import ResourceFAQ from "../Pages/Resources/FAQ";
 import VendorSignIn from "../Pages/Vendor/SignIn";
 import VendorSignUp from "../Pages/Vendor/SignUp";
 import PropertyInformation from "../Pages/Vendor/Dashboard/PropertyInformation";
+import VendorPropertyDetails from "../Pages/Vendor/Dashboard/PropertyDetails";
 
 
 
@@ -149,7 +150,7 @@ export const router = createBrowserRouter([
       { path: "", element: <VendorRoot /> },
       { path: "photography_request", element: <PhotographyRequest /> },
   { path: "property_information/:id", element: <PropertyInformation /> },
-      { path: "property/:id", element: <PropertyDetails /> },
+      { path: "property/:id", element: <VendorPropertyDetails /> },
     ],
   },
 
