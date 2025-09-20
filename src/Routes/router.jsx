@@ -8,6 +8,9 @@ import ForgetPasswordVerifyEmail from "../Pages/Authentication/ForgetPasswordVer
 import NewPassword from "../Pages/Authentication/NewPassword";
 import PropertyDetails from "../Pages/PropertyDetails/PropertyDetails";
 import Dashboard from "../Pages/SellingListingFlow/Dashboard";
+import DashboardLayout from "../Pages/Vendor/Dashboard/DashboardLayout";
+import VendorRoot from "../Pages/Vendor/Dashboard/RootPage";
+import PhotographyRequest from "../Pages/Vendor/Dashboard/PhotographyRequest";
 import SellProperties from "../Pages/SellingListingFlow/SellProperties";
 import RootSubmitted from "../Pages/SellingListingFlow/SubmittedOffer/RootPage";
 import OfferSummary from "../Pages/SellingListingFlow/SubmittedOffer/OfferSummary";
@@ -43,6 +46,10 @@ import WhyListly from "../Pages/WhyListlly/RootPage"
 import HowListllyWorks from "../Pages/Resources/HowListllyWorks/RootPage";
 import Blog from "../Pages/Resources/Blog";
 import ResourceFAQ from "../Pages/Resources/FAQ";
+
+import VendorSignIn from "../Pages/Vendor/SignIn";
+import VendorSignUp from "../Pages/Vendor/SignUp";
+import PropertyInformation from "../Pages/Vendor/Dashboard/PropertyInformation";
 
 
 
@@ -123,10 +130,38 @@ export const router = createBrowserRouter([
     element: <FindValue />,
   },
 
+
+
+  {
+    path: "/vendor_signin",
+    element: <VendorSignIn />,
+  },
+  {
+    path: "/vendor_signup",
+    element: <VendorSignUp />,
+  },
+
+  // Vendor-specific dashboard routes wrapped with DashboardLayout
+  {
+    path: "/vendor_dashboard",
+    element: <DashboardLayout />,
+    children: [
+      { path: "", element: <VendorRoot /> },
+      { path: "photography_request", element: <PhotographyRequest /> },
+  { path: "property_information/:id", element: <PropertyInformation /> },
+      { path: "property/:id", element: <PropertyDetails /> },
+    ],
+  },
+
+
+
+
+
   {
   path: "/dashboard",
-  element: <Dashboard />,
+  element: <DashboardLayout />,
   children: [
+      
       {
         path: "selling_properties",
         element: <SellProperties />,

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
-import signup from "../../../public/SignUpBackground.jpg";
+import signup from "../../../public/vendorsignup.svg";
 import Logo from "../../../public/Listlly-logo-white.svg";
 
 import { Link } from "react-router-dom";
@@ -59,16 +59,13 @@ function SignUp() {
               className="text-2xl sm:text-3xl md:text-4xl font-bold text-center"
               style={{ color: "#1C1C1C" }}
             >
-              Create Your Listlly Account
+              Welcome to Listlly Agent
             </h1>
             <p className="text-[16px] mt-1 text-center text-[#606A76]">
-              Start selling your home with no commissions and full professional support.
+              Connect with our expert agents for personalized assistance, from discovering the best deals to closing your ideal property.
             </p>
 
-            <p className="text-[16px] text-center text-black mt-5">
-              If you are a partner/vendor/agent, please <Link to="/vendor_signup" className="text-blue-600 underline">Register</Link>
-            </p>
-
+         
             <div className="mt-6 space-y-4">
 
               {/* Full Name */}
@@ -133,7 +130,7 @@ function SignUp() {
 
 
                {/* Confirm Password */}
-              <div>
+              <div className="mb-10">
                 <label className="block text-[16px] mb-1 text-[#4B5563]">
                   Confirm Password
                 </label>
@@ -160,9 +157,10 @@ function SignUp() {
 
 
 
-              {/* Login button */}
+              {/* Register button */}
+              <Link to="/vendor_signin">
               <button
-                className="w-full h-11 rounded-md text-white font-semibold text-sm md:text-base"
+                className="w-full h-11 rounded-md text-white font-semibold text-sm md:text-base mt-10"
                 style={{
                   background:
                     "linear-gradient(90deg, #0054F6 0%, #0D47C1 100%)",
@@ -170,6 +168,7 @@ function SignUp() {
               >
                 Register
               </button>
+              </Link>
 
               {/* Terms and Privacy */}
               <p className="text-[15px] text-center text-[#222] mt-2 mb-1">
@@ -214,7 +213,7 @@ function SignUp() {
               {/* Footer */}
               <p className="text-[16px] text-center mt-1 text-[#6B7280]">
                 Do have an account?{" "}
-                <Link to="/signin">
+                <Link to="/vendor_signin">
                   <span className="text-blue-600 font-bold">Sign In</span>
                 </Link>
               </p>

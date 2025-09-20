@@ -1,28 +1,26 @@
 import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
-import signup from "../../../public/SignUpBackground.jpg";
+import SignupBackground from "../../../public/vendorsignup.svg";
 import Logo from "../../../public/Listlly-logo-white.svg";
-
 import { Link } from "react-router-dom";
-function SignUp() {
-    const [showPwd, setShowPwd] = useState(false);
-  const [showPwd2, setShowPwd2] = useState(false);
+function SignIn() {
+  const [showPwd, setShowPwd] = useState(false);
 
   return (
-    <div className="min-h-screen w-full bg-white">
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-full p-4 sm:p-6 md:p-8 gap-6 items-stretch">
+    <div className="min-h-screen w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-2 h-full p-4 sm:p-6 lg:p-8 gap-6 items-stretch">
         {/* LEFT: Background image with overlay and logo */}
         <div className="relative w-full rounded-xl overflow-hidden">
           <div
-            className="absolute inset-0 bg-cover bg-center rounded-xl h-48 sm:h-72 md:h-96 lg:h-full"
+            className="absolute inset-0 bg-cover bg-center rounded-xl h-56 sm:h-72 md:h-96 lg:h-full"
             style={{
-              backgroundImage: `url(${signup})`,
+              backgroundImage: `url(${SignupBackground})`,
             }}
           />
           {/* Logo */}
           <Link to="/">
-            <div className="absolute top-4 left-4 z-20">
-              <img src={Logo} alt="Logo" className="w-12 h-12 md:w-16 md:h-16" />
+            <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-20">
+              <img src={Logo} alt="Logo" className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16" />
             </div>
           </Link>
           {/* Bottom overlay */}
@@ -53,35 +51,19 @@ function SignUp() {
         </div>
 
         {/* RIGHT: Sign-in Form */}
-        <div className="flex items-center justify-center px-4 md:px-10 py-8 md:py-10">
-            <div className="w-full max-w-md mx-auto">
+        <div className="flex items-center justify-center px-4 sm:px-6 md:px-10 py-8 sm:py-10">
+          <div className="w-full max-w-md mx-auto">
             <h1
-              className="text-2xl sm:text-3xl md:text-4xl font-bold text-center"
+              className="text-xl sm:text-2xl md:text-[26px] font-bold text-center"
               style={{ color: "#1C1C1C" }}
             >
-              Create Your Listlly Account
+              Welcome to Listlly Agent
             </h1>
             <p className="text-[16px] mt-1 text-center text-[#606A76]">
-              Start selling your home with no commissions and full professional support.
-            </p>
-
-            <p className="text-[16px] text-center text-black mt-5">
-              If you are a partner/vendor/agent, please <Link to="/vendor_signup" className="text-blue-600 underline">Register</Link>
+              Connect with our expert agents for personalized assistance, from discovering the best deals to closing your ideal property.
             </p>
 
             <div className="mt-6 space-y-4">
-
-              {/* Full Name */}
-              <div>
-                <label className="block text-[16px] mb-1 text-[#4B5563]">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  className="w-full h-11 rounded-md px-3 text-sm sm:text-sm md:text-base outline-none bg-white dark:bg-white text-black dark:text-black border border-gray-300"
-                />
-              </div>
-
               {/* Email */}
               <div>
                 <label className="block text-[16px] mb-1 text-[#4B5563]">
@@ -128,56 +110,27 @@ function SignUp() {
                     )}
                   </button>
                 </div>
-              
-              </div>
-
-
-               {/* Confirm Password */}
-              <div>
-                <label className="block text-[16px] mb-1 text-[#4B5563]">
-                  Confirm Password
-                </label>
-                <div className="relative">
-                  <input
-                    type={showPwd2 ? "text" : "password"}
-                    className="w-full h-11 rounded-md px-3 pr-10 text-sm sm:text-sm md:text-base outline-none bg-white dark:bg-white text-black dark:text-black border border-gray-300"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowPwd2((v) => !v)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2"
-                    aria-label="Toggle password visibility"
-                  >
-                    {showPwd2 ? (
-                      <Eye size={18} color="#606A76" />
-                    ) : (
-                      <EyeOff size={18} color="#606A76" />
-                    )}
-                  </button>
+                <div className="mt-5 text-right">
+                <span className="text-gray-500 mt-2 text-sm">Forget Password?{" "}</span>
+                <Link to="/forgot_password_email">
+                  <span className="text-blue-600 font-semibold hover:underline text-sm">
+                    Reset it here
+                  </span>
+                </Link>
                 </div>
               </div>
 
-
-
-
               {/* Login button */}
+              <Link to="/vendor_dashboard">
               <button
-                className="w-full h-11 rounded-md text-white font-semibold text-sm md:text-base"
+                className="w-full h-11 rounded-md text-white font-semibold text-sm sm:text-sm md:text-base"
                 style={{
                   background:
                     "linear-gradient(90deg, #0054F6 0%, #0D47C1 100%)",
                 }}
               >
-                Register
-              </button>
-
-              {/* Terms and Privacy */}
-              <p className="text-[15px] text-center text-[#222] mt-2 mb-1">
-                By signing up, you agree to our{' '}
-                <Link to="/terms" className="text-blue-700 underline">Terms of Service</Link>
-                {' '}and{' '}
-                <Link to="/privacy" className="text-blue-700 underline">Privacy Policy.</Link>
-              </p>
+                Log In
+              </button> </Link>
 
               {/* Divider */}
               <div className="flex items-center gap-4 my-1">
@@ -213,9 +166,9 @@ function SignUp() {
 
               {/* Footer */}
               <p className="text-[16px] text-center mt-1 text-[#6B7280]">
-                Do have an account?{" "}
-                <Link to="/signin">
-                  <span className="text-blue-600 font-bold">Sign In</span>
+                Don't have an account?{" "}
+                <Link to="/vendor_signup">
+                  <span className="text-blue-600 font-bold">Sign Up</span>
                 </Link>
               </p>
             </div>
@@ -258,4 +211,4 @@ function AppleIcon() {
   );
 }
 
-export default SignUp;
+export default SignIn;
