@@ -96,39 +96,65 @@ function PropertyDetails() {
         </div>
 
         {/* Image Grid - responsive: stacked on small, mosaic on md+ */}
-        <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-2 mt-6">
-          <img
-            src={images[0]}
-            alt="Home 1"
-            onClick={() => openModal(0)}
-            className="w-full h-56 md:h-auto md:col-span-1 md:row-span-2 object-cover rounded-xl cursor-pointer"
-          />
-          <img
-            src={images[1]}
-            alt="Home 2"
-            onClick={() => openModal(1)}
-            className="w-full h-56 md:h-auto md:col-span-2 md:row-span-2 object-cover rounded-xl cursor-pointer"
-          />
-          <img
-            src={images[2]}
-            alt="Home 3"
-            onClick={() => openModal(2)}
-            className="w-full h-56 md:h-auto md:col-span-1 md:row-span-1 object-cover rounded-xl cursor-pointer"
-          />
-          <div
-            className="relative w-full h-56 md:h-auto md:col-span-1 md:row-span-1 cursor-pointer"
-            onClick={() => openModal(3)}
-          >
-            <img
-              src={images[3]}
-              alt="More Homes"
-              className="w-full h-full object-cover rounded-xl"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-40 rounded-xl flex items-center justify-center text-white font-semibold text-lg">
-              31+
-            </div>
-          </div>
+       <div className="grid grid-cols-1 md:grid-cols-6 md:grid-rows-2 gap-2 mt-6 md:h-96 lg:h-[520px]">
+  {/* Large left image (spans 3 cols and 2 rows on md+) with "For sale" tag */}
+  <div className="relative w-full h-full md:col-span-3 md:row-span-2">
+    <img
+      src={images[0]}
+      alt="Home 1"
+      onClick={() => openModal(0)}
+      className="w-full h-full object-cover rounded-xl cursor-pointer"
+    />
+    {/* For sale tag */}
+    <div className="absolute top-3 left-3 bg-black text-white text-sm px-3 py-1 rounded-md font-medium">
+      For sale
+    </div>
+  </div>
+
+  {/* Right side: 2x2 grid of thumbnails spanning the other 3 cols */}
+  <div className="md:col-span-3 md:row-span-2 grid grid-rows-2 grid-cols-2 gap-2 h-full">
+    <div className="rounded-xl overflow-hidden h-full">
+      <img
+        src={images[1]}
+        alt="Home 2"
+        onClick={() => openModal(1)}
+        className="w-full h-full object-cover cursor-pointer"
+      />
+    </div>
+    <div className="rounded-xl overflow-hidden h-full">
+      <img
+        src={images[2]}
+        alt="Home 3"
+        onClick={() => openModal(2)}
+        className="w-full h-full object-cover cursor-pointer"
+      />
+    </div>
+    <div className="rounded-xl overflow-hidden h-full">
+      <img
+        src={images[3]}
+        alt="Home 4"
+        onClick={() => openModal(3)}
+        className="w-full h-full object-cover cursor-pointer"
+      />
+    </div>
+    {/* Last tile with overlay for 'See all photos' */}
+    <div className="relative rounded-xl overflow-hidden cursor-pointer h-full" onClick={() => openModal(4)}>
+      <img 
+        src={images[4]} 
+        alt="More Homes" 
+        className="w-full h-full object-cover" 
+      />
+      <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end justify-end p-3">
+        <div className="bg-white text-black text-sm px-3 py-1 rounded-md flex items-center gap-2 font-medium">
+          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M3 4a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm2 2V5h1v1H5zM3 13a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1v-3zm2 2v-1h1v1H5zM13 4a1 1 0 00-1 1v3a1 1 0 001 1h3a1 1 0 001-1V4a1 1 0 00-1-1h-3zm1 2v1h1V5h-1zM12 13a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-3zm2 2v-1h1v1h-1z" clipRule="evenodd" />
+          </svg>
+          See all 40 photos
         </div>
+      </div>
+    </div>
+  </div>
+</div>
 
         {/* Tabs */}
         <div className="flex justify-center mt-6">
@@ -140,51 +166,120 @@ function PropertyDetails() {
         </div>
 
         {/* Popup Viewer */}
-        {isOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center" style={{ colorScheme: 'light' }}>
-             {/* Top-right controls */}
-             <div className="absolute top-5 right-6 flex gap-4 items-center text-white">
-               <button onClick={downloadImage}>
-                 <Download size={20} />
-               </button>
-               <button onClick={() => handleZoom("in")}>
-                 <ZoomIn size={20} />
-               </button>
-               <button onClick={() => handleZoom("out")}>
-                 <ZoomOut size={20} />
-               </button>
-               <button onClick={() => setIsOpen(false)}>
-                 <X size={22} />
-               </button>
-             </div>
+     {/* Popup Viewer */}
+{isOpen && (
+  <div className="fixed inset-0 bg-white z-50" style={{ colorScheme: 'light' }}>
+    {/* Header with controls */}
+    <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+      <button 
+        onClick={() => setIsOpen(false)}
+        className="flex items-center gap-2 text-black hover:text-gray-600"
+      >
+        <ChevronLeft size={20} />
+        <span className="text-sm font-medium">Back to listing</span>
+      </button>
+      
+      <div className="flex gap-4 items-center text-black">
+        <button className="flex items-center gap-1 hover:text-gray-600">
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+          <span className="text-sm">Save</span>
+        </button>
+        <button className="flex items-center gap-1 hover:text-gray-600">
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
+          </svg>
+          <span className="text-sm">Share</span>
+        </button>
+        <button className="flex items-center gap-1 hover:text-gray-600">
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L4.392 5.392m5.486 4.486L15.314 15.314M7.05 7.05A10.015 10.015 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-1.363 2.574" />
+          </svg>
+          <span className="text-sm">Hide</span>
+        </button>
+        <button className="text-sm hover:text-gray-600">⋯ More</button>
+      </div>
+    </div>
 
-             {/* Main image */}
-            <div className="p-4 rounded-md bg-white text-black" style={{ colorScheme: 'light' }}>
-              <img
-                src={images[current]}
-                alt={`Popup ${current + 1}`}
-                style={{ transform: `scale(${zoom})` }}
-                className="max-w-4xl max-h-[80vh] object-contain transition-transform"
-              />
-            </div>
+    {/* Main content area */}
+    <div className="flex h-[calc(100vh-73px)]">
+      {/* Left side - Scrollable photo gallery */}
+      <div className="flex-1 overflow-y-auto bg-gray-50 p-8">
+        <div className="max-w-4xl mx-auto">
+          {/* Photo grid with alternating pattern */}
+          <div className="space-y-4">
+            {images.map((image, index) => {
+              // Pattern: index 0,3,6,9... = full width, index 1-2,4-5,7-8... = half width pairs
+              const isFullWidth = index % 3 === 0;
+              const isFirstOfPair = index % 3 === 1;
+              const isSecondOfPair = index % 3 === 2;
+              
+              if (isFullWidth) {
+                return (
+                  <div key={index} className="w-full">
+                    <img
+                      src={image}
+                      alt={`Gallery image ${index + 1}`}
+                      className="w-full h-96 object-cover rounded-lg shadow-sm cursor-pointer hover:shadow-md transition-shadow"
+                      onClick={() => setCurrent(index)}
+                    />
+                  </div>
+                );
+              } else if (isFirstOfPair) {
+                return (
+                  <div key={`pair-${Math.floor(index/3)}`} className="grid grid-cols-2 gap-4">
+                    <img
+                      src={image}
+                      alt={`Gallery image ${index + 1}`}
+                      className="w-full h-64 object-cover rounded-lg shadow-sm cursor-pointer hover:shadow-md transition-shadow"
+                      onClick={() => setCurrent(index)}
+                    />
+                    {images[index + 1] && (
+                      <img
+                        src={images[index + 1]}
+                        alt={`Gallery image ${index + 2}`}
+                        className="w-full h-64 object-cover rounded-lg shadow-sm cursor-pointer hover:shadow-md transition-shadow"
+                        onClick={() => setCurrent(index + 1)}
+                      />
+                    )}
+                  </div>
+                );
+              }
+              // Skip rendering for second of pair as it's handled above
+              return null;
+            })}
+          </div>
+        </div>
+      </div>
 
-             {/* Bottom nav */}
-             <div className="absolute bottom-6 flex items-center justify-center gap-6">
-               <button
-                 onClick={() => setCurrent((prev) => (prev - 1 + images.length) % images.length)}
-                 className="bg-white text-black p-2 rounded-full shadow"
-               >
-                 <ChevronLeft size={20} />
-               </button>
-               <button
-                 onClick={() => setCurrent((prev) => (prev + 1) % images.length)}
-                 className="bg-white text-black p-2 rounded-full shadow"
-               >
-                 <ChevronRight size={20} />
-               </button>
-             </div>
-           </div>
-         )}
+      {/* Right side - Property info */}
+      <div className="w-80 bg-white border-l border-gray-200 p-6">
+        <div className="mb-6">
+          <div className="text-3xl font-bold text-black mb-2">$1,120,000</div>
+          <div className="text-gray-600 mb-1">
+            <span className="font-medium">3 bd</span> • 
+            <span className="font-medium"> 2 ba</span> • 
+            <span className="font-medium"> 1,315 sqft</span>
+          </div>
+          <div className="text-gray-600 text-sm">
+            <div>6010 S Verdun Ave</div>
+            <div>Los Angeles, CA 90043</div>
+          </div>
+        </div>
+
+        <button className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 transition-colors mb-4">
+          Request a tour
+          <div className="text-sm font-normal">as early as tomorrow at 11:00 am</div>
+        </button>
+
+        {/* Thumbnail strip - removed since we're showing all photos in main area */}
+        
+        {/* Zoom controls - removed since not needed for scrollable gallery */}
+      </div>
+    </div>
+  </div>
+)}
        </div>
   <div className="max-w-7xl mx-auto px-4 py-8  gap-6">
         {/* LEFT: Description */}
