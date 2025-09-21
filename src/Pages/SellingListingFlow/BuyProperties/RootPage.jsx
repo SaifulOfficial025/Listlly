@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Filtering from './Filtering';
 
 const cards = [
   {
@@ -88,19 +89,9 @@ function RootPage() {
         <p className="text-center text-gray-500 mt-2">Find your dream home from thousands of listings across Texas.</p>
       </div>
 
-      {/* Search Bar */}
-      <div className="max-w-5xl mx-auto mt-8 px-4 flex flex-col md:flex-row items-center gap-4">
-        <input type="text" placeholder="Search by City, State or Zip" className="flex-1 border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none bg-white text-black" />
-        <select className="border border-gray-300 rounded px-4 py-3 text-sm min-w-[140px] bg-white text-black">
-          <option>Beds & Baths</option>
-        </select>
-        <select className="border border-gray-300 rounded px-4 py-3 text-sm min-w-[140px] bg-white text-black">
-          <option>Home Type</option>
-        </select>
-        <button className="bg-blue-600 text-white px-6 py-3 rounded font-semibold text-sm">Search</button>
-      </div>
+      <Filtering className="max-w-5xl mx-auto px-4" />
 
-      {/* Price Slider - Updated Design */}
+      {/* Price Slider - Updated Design
       <div className="max-w-5xl mx-auto mt-8 px-4">
         <div className="p-6  rounded-lg shadow-md max-w-5xl mx-auto">
           <div className="relative mb-4 mt-20">
@@ -114,7 +105,7 @@ function RootPage() {
               <div className="text-2xl font-bold text-[#00589c] bg-red-50 border-2 border-[#00589c] rounded-xl px-3 py-1 shadow-md mb-1 -ml-14">
                 {formatPrice(sliderValue)}
               </div>
-              {/* Triangle icon can be replaced with an SVG or a styled div */}
+              Triangle icon can be replaced with an SVG or a styled div
               <div className="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-[#00589c] mx-auto -mt-2 -ml-2"></div>
             </div>
           </div>
@@ -135,7 +126,7 @@ function RootPage() {
             Adjust the slider to see your budget friendly properties
           </p>
         </div>
-      </div>
+      </div> */}
 
       {/* Suggested Property grid with animated card and pagination */}
       <div className="max-w-5xl mx-auto mt-10 px-4">
