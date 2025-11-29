@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import Logo from "../../public/Listlly-logo.svg"; // Adjust the path as necessary
 import { Link } from "react-router-dom";
+import { FaPhoneAlt } from "react-icons/fa";
 
 function Header() {
   const [buyOpen, setBuyOpen] = useState(false);
@@ -12,8 +13,10 @@ function Header() {
   // Close on click outside or Esc
   useEffect(() => {
     function onClick(e) {
-      if (buyRef.current && !buyRef.current.contains(e.target)) setBuyOpen(false);
-      if (sellRef.current && !sellRef.current.contains(e.target)) setSellOpen(false);
+      if (buyRef.current && !buyRef.current.contains(e.target))
+        setBuyOpen(false);
+      if (sellRef.current && !sellRef.current.contains(e.target))
+        setSellOpen(false);
     }
     function onKey(e) {
       if (e.key === "Escape") {
@@ -35,9 +38,12 @@ function Header() {
   // extend click handler for resources ref
   useEffect(() => {
     function onClick(e) {
-      if (buyRef.current && !buyRef.current.contains(e.target)) setBuyOpen(false);
-      if (sellRef.current && !sellRef.current.contains(e.target)) setSellOpen(false);
-      if (resourcesRef.current && !resourcesRef.current.contains(e.target)) setResourcesOpen(false);
+      if (buyRef.current && !buyRef.current.contains(e.target))
+        setBuyOpen(false);
+      if (sellRef.current && !sellRef.current.contains(e.target))
+        setSellOpen(false);
+      if (resourcesRef.current && !resourcesRef.current.contains(e.target))
+        setResourcesOpen(false);
     }
     function onKey(e) {
       if (e.key === "Escape") {
@@ -55,17 +61,17 @@ function Header() {
   }, []);
 
   return (
-    <div className="w-full shadow-sm bg-white drop-shadow-lg fixed top-0 left-0 z-50">
-      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between h-16">
+    <div className="w-full shadow-sm bg-white drop-shadow-lg absolute top-0 left-0 z-5 px-8">
+      <div className="max-w-[1500px] mx-auto sm:px-6 md:px-8 flex items-center justify-center h-16">
         {/* Logo */}
-        <Link to="/">
+        <Link to="/" className="absolute left-8">
           <img src={Logo} alt="Listlly logo" className="w-10 h-10" />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6 text-md  font-bold text-[#1C1C1C]">
+        <nav className="hidden md:flex items-center space-x-6 text-md font-bold text-[#1C1C1C]">
           {/* Buy dropdown */}
-          <div className="relative " ref={buyRef}>
+          <div className="relative" ref={buyRef}>
             <button
               type="button"
               className="flex items-center cursor-pointer outline-none"
@@ -128,7 +134,7 @@ function Header() {
                     Sell Your Home For Cash
                   </button>
                 </Link>
-                  <Link to="/sell/home_worth">
+                <Link to="/sell/home_worth">
                   <button
                     role="menuitem"
                     className="w-full text-left px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#F5F7FB]"
@@ -140,8 +146,12 @@ function Header() {
             )}
           </div>
 
-          <Link to="/pricing" className="cursor-pointer">Pricing</Link>
-          <Link to="/why_listly" className="cursor-pointer">Why Listlly</Link>
+          <Link to="/pricing" className="cursor-pointer">
+            Pricing
+          </Link>
+          <Link to="/why_listly" className="cursor-pointer">
+            Why Listlly
+          </Link>
 
           {/* Resources dropdown */}
           <div className="relative" ref={resourcesRef}>
@@ -157,19 +167,31 @@ function Header() {
             </button>
 
             {resourcesOpen && (
-              <div role="menu" className="absolute left-0 mt-2 w-56 bg-white border border-[#E5E7EB] rounded-lg shadow-lg z-50">
+              <div
+                role="menu"
+                className="absolute left-0 mt-2 w-56 bg-white border border-[#E5E7EB] rounded-lg shadow-lg z-50"
+              >
                 <Link to="/resources/how_listlly_works">
-                  <button role="menuitem" className="w-full text-left px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#F5F7FB]">
+                  <button
+                    role="menuitem"
+                    className="w-full text-left px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#F5F7FB]"
+                  >
                     How Listlly Works
                   </button>
                 </Link>
                 <Link to="/resources/blogs">
-                  <button role="menuitem" className="w-full text-left px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#F5F7FB]">
+                  <button
+                    role="menuitem"
+                    className="w-full text-left px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#F5F7FB]"
+                  >
                     Blog
                   </button>
                 </Link>
                 <Link to="/resources/faq">
-                  <button role="menuitem" className="w-full text-left px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#F5F7FB]">
+                  <button
+                    role="menuitem"
+                    className="w-full text-left px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#F5F7FB]"
+                  >
                     FAQ
                   </button>
                 </Link>
@@ -178,37 +200,25 @@ function Header() {
           </div>
         </nav>
 
-        {/* Mobile Navigation (hamburger) */}
-        <nav className="md:hidden flex items-center">
-          <button
-            className="text-[#0054F6] text-2xl p-2 focus:outline-none"
-            aria-label="Open menu"
-            onClick={() => setBuyOpen((v) => !v)}
-          >
-            <span className="material-icons">menu</span>
-          </button>
-          {buyOpen && (
-            <div className="absolute top-16 left-0 w-full bg-white border-t border-[#E5E7EB] shadow-lg z-50 flex flex-col">
-              <Link to="/buy/homes_for_sale" className="px-6 py-4 border-b border-[#E5E7EB] text-[#1C1C1C] font-medium">Buy</Link>
-              <Link to="#" className="px-6 py-4 border-b border-[#E5E7EB] text-[#1C1C1C] font-medium">Sell</Link>
-              <Link to="/pricing" className="px-6 py-4 border-b border-[#E5E7EB] text-[#1C1C1C] font-medium">Pricing</Link>
-              <Link to="#" className="px-6 py-4 border-b border-[#E5E7EB] text-[#1C1C1C] font-medium">Why Listlly</Link>
-              <Link to="#" className="px-6 py-4 text-[#1C1C1C] font-medium">Resources</Link>
-            </div>
-          )}
-        </nav>
+        {/* Right Side Buttons */}
+        <div className="flex items-center space-x-4 absolute right-8">
+          {/* Phone Button */}
+          <FaPhoneAlt className="text-[#0b5aa5] text-4xl mr-4 p-2 border-2 border-[#0b5aa5] rounded" />
 
-        {/* Register Button */}
-        <Link to="/signup">
-        <button
-          className="hidden md:inline-block text-white text-[13px] font-medium px-4 py-2 rounded shadow-sm"
-          style={{
-            background: "linear-gradient(90deg, #0054F6 0%, #0D47C1 100%)",
-          }}
-        >
-          Register
-        </button>
-        </Link>
+          {/* Start Listing Button */}
+          <Link to="/">
+            <button className="hidden md:inline-block bg-[#0b5aa5] text-white text-[13px] font-medium px-4 py-2 rounded shadow-sm">
+              Start Listing
+            </button>
+          </Link>
+
+          {/* Register Button */}
+          <Link to="/signup">
+            <button className="hidden md:inline-block text-[#0b5aa5] text-md font-bold">
+              Register
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

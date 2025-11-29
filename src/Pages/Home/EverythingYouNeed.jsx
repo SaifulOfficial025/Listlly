@@ -1,66 +1,90 @@
-import React from 'react';
+import React from "react";
+import everythingcard1 from "../../../public/everythingcard1.png";
+import everythingcard2 from "../../../public/everythingcard2.png";
+import everythingcard3 from "../../../public/everythingcard3.png";
+import everythingcard4 from "../../../public/everythingcard4.png";
+import everythingcard6 from "../../../public/everythingcard5.png";
+import everythingcard7 from "../../../public/everythingcard6.png";
 
-// Red check SVG icon as React component
-const RedCheck = () => (
-  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="28" height="28" rx="10" fill="#fff6f3"/>
-    <path d="M19.5 10.5L12.25 17.5L9 14.5" stroke="#EB4E3D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    <circle cx="14" cy="14" r="12" stroke="#EB4E3D" strokeWidth="2"/>
-  </svg>
-);
+const cardImages = [
+  everythingcard1,
+  everythingcard2,
+  everythingcard3,
+  everythingcard4,
+  everythingcard6,
+  everythingcard7,
+];
 
 const features = [
   {
-    title: "Complete Your Listing in Minutes",
-    description: "Guided flow walks you step by step — from property details to pricing.",
+    title: "Complete Your Listing in Just Minutes",
+    description:
+      "Our guided listing flow walks you through every step, from entering your property details to setting your price.",
   },
   {
-    title: "Professional Photography",
-    description: "Schedule a pro photographer through Listlly to make your home shine.",
+    title: "Professional Photography, Delivered to Your Door",
+    description:
+      "Easily schedule a professional photographer through Listlly to showcase your home in the best possible light. High-quality. See more",
   },
   {
-    title: "MLS Listing in 24 Hours",
-    description: "Get professionally reviewed & live on the MLS within a day.",
+    title: "The Simplest Way to Complete Seller Disclosures",
+    description:
+      "We've made paperwork stress-free. Our digital disclosure process is straightforward, compliant, and tailored to the Department of See more.",
   },
   {
-    title: "Simple Disclosures",
-    description: "Our digital disclosure process is compliant & stress-free.",
+    title: "A Dedicated Team by Your Side from Start to Finish",
+    description:
+      "Selling on your own doesn't mean selling alone. Our experienced listing advisers are by your side throughout the entire process See more",
   },
   {
-    title: "Huge Savings",
-    description: "No hidden fees. Flat-rate pricing saves homeowners an average of $20,000.",
+    title: "Your Home Listed on the MLS Within 24 Hours",
+    description:
+      "Once your listing is submitted, it's professionally reviewed and published to the MLS within 24 hours. From there, it's See more",
   },
   {
-    title: "Smart Offer Management",
-    description: "Review, counter, or accept offers instantly inside your dashboard.",
+    title: "Huge Savings and No Hidden Fees",
+    description:
+      "With Listlly, there are no surprises and no 5% commissions. Our flat-fee structure helps homeowners save an average of $20,000 See more",
   },
 ];
 
 function EverythingYouNeed() {
   return (
-    <div className="bg-white w-full px-4 sm:px-6 md:px-8 ">
-      <div className="max-w-[1100px] mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-[#1C1C1C]">
-          Everything <span className="text-[#EB4E3D]">You Need to Sell</span> with Confidence
+    <div className="bg-white w-full px-4 sm:px-6 md:px-8 py-16">
+      <div className="max-w-[1200px] mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1C1C1C] leading-tight">
+          Everything <span className="text-[#d03c0b]">You Need to Sell</span>
+          <br />
+          Like a Pro Without Paying One.
         </h2>
-        <p className="text-[#5A5A5A] mt-4 max-w-[600px] mx-auto text-sm md:text-base">
-         Listlly gives you all the tools and support to sell your home smoothly — without paying 5% commissions.
+        <p className="text-[#5A5A5A] mt-5 max-w-[650px] mx-auto text-base md:text-lg">
+          Our platform provides all the tools and support you need to
+          successfully sell your home without a traditional agent.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-[0_2px_12px_rgba(44,62,80,0.07)] p-6 flex flex-col h-full min-h-[170px] border border-[#f2f2f2] hover:shadow-lg transition-shadow duration-300 transform hover:scale-105"
+              className="rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col relative"
+              style={{
+                minHeight: "450px",
+                backgroundImage: ` url(${cardImages[index]})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
             >
-              <div className=" items-start">
-                <span className="block mr-3 mt-1 mb-3"><RedCheck /></span>
-                <div>
-                  <h3 className="text-[18px] font-bold text-[#1C1C1C] leading-snug mb-1">{feature.title}</h3>
-                  <p className="text-[15px] text-[#3A3A3A] leading-snug opacity-90">
-                    {feature.description}
-                  </p>
-                </div>
+              {/* Card content */}
+              <div className="relative flex flex-col h-full p-6 pt-8">
+                {/* Title at the top */}
+                <h3 className="text-white text-xl md:text-2xl font-bold leading-tight mb-4 text-left">
+                  {feature.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-white text-sm md:text-base leading-relaxed opacity-95 mb-6 text-left">
+                  {feature.description}
+                </p>
               </div>
             </div>
           ))}

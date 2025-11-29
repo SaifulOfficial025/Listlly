@@ -1,83 +1,106 @@
 import React from "react";
 import Container from "../../Layout/Container/Container";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+import herobg from "../../../public/herobg.png";
+import { useState } from "react";
+import { Search } from "lucide-react";
 
 function Hero() {
+  const [activeTab, setActiveTab] = useState("Buy");
+  const tabs = ["Buy", "Sell", "Home Worth", "Get Pre-approved"];
 
   return (
-    <div className="bg-white min-h-screen flex flex-col justify-betweens w-full mt-10">
-      {/* Content section (now full width) */}
-      <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-10 mt-20 px-4 lg:px-12 max-w-none">
-        {/* Left Side */}
-        <div className="w-full lg:w-1/2">
-          <h1 className="text-4xl leading-tight font-bold text-[#1C1C1C]">
-            For Sale by Owner <span className="text-[#EB4E3D]">Just Made Simple</span>
-          </h1>
-          <p className="text-2xl text-[#1C1C1C] font-medium mt-3">
-            Sell Your Home Yourself And Keep Every Dollar
-          </p>
-          <p className="text-lg text-[#3A3A3A] leading-relaxed  mt-10">
-            List your home, save commissions, and stay in control with full professional support.
-          </p>
+    <div
+      className="relative bg-cover bg-center flex items-center w-full mt-16 min-h-[50rem]"
+      style={{ backgroundImage: `url(${herobg})` }} // Add the background image URL later
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 "></div>
 
-          {/* Rating */}
-          <div className="flex items-center space-x-2 mt-10">
-            <div className="text-[#FFA800] text-lg">{'★'.repeat(5)}</div>
-            <p className="text-md text-[#1C1C1C]">
-              <span className="font-bold">4.9</span> (11,260 reviews)
+      {/* Content section */}
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-8 lg:px-12 py-12">
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-12">
+          {/* Left Side */}
+          <div className="w-full lg:w-[55%] text-white">
+            {/* Badge */}
+            <div className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-md text-sm font-medium mb-6">
+              For Sale by Owner Just Made Simple
+            </div>
+
+            {/* Heading */}
+            <h1 className="text-5xl lg:text-6xl leading-tight font-bold mb-6">
+              Sell Your Home Yourself
+              <br />
+              And Keep Every Dollar
+            </h1>
+
+            {/* Description */}
+            <p className="text-base lg:text-lg leading-relaxed mb-8">
+              List your home, save commissions, and stay in control with
+              <br />
+              full professional support.
             </p>
+
+            {/* Tabs and Search Bar Container */}
+            <div className="flex items-center justify-start p-4 -ml-4 ">
+              <div className="w-full max-w-2xl">
+                {/* Tab Navigation */}
+                <div className="bg-white rounded-t-2xl shadow-lg flex p-1.5 gap-1 mr-16 max-w-lg">
+                  {tabs.map((tab) => (
+                    <button
+                      key={tab}
+                      onClick={() => setActiveTab(tab)}
+                      className={`flex-1 py-2.5 px-3 rounded-lg text-sm font-semibold transition-all ${
+                        activeTab === tab
+                          ? "bg-[#0b5aa5] text-white shadow-md"
+                          : "text-gray-700 hover:bg-gray-100"
+                      }`}
+                    >
+                      {tab}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Search Box - Wider than tabs */}
+                <div className="bg-white rounded-b-2xl rounded-tr-2xl shadow-lg px-2 py-2 w-6xl">
+                  <div className="relative">
+                    <input
+                      type="text"
+                      placeholder="Search by City, State or Zip"
+                      className="w-full py-4 pl-5 pr-12 border-2 border-[#0b5aa5] rounded-2xl text-gray-700 placeholder-gray-400 focus:outline-none focus:border-[#0b5aa5] transition-colors dark:bg-white"
+                    />
+                    <button className="absolute right-3 top-1/2 -translate-y-1/2  bg-[#dfe7ed] hover:bg-[#094a87] text-white p-2.5 rounded-xl transition-colors">
+                      <Search size={20} className="text-[#0b5aa5]" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Rating */}
+            <div className="flex items-center space-x-2">
+              <div className="text-[#f9c80e] text-lg">{"★".repeat(5)}</div>
+              <p className="text-sm">
+                <span className="font-bold">4.9</span> (11,260 reviews)
+              </p>
+            </div>
           </div>
 
-          {/* Buttons */}
-          <div className="flex items-center space-x-4 pt-2 mt-10">
-            <button
-              className="text-white text-sm font-medium px-5 py-2 rounded shadow-sm flex items-center"
-              style={{
-                background: "linear-gradient(90deg, #0054F6 0%, #0D47C1 100%)",
-              }}
-            >
-              Start Listing <span className="ml-2"><FaArrowUpRightFromSquare /></span>
-            </button>
-            <button className="text-sm text-[#0D47C1] font-medium border border-[#0D47C1] px-5 py-2 rounded">
-              Contact
-            </button>
+          {/* Right Side */}
+          <div className="w-full lg:w-[40%] mt-10">
+            <div className="rounded-2xl overflow-hidden shadow-2xl w-full aspect-video bg-gray-200">
+              <iframe
+                className="w-full h-full block"
+                src="https://www.youtube-nocookie.com/embed/OfnFU99-uds?autoplay=1&mute=1&vq=hd1080"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
         </div>
-
-        {/* Right Side: Responsive YouTube Video */}
-        <div className="w-full lg:w-1/2">
-          <div className="rounded-xl overflow-hidden shadow-lg w-full aspect-video bg-black">
-            <iframe
-              className="rounded-xl w-full h-full block"
-              src="https://www.youtube-nocookie.com/embed/OfnFU99-uds?autoplay=1&mute=1&vq=hd1080"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-      </div>
-
-  {/* Search  */}
-  <div className="mt-20 flex items-center justify-center gap-0 shadow-xl rounded-2xl overflow-hidden bg-white w-full max-w-7xl mx-auto">
-        <input
-          type="text"
-          placeholder="Search by City, State or Zip..."
-          className="flex-1 min-w-0 px-6 py-4 text-base rounded-none outline-none placeholder:text-[#7A7A7A] placeholder:font-medium bg-white text-[#1C1C1C] focus:ring-2 focus:ring-[#0054F6] transition-all duration-200"
-        />
-        <button
-          className="px-8 py-4 text-base text-white font-semibold rounded-none shadow-sm transition-all duration-200 hover:scale-105 active:scale-100 bg-gradient-to-r from-[#0054F6] to-[#0D47C1]"
-        >
-          Search 🔍
-        </button>
-      </div>
-
-      {/* Footer note */}
-      <div className="text-center mt-10 text-lg text-[#1C1C1C] w-full">
-        ✆ Schedule a free <span className="text-[#EB4E3D] underline cursor-pointer">consultation call</span> or contact a specialist at{' '}
-        <span className="font-semibold">(844) 448-0110</span> (9am to 6pm CDT, Mon–Sat)
       </div>
     </div>
   );
