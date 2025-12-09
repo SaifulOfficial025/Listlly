@@ -37,34 +37,68 @@ function CommissionSavings() {
             <img
               src="/top10metros.png"
               alt="Top 10 metros"
-              className="w-full max-w-md rounded-lg shadow-lg object-cover"
+              className="w-full max-w-[320px] sm:max-w-md rounded-lg shadow-lg object-cover"
             />
           </div>
 
-          {/* Right side - table layout */}
-          <div className="w-full bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-            <table className="w-full">
-              <tbody>
-                {metros.map((m, i) => (
-                  <tr
-                    key={i}
-                    className={`${i % 2 === 0 ? "bg-blue-50" : "bg-white"}`}
-                  >
-                    <td className="px-6 py-4">
-                      <a className="text-[#0b5aa5] font-bold text-left block cursor-pointer hover:underline">
-                        {m.city}
-                      </a>
-                    </td>
-                    <td className="px-6 py-4 text-gray-900 font-semibold text-right">
+          {/* Right side - table layout (table on sm+, stacked cards on mobile) */}
+          <div className="w-full">
+            {/* Mobile stacked list */}
+            <div className="block sm:hidden space-y-3">
+              {metros.map((m, i) => (
+                <div
+                  key={i}
+                  className={`${
+                    i % 2 === 0 ? "bg-blue-50" : "bg-white"
+                  } rounded-lg p-3 border border-gray-100 shadow-sm`}
+                >
+                  <div className="flex justify-between items-center">
+                    <div className="text-[#0b5aa5] font-bold text-sm">
+                      {m.city.split(" ").map((word, wIdx, arr) => (
+                        <span key={wIdx} className="block sm:inline">
+                          {word}
+                          {wIdx < arr.length - 1 ? " " : ""}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="text-gray-900 font-semibold text-sm">
                       {m.price}
-                    </td>
-                    <td className="px-6 py-4 text-green-600  font-bold text-right">
-                      {m.savings}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                    </div>
+                  </div>
+                  <div className="mt-2 text-green-600 font-bold text-sm">
+                    {m.savings}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Table for sm and up */}
+            <div className="hidden sm:block bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <tbody>
+                    {metros.map((m, i) => (
+                      <tr
+                        key={i}
+                        className={`${i % 2 === 0 ? "bg-blue-50" : "bg-white"}`}
+                      >
+                        <td className="px-6 py-4">
+                          <a className="text-[#0b5aa5] font-bold text-left block cursor-pointer hover:underline">
+                            {m.city}
+                          </a>
+                        </td>
+                        <td className="px-6 py-4 align-top text-gray-900 font-semibold text-right">
+                          {m.price}
+                        </td>
+                        <td className="px-6 py-4 text-green-600  font-bold text-right">
+                          {m.savings}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </div>

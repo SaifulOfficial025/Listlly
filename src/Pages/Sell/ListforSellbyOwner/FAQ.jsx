@@ -38,37 +38,38 @@ function FAQ() {
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-
   return (
-    <div className="w-full bg-white px-4 sm:px-6 py-8 sm:py-10 mx-auto max-w-[1200px] ">
-      <h2 className="text-2xl sm:text-3xl font-bold text-black mb-4 text-center">
+    <div className="w-full bg-white px-4 sm:px-6 py-12 mx-auto max-w-4xl">
+      <h2 className="text-3xl sm:text-4xl font-extrabold text-black mb-2 text-center">
         Flat Fee MLS <span className="text-[#EB4E3D]">FAQs</span>
       </h2>
-      <span className="text-black block text-center mx-auto max-w-2xl mb-6">
+      <p className="text-center text-gray-600 max-w-2xl mx-auto mb-8">
         Find quick, straightforward answers to the most common questions about
         how Listlly helps homeowners save thousands and sell like a pro with
         full support from a team of licensed experts.
-      </span>
+      </p>
 
-      <div className="grid grid-cols-1 gap-4">
+      <div className="w-full mx-auto">
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className="p-4 bg-gray-100 rounded-lg shadow-md cursor-pointer"
+            className="py-5 border-t last:border-b cursor-pointer"
             onClick={() => toggleFAQ(index)}
           >
-            <div className="flex justify-between items-center">
-              <h3 className="text-base sm:text-lg font-bold text-[#1C1C1C]">
+            <div className="flex items-center justify-between cursor-pointer">
+              <h3 className="text-base sm:text-lg font-semibold text-black">
                 {faq.question}
               </h3>
-              <span className="text-[#0b5aa5] text-xl font-bold sm:text-2xl">
+              <button
+                aria-expanded={openIndex === index}
+                className="w-8 h-8 rounded-full flex items-center justify-center text-[#0b5aa5] text-lg"
+              >
                 {openIndex === index ? "-" : "+"}
-              </span>
+              </button>
             </div>
+
             {openIndex === index && (
-              <p className="text-sm sm:text-base text-gray-500 mt-2">
-                {faq.answer}
-              </p>
+              <p className="mt-4 text-sm text-gray-600">{faq.answer}</p>
             )}
           </div>
         ))}

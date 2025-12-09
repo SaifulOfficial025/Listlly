@@ -27,46 +27,48 @@ function NoObligation() {
   ];
 
   return (
-    <section className="py-16">
+    <section className="py-8 sm:py-16">
       <div className="max-w-full mx-auto ">
-        <div className=" px-24 sm:px-24 py-24 bg-gradient-to-br from-[#05469a]  to-[#0a66cc] text-white overflow-hidden ">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div className="px-4 sm:px-24 py-8 sm:py-24 bg-gradient-to-br from-[#05469a] to-[#0a66cc] text-white overflow-hidden ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
             <div className="lg:pr-8">
-              <h2 className="text-3xl sm:text-4xl font-extrabold leading-tight">
+              <h2 className="text-2xl sm:text-4xl font-extrabold leading-tight">
                 Get Your No-Obligation
                 <span className="block">Cash Offer</span>
               </h2>
 
-              <p className="mt-6 text-white/90 max-w-xl">
+              <p className="mt-4 sm:mt-6 text-white/90 max-w-xl text-sm sm:text-base">
                 Selling your home doesn’t have to be complicated. With Listlly,
                 you can receive a fair, no-obligation cash offer backed by real
                 licensed professionals — not bots or algorithms.
               </p>
 
-              <p className="mt-4 text-white/80 max-w-xl">
+              <p className="mt-3 sm:mt-4 text-white/80 max-w-xl text-sm sm:text-base">
                 No pressure. No commitments. Just a clear, honest number based
                 on your home's true market value.
               </p>
 
-              <button className="mt-8 inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#7ebdfa] to-[#3469f7] border border-white/20 shadow-lg shadow-white/30 hover:scale-105 transform transition-all text-white font-semibold rounded-lg">
+              <button className="mt-6 sm:mt-8 inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-[#7ebdfa] to-[#3469f7] border border-white/20 shadow-lg shadow-white/30 hover:scale-105 transform transition-all text-white font-semibold rounded-lg text-sm sm:text-base">
                 Get Cash Offer
               </button>
             </div>
 
             <div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {cards.map((c, i) => (
                   <div
                     key={i}
-                    className="bg-gradient-to-b from-[#58a1f6] to-[#2462d3] relative rounded-xl p-5 overflow-hidden border border-white/20"
+                    className="bg-gradient-to-b from-[#58a1f6] to-[#2462d3] relative rounded-xl p-3 sm:p-5 overflow-hidden border border-white/20"
                   >
-                    <div className="w-24 flex items-left justify-center mb-3 -ml-8">
+                    <div className="w-16 sm:w-24 flex items-left justify-center mb-2 sm:mb-3 -ml-4 sm:-ml-8">
                       <img src={c.icon} alt={c.title} className="" />
                     </div>
-                    <h3 className="text-white font-semibold text-sm sm:text-base">
+                    <h3 className="text-white font-semibold text-xs sm:text-base">
                       {c.title}
                     </h3>
-                    <p className="mt-2 text-white/80 text-md">{c.desc}</p>
+                    <p className="mt-1 sm:mt-2 text-white/80 text-xs sm:text-md">
+                      {c.desc}
+                    </p>
                   </div>
                 ))}
               </div>

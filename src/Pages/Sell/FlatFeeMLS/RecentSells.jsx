@@ -36,7 +36,7 @@ const recentSales = [
 
 function RecentSells() {
   return (
-    <div className="w-full bg-white px-4 sm:px-6 py-10">
+    <div className="w-full bg-[#f7faff] px-4 sm:px-6 py-10">
       <div className="max-w-[1200px] mx-auto">
         <div className="relative mb-6 mt-16">
           <h2 className="text-left text-2xl sm:text-3xl font-bold text-[#1C1C1C]">

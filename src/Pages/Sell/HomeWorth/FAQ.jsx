@@ -33,8 +33,8 @@ function FAQ() {
   };
 
   return (
-    <div className="w-full bg-white px-4 sm:px-6 py-12 mx-auto max-w-5xl">
-      <h2 className="text-3xl sm:text-4xl font-bold text-black mb-2 text-center">
+    <div className="w-full bg-white px-4 sm:px-6 py-12 mx-auto max-w-4xl">
+      <h2 className="text-3xl sm:text-4xl font-extrabold text-black mb-2 text-center">
         Frequently Asked Questions
       </h2>
       <p className="text-center text-gray-600 max-w-2xl mx-auto mb-8">
@@ -47,23 +47,23 @@ function FAQ() {
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className="py-4 border-t last:border-b cursor-pointer"
+            className="py-5 border-t last:border-b cursor-pointer"
             onClick={() => toggleFAQ(index)}
           >
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between cursor-pointer">
               <h3 className="text-base sm:text-lg font-semibold text-black">
                 {faq.question}
               </h3>
               <button
                 aria-expanded={openIndex === index}
-                className="w-8 h-8 rounded-full flex items-center justify-center border border-gray-400 text-gray-600 text-lg"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-[#0b5aa5] text-lg"
               >
                 {openIndex === index ? "−" : "+"}
               </button>
             </div>
 
             {openIndex === index && faq.answer && (
-              <p className="mt-4 text-sm text-gray-500">{faq.answer}</p>
+              <p className="mt-4 text-sm text-gray-600">{faq.answer}</p>
             )}
           </div>
         ))}

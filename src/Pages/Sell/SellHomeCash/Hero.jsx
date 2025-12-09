@@ -17,27 +17,27 @@ function Hero() {
       {/* overlay */}
       <div className="absolute inset-0 "></div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center">
         {/* small badge */}
         <div className="inline-flex items-center bg-white/40 text-white text-md px-3 py-1 rounded-lg mb-4">
-          <RiMoneyDollarCircleLine className=" w-5 h-5 mr-1" /> CASH FOR HOUSES
+          <RiMoneyDollarCircleLine className="w-5 h-5 mr-1" /> CASH FOR HOUSES
         </div>
 
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4">
+        <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold leading-tight mb-3 sm:mb-4">
           Sell Your House Fast for Cash
         </h1>
 
-        <p className="text-lg md:text-lg text-white/90 mb-8">
+        <p className="text-base sm:text-lg md:text-lg text-white/90 mb-6 sm:mb-8">
           Get a competitive cash offer for your home in any condition. No
           repairs, no fees, no hassles.
         </p>
 
         {/* Search input */}
-        <div className="mx-auto max-w-[820px] flex items-center justify-center gap-4 bg-white rounded-2xl p-3 shadow-lg">
-          <div className="flex-1 bg-gray-200 rounded-lg flex items-center px-4 py-3 ">
+        <div className="mx-auto max-w-[820px] flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 bg-white rounded-2xl p-2 sm:p-3 shadow-lg">
+          <div className="flex-1 bg-[#ebeff5] rounded-lg flex items-center px-3 sm:px-4 py-2 sm:py-3 mb-2 sm:mb-0">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-5 h-5 text-gray-400 mr-3"
+              className="w-5 h-5 text-gray-400 mr-2 sm:mr-3"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth="1.5"
@@ -52,39 +52,39 @@ function Hero() {
             <input
               type="text"
               placeholder="Enter your property address"
-              className="w-full text-gray-900 placeholder-gray-500 bg-transparent focus:outline-none "
+              className="w-full text-sm sm:text-base text-gray-900 placeholder-gray-500 bg-transparent focus:outline-none "
             />
           </div>
-          <button className="bg-[#0b5aa5] text-white px-6 py-3 rounded-lg font-medium shadow-lg hover:brightness-110">
+          <button className="bg-[#0b5aa5] text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium shadow-lg hover:brightness-110 text-sm sm:text-base">
             Get Cash Offer
           </button>
         </div>
 
-        {/* Chips: 3 on first row, 2 centered on second row */}
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-[900px] mx-auto">
-          <div className="justify-self-center bg-white text-[#0b5aa5] px-4 py-2 rounded-full flex items-center gap-2 text-sm shadow-sm">
+        {/* Chips: stack on mobile, grid on desktop */}
+        <div className="mt-5 sm:mt-6 flex flex-col sm:grid sm:grid-cols-3 gap-2 sm:gap-3 max-w-[900px] mx-auto">
+          <div className="justify-self-center bg-white text-[#0b5aa5] px-3 sm:px-4 py-2 rounded-full flex items-center gap-2 text-xs sm:text-sm shadow-sm">
             <BsFillPatchCheckFill className="text-green-600" />
             <span>100% online</span>
           </div>
 
-          <div className="justify-self-center bg-white text-[#0b5aa5] px-4 py-2 rounded-full flex items-center gap-2 text-sm shadow-sm">
+          <div className="justify-self-center bg-white text-[#0b5aa5] px-3 sm:px-4 py-2 rounded-full flex items-center gap-2 text-xs sm:text-sm shadow-sm">
             <BsFillPatchCheckFill className="text-green-600" />
             <span>4.9-star customer service</span>
           </div>
 
-          <div className="justify-self-center bg-white text-[#0b5aa5] px-4 py-2 rounded-full flex items-center gap-2 text-sm shadow-sm">
+          <div className="justify-self-center bg-white text-[#0b5aa5] px-3 sm:px-4 py-2 rounded-full flex items-center gap-2 text-xs sm:text-sm shadow-sm">
             <BsFillPatchCheckFill className="text-green-600" />
             <span>Choose your closing date</span>
           </div>
 
-          {/* second row: span all 3 columns and center two chips */}
-          <div className="col-span-3 flex justify-center gap-3 mt-1">
-            <div className="bg-white text-[#0b5aa5] px-4 py-2 rounded-full flex items-center gap-2 text-sm shadow-sm">
+          {/* second row: stack on mobile, row on desktop */}
+          <div className="flex flex-col sm:col-span-3 sm:flex-row justify-center gap-2 sm:gap-3 mt-1">
+            <div className="bg-white text-[#0b5aa5] px-3 sm:px-4 py-2 rounded-full flex items-center gap-2 text-xs sm:text-sm shadow-sm">
               <BsFillPatchCheckFill className="text-green-600" />
               <span>Save thousands in commissions</span>
             </div>
 
-            <div className="bg-white text-[#0b5aa5] px-4 py-2 rounded-full flex items-center gap-2 text-sm shadow-sm">
+            <div className="bg-white text-[#0b5aa5] px-3 sm:px-4 py-2 rounded-full flex items-center gap-2 text-xs sm:text-sm shadow-sm">
               <BsFillPatchCheckFill className="text-green-600" />
               <span>4.7-star rated mobile app</span>
             </div>

@@ -22,10 +22,10 @@ export default function Footer() {
         }}
       >
         <div className="max-w-[1700px] mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr] gap-8 md:gap-12 items-start">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr] gap-8 md:gap-12 items-center sm:items-start text-center sm:text-left">
             {/* Left: Logo + blurb */}
-            <div>
-              <div className="flex items-center gap-3">
+            <div className="flex flex-col items-center sm:items-start">
+              <div className="flex items-center justify-center sm:justify-start gap-3">
                 <img
                   src={Logo}
                   alt="Listlly logo"
@@ -33,22 +33,22 @@ export default function Footer() {
                 />
                 <span className="sr-only">Listlly</span>
               </div>
-              <p className="mt-4 text-sm md:text-base leading-relaxed text-white/85 max-w-[320px]">
+              <p className="mt-4 text-sm md:text-base leading-relaxed text-white/85 max-w-[320px] text-center sm:text-left">
                 For Sale by Owner Just Made Simple - Sell Your Home Yourself And
                 Keep Every Dollar
               </p>
-              <p className="mt-4 text-xs text-white/60 max-w-[360px]">
+              <p className="mt-4 text-xs text-white/60 max-w-[360px] text-center sm:text-left">
                 Listlly Corp. holds real estate brokerage licenses in California
                 (License No. 02187353)
               </p>
             </div>
 
             {/* Company Links */}
-            <div>
-              <h4 className="text-sm md:text-base font-semibold mb-3">
+            <div className="flex flex-col items-center sm:items-start">
+              <h4 className="text-sm md:text-base font-semibold mb-3 text-center sm:text-left">
                 Company
               </h4>
-              <ul className="space-y-2 text-sm text-white/90">
+              <ul className="space-y-2 text-sm text-white/90 text-center sm:text-left">
                 <li>
                   <a href="#" className="hover:underline">
                     Sell Your Home
@@ -83,11 +83,11 @@ export default function Footer() {
             </div>
 
             {/* Contact Us */}
-            <div>
-              <h4 className="text-sm md:text-base font-semibold mb-3">
+            <div className="flex flex-col items-center sm:items-start">
+              <h4 className="text-sm md:text-base font-semibold mb-3 text-center sm:text-left">
                 Contact Us
               </h4>
-              <ul className="space-y-2 text-sm text-white/90">
+              <ul className="space-y-2 text-sm text-white/90 text-center sm:text-left">
                 <li>
                   <CiMail className="inline-block mr-2" />
                   <a href="mailto:help@listlly.com" className="hover:underline">
@@ -108,11 +108,11 @@ export default function Footer() {
             </div>
 
             {/* Follow */}
-            <div>
-              <h4 className="text-sm md:text-base font-semibold mb-3">
+            <div className="flex flex-col items-center sm:items-start lg:ml-28">
+              <h4 className="text-sm md:text-base font-semibold mb-3 text-center sm:text-left ">
                 Follow Us
               </h4>
-              <div className="flex items-center gap-3 text-white/90">
+              <div className="flex items-center justify-center sm:justify-start gap-3 text-white/90">
                 <a
                   href="#"
                   className="p-2 rounded-full bg-white/5 hover:bg-white/10"
@@ -142,11 +142,11 @@ export default function Footer() {
           </div>
 
           <div className="mt-8 border-t border-white/10 pt-5">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-3">
-              <div className="text-xs text-white/70">
+            <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-3">
+              <div className="text-xs text-white/70 text-center md:text-left">
                 Copyright © 2026 Listlly. All Rights Reserved.
               </div>
-              <div className="flex items-center gap-4 text-xs text-white/70">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-xs text-white/70">
                 <a href="#" className="hover:underline">
                   License
                 </a>

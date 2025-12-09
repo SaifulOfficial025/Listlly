@@ -115,7 +115,7 @@ export default function NewAddress() {
       <img
         src={newaddressimg}
         alt="New Address"
-        className="justify-center mx-auto h-[600px] mb-8"
+        className="mx-auto w-full max-w-[1100px] object-cover h-40 sm:h-60 md:h-80 lg:h-[600px] mb-8"
       />
     </section>
   );

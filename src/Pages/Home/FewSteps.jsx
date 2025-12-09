@@ -67,7 +67,7 @@ function FewSteps() {
               <img
                 src={stepsimg}
                 alt="Beautiful house"
-                className="w-full h-auto object-cover"
+                className="hidden sm:block w-full h-auto object-cover"
               />
             </div>
           </div>

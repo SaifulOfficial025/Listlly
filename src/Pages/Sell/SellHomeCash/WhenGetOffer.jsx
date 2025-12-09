@@ -109,39 +109,41 @@ function WhenGetOffer() {
   ];
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <section className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-8">
       <div className="text-center">
-        <h2 className="text-3xl font-bold text-gray-800">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
           When to Get a <span className="text-[#d03c0b]">Cash Offer</span>
         </h2>
-        <p className="mt-3 text-gray-500 max-w-2xl mx-auto">
+        <p className="mt-2 sm:mt-3 text-sm sm:text-base text-gray-500 max-w-2xl mx-auto">
           Sometimes it’s not just about selling, it’s about peace of mind.
           Listlly helps you sell your home privately, quickly, and on your
           terms. Here’s when a cash offer makes the most sense:
         </p>
       </div>
 
-      <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="mt-4 sm:mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {cards.map((c, idx) => (
           <div
             key={idx}
-            className="rounded-lg shadow-sm p-2 sm:p-4 overflow-hidden border hover:border-blue-900 h-56"
+            className="rounded-lg shadow-sm p-2 sm:p-4 overflow-hidden border hover:border-blue-900 h-40 sm:h-56 flex flex-col"
             style={{
               backgroundImage: "url('/getacashoffercardbg.png')",
               backgroundPosition: "center",
-              backgroundSize: "",
+              backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
             }}
           >
             <div className="flex items-start">
-              <div className=" w-16 flex items-center justify-center p-2">
+              <div className="w-12 sm:w-16 flex items-center justify-center p-1 sm:p-2">
                 {c.icon}
               </div>
             </div>
-            <h3 className="text-left text-base sm:text-lg font-semibold text-gray-800 mt-8">
+            <h3 className="text-left text-sm sm:text-lg font-semibold text-gray-800 mt-5 sm:mt-8">
               {c.title}
             </h3>
-            <p className="text-left text-sm text-gray-500 mt-2">{c.subtitle}</p>
+            <p className="text-left text-xs sm:text-sm text-gray-500 mt-1 sm:mt-2">
+              {c.subtitle}
+            </p>
           </div>
         ))}
       </div>

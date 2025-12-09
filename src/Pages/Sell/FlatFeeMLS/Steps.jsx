@@ -35,21 +35,27 @@ function Steps() {
             <img
               src="/stepstolist.jpg"
               alt="Steps to list"
-              className="w-full max-w-[520px]  object-cover"
+              className="hidden sm:block w-full max-w-[520px] object-cover"
             />
           </div>
 
           {/* Right: timeline / cards */}
           <div className="md:col-span-1">
+            <div className="block sm:hidden text-center mb-4">
+              <h2 className="text-3xl font-bold text-[#1C1C1C]">
+                Steps to <span className="text-[#EB4E3D]">List Your Home</span>{" "}
+                on MLS
+              </h2>
+            </div>
             <div className="space-y-10">
               {steps.map((step, idx) => (
                 <div key={step.id} className="flex items-start gap-6">
                   <div className="flex-1">
                     <div className="bg-[#F3F9FE] p-6 rounded-xl shadow-sm">
-                      <h3 className="text-2xl font-semibold text-[#1C1C1C]">
+                      <h3 className="text-lg sm:text-2xl font-semibold text-[#1C1C1C]">
                         {step.title}
                       </h3>
-                      <p className="text-xl text-gray-600 mt-2">
+                      <p className="text-sm sm:text-xl text-gray-600 mt-2">
                         {step.description}
                       </p>
                     </div>

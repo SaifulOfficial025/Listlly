@@ -4,6 +4,7 @@ import { FaCheck } from "react-icons/fa";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { IoLocationOutline } from "react-icons/io5";
 import { PiSealCheckFill } from "react-icons/pi";
+import AddressForm from "../../../../src/Components/AddressForm/AddressForm";
 
 function Listing() {
   return (
@@ -34,26 +35,11 @@ function Listing() {
               commissions with full professional support.
             </p>
 
-            {/* Search input group */}
-            <div className="mt-8 max-w-[760px]">
-              <div className="bg-white rounded-2xl p-3 flex items-center gap-3 shadow-[0_10px_40px_rgba(13,71,193,0.18)]">
-                <div className="relative flex-1">
-                  <IoLocationOutline className="absolute left-4 top-1/2 -translate-y-1/2 text-blue-600 w-5 h-5" />
-                  <input
-                    className="w-full h-14 pl-12 bg-[#ebeff5] pr-4 rounded-lg border border-white/0 outline-none text-gray-700 placeholder-gray-700 dark:bg-[#ebeff5] shadow-lg"
-                    placeholder="Enter your address"
-                  />
-                </div>
-                <input
-                  className="bg-[#ebeff5] w-32 h-14 px-3 rounded-lg border border-white/0 outline-none text-gray-700 placeholder-gray-700 dark:bg-[#ebeff5]  shadow-lg"
-                  placeholder="Suite"
-                />
-                <button className="bg-[#0b5aa5] text-white rounded-lg px-6 py-3 font-semibold shadow-md">
-                  Get Started
-                </button>
-              </div>
+            {/* Search input group (extracted) */}
+            <div className="mt-8 max-w-[760px] w-full">
+              <AddressForm />
 
-              <p className="mt-3 text-lg text-white/80 flex items-center gap-2">
+              <p className="mt-3 text-base sm:text-lg text-white/80 flex items-center gap-2">
                 <FaPhoneVolume /> Schedule a free consultation call or contact a
                 specialist at (844) 448-0110 (9am to 6pm CDT, Mon-Sat)
               </p>

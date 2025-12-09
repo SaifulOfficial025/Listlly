@@ -43,7 +43,7 @@ export function PropertyCard({
           <img
             src={images[currentIndex]}
             alt={`${title} - image ${currentIndex + 1}`}
-            className="w-full h-full object-cover max-h-60 md:max-h-full"
+            className="w-full h-full object-cover max-h-80 md:max-h-full"
           />
         </div>
 
@@ -77,8 +77,10 @@ export function PropertyCard({
 
       {/* Body */}
       <div className="px-4 py-3">
-        <h3 className="text-[14px] font-semibold text-[#1C1C1C]">{title}</h3>
-        <div className="mt-2 text-[16px] text-[#5F6B7A]">
+        <h3 className="text-sm lg:text-[14px] font-semibold text-[#1C1C1C]">
+          {title}
+        </h3>
+        <div className="mt-2 text-sm lg:text-[16px] text-[#5F6B7A]">
           <FaBed className="inline mr-1" /> {beds} beds{" "}
           <span className="mx-2">•</span>{" "}
           <FaDoorClosed className="inline mr-1" /> {baths} baths
@@ -88,7 +90,9 @@ export function PropertyCard({
             <span className="font-semibold text-[#0b5aa5]">{area}</span> sq ft
           </span>
         </div>
-        <div className="mt-2 text-lg font-bold text-[#0b5aa5]">{price}</div>
+        <div className="mt-2 text-base lg:text-lg font-bold text-[#0b5aa5]">
+          {price}
+        </div>
       </div>
     </div>
   );

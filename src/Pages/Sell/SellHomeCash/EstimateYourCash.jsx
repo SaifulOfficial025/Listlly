@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IoTriangleSharp } from "react-icons/io5";
+import { IoTriangleSharp, IoLocationOutline } from "react-icons/io5";
 import { BsPatchCheckFill } from "react-icons/bs";
 
 function EstimateYourCash() {
@@ -136,7 +136,6 @@ function EstimateYourCash() {
                 </ul>
               </div>
             </div>
-
             <div
               className="rounded-lg shadow-lg"
               style={{
@@ -148,7 +147,6 @@ function EstimateYourCash() {
                 Via Listlly MLS Listing
               </div>
               <p className="text-center mb-5">Your Offer Est.</p>
-
               <div className="p-6 text-center">
                 <div className="text-2xl font-bold text-white">
                   ${mlsEstimate.toLocaleString()}
@@ -172,6 +170,40 @@ function EstimateYourCash() {
                   </li>
                 </ul>
               </div>
+            </div>
+          </div>
+          {/* Address input bar - matches design */}
+          <div className="mt-4">
+            <div className="bg-white rounded-lg px-3 sm:px-4 py-3 shadow-lg flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mx-auto">
+              {/* Mobile label above input */}
+              <div className="block sm:hidden text-base font-semibold text-black mb-1 pl-1">
+                Get Your Cash Offer
+              </div>
+              {/* Desktop label left of input */}
+              <div className="hidden sm:block text-lg font-semibold text-black pl-2 mr-24">
+                Get Your Cash Offer
+              </div>
+
+              <div className="flex-1 flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
+                <div className="relative flex-1">
+                  <IoLocationOutline className="absolute left-3 top-1/2 -translate-y-1/2 text-blue-400 w-5 h-5" />
+                  <input
+                    type="text"
+                    placeholder="Enter your address"
+                    className="w-full h-10 sm:h-12 pl-10 pr-3 rounded-lg border border-gray-200 bg-gray-200 text-gray-700 placeholder-gray-700 outline-none text-sm sm:text-base"
+                  />
+                </div>
+
+                <input
+                  type="text"
+                  placeholder="Suite"
+                  className="w-full sm:w-28 h-10 sm:h-12 px-3 rounded-lg border border-gray-200 bg-gray-200 text-gray-700 placeholder-gray-700 outline-none text-sm sm:text-base mt-2 sm:mt-0"
+                />
+              </div>
+
+              <button className="bg-[#0b5aa5] text-white rounded-lg px-4 sm:px-5 py-2 sm:py-3 font-semibold hover:bg-[#094a87] transition text-sm sm:text-base mt-2 sm:mt-0">
+                Get Cash Offer
+              </button>
             </div>
           </div>
         </div>

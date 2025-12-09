@@ -41,7 +41,7 @@ function CashHomeSellers() {
   ];
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <section className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-64 py-8 bg-[#ebeff5]">
       <div className="text-left">
         <h2 className="text-3xl font-bold text-gray-800">
           Cash Home Sellers <span className="text-[#d45329]">Listlly</span>
