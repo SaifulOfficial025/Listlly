@@ -67,7 +67,7 @@ function Hero() {
                     <input
                       type="text"
                       placeholder="Search by City, State or Zip"
-                      className="w-full py-4 pl-5 pr-12 border-2 border-[#0b5aa5] rounded-2xl text-gray-700 placeholder-gray-400 focus:outline-none focus:border-[#0b5aa5] transition-colors dark:bg-white"
+                      className="w-full py-4 pl-5 pr-12 border-2 border-[#0b5aa5] rounded-2xl text-gray-700 placeholder-gray-400 focus:outline-none focus:border-[#0b5aa5] transition-colors focus:shadow-lg focus:shadow-[#0b5aa5]/30 dark:bg-white duration-300"
                     />
                     <button className="absolute right-3 top-1/2 -translate-y-1/2  bg-[#dfe7ed] hover:bg-[#094a87] text-white p-2.5 rounded-xl transition-colors">
                       <Search size={20} className="text-[#0b5aa5]" />

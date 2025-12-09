@@ -1,68 +1,104 @@
 import React from "react";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
-import { FaHome, FaFileSignature, FaUserTie, FaHandshake } from "react-icons/fa";
+import {
+  FaHome,
+  FaFileSignature,
+  FaUserTie,
+  FaHandshake,
+} from "react-icons/fa";
+import findbg from "/findbg.png";
+import findcard1 from "/findcard1.png";
+import findcard2 from "/findcard2.png";
+import findcard3 from "/findcard3.png";
+import findcard4 from "/findcard4.png";
 
 const steps = [
   {
-    icon: <FaHome className="text-[#0054F6] w-6 h-6" />,
+    icon: <FaHome className="w-6 h-6 text-white" />,
     title: "Request a Tour",
     desc: "Pick a time, choose in-person or virtual, and get a confirmation instantly.",
   },
   {
-    icon: <FaFileSignature className="text-[#0054F6] w-6 h-6" />,
+    icon: <FaFileSignature className="w-6 h-6 text-white" />,
     title: "Submit an Offer",
     desc: "Use our online form to send your offer to the seller directly—fast, secure, and easy.",
   },
   {
-    icon: <FaUserTie className="text-[#0054F6] w-6 h-6" />,
+    icon: <FaUserTie className="w-6 h-6 text-white" />,
     title: "Get Pre-approved",
     desc: "Connect with our lending partners to get pre-approved and strengthen your offer.",
   },
   {
-    icon: <FaHandshake className="text-[#0054F6] w-6 h-6" />,
+    icon: <FaHandshake className="w-6 h-6 text-white" />,
     title: "Connect with Agent",
     desc: "Get expert advice from our team of experienced real estate professionals.",
   },
 ];
 
+const cardImages = [findcard1, findcard2, findcard3, findcard4];
+
 export default function Find() {
   return (
-    <div className="bg-[#F5F9FF] w-full px-4 sm:px-6 md:px-8 py-10 md:py-16">
-      <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row items-center lg:items-start gap-6 md:gap-10">
-        
-        {/* Left section */}
-        <div className="flex-1">
-          <h2 className="text-xl md:text-3xl font-bold text-[#1C1C1C] leading-snug">
-            <span className="text-[#EB4E3D]">Find the Right Home</span> and
-            <br /> Make an Offer Easily
-          </h2>
-          <p className="text-[#5A5A5A] mt-4 max-w-[500px] text-xs md:text-sm">
-            Our streamlined buying process makes finding and purchasing your dream home simple and stress-free.
-          </p>
-          <button
-            className="mt-8 text-white text-xs md:text-sm font-medium px-4 md:px-5 py-2 md:py-3 rounded shadow-sm flex items-center"
-            style={{
-              background: "linear-gradient(90deg, #0054F6 0%, #0D47C1 100%)",
-            }}
-          >
-            Start Listing <FaArrowUpRightFromSquare className="ml-2" />
-          </button>
-        </div>
+    <section
+      className="w-full px-4 sm:px-6 md:px-8 py-14 md:py-20"
+      style={{
+        backgroundImage: `url(${findbg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="max-w-[1200px] mx-auto text-center relative">
+        <div className="absolute inset-0  rounded-md pointer-events-none" />
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+          <span className="block text-white">Find the Right Home</span>
+          <span className="block">and Make an Offer Easily</span>
+        </h2>
+        <p className="text-white/85 mt-4 max-w-[800px] mx-auto text-xs md:text-sm">
+          Our streamlined buying process makes finding and purchasing your dream
+          home simple and stress-free.
+        </p>
 
-        {/* Right section - steps grid */}
-  <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((step, i) => (
             <div
               key={i}
-              className="bg-white rounded-xl shadow-[0_4px_16px_rgba(0,0,0,0.06)] p-4 md:p-6"
+              className="relative overflow-hidden rounded-xl shadow-[0_12px_30px_rgba(0,0,0,0.18)] hover:scale-105 transition-transform duration-300"
+              style={{
+                background: "linear-gradient(180deg,#59a3f7 , #2360d2 50%)",
+              }}
             >
-              <div className="mb-2 md:mb-4">{step.icon}</div>
-              <h3 className="text-[#1C1C1C] text-xs md:text-sm font-semibold">{step.title}</h3>
-              <p className="text-[#5A5A5A] text-xs mt-1">{step.desc}</p>
+              <img
+                src={cardImages[i]}
+                alt={step.title}
+                className="w-25 h-25 object-cover block justify-center mx-auto rounded-md mt-12"
+              />
+              <div className="p-4 bg-gradient-to-t from-black/50 to-transparent">
+                <h3 className="text-white text-sm md:text-base font-semibold">
+                  {step.title}
+                </h3>
+                <p className="text-white/90 text-xs mt-1 mb-10">{step.desc}</p>
+              </div>
             </div>
           ))}
         </div>
+
+        <div className="mt-10">
+          <div className="relative inline-flex">
+            <span
+              className="absolute inset-0 rounded-lg blur-xl bg-white/60 opacity-30 filter z-0"
+              aria-hidden="true"
+            />
+            <button
+              className="relative z-10 inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm md:text-base font-semibold text-white border-2 border-white shadow-md shadow-white hover:scale-105 transition"
+              style={{
+                background: "linear-gradient(90deg,#59a3f7 0%, #2361d3 100%)",
+              }}
+            >
+              Start Searching
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

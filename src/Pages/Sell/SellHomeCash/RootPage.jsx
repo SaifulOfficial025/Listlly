@@ -1,16 +1,17 @@
-import React from 'react'
-import Header from '../../../Shared/Header'
-import Footer from '../../../Shared/Footer'
-import Hero from './Hero'
-import CashHomeSellers from './CashHomeSellers'
-import ListllyVsTraditional from './ListllyVsTraditional'
-import EstimateYourCash from './EstimateYourCash'
-import GetYourCashOffer from './GetYourCashOffer'
-import WhenGetOffer from './WhenGetOffer'
-import WhyChooseListlly from './WhyChooseListlly'
-import Beware from './Beware'
-import CashBuyerMarketPlace from './CashBuyerMarketPlace'
-import FAQ from './FAQ'
+import React from "react";
+import Header from "../../../Shared/Header";
+import Footer from "../../../Shared/Footer";
+import Hero from "./Hero";
+import CashHomeSellers from "./CashHomeSellers";
+import ListllyVsTraditional from "./ListllyVsTraditional";
+import EstimateYourCash from "./EstimateYourCash";
+import GetYourCashOffer from "./GetYourCashOffer";
+import WhenGetOffer from "./WhenGetOffer";
+import WhyChooseListlly from "./WhyChooseListlly";
+import Beware from "./Beware";
+import CashBuyerMarketPlace from "./CashBuyerMarketPlace";
+import FAQ from "./FAQ";
+import NoObligation from "./NoObligation";
 
 function RootPage() {
   return (
@@ -24,12 +25,12 @@ function RootPage() {
       <WhenGetOffer />
       <WhyChooseListlly />
       <Beware />
-      <CashBuyerMarketPlace />
+      <NoObligation />
+      {/* <CashBuyerMarketPlace /> */}
       <FAQ />
       <Footer />
     </div>
-  )
+  );
 }
 
-export default RootPage
-        
+export default RootPage;

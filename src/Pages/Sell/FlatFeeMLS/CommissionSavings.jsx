@@ -8,44 +8,65 @@ function CommissionSavings() {
     { icon: "🏡", value: "2.4 million", label: "Home for Sale" },
   ];
 
-  const metros = Array(10).fill({ city: "Los Angeles", price: "$1,000,000", savings: "$44,571" });
-
+  const metros = [
+    { city: "Los Angeles", price: "$1,050,000", savings: "$45,200" },
+    { city: "San Fernando Valley", price: "$920,000", savings: "$39,600" },
+    { city: "Ventura County", price: "$930,000", savings: "$40,200" },
+    { city: "Riverside County", price: "$650,000", savings: "$28,000" },
+    { city: "Orange County", price: "$1,200,000", savings: "$50,000" },
+    { city: "Inland Empire", price: "$700,000", savings: "$30,000" },
+    { city: "San Diego", price: "$970,000", savings: "$41,800" },
+    { city: "San Francisco Bay Area", price: "$1,400,000", savings: "$58,800" },
+    { city: "Santa Clarita", price: "$850,000", savings: "$36,500" },
+    { city: "Sacramento", price: "$600,000", savings: "$25,200" },
+  ];
   return (
-  <div className="w-full bg-white py-8 sm:py-10 text-center">
-      {/* Stats Section */}
-      <div className="bg-[#e9f3fd] py-10">
-      <h2 className="text-2xl sm:text-3xl font-bold text-[#1C1C1C] mb-4">
-        Home <span className="text-[#EB4E3D]">Sellers Saved Over $215 Million</span> in Commissions!*
-      </h2>
-      <p className="text-sm sm:text-md text-gray-500 mb-6">
-        *Compared to a 6% traditional full-service listing.
-      </p>
-      <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-6 mb-10 py-8 sm:py-10 px-4 sm:px-10">
-        {stats.map((stat, index) => (
-          <div key={index} className="p-6  rounded-lg shadow-md bg-[#f3f4f4]">
-            <div className="text-3xl font-bold text-[#1C1C1C] mb-2">{stat.icon}</div>
-            <div className="text-2xl font-bold text-[#1C1C1C] mb-1">{stat.value}</div>
-            <p className="text-sm text-gray-500">{stat.label}</p>
-          </div>
-        ))}
-      </div>
-      </div>
-
+    <div className="w-full bg-white py-8 sm:py-10 text-center">
       {/* Metros Section */}
-  <div className="mx-4 sm:mx-14 px-4 mt-8 sm:mt-10 border-2 border-gray-200 py-8 sm:py-10 rounded-xl">
+      <div className="max-w-[1600px] justify-center mx-auto px-4 mt-16">
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#1C1C1C]  mb-6 text-center">
+          <span className="text-[#d03c0b]">Top 10 California Metros </span>
+          <span className="">
+            Where Sellers <br /> Save the Most with Listlly
+          </span>
+        </h2>
 
-      <h2 className="text-2xl sm:text-3xl font-bold text-[#1C1C1C] mb-6">
-        Top 10 Metros <span className="text-[#EB4E3D]">With Maximum Savings</span>
-      </h2>
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {metros.map((metro, index) => (
-          <div key={index} className="flex items-center justify-between p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-100">
-            <span className="text-blue-600 underline cursor-pointer">{metro.city}</span>
-            <span className="text-[#1C1C1C]">{metro.price}</span>
-            <span className="text-green-600 font-bold">{metro.savings}</span>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center max-w-7xl mx-auto px-4">
+          {/* Left image */}
+          <div className="flex justify-center">
+            <img
+              src="/top10metros.png"
+              alt="Top 10 metros"
+              className="w-full max-w-md rounded-lg shadow-lg object-cover"
+            />
           </div>
-        ))}
-      </div>
+
+          {/* Right side - table layout */}
+          <div className="w-full bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+            <table className="w-full">
+              <tbody>
+                {metros.map((m, i) => (
+                  <tr
+                    key={i}
+                    className={`${i % 2 === 0 ? "bg-blue-50" : "bg-white"}`}
+                  >
+                    <td className="px-6 py-4">
+                      <a className="text-[#0b5aa5] font-bold text-left block cursor-pointer hover:underline">
+                        {m.city}
+                      </a>
+                    </td>
+                    <td className="px-6 py-4 text-gray-900 font-semibold text-right">
+                      {m.price}
+                    </td>
+                    <td className="px-6 py-4 text-green-600  font-bold text-right">
+                      {m.savings}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   );

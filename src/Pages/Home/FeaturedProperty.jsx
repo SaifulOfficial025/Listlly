@@ -1,8 +1,11 @@
-
-import Property from "../../../public/property.jpg"
+import Property from "../../../public/property.jpg";
 /** Reusable card with a static image */
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { FaArrowRight } from "react-icons/fa";
+import { FaBed } from "react-icons/fa";
+import { FaDoorClosed } from "react-icons/fa";
+import { LuSquareSquare } from "react-icons/lu";
 
 // ⬆ keep imports
 
@@ -28,7 +31,11 @@ export function PropertyCard({
   };
 
   return (
-    <div className={`bg-white rounded-xl shadow-[0_6px_24px_rgba(0,0,0,0.08)] overflow-hidden transform transition-transform duration-500 ease-in-out w-full max-w-full ${zoom ? 'hover:scale-105 hover:shadow-lg cursor-pointer' : ''}`}>
+    <div
+      className={`bg-white rounded-xl shadow-[0_6px_24px_rgba(0,0,0,0.08)] overflow-hidden transform transition-transform duration-500 ease-in-out w-full max-w-full ${
+        zoom ? "hover:scale-105 hover:shadow-lg cursor-pointer" : ""
+      }`}
+    >
       {/* Media */}
       <div className="relative">
         <div className="pt-[56.25%]"></div>
@@ -43,7 +50,7 @@ export function PropertyCard({
         {/* Status badge */}
         <span
           className={`absolute top-2 right-2 text-[10px] md:text-[11px] font-semibold px-2 md:px-3 py-[4px] md:py-[6px] rounded-full shadow-sm ${
-            isSold ? "bg-[#FF6B6B] text-white" : "bg-[#E8F0FF] text-[#0054F6]"
+            isSold ? "bg-[#fff] text-[#d03c0b]" : "bg-[#d03c0b] text-[#fff]"
           }`}
         >
           {status}
@@ -71,14 +78,17 @@ export function PropertyCard({
       {/* Body */}
       <div className="px-4 py-3">
         <h3 className="text-[14px] font-semibold text-[#1C1C1C]">{title}</h3>
-        <div className="mt-2 text-[14px] font-semibold text-[#0054F6]">{price}</div>
         <div className="mt-2 text-[16px] text-[#5F6B7A]">
-          {beds} beds <span className="mx-2">•</span> {baths} baths
+          <FaBed className="inline mr-1" /> {beds} beds{" "}
+          <span className="mx-2">•</span>{" "}
+          <FaDoorClosed className="inline mr-1" /> {baths} baths
           <span className="mx-2">•</span>
           <span>
-            <span className="font-semibold text-[#0054F6]">{area}</span> sq ft
+            <LuSquareSquare className="inline mr-1" />
+            <span className="font-semibold text-[#0b5aa5]">{area}</span> sq ft
           </span>
         </div>
+        <div className="mt-2 text-lg font-bold text-[#0b5aa5]">{price}</div>
       </div>
     </div>
   );
@@ -87,15 +97,15 @@ export function PropertyCard({
 function SectionHeader({ red, rest, linkText = "View All" }) {
   return (
     <div className="relative mb-6">
-      <h2 className="text-center text-[28px] font-bold text-[#1C1C1C]">
-        <span className="text-[#EB4E3D]">{red} </span>
-        {rest}
+      <h2 className="text-left text-[28px] font-bold text-[#1C1C1C]">
+        <span className="text-[#000]">{red} </span>
+        <span className="text-[#d03c0b]">{rest}</span>
       </h2>
       <a
         href="#"
-        className="absolute right-0 top-1/2 -translate-y-1/2 text-[13px] font-semibold text-[#0054F6] hover:underline"
+        className="absolute right-0 top-1/2 -translate-y-1/2 text-[13px] font-bold text-[#0b5aa5] underline"
       >
-        {linkText}
+        {linkText} <FaArrowRight className="inline ml-1 -mt-1" />
       </a>
     </div>
   );
@@ -161,12 +171,6 @@ const recentSales = [
   },
 ];
 
-
-
-
-
-
-
 export default function FeaturedProperty() {
   // Carousel state for featured and recent sales
   const [featuredIndex, setFeaturedIndex] = useState(0);
@@ -193,23 +197,29 @@ export default function FeaturedProperty() {
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      setRecentIndex((prev) => (prev === recentSales.length - 1 ? 0 : prev + 1));
+      setRecentIndex((prev) =>
+        prev === recentSales.length - 1 ? 0 : prev + 1
+      );
     }, 5000);
     return () => clearInterval(interval);
   }, [recentSales.length]);
 
   const handlePrev = (type) => {
-    if (type === 'featured') {
+    if (type === "featured") {
       setFeaturedIndex((prev) => (prev === 0 ? featured.length - 1 : prev - 1));
     } else {
-      setRecentIndex((prev) => (prev === 0 ? recentSales.length - 1 : prev - 1));
+      setRecentIndex((prev) =>
+        prev === 0 ? recentSales.length - 1 : prev - 1
+      );
     }
   };
   const handleNext = (type) => {
-    if (type === 'featured') {
+    if (type === "featured") {
       setFeaturedIndex((prev) => (prev === featured.length - 1 ? 0 : prev + 1));
     } else {
-      setRecentIndex((prev) => (prev === recentSales.length - 1 ? 0 : prev + 1));
+      setRecentIndex((prev) =>
+        prev === recentSales.length - 1 ? 0 : prev + 1
+      );
     }
   };
 
@@ -225,8 +235,8 @@ export default function FeaturedProperty() {
                 key={`f-${featuredIndex}-${i}`}
                 className={
                   p._carouselPos === 1
-                    ? 'scale-105 transition-transform duration-500'
-                    : 'scale-95 transition-transform duration-500'
+                    ? "scale-105 transition-transform duration-500"
+                    : "scale-95 transition-transform duration-500"
                 }
                 style={{ zIndex: p._carouselPos === 1 ? 2 : 1 }}
               >
@@ -236,14 +246,14 @@ export default function FeaturedProperty() {
           </div>
           <div className="flex justify-center mt-6 gap-4">
             <button
-              onClick={() => handlePrev('featured')}
+              onClick={() => handlePrev("featured")}
               className="p-2 bg-white/80 hover:bg-white rounded-full shadow-md border"
               aria-label="Previous featured property"
             >
               <ChevronLeft className="w-6 h-6 text-[#0054F6]" />
             </button>
             <button
-              onClick={() => handleNext('featured')}
+              onClick={() => handleNext("featured")}
               className="p-2 bg-white/80 hover:bg-white rounded-full shadow-md border"
               aria-label="Next featured property"
             >
@@ -264,8 +274,8 @@ export default function FeaturedProperty() {
                 key={`r-${recentIndex}-${i}`}
                 className={
                   p._carouselPos === 1
-                    ? 'scale-105 transition-transform duration-500'
-                    : 'scale-95 transition-transform duration-500'
+                    ? "scale-105 transition-transform duration-500"
+                    : "scale-95 transition-transform duration-500"
                 }
                 style={{ zIndex: p._carouselPos === 1 ? 2 : 1 }}
               >
@@ -275,14 +285,14 @@ export default function FeaturedProperty() {
           </div>
           <div className="flex justify-center mt-6 gap-4">
             <button
-              onClick={() => handlePrev('recent')}
+              onClick={() => handlePrev("recent")}
               className="p-2 bg-white/80 hover:bg-white rounded-full shadow-md border"
               aria-label="Previous recent sale"
             >
               <ChevronLeft className="w-6 h-6 text-[#0054F6]" />
             </button>
             <button
-              onClick={() => handleNext('recent')}
+              onClick={() => handleNext("recent")}
               className="p-2 bg-white/80 hover:bg-white rounded-full shadow-md border"
               aria-label="Next recent sale"
             >

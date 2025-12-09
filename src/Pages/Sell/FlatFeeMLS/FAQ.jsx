@@ -20,7 +20,8 @@ function FAQ() {
         "Yes, absolutely! The National Association of REALTORS (NAR) allows sellers to list on the MLS for a flat fee. It's an affordable way to sell your home without spending a fortune on agent commissions. Just make sure to choose a trusted MLS service with credible reviews.",
     },
     {
-      question: "Is listing on the MLS without a Realtor in the US a good option?",
+      question:
+        "Is listing on the MLS without a Realtor in the US a good option?",
       answer: "",
     },
     {
@@ -44,6 +45,11 @@ function FAQ() {
       <h2 className="text-2xl sm:text-3xl font-bold text-black mb-4 text-center">
         Flat Fee MLS <span className="text-[#EB4E3D]">FAQs</span>
       </h2>
+      <span className="text-black block text-center mx-auto max-w-2xl mb-6">
+        Find quick, straightforward answers to the most common questions about
+        how Listlly helps homeowners save thousands and sell like a pro with
+        full support from a team of licensed experts.
+      </span>
 
       <div className="grid grid-cols-1 gap-4">
         {faqs.map((faq, index) => (
@@ -56,12 +62,14 @@ function FAQ() {
               <h3 className="text-base sm:text-lg font-bold text-[#1C1C1C]">
                 {faq.question}
               </h3>
-              <span className="text-[#EB4E3D] text-lg sm:text-xl">
-                {openIndex === index ? "▲" : "▼"}
+              <span className="text-[#0b5aa5] text-xl font-bold sm:text-2xl">
+                {openIndex === index ? "-" : "+"}
               </span>
             </div>
             {openIndex === index && (
-              <p className="text-sm sm:text-base text-gray-500 mt-2">{faq.answer}</p>
+              <p className="text-sm sm:text-base text-gray-500 mt-2">
+                {faq.answer}
+              </p>
             )}
           </div>
         ))}

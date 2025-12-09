@@ -1,65 +1,74 @@
 import React, { useState } from "react";
-import { FiChevronDown, FiChevronUp } from "react-icons/fi";
-
-const faqs = [
-  {
-    q: "How can I sell my house for cash?",
-    a: "",
-  },
-  {
-    q: "Who will buy my house for cash if I sign up on Listlly?",
-    a: "",
-  },
-  {
-    q: "How does a Listlly Cash Offer work?",
-    a: "",
-  },
-  {
-    q: "Who pays the most for houses?",
-    a: "Typically, buyers who are most motivated or have the fewest contingencies (such as cash buyers or investors) may pay the most, but it depends on your local market and property condition.",
-  },
-  {
-    q: "Are cash sales faster than traditional home sales?",
-    a: "",
-  },
-];
 
 function FAQ() {
-  const [open, setOpen] = useState(3); // fourth question open by default
+  const faqs = [
+    { question: "How much is my house worth?", answer: "" },
+    { question: "What is the value of my home?", answer: "" },
+    {
+      question: "How do I find the value of my home?",
+      answer:
+        "Simply enter your address on Listlly and one of our licensed professionals will analyze comparable sales, active listings, and market movement to provide an accurate and detailed home value report — not just a computer estimate.",
+    },
+    { question: "How can I estimate the value of a mobile home?", answer: "" },
+    { question: "Can I estimate the value of my old house?", answer: "" },
+    { question: "Can I update my home value estimation?", answer: "" },
+    { question: "How accurate is a home value estimator?", answer: "" },
+    { question: "How does the Listlly home worth estimator work?", answer: "" },
+    { question: "How much is a house worth by its address?", answer: "" },
+    { question: "How to get an accurate value for my house?", answer: "" },
+    { question: "Is the home value estimator free?", answer: "" },
+    { question: "Is the home value estimator free?", answer: "" },
+    {
+      question: "Is renovation cost included in my home valuation?",
+      answer: "",
+    },
+    { question: "When should I use a home value estimator?", answer: "" },
+    { question: "Why use a home value estimator?", answer: "" },
+  ];
+
+  const [openIndex, setOpenIndex] = useState(2);
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
-    <section className="max-w-3xl mx-auto px-4 py-12">
-      <h2 className="text-2xl font-bold text-center mb-8 text-black">
-        Frequently{" "}
-        <span className="text-[#ff6061]">Asked Questions</span>
+    <div className="w-full bg-white px-4 sm:px-6 py-12 mx-auto max-w-5xl">
+      <h2 className="text-3xl sm:text-4xl font-bold text-black mb-2 text-center">
+        Frequently Asked Questions
       </h2>
-      <div className="space-y-4">
-        {faqs.map((item, idx) => (
-          <div key={idx}>
-            <button
-              className={`w-full text-left bg-[#fafafa] rounded-md px-5 py-4 flex items-center justify-between font-medium text-lg focus:outline-none transition-colors ${
-                open === idx
-                  ? "text-[#ff6061]"
-                  : "text-gray-800"
-              }`}
-              onClick={() => setOpen(open === idx ? null : idx)}
-            >
-              <span>{item.q}</span>
-              {open === idx ? (
-                <FiChevronUp className="text-[#ff6061] w-6 h-6" />
-              ) : (
-                <FiChevronDown className="text-gray-400 w-6 h-6" />
-              )}
-            </button>
-            {open === idx && item.a && (
-              <div className="bg-[#faf6f6] rounded-b-md px-5 pb-4 pt-2 text-gray-700 text-base">
-                {item.a}
-              </div>
+      <p className="text-center text-gray-600 max-w-2xl mx-auto mb-8">
+        Find quick, straightforward answers to the most common questions about
+        how Listlly helps homeowners save thousands and sell like a pro with
+        full support from a team of licensed experts.
+      </p>
+
+      <div className="w-full mx-auto">
+        {faqs.map((faq, index) => (
+          <div
+            key={index}
+            className="py-4 border-t last:border-b cursor-pointer"
+            onClick={() => toggleFAQ(index)}
+          >
+            <div className="flex items-center justify-between">
+              <h3 className="text-base sm:text-lg font-semibold text-black">
+                {faq.question}
+              </h3>
+              <button
+                aria-expanded={openIndex === index}
+                className="w-8 h-8 rounded-full flex items-center justify-center border border-gray-400 text-gray-600 text-lg"
+              >
+                {openIndex === index ? "−" : "+"}
+              </button>
+            </div>
+
+            {openIndex === index && faq.answer && (
+              <p className="mt-4 text-sm text-gray-500">{faq.answer}</p>
             )}
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }
 

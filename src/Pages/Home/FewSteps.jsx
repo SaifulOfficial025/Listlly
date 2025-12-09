@@ -1,79 +1,105 @@
-import React from 'react';
-import { FaBoxOpen, FaHome, FaCamera, FaCheckCircle, FaGlobe } from 'react-icons/fa';
+import React from "react";
+import { Camera, CheckCircle, Globe } from "lucide-react";
+import stepsimg from "../../../public/steps.png";
+import { FaBox } from "react-icons/fa";
+import { GoHomeFill } from "react-icons/go";
+import { HiCamera } from "react-icons/hi";
 
 const steps = [
   {
-    number: 1,
-    titleTop: 'Choose',
-    titleBottom: 'Package',
-    description: 'Pick the plan that fits your needs.',
+    number: "01",
+    icon: FaBox,
+    title: "Choose Your Package",
+    description:
+      "Pick the plan that fits your needs from basic to A to full pro support.",
   },
   {
-    number: 2,
-    titleTop: 'Enter',
-    titleBottom: 'Details',
-    description: 'Add address, features, and pricing.',
+    number: "02",
+    icon: GoHomeFill,
+    title: "Enter Property Details",
+    description: "Add address, home features, and pricing in a guided form.",
   },
   {
-    number: 3,
-    titleTop: 'Upload',
-    titleBottom: 'Photos',
-    description: 'Use your own or book a pro shoot.',
+    number: "03",
+    icon: HiCamera,
+    title: "Upload Your Photos",
+    description:
+      "Upload your own or schedule a professional shoot with our partners.",
   },
   {
-    number: 4,
-    titleTop: 'Final Review',
-    titleBottom: '',
-    description: 'Check info & make final edits.',
+    number: "04",
+    icon: CheckCircle,
+    title: "Final Review",
+    description: "Review all listing info and make any last-minute edits.",
   },
   {
-    number: 5,
-    titleTop: 'Go Live!',
-    titleBottom: '',
-    description: 'Your home is listed on the MLS within 24 hrs.',
+    number: "05",
+    icon: Globe,
+    title: "Go Live on the MLS",
+    description:
+      "Hit submit and go live within 24 hours. Your home is now visible to millions.",
   },
 ];
 
 function FewSteps() {
   return (
-    <div className="w-full bg-white mt-10">
-      <div className="bg-[#FAFAFA] py-10 px-4 sm:px-6 md:px-8">
-        <div className="max-w-[1100px] mx-auto text-center">
-    <h2 className="text-xl md:text-2xl font-bold text-[#1C1C1C]">
-            <span className="text-[#EB4E3D]">Your Sale, Your Way</span>
-            <span className="text-[#1C1C1C]">—In Just a Few Steps”</span>
-        </h2>
-  <p className="text-xs md:text-sm text-[#5A5A5A] mt-2">
-          Our simple process makes it easy to get your home listed and sold.
-        </p>
+    <div className="w-full bg-white py-12 px-4 sm:px-6 md:px-8">
+      <div className="max-w-5xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-5xl font-bold text-black mb-1">
+            Sell Your Home in
+          </h2>
+          <h3 className="text-3xl md:text-5xl font-bold mb-2">
+            <span className="text-[#d03c0b]">5 Easy Steps </span>
+            <span className="text-black">Zero Stress</span>
+          </h3>
+          <p className="text-gray-600 text-sm">
+            Our simple process makes it easy to get your home listed and sold.
+          </p>
+        </div>
 
-  <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-    {steps.map((step, index) => (
-      <div
-        key={index}
-        className="bg-white rounded-2xl shadow-[0_2px_12px_rgba(44,62,80,0.07)] border border-[#e3eaf2] flex flex-col items-center text-center px-8 py-8 min-h-[230px] hover:shadow-lg transition-shadow duration-300 transform hover:scale-105"
-      >
-        <div className="text-[32px] font-bold text-[#EB4E3D] leading-none mb-2">{step.number}</div>
-        <h3 className="text-[22px] font-bold text-[#1C1C1C] leading-tight mb-1">
-          {step.titleTop && <span className="block">{step.titleTop}</span>}
-          {step.titleBottom && <span className="block">{step.titleBottom}</span>}
-        </h3>
-        <p className="text-[17px] text-[#3A3A3A] opacity-90 leading-snug mt-1">
-          {step.description}
-        </p>
-      </div>
-    ))}
-  </div>
+        {/* Main Content - Image and Steps */}
+        <div className="flex flex-col lg:flex-row gap-6 items-start ">
+          {/* Left Side - Image */}
+          <div className="w-full lg:w-5/12 ">
+            <div className="rounded-2xl overflow-hidden ">
+              <img
+                src={stepsimg}
+                alt="Beautiful house"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          </div>
 
-  {/* Red button below steps */}
-  <div className="flex justify-center mt-10">
-    <button
-      className="bg-gradient-to-r from-[#FF2B2B] to-[#EB4E3D] text-white text-[22px] font-semibold rounded-xl px-12 py-3 shadow-md hover:scale-105 transition-transform duration-200 focus:outline-none"
-    >
-      Get Started Today
-    </button>
-  </div>
-      </div>
+          {/* Right Side - Steps */}
+          <div className="w-full lg:w-7/12 space-y-4">
+            {steps.map((step, index) => {
+              const IconComponent = step.icon;
+              return (
+                <div
+                  key={index}
+                  className="flex gap-3 items-start rounded-xl p-4 -mt-3 hover:bg-[#dfe7ed] transition duration-300"
+                >
+                  {/* Icon Box */}
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#e7eff6] flex items-center justify-center mt-2">
+                    <IconComponent className="w-5 h-5 text-[#0b5aa5] " />
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1 pt-1">
+                    <h4 className="text-base font-semibold text-black mb-1">
+                      {step.title}
+                    </h4>
+                    <p className="text-gray-600 text-xs leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );

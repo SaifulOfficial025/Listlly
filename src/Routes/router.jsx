@@ -36,13 +36,14 @@ import SavedProperties from "../Pages/SellingListingFlow/SavedProperties/RootPag
 import HowToVideos from "../Pages/SellingListingFlow/HowToVideos/RootPage";
 import AccountSettings from "../Pages/SellingListingFlow/AccountSettings";
 
-import SellFlatFeeMLS from "../Pages/Sell/FlatFeeMLS/RootPage"
-import SellHomeCash from "../Pages/Sell/SellHomeCash/RootPage"
-import HomeWorth from "../Pages/Sell/HomeWorth/RootPage"
-import FindValue from "../Pages/Sell/HomeWorth/FindValue"
+import SellFlatFeeMLS from "../Pages/Sell/FlatFeeMLS/RootPage";
+import SellHomeCash from "../Pages/Sell/SellHomeCash/RootPage";
+import HomeWorth from "../Pages/Sell/HomeWorth/RootPage";
+import FindValue from "../Pages/Sell/HomeWorth/FindValue";
+import ListforSellbyOwner from "../Pages/Sell/ListforSellbyOwner/RootPage";
 
 import Pricing from "../Pages/Pricing/RootPage";
-import WhyListly from "../Pages/WhyListlly/RootPage"
+import WhyListly from "../Pages/WhyListlly/RootPage";
 import HowListllyWorks from "../Pages/Resources/HowListllyWorks/RootPage";
 import Blog from "../Pages/Resources/Blog";
 import ResourceFAQ from "../Pages/Resources/FAQ";
@@ -52,14 +53,11 @@ import VendorSignUp from "../Pages/Vendor/SignUp";
 import PropertyInformation from "../Pages/Vendor/Dashboard/PropertyInformation";
 import VendorPropertyDetails from "../Pages/Vendor/Dashboard/PropertyDetails";
 
-
-
 // import OfferSummary from "../Pages/SellingListingFlow/SubmittedOffer/OfferSummary";
 // import OfferDetails from "../Pages/SellingListingFlow/SubmittedOffer/OfferDetails";
 // import CounterOffer from "../Pages/SellingListingFlow/SubmittedOffer/CounterOffer";
 // import RequestHighest from "../Pages/SellingListingFlow/SubmittedOffer/RequestHighest";
 // import SelectRecipient from "../Pages/SellingListingFlow/SubmittedOffer/SelectRecipient";
-
 
 export const router = createBrowserRouter([
   {
@@ -130,8 +128,10 @@ export const router = createBrowserRouter([
     path: "/sell/home_worth/find_value",
     element: <FindValue />,
   },
-
-
+  {
+    path: "/sell/list_for_sale_by_owner",
+    element: <ListforSellbyOwner />,
+  },
 
   {
     path: "/vendor_signin",
@@ -149,31 +149,26 @@ export const router = createBrowserRouter([
     children: [
       { path: "", element: <VendorRoot /> },
       { path: "photography_request", element: <PhotographyRequest /> },
-  { path: "property_information/:id", element: <PropertyInformation /> },
+      { path: "property_information/:id", element: <PropertyInformation /> },
       { path: "property/:id", element: <VendorPropertyDetails /> },
     ],
   },
 
-
-
-
-
   {
-  path: "/dashboard",
-  element: <DashboardLayout />,
-  children: [
-      
+    path: "/dashboard",
+    element: <DashboardLayout />,
+    children: [
       {
         path: "selling_properties",
         element: <SellProperties />,
       },
       {
         path: "selling_properties/list_property",
-        element: <ListProperty />
+        element: <ListProperty />,
       },
       {
         path: "selling_properties/list_property/property_information",
-        element: <ListPropertyFlow />
+        element: <ListPropertyFlow />,
       },
       {
         path: "submitted_offer",
@@ -186,9 +181,9 @@ export const router = createBrowserRouter([
           { path: "select_recipient", element: <SelectRecipient /> },
         ],
       },
-  { path: "buy_properties", element: <RootPage /> },
-  { path: "buy_properties/details", element: <Details /> },
-  { path: "buy_properties/offer_details", element: <BuyOfferDetails /> },
+      { path: "buy_properties", element: <RootPage /> },
+      { path: "buy_properties/details", element: <Details /> },
+      { path: "buy_properties/offer_details", element: <BuyOfferDetails /> },
       {
         path: "selling_properties/start_escrow/social_media_sharing",
         element: <SocialMediaSharing />,
@@ -231,5 +226,4 @@ export const router = createBrowserRouter([
       },
     ],
   },
-
 ]);

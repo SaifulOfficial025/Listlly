@@ -1,78 +1,8 @@
 import React from "react";
 import Property from "/property.jpg";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-function PropertyCard({
-  status = "Active",
-  title,
-  price,
-  beds,
-  baths,
-  area,
-  images = [],
-}) {
-  const isSold = status.toLowerCase() === "sold";
-  const [currentIndex, setCurrentIndex] = React.useState(0);
-
-  const prevImage = () => {
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
-
-  const nextImage = () => {
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  };
-
-  return (
-    <div className="bg-white rounded-xl shadow-[0_6px_24px_rgba(0,0,0,0.08)] overflow-hidden transform transition-transform duration-500 ease-in-out hover:scale-105 hover:shadow-lg w-full max-w-full">
-      <div className="relative">
-        <div className="pt-[56.25%]"></div>
-        <div className="absolute inset-0">
-          <img
-            src={images[currentIndex]}
-            alt={`${title} - image ${currentIndex + 1}`}
-            className="w-full h-full object-cover max-h-60 md:max-h-full"
-          />
-        </div>
-        <span
-          className={`absolute top-2 right-2 text-[10px] md:text-[11px] font-semibold px-2 md:px-3 py-[4px] md:py-[6px] rounded-full shadow-sm ${
-            isSold ? "bg-[#FF6B6B] text-white" : "bg-[#E8F0FF] text-[#0054F6]"
-          }`}
-        >
-          {status}
-        </span>
-        {images.length > 1 && (
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex space-x-2">
-            <button
-              onClick={prevImage}
-              className="p-1 bg-white/70 hover:bg-white rounded-full shadow-sm"
-            >
-              <ChevronLeft className="w-4 h-4 md:w-5 md:h-5 text-[#1C1C1C]" />
-            </button>
-            <button
-              onClick={nextImage}
-              className="p-1 bg-white/70 hover:bg-white rounded-full shadow-sm"
-            >
-              <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-[#1C1C1C]" />
-            </button>
-          </div>
-        )}
-      </div>
-      <div className="px-4 py-3">
-        <h3 className="text-[14px] font-semibold text-[#1C1C1C]">{title}</h3>
-        <div className="mt-2 text-[14px] font-semibold text-[#0054F6]">
-          {price}
-        </div>
-        <div className="mt-2 text-[16px] text-[#5F6B7A]">
-          {beds} beds <span className="mx-2">•</span> {baths} baths
-          <span className="mx-2">•</span>
-          <span>
-            <span className="font-semibold text-[#0054F6]">{area}</span> sq ft
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-}
+import { FaArrowRight } from "react-icons/fa";
+import { PropertyCard } from "../../Home/FeaturedProperty";
 
 const recentSales = [
   {
@@ -108,9 +38,17 @@ function RecentSells() {
   return (
     <div className="w-full bg-white px-4 sm:px-6 py-10">
       <div className="max-w-[1200px] mx-auto">
-        <h2 className="text-center text-2xl sm:text-3xl font-bold text-[#1C1C1C] mb-6">
-          <span className="text-[#EB4E3D]">Recent Sales</span> Properties
-        </h2>
+        <div className="relative mb-6 mt-16">
+          <h2 className="text-left text-2xl sm:text-3xl font-bold text-[#1C1C1C]">
+            <span className="text-[#d03c0b]">Recent Sales</span> Properties
+          </h2>
+          <a
+            href="#"
+            className="absolute right-0 top-1/2 -translate-y-1/2 text-[13px] font-bold text-[#0b5aa5] underline"
+          >
+            View All <FaArrowRight className="inline ml-1 -mt-1" />
+          </a>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {recentSales.map((p, i) => (
             <PropertyCard key={`r-${i}`} {...p} />

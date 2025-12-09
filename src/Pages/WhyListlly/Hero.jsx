@@ -1,51 +1,55 @@
-import React from 'react'
+import React from "react";
+import homeworthhero from "../../../public/whylistlyherobg.png";
+import { CiLocationOn } from "react-icons/ci";
+import { FaPhoneVolume } from "react-icons/fa6";
 
-export default function Hero() {
+function Hero() {
   return (
-    <section className="relative w-full mt-12 text-black dark:text-black">
-      {/* Background image (public/WhyListllyHero.svg) + overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center -z-10"
-        style={{ backgroundImage: "url('/WhyListllyHero.svg')" }}
-        aria-hidden="true"
-      />
+    <section
+      className="relative w-full bg-cover bg-center mt-12 sm:mt-16 min-h-screen flex items-start"
+      style={{ backgroundImage: `url(${homeworthhero})` }}
+    >
+      <div className="absolute inset-0" />
+      <div className="relative z-10 max-w-4xl px-8 sm:px-32 mt-32 py-12 sm:py-20 flex flex-col items-start text-left">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
+          <span className="text-[#d03c0b]"> Sell Your Home</span> Yourself &
+          Keep Every Dollar
+        </h1>
 
-      <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
-          {/* Left: headline */}
-          <div className="text-black dark:text-black">
-            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight text-black dark:text-black">
-              <span className="text-[#FF6B6B]">$215 Million</span> in
-              <br />
-              Savings and counting
-            </h2>
-            <p className="mt-4 md:mt-6 text-base md:text-lg max-w-lg text-black dark:text-black">
-              Let's market your property to local buyers with our proven flat fee
-              MLS listing service.
-            </p>
-          </div>
+        <p className="mt-4 text-base sm:text-lg text-white max-w-2xl">
+          Listlly gives you everything a traditional agent does (and more)
+          without the hefty commissions, repair requests, or pressure. Stay in
+          control, save tens of thousands, and sell on your own terms.
+        </p>
 
-          {/* Right: stats grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-black dark:text-black">
-            {[
-              { num: '180,000', label: 'Home Listed', icon: '📄' },
-              { num: '2.4M', label: 'Homes for Sale', icon: '🏠' },
-              { num: '20,000', label: 'Showings', icon: '🚪' },
-              { num: '9,500', label: 'Offers Received', icon: '💰' },
-            ].map((s, i) => (
-              <div key={i} className="bg-white/5 backdrop-blur-md border border-white/20 rounded-lg p-4 md:p-6 flex items-center gap-4 shadow-md">
-                <div className="w-12 h-12 rounded-md bg-white/10 flex items-center justify-center text-2xl md:text-3xl">
-                  {s.icon}
-                </div>
-                <div>
-                  <div className="text-lg md:text-xl font-bold">{s.num}</div>
-                  <div className=" text-sm">{s.label}</div>
-                </div>
-              </div>
-            ))}
+        <form className="mt-8 w-full p-3 bg-white rounded-lg shadow-lg">
+          <div className="flex items-center border border-gray-200  shadow-sm px-3 py-2 bg-gray-200 rounded-md">
+            <span className=" mr-3">
+              <CiLocationOn className="text-blue-600 w-5 h-5" />
+            </span>
+
+            <input
+              type="text"
+              aria-label="Enter your address"
+              placeholder="Enter your address"
+              className="flex-1 bg-transparent outline-none px-2 text-sm sm:text-base text-black placeholder-black"
+            />
+
+            <button
+              type="submit"
+              className="ml-6 bg-[#0b5aa5] hover:bg-[#0954c0] text-white px-4 py-2 rounded-lg text-sm sm:text-base font-semibold shadow-md"
+            >
+              Get Started Free
+            </button>
           </div>
-        </div>
+        </form>
+        <p className="flex items-center mt-4 text-white/90">
+          {" "}
+          <FaPhoneVolume className="mr-2" /> No commitments. Just savings.
+        </p>
       </div>
     </section>
-  )
+  );
 }
+
+export default Hero;
