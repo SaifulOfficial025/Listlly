@@ -87,9 +87,11 @@ function Header() {
       >
         {/* Mobile Menu Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
-          <Link to="/" onClick={() => setMobileMenuOpen(false)}>
-            <img src={Logo} alt="Listlly logo" className="w-10 h-10" />
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+              <img src={Logo} alt="Listlly logo" className="w-10 h-10" />
+            </Link>
+          </div>
           <button
             onClick={() => setMobileMenuOpen(false)}
             className="text-3xl text-gray-600 hover:text-[#0b5aa5] transition-colors"
@@ -290,6 +292,19 @@ function Header() {
 
           {/* Mobile Action Buttons */}
           <div className="mt-6 space-y-3 pt-6 border-t border-gray-200">
+            {/* Phone action for mobile: placed above Start Listing */}
+            <div className="flex justify-center">
+              <a
+                href="tel:+184400000000"
+                className="text-[#0b5aa5] p-2 rounded-md hover:bg-gray-100"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span className="w-full text-[#0b5aa5] text-sm font-bold border-2 border-[#0b5aa5] px-28 py-3 rounded shadow-sm hover:bg-[#0b5aa5] hover:text-white transition-colors mt-3 flex items-center justify-center gap-2">
+                  {" "}
+                  Phone
+                </span>
+              </a>
+            </div>
             <Link
               to="/dashboard/selling_properties"
               onClick={() => setMobileMenuOpen(false)}
@@ -523,7 +538,7 @@ function Header() {
               <FaPhoneAlt className="text-[#0b5aa5] text-4xl mr-4 p-2 border-2 border-[#0b5aa5] rounded hover:scale-110 transition-transform duration-300" />
             </button>
             <div
-              className={`absolute left-1/2 -translate-x-1/2 mt-2 w-[320px] bg-white border-2 border-[#0b5aa5] rounded-lg shadow-lg z-50 flex items-center px-4 py-3 transition-all duration-300 ease-in-out ${
+              className={`absolute left-1/2 -translate-x-1/2 mr-16 mt-2 w-[320px] bg-white border-2 border-[#0b5aa5] rounded-lg shadow-lg z-50 flex items-center px-4 py-3 transition-all duration-300 ease-in-out ${
                 showPhonePopup
                   ? "opacity-100 scale-100 pointer-events-auto"
                   : "opacity-0 scale-95 pointer-events-none"
