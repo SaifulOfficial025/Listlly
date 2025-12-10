@@ -93,7 +93,7 @@ function Hero() {
             <div className="rounded-2xl overflow-hidden shadow-2xl w-full aspect-video bg-gray-200">
               <iframe
                 className="w-full h-full block"
-                src="https://www.youtube-nocookie.com/embed/OfnFU99-uds?autoplay=1&mute=1&vq=hd1080"
+                src="https://www.youtube.com/embed/3pUdzT7RdO8?si=mGHC6oI1BvHr0q9N"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
