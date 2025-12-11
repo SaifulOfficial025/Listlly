@@ -1,5 +1,6 @@
 import React from "react";
 import bg from "../../../../public/savetenthousands.png";
+import { Link } from "react-router-dom";
 
 function SaveTenThousands() {
   return (
@@ -13,12 +14,16 @@ function SaveTenThousands() {
           Save Tens of Thousands — Choose Listlly
         </h2>
         <div className="flex flex-col sm:flex-row gap-4 mb-12 justify-center">
-          <button className="bg-white text-[#1769c2] font-semibold px-6 py-3 rounded-lg shadow-md text-base flex items-center gap-2">
-            Start Your Listing for Free <span className="text-lg">&gt;</span>
-          </button>
-          <button className="bg-transparent border border-white text-white font-semibold px-6 py-3 rounded-lg shadow-md text-base flex items-center gap-2">
-            Talk to our FSBO Expert
-          </button>
+          <Link to="/dashboard/selling_properties">
+            <button className="bg-white text-[#1769c2] font-semibold px-6 py-3 rounded-lg shadow-md text-base flex items-center gap-2">
+              Start Your Listing for Free <span className="text-lg">&gt;</span>
+            </button>
+          </Link>
+          <Link to="">
+            <button className="bg-transparent border border-white text-white font-semibold px-6 py-3 rounded-lg shadow-md text-base flex items-center gap-2">
+              Talk to our FSBO Expert
+            </button>
+          </Link>
         </div>
       </div>
     </section>

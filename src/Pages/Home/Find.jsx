@@ -1,5 +1,6 @@
 import React from "react";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 import {
   FaHome,
   FaFileSignature,
@@ -88,14 +89,16 @@ export default function Find() {
               className="absolute inset-0 rounded-lg blur-xl bg-white/60 opacity-30 filter z-0"
               aria-hidden="true"
             />
-            <button
-              className="relative z-10 inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm md:text-base font-semibold text-white border-2 border-white shadow-md shadow-white hover:scale-105 transition"
-              style={{
-                background: "linear-gradient(90deg,#59a3f7 0%, #2361d3 100%)",
-              }}
-            >
-              Start Searching
-            </button>
+            <Link to="/buy/homes_for_sale">
+              <button
+                className="relative z-10 inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm md:text-base font-semibold text-white border-2 border-white shadow-md shadow-white hover:scale-105 transition"
+                style={{
+                  background: "linear-gradient(90deg,#59a3f7 0%, #2361d3 100%)",
+                }}
+              >
+                Start Searching
+              </button>
+            </Link>
           </div>
         </div>
       </div>

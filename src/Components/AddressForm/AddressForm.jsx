@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { IoLocationOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 export default function AddressForm({
   buttonText = "Get Started",
@@ -34,12 +35,14 @@ export default function AddressForm({
           placeholder="Suite"
         />
 
-        <button
-          type="submit"
-          className="bg-[#0b5aa5] text-white rounded-lg px-6 py-3 font-semibold shadow-md"
-        >
-          {buttonText}
-        </button>
+        <Link to="/dashboard/selling_properties">
+          <button
+            type="submit"
+            className="bg-[#0b5aa5] text-white rounded-lg px-6 py-3 font-semibold shadow-md"
+          >
+            {buttonText}
+          </button>
+        </Link>
       </div>
     </form>
   );

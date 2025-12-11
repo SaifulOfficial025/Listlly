@@ -1,6 +1,7 @@
 import React from "react";
 import bg from "../../../../public/listforsellbyownerherobg.png";
 import { BiSolidBadgeCheck } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -78,12 +79,14 @@ function Hero() {
                   className="sm:w-20 bg-transparent outline-none py-1 text-sm text-black placeholder-black"
                 />
               </div>
-              <button
-                type="submit"
-                className="sm:ml-6 bg-[#0b5aa5] hover:bg-[#0954c0] text-white px-4 py-2 rounded-lg text-sm sm:text-base font-semibold shadow-md w-full sm:w-auto"
-              >
-                Get Started
-              </button>
+              <Link to="/dashboard/selling_properties">
+                <button
+                  type="submit"
+                  className="sm:ml-6 bg-[#0b5aa5] hover:bg-[#0954c0] text-white px-4 py-2 rounded-lg text-sm sm:text-base font-semibold shadow-md w-full sm:w-auto"
+                >
+                  Get Started
+                </button>
+              </Link>
             </div>
           </form>
         </div>

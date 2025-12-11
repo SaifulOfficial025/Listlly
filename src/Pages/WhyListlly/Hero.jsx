@@ -2,6 +2,7 @@ import React from "react";
 import homeworthhero from "../../../public/whylistlyherobg.png";
 import { CiLocationOn } from "react-icons/ci";
 import { FaPhoneVolume } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -34,13 +35,14 @@ function Hero() {
               placeholder="Enter your address"
               className="flex-1 bg-transparent outline-none px-2 text-sm sm:text-base text-black placeholder-black"
             />
-
-            <button
-              type="submit"
-              className="ml-6 bg-[#0b5aa5] hover:bg-[#0954c0] text-white px-4 py-2 rounded-lg text-sm sm:text-base font-semibold shadow-md"
-            >
-              Get Started Free
-            </button>
+            <Link to="/dashboard/selling_properties">
+              <button
+                type="submit"
+                className="ml-6 bg-[#0b5aa5] hover:bg-[#0954c0] text-white px-4 py-2 rounded-lg text-sm sm:text-base font-semibold shadow-md"
+              >
+                Get Started Free
+              </button>
+            </Link>
           </div>
         </form>
         <p className="flex items-center mt-4 text-white/90">

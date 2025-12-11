@@ -1,5 +1,6 @@
 import React from "react";
 import MapSell from "../../../../public/newaddress.png";
+import { Link } from "react-router-dom";
 
 function Map() {
   return (
@@ -9,11 +10,13 @@ function Map() {
         <br />
         Owner Packages
       </h2>
-      <p className="text-sm text-gray-600 mb-6">
+      <p className="text-sm text-gray-600 mb-6 flex justify-center items-center gap-1">
         Save big like thousands of sellers—
-        <a href="#" className="text-blue-600 underline">
-          click your state to get started!
-        </a>
+        <Link to="/dashboard/selling_properties">
+          <p className="text-blue-600 underline">
+            click your state to get started!
+          </p>
+        </Link>
       </p>
       <div className="relative max-w-7xl mx-auto px-4">
         <img src={MapSell} alt="US Map" className="w-full h-auto" />
